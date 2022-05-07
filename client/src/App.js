@@ -1,19 +1,45 @@
-// import 'antd/dist/antd.css
+import React, { useState } from 'react';
+
 import 'antd/dist/antd.min.css'
-import { DatePicker } from 'antd';
+// import 'antd/dist/antd.css' does`t work 
+import { Menu } from 'antd';
+import { MailOutlined, HomeOutlined, SettingOutlined, FieldTimeOutlined } from '@ant-design/icons';
+
+const items = [
+  {
+    label: 'Home page',
+    key: 'home-page',
+    icon: <HomeOutlined />,
+  },
+  {
+    label: 'About us',
+    key: 'setings',
+    icon: <SettingOutlined />,
+  },
+  {
+    label: 'Contact us',
+    key: 'mail',
+    icon: <MailOutlined />,
+  },
+  {
+    label: 'Book Appointment',
+    key: 'appointment',
+    icon: <FieldTimeOutlined />,
+  },
 
 
 
-function App() {
+];
 
+const App = () => {
+  const [current, setCurrent] = useState('mail');
 
-  return (
+  const onClick = (e) => {
+    console.log('click ', e);
+    setCurrent(e.key);
+  };
 
-    <DatePicker />
-
-
-
-  );
-}
+  return <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
+};
 
 export default App;
