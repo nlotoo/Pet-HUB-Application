@@ -1,0 +1,11 @@
+/* .navigation-bar {
+    display: inline-block;
+} */
+.menuTwo {
+    display: inline-block;
+}
+
+.menuOne {
+    margin-right: 200px;
+    display: inline-block;
+}
