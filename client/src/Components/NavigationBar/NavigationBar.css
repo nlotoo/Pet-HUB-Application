@@ -1,11 +1,22 @@
 /* .navigation-bar {
     display: inline-block;
 } */
+
+
+
 .menuTwo {
-    display: inline-block;
+     margin-left: 200px;
 }
 
-.menuOne {
-    margin-right: 200px;
-    display: inline-block;
+.menuThree {
+
+ margin-right: 100px;
 }
+
+
+
+/* 
+.menuOne {
+    margin-right: auto;
+    display: inline-block;
+} */
