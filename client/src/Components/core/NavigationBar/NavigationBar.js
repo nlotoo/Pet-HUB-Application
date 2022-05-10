@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 
 import 'antd/dist/antd.min.css'
@@ -10,6 +11,7 @@ import './NavigationBar.css'
 import { Menu } from 'antd';
 import { MailOutlined, HomeOutlined, FireOutlined, SettingOutlined, FieldTimeOutlined, LoginOutlined, LogoutOutlined, ApiOutlined } from '@ant-design/icons';
 
+
 const items = [
     {
         label: 'Home page',
@@ -18,17 +20,18 @@ const items = [
     },
     {
         label: 'Book Appointment',
-        key: 'appointment',
+        key: 'book-appointment',
         icon: <FieldTimeOutlined />,
     },
     {
         label: 'About us',
-        key: 'setings',
+        key: 'about-us',
         icon: <SettingOutlined />,
+
     },
     {
         label: 'Contact us',
-        key: 'mail',
+        key: 'contact-us',
         icon: <MailOutlined />,
     },
 
@@ -36,6 +39,11 @@ const items = [
     // image site banner
     { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, icon: <FireOutlined />, },
     { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, },
+    {
+        label: 'Sign in',
+        key: 'sign-in',
+        icon: <ApiOutlined />,
+    },
     {
         label: 'Login',
         key: 'login',
@@ -46,11 +54,7 @@ const items = [
         key: 'logout',
         icon: <LogoutOutlined />,
     },
-    {
-        label: 'Sign in',
-        key: 'Sign-in',
-        icon: <ApiOutlined />,
-    },
+
 
 ];
 
@@ -59,10 +63,13 @@ const items = [
 const NavigationBar = () => {
 
     const [current, setCurrent] = useState();
+    let navigate = useNavigate();
 
     const onClick = (e) => {
         console.log('clicked ', e);
         setCurrent(e.key);
+        navigate(`/${e.key}`);
+
     };
 
     return (

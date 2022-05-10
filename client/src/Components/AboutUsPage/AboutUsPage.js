@@ -7,7 +7,7 @@ const AboutUsPage = () => {
 
     return (
         <div className="site-card-border-less-wrapper">
-            <Image className='image-in-card' paddingLeft={20} width={825} height={550} src={'https://advice.cdn.betterhelp.com/cro-people-who-love-animals-more-than-people-psychology-of-empathy-4.jpg'} />
+            <Image className='image-in-card' width={825} height={550} src={'https://advice.cdn.betterhelp.com/cro-people-who-love-animals-more-than-people-psychology-of-empathy-4.jpg'} />
 
             <Card className='about-us-card' title="Our Story" bordered={false} style={{ width: 500, height: 550 }}>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque et ea, libero distinctio pariatur soluta laudantium harum optio eaque voluptatum?</p>
