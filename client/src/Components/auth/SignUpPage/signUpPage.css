@@ -1,11 +1,11 @@
-.inside-login-card {
-    margin-top: 10em; 
-    margin-bottom: 13em;
+.inside-sign-up-card {
+    margin-top: 7em;
+    margin-bottom: 4em;
     background: #ececec;
-    
+
 }
 
-.login-card {
+.sign-up-card {
     text-align: -webkit-center;
     background: #ececec;
 

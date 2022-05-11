@@ -8,8 +8,8 @@ import './NavigationBar.css'
 
 
 
-import { Menu } from 'antd';
-import { MailOutlined, HomeOutlined, FireOutlined, SettingOutlined, FieldTimeOutlined, LoginOutlined, LogoutOutlined, ApiOutlined } from '@ant-design/icons';
+import { Menu, Image } from 'antd';
+import { MailOutlined, HomeOutlined,  SettingOutlined, FieldTimeOutlined, LoginOutlined, LogoutOutlined, ApiOutlined } from '@ant-design/icons';
 
 
 const items = [
@@ -34,14 +34,17 @@ const items = [
         key: 'contact-us',
         icon: <MailOutlined />,
     },
-
-
-    // image site banner
-    { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, icon: <FireOutlined />, },
-    { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, },
     {
-        label: 'Sign in',
-        key: 'sign-in',
+        key: 'home-page',
+        icon: <Image preview={false} width={550} height={50} src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSEA0aEytwAg9gw1KMhY-Yb6TtAFQJNNZi_g&usqp=CAU'} />
+    },
+    
+    // image site banner 
+    // { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, icon: < />, },
+    // { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, }, { disabled: true, },
+    {
+        label: 'Sign up ',
+        key: 'sign-up ',
         icon: <ApiOutlined />,
     },
     {
