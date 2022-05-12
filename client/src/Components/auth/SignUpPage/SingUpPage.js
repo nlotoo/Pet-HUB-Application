@@ -1,21 +1,35 @@
 import { Form, Input, Button, Card, } from 'antd';
 import './signUpPage.css'
-
+import authService from '../authService'
+import { useState } from 'react';
 const SingUpPage = () => {
+
+    let [pageInfo, setInfo] = useState({})
+
 
     const onFinish = (values) => {
         console.log('Success:', values);
+        setInfo(values)
     };
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
+        setInfo(errorInfo)
     };
+
+    if (pageInfo.errorFields == undefined) {
+
+        authService.createUser(pageInfo)
+
+    }
+
+
 
     return (
         <div className='sign-up-card'>
 
 
-            <Card title="Sign up" className='inside-sign-up-card' style={{ width: 700 }} >
+            <Card title="Sign up" className='inside-sign-up-card' style={{ width: 700 }}>
 
                 <Form
                     name="Sign up"
@@ -34,12 +48,12 @@ const SingUpPage = () => {
 
                     <Form.Item
                         label="Username"
-                        name="Username"
+                        name="username"
                         rules={[
                             {
                                 min: 4,
                                 required: true,
-                                messageWarning: 'Please input your username!',
+                                messageWarning: `Please input your username!`,
                             },
                         ]}
                     >
@@ -86,13 +100,13 @@ const SingUpPage = () => {
                         <Input.Password />
                     </Form.Item>
                     <Form.Item
-                        name="User email"
+                        name="user-email"
                         label="Email"
                         rules={[
                             {
                                 type: 'email',
                                 required: true,
-                                message: 'Please input your corecly email'
+                                message: 'Please input your corecly email "example@example.com"'
                             },
                         ]}
                     >

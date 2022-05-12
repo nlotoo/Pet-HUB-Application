@@ -9,8 +9,7 @@ import LoginPage from './Components/auth/LoginPage/LoginPage'
 import SignUpPage from './Components/auth/SignUpPage/SingUpPage'
 
 const App = () => {
-  // 
-
+  
   return (
     <div className='root'>
       <header>
@@ -20,12 +19,10 @@ const App = () => {
         <Routes>
           <Route path='/about-us' element={<AboutUsPage />} />
           <Route path='/' element={<HomePage />} />
+          <Route path='/home-page-banner' element={<HomePage />} />
           <Route path='/home-page' element={<HomePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/sign-up' element={<SignUpPage />} />
-
-
-
         </Routes>
       </div>
       <footer className='footer-content'>

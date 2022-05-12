@@ -35,7 +35,7 @@ const items = [
         icon: <MailOutlined />,
     },
     {
-        key: 'home-page',
+        key: 'home-page-banner',
         icon: <Image preview={false} width={550} height={50} src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSEA0aEytwAg9gw1KMhY-Yb6TtAFQJNNZi_g&usqp=CAU'} />
     },
     

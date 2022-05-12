@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-const { Schema } = require('mongoose')
 
 const userSchema = new mongoose.Schema({
 
-    email: {
+    username: {
         type: String,
         requred: true,
         minLength: 4
@@ -12,8 +11,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         requred: true
     },
-    comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]
-
+    'user-email': {
+        type: String
+    },
+    phoneNumber: {
+        type: Number
+    }
 
 })
 
