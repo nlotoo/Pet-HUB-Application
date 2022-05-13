@@ -65,9 +65,12 @@ const { SALT_ROUNDS, JWT_SECRET } = require('../config/config.js');
 // }
 
 async function CreateUser(data) {
-    
+
+    console.log(data)
+    let { username, password, userEmail, phoneNumber } = data
+    console.log(username, password, userEmail, phoneNumber)
     let newUserData = new User(data)
-    
+
 
     return newUserData.save()
 }

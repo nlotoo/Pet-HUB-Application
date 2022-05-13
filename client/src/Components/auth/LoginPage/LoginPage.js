@@ -12,10 +12,7 @@ const LoginForm = () => {
 
   return (
     <div className='login-card'>
-
-
       <Card title="Login" className='inside-login-card'  style={{ width: 700 }} >
-
         <Form
           name="loginForm"
           labelCol={{

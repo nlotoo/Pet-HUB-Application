@@ -6,7 +6,6 @@ const SingUpPage = () => {
 
     let [pageInfo, setInfo] = useState({})
 
-
     const onFinish = (values) => {
         console.log('Success:', values);
         setInfo(values)
@@ -17,12 +16,13 @@ const SingUpPage = () => {
         setInfo(errorInfo)
     };
 
-    if (pageInfo.errorFields == undefined) {
+    if (pageInfo.errorFields !== {}) {
 
         authService.createUser(pageInfo)
-
+        
+    } else {
+        pageInfo.errorFields?.forEach(async (x) => { throw new Error(`${x.errors[0]}`) })
     }
-
 
 
     return (
@@ -51,7 +51,7 @@ const SingUpPage = () => {
                         name="username"
                         rules={[
                             {
-                                min: 4,
+                                min: 5,
                                 required: true,
                                 messageWarning: `Please input your username!`,
                             },
@@ -100,7 +100,7 @@ const SingUpPage = () => {
                         <Input.Password />
                     </Form.Item>
                     <Form.Item
-                        name="user-email"
+                        name="userEmail"
                         label="Email"
                         rules={[
                             {
