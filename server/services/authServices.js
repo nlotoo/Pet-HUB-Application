@@ -67,18 +67,23 @@ const { SALT_ROUNDS, JWT_SECRET } = require('../config/config.js');
 async function CreateUser(data) {
 
     console.log(data)
+
     let { username, password, userEmail, phoneNumber } = data
-    console.log(username, password, userEmail, Number(phoneNumber))
+
+    // console.log(username, password, userEmail, Number(phoneNumber))
 
     let emailUserExist = await User.findOne({ userEmail: userEmail })
     let userNameExist = await User.findOne({ username: username })
+
+
     if (emailUserExist) {
         throw "User email Exist"
     } else if (userNameExist) {
         throw "Username Exist"
     }
 
-
+    emailUserExist = ''
+    userNameExist = ''
 
     if (username.length < 5) {
         throw new Error('User name is to short')
@@ -89,8 +94,8 @@ async function CreateUser(data) {
     }
     if (isNaN(phoneNumber)) {
         throw new Error('Phone number is not corect')
-
     }
+
 
 
     let newUserData = new User(data)

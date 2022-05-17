@@ -1,143 +1,61 @@
-import { Form, Input, Button, Card, } from 'antd';
 import './signUpPage.css'
 import authService from '../authService'
+import { userValidation } from '../../../services/userCheking';
 import { useState } from 'react';
 const SingUpPage = () => {
 
-    let [pageInfo, setInfo] = useState({})
+    let [errorArr, setError] = useState([])
 
-    const onFinish = (values) => {
-        console.log('Success:', values);
-        setInfo(values)
-    };
+    let user;
+    function SingUpFormHandler(e) {
+        e.preventDefault()
 
-    const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-        setInfo(errorInfo)
-    };
+        let username = e.target.username.value
+        let password = e.target.password.value
+        let rePassword = e.target.rePassword.value
+        let gender = e.target.gender.value
 
-    if (pageInfo.errorFields !== {}) {
+        user = {
+            'username': username,
+            'password': password,
+            'rePassword': rePassword,
+            'gender': gender
+        }
+        try {
+            userValidation(user)
 
-        authService.createUser(pageInfo)
-        
-    } else {
-        pageInfo.errorFields?.forEach(async (x) => { throw new Error(`${x.errors[0]}`) })
+        } catch (error) {
+            setError(error)
+           
+        }
+
     }
 
 
-    return (
+
+
+
+    return (<div>
+
         <div className='sign-up-card'>
-
-
-            <Card title="Sign up" className='inside-sign-up-card' style={{ width: 700 }}>
-
-                <Form
-                    name="Sign up"
-                    labelCol={{
-                        span: 10,
-                    }}
-                    wrapperCol={{
-                        span: 6,
-                    }}
-                    initialValues={{
-                        remember: true,
-                    }}
-                    onFinish={onFinish}
-                    onFinishFailed={onFinishFailed}
-                >
-
-                    <Form.Item
-                        label="Username"
-                        name="username"
-                        rules={[
-                            {
-                                min: 5,
-                                required: true,
-                                messageWarning: `Please input your username!`,
-                            },
-                        ]}
-                    >
-                        <Input />
-                    </Form.Item>
-
-                    <Form.Item
-                        label="Password"
-                        name="password"
-                        rules={[
-                            {
-                                min: 6,
-                                required: true,
-                                message: 'Your password  must be at least 6 characters!',
-                            },
-                        ]}
-                    >
-                        <Input.Password />
-                    </Form.Item>
-
-                    <Form.Item
-                        label="Confirm password"
-                        name="rePassword"
-                        dependencies={['password']}
-                        rules={[
-                            {
-                                min: 6,
-                                required: true,
-                                message: false,
-                                // message: 'Please input your comfirm password!',
-                            },
-                            ({ getFieldValue }) => ({
-                                validator(_, value) {
-                                    if (!value || getFieldValue('password') === value) {
-                                        return Promise.resolve();
-                                    }
-
-                                    return Promise.reject(new Error('The two passwords that you entered do not match!'));
-                                },
-                            }),
-
-                        ]}
-                    >
-                        <Input.Password />
-                    </Form.Item>
-                    <Form.Item
-                        name="userEmail"
-                        label="Email"
-                        rules={[
-                            {
-                                type: 'email',
-                                required: true,
-                                message: 'Please input your corecly email "example@example.com"'
-                            },
-                        ]}
-                    >
-                        <Input />
-                    </Form.Item>
-
-                    <Form.Item
-                        label="Phone number"
-                        name="phoneNumber"
-                        rules={[{
-                            required: true,
-                            message: "Please input your phone number"
-                        }]}
-                    >
-                        <Input />
-                    </Form.Item>
-
-
-
-                    <Form.Item
-                        wrapperCol={{
-                            offset: 8,
-                            span: 10,
-                        }}>
-                        <Button type="primary" htmlType="submit">
-                            Sign up
-                        </Button>
-                    </Form.Item>
-                </Form>
-            </Card>
-        </div>
+            <form className='form-class' onSubmit={SingUpFormHandler}>
+                <label>Username</label>
+                <input name='username' type='text' id='username'></input>
+                <label>Email</label>
+                <input name='email' type='text' id='email' ></input>
+                <label>Password</label>
+                <input name='password' type='password' id='password' ></input>
+                <label>Comfirm password</label>
+                <input name='rePassword' type='password' id='rePassword' ></input>
+                <label>Sex</label>
+                <select name='gender'>
+                    <option id='female' value='female'>Female </option>
+                    <option id='male' value='male'>Male </option>
+                </select>
+                <button className='register-button' type="submit">Register</button>
+            </form>
+        </div >
+    </div>
 
     )
 }

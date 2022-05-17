@@ -3,10 +3,21 @@
     margin-bottom: 4em;
     background: #ececec;
 
+
+}
+
+.register-button {
+
+    margin-top: 20px;
+}
+
+.form-class {
+    display: inline-grid;
 }
 
 .sign-up-card {
-    text-align: -webkit-center;
+    max-width: auto;
+    text-align-last: center;
     background: #ececec;
 
 

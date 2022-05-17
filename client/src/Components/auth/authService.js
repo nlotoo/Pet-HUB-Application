@@ -3,13 +3,14 @@
 
 const createUser = async (data) => {
 
+
     let { username, password, rePassword, userEmail, phoneNumber } = data
 
-    if (username?.length < 5) {
+    if (username.length < 4) {
         throw new Error('User name is to short')
     }
 
-    if (password?.length < 6) {
+    if (password.length < 6) {
         throw new Error('User password is to short')
     }
     if (password !== rePassword) {
@@ -19,15 +20,28 @@ const createUser = async (data) => {
     //eslint-disable-next-line
     let pattern = new RegExp(/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+/)
 
-    if (!userEmail?.match(pattern)) {
+    if (!userEmail.match(pattern)) {
         throw new Error('Please write corect email')
     }
     //eslint-disable-next-line
     let phonePattern = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/g
 
-    if (phoneNumber?.match(phonePattern)) {
+    if (phoneNumber.match(phonePattern)) {
         throw new Error('Please write corect phone number')
     }
+
+    function errorColector(responceData) {
+        console.log(responceData.username)
+        console.log(username)
+        if (responceData.username == username) {
+            console.log(responceData)
+        } else {
+            console.log(responceData)
+        }
+
+    }
+
+
 
     const requestOptions = {
         method: 'POST',
@@ -36,7 +50,8 @@ const createUser = async (data) => {
     };
     fetch('http://localhost:5000/sign-up', requestOptions)
         .then(response => response.json())
-        .then(data => { console.log(data) });
+        .then(responceData => errorColector(responceData))
+
 
 
 }
