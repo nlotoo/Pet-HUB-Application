@@ -4,33 +4,31 @@ import { userValidation } from '../../../services/userCheking';
 import { useState } from 'react';
 const SingUpPage = () => {
 
-    let [errorArr, setError] = useState([])
+    let [errorArr, setError] = useState()
+    let [userInfo, setUser] = useState({
+        'username': '',
+        'email': '',
+        'password': '',
+        'rePassword': '',
+    })
 
-    let user;
     function SingUpFormHandler(e) {
         e.preventDefault()
-
-        let username = e.target.username.value
-        let password = e.target.password.value
-        let rePassword = e.target.rePassword.value
-        let gender = e.target.gender.value
-
-        user = {
-            'username': username,
-            'password': password,
-            'rePassword': rePassword,
-            'gender': gender
-        }
         try {
-            userValidation(user)
+            userValidation(userInfo)
 
         } catch (error) {
             setError(error)
-           
+            console.log(errorArr)
         }
 
     }
 
+
+    const handleInputChange = (e) => setUser({
+        ...userInfo,
+        [e.currentTarget.name]: e.currentTarget.value
+    })
 
 
 
@@ -40,15 +38,16 @@ const SingUpPage = () => {
         <div className='sign-up-card'>
             <form className='form-class' onSubmit={SingUpFormHandler}>
                 <label>Username</label>
-                <input name='username' type='text' id='username'></input>
+                <input name='username' type='text' id='username' onChange={handleInputChange}></input>
                 <label>Email</label>
-                <input name='email' type='text' id='email' ></input>
+                <input name='email' type='text' id='email' onChange={handleInputChange}></input>
                 <label>Password</label>
-                <input name='password' type='password' id='password' ></input>
+                <input name='password' type='password' id='password' onChange={handleInputChange} ></input>
                 <label>Comfirm password</label>
-                <input name='rePassword' type='password' id='rePassword' ></input>
+                <input name='rePassword' type='password' id='rePassword' onChange={handleInputChange} ></input>
                 <label>Sex</label>
-                <select name='gender'>
+                <select name='gender' onChange={handleInputChange}>
+                    <option id='female' value='default' defaultChecked >Please choice </option>
                     <option id='female' value='female'>Female </option>
                     <option id='male' value='male'>Male </option>
                 </select>
