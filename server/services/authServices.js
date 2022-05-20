@@ -78,9 +78,6 @@ async function CreateUser(data) {
         gender: gender.toLowerCase().trim(),
     }
 
-
-
-
     let emailUserExist = await User.findOne({ userEmail: obj.userEmail })
     let userNameExist = await User.findOne({ username: obj.username })
 
@@ -90,7 +87,6 @@ async function CreateUser(data) {
     if (!pattern.test(userEmail)) {
         throw 'Your email is incorect: example@example.exapmle';
     }
-
 
     if (userNameExist) {
         throw "This username is  exist"
@@ -115,7 +111,9 @@ async function CreateUser(data) {
     }
 
 
+    const hash = bcrypt.hashSync(password.trim(), SALT_ROUNDS);
 
+    obj.password = hash
 
     let newUserData = new User(obj)
 

@@ -7,6 +7,13 @@ export const userValidation = (data) => {
 
     let errorArr = [];
 
+    let pattern = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/;
+
+    if (!pattern.test(userEmail)) {
+        errorArr.push("Your email is incorect: example@example.exapmle");
+    }
+
+
     if (!username || !password || !userEmail || !rePassword) {
         errorArr.push("All fields are required!");
     }
