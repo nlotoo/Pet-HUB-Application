@@ -7,15 +7,16 @@ const userSchema = new mongoose.Schema({
         requred: true,
         minLength: 4
     },
+    userEmail: {
+        type: String
+    },
     password: {
         type: String,
         requred: true
     },
-    userEmail: {
+
+    gender: {
         type: String
-    },
-    phoneNumber: {
-        type: Number
     }
 
 })

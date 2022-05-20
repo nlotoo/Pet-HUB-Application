@@ -13,6 +13,7 @@
 
 .form-class {
     display: inline-grid;
+    width: 200px;
 }
 
 .sign-up-card {

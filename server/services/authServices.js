@@ -66,39 +66,58 @@ const { SALT_ROUNDS, JWT_SECRET } = require('../config/config.js');
 
 async function CreateUser(data) {
 
-    console.log(data)
-
-    let { username, password, userEmail, phoneNumber } = data
-
-    // console.log(username, password, userEmail, Number(phoneNumber))
-
-    let emailUserExist = await User.findOne({ userEmail: userEmail })
-    let userNameExist = await User.findOne({ username: username })
 
 
-    if (emailUserExist) {
-        throw "User email Exist"
-    } else if (userNameExist) {
-        throw "Username Exist"
+    let { username, password, userEmail, gender } = data
+
+
+    let obj = {
+        username: username.toLowerCase().trim(),
+        password: password.toLowerCase().trim(),
+        userEmail: userEmail.toLowerCase().trim(),
+        gender: gender.toLowerCase().trim(),
+    }
+
+
+
+
+    let emailUserExist = await User.findOne({ userEmail: obj.userEmail })
+    let userNameExist = await User.findOne({ username: obj.username })
+
+
+    let pattern = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/;
+
+    if (!pattern.test(userEmail)) {
+        throw 'Your email is incorect: example@example.exapmle';
+    }
+
+
+    if (userNameExist) {
+        throw "This username is  exist"
+    }
+    else if (emailUserExist) {
+        throw "This email is exist"
     }
 
     emailUserExist = ''
     userNameExist = ''
 
-    if (username.length < 5) {
-        throw new Error('User name is to short')
+    if (obj.username.length < 5) {
+        throw new Error('User name is to short!')
     }
 
-    if (password.length < 6) {
-        new Error('User password is to short')
-    }
-    if (isNaN(phoneNumber)) {
-        throw new Error('Phone number is not corect')
+    if (obj.password.length < 6) {
+        new Error('User password is to short!')
     }
 
+    if (obj.gender === 'default' || obj.gender == '') {
+        new Error('You must to choice you gender!')
+    }
 
 
-    let newUserData = new User(data)
+
+
+    let newUserData = new User(obj)
 
 
     return newUserData.save()
