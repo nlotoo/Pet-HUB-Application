@@ -1,13 +1,14 @@
 .inside-login-card {
-    margin-top: 10em; 
+    margin-top: 10em;
     margin-bottom: 13em;
     background: #ececec;
-    
+
 }
 
 .login-card {
     text-align: -webkit-center;
     background: #ececec;
+}
 
-
+.form-class-login {
 }

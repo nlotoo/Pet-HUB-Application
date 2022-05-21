@@ -1,76 +1,28 @@
-import { Form, Input, Button, Card, } from 'antd';
+
 import './loginPage.css'
 
-const LoginForm = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values);
-  };
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
+const LoginForm = () => {
+
+
+
+  function submitHandler(e) {
+    e.preventDefault()
+    console.log(e.target.email.value)
+  }
 
   return (
-    <div className='login-card'>
-      <Card title="Login" className='inside-login-card'  style={{ width: 700 }} >
-        <Form
-          name="loginForm"
-          labelCol={{
-            span: 10,
-          }}
-          wrapperCol={{
-            span: 6,
-          }}
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-        >
+    <div className='login-card '>
+      <form className='form-class-login' onSubmit={submitHandler}>
+        <label>Email</label>
+        <input id="email" name="email"></input>
+        <label>Password</label>
+        <input id="password" name="password"></input>
+        <button>Login</button>
+      </form>
 
-          <Form.Item
-            label="Username"
-            name="username"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your username!',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-
-          <Form.Item
-            label="Password"
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your password!',
-              },
-            ]}
-          >
-            <Input.Password />
-          </Form.Item>
-
-
-
-          <Form.Item
-            wrapperCol={{
-              offset: 8,
-              span: 10,
-            }}>
-            <Button type="primary" htmlType="submit">
-              Login
-            </Button>
-          </Form.Item>
-        </Form>
-      </Card>
     </div>
-
-
-  );
-};
+  )
+}
 
 export default LoginForm;

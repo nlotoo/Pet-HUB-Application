@@ -116,14 +116,18 @@ async function CreateUser(data) {
     obj.password = hash
 
     let newUserData = new User(obj)
-
-
     return newUserData.save()
-}
+};
+
+
+async function loginUser(data) {
+    console.log(data)
+};
 
 
 
 
 module.exports = {
-    CreateUser
+    CreateUser,
+    loginUser,
 };
