@@ -3,7 +3,7 @@ import authService from '../authService'
 import { userValidation } from '../../../services/userCheking';
 import { useEffect, useState, } from 'react';
 
-import ErrorBar from './ErrorBar/ErrorBar'
+import ErrorBar from '../ErrorBar/ErrorBar'
 
 import { useNavigate } from 'react-router-dom'
 

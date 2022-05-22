@@ -33,9 +33,7 @@ export const userValidation = (data) => {
 
 
     if (errorArr.length > 0) {
-        throw {
-            errorArr
-        }
+        throw { errorArr }
     }
 
 }

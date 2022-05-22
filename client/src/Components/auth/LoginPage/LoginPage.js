@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './loginPage.css'
 import { loginUserValidation } from '../../../services/loginUserValidation'
-
+import ErrorBar from '../ErrorBar/ErrorBar'
 
 
 const LoginForm = () => {
@@ -12,8 +12,6 @@ const LoginForm = () => {
 
   let [userInfo, setUser] = useState({ email: '', password: '' })
 
-  let foo;
-
   function submitHandler(e) {
     e.preventDefault()
 
@@ -23,14 +21,14 @@ const LoginForm = () => {
 
 
     } catch (err) {
-      console.log(err)
-      setError(err)
-      console.log(errorArr)
 
-      foo = errorArr.errorMessage[0].email
+      setError(err)
+
+
     }
   }
 
+  console.log(errorArr)
 
 
   const handleInputChange = (e) => setUser({
@@ -46,7 +44,7 @@ const LoginForm = () => {
         <label>Password</label>
         <input id="password" name="password" onChange={handleInputChange}></input>
         <button>Login</button>
-        <div>error{foo}</div>
+        <div>  {errorArr ? <ErrorBar data={errorArr} /> : ''}</div>
       </form>
 
     </div>
