@@ -26,6 +26,17 @@ const createUser = async (data) => {
 
 }
 
+const loginUser = async (data) => {
+    try {
+        console.log('CreateUserINSIDEDATA')
+        console.log(data)
+    } catch (err) {
+        console.log('CreateUserINSIDE')
+        console.log(err)
+    }
+}
+
 module.exports = {
     createUser,
+    loginUser,
 }

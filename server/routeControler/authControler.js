@@ -19,10 +19,8 @@ router.post('/sign-up', async (req, res) => {
 router.post('/sing-in', async (req, res) => {
 
     try {
-        let data = await authService.CreateUser(req.body)
+        let data = await authService.loginUser(req.body)
         res.status(200).json(data);
-
-
     } catch (err) {
         res.status(401).json({ message: err });
     }
