@@ -28,10 +28,19 @@ const createUser = async (data) => {
 
 const loginUser = async (data) => {
     try {
-        console.log('CreateUserINSIDEDATA')
-        console.log(data)
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        };
+        const url = 'http://localhost:5000/sing-in'
+
+        let responce = await fetch(url, requestOptions)
+        let result = await responce.json()
+        return result
+
     } catch (err) {
-        console.log('CreateUserINSIDE')
+        console.log('loginUser INSIDE error')
         console.log(err)
     }
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './loginPage.css'
 import { loginUserValidation } from '../../../services/loginUserValidation'
 import ErrorBar from '../ErrorBar/ErrorBar'
-
+import authService from '../authService'
 
 const LoginForm = () => {
 
@@ -19,12 +19,14 @@ const LoginForm = () => {
     try {
       loginUserValidation(userInfo)
 
+      let userResult = authService.loginUser(userInfo)
+        .then((data) => {
+          console.log(data)
+        })
+
 
     } catch (err) {
-
       setError(err)
-
-
     }
   }
 
