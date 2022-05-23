@@ -12,6 +12,8 @@ const LoginForm = () => {
 
   let [userInfo, setUser] = useState({ email: '', password: '' })
 
+  let [token, setToken] =useState()
+
   function submitHandler(e) {
     e.preventDefault()
 
@@ -21,9 +23,16 @@ const LoginForm = () => {
 
       authService.loginUser(userInfo)
         .then((data) => {
-          setError({})
+          if (data.message) {
+            setError(data)
+          } else {
+            setToken(data)
+            setError({})
+          }
+
           return data
         })
+        .catch((err) => { console.log(err) })
 
 
     } catch (err) {
@@ -31,7 +40,8 @@ const LoginForm = () => {
     }
   }
 
-  console.log(errorArr)
+
+
 
 
   const handleInputChange = (e) => setUser({

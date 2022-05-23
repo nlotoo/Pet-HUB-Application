@@ -121,9 +121,26 @@ async function CreateUser(data) {
 
 
 async function loginUser(data) {
-    console.log(data)
 
-    return data
+
+    let { email, password } = data;
+    let user = await User.find({ userEmail: email });
+
+    if (user.length == 0) {
+        console.log('error')
+        throw 'Incorect User';
+    }
+
+    itTrue = bcrypt.compareSync(data.password, user[0].password)
+
+    if (!itTrue) {
+        throw 'Incorect email or password'
+    }
+
+    let token = jwt.sign({ 'email': email, 'id': user._id, }, JWT_SECRET);
+    console.log(token)
+
+    return token
 };
 
 
