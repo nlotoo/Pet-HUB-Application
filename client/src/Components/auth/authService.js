@@ -27,21 +27,29 @@ const createUser = async (data) => {
 }
 
 const loginUser = async (data) => {
+
+    console.log(data)
+    let userObj = {
+        email: data.email,
+        password: data.password,
+    }
+
+
     try {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
+            body: JSON.stringify(userObj)
         };
         const url = 'http://localhost:5000/sing-in'
 
-        let responce = await fetch(url, requestOptions)
-        let result = await responce.json()
-        return result
+        fetch(url, requestOptions)
+            .then(res => res.json())
+            .then(userObj => { return userObj })
+            .catch(err => { console.log('error ', err); return err })
 
     } catch (err) {
-        console.log('loginUser INSIDE error')
-        console.log(err)
+        console.log('error', err)
     }
 }
 

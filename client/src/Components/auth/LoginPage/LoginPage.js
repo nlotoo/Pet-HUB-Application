@@ -19,9 +19,10 @@ const LoginForm = () => {
     try {
       loginUserValidation(userInfo)
 
-      let userResult = authService.loginUser(userInfo)
+      authService.loginUser(userInfo)
         .then((data) => {
-          console.log(data)
+          setError({})
+          return data
         })
 
 

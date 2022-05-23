@@ -122,6 +122,8 @@ async function CreateUser(data) {
 
 async function loginUser(data) {
     console.log(data)
+
+    return data
 };
 
 
