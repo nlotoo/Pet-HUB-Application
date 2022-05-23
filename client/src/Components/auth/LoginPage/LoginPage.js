@@ -12,34 +12,36 @@ const LoginForm = () => {
 
   let [userInfo, setUser] = useState({ email: '', password: '' })
 
-  let [token, setToken] =useState()
+  let [token, setToken] = useState()
 
   function submitHandler(e) {
     e.preventDefault()
-
-
     try {
       loginUserValidation(userInfo)
 
       authService.loginUser(userInfo)
-        .then((data) => {
-          if (data.message) {
-            setError(data)
+        .then((responce) => {
+          console.log(responce)
+          if (responce.message) {
+            setError(responce)
+            setToken(undefined)
+
           } else {
-            setToken(data)
+            setToken(responce)
             setError({})
           }
-
-          return data
+          return responce
         })
         .catch((err) => { console.log(err) })
-
-
     } catch (err) {
       setError(err)
     }
   }
 
+  console.log(token)
+  window.localStorage.setItem('User Token', token.token)
+  window.localStorage.setItem('User email', token.userEmail)
+  window.localStorage.setItem('User ID', token.userID)
 
 
 

@@ -17,10 +17,18 @@ const createUser = async (data) => {
     };
     const url = 'http://localhost:5000/sign-up'
 
-    let responce = await fetch(url, requestOptions)
-    let result = await responce.json()
-    return result
+    // let responce = await fetch(url, requestOptions)
+    // let result = await responce.json()
+    // return result
 
+
+    return fetch(url, requestOptions)
+        .then(res => res.json())
+        .then(userObj => {
+            console.log(userObj)
+            return userObj
+        })
+        .catch(err => { console.log('error ', err); return err })
 
 
 
@@ -43,16 +51,10 @@ const loginUser = async (data) => {
     const url = 'http://localhost:5000/sing-in'
 
 
-
-    // let responce = await fetch(url, requestOptions)
-    // let result = await responce.json()
-    // return result
-
-
-   return fetch(url, requestOptions)
+    return fetch(url, requestOptions)
         .then(res => res.json())
         .then(userObj => {
-          
+
             return userObj
         })
         .catch(err => { console.log('error ', err); return err })

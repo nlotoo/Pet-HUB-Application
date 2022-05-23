@@ -29,15 +29,18 @@ const SingUpPage = () => {
 
             userValidation(userInfo)
             let result = authService.createUser(userInfo)
-            result.then(res => {
-              return  setError(res)
+            result.then(response => {
+                console.log(response)
+                if (response.message) {
+                    return setError(response)
+                }
+                setError({})
+                navigate('/login')
             })
- 
-            // navigate('/login')
 
         }
         catch (error) {
-            console.log(error)
+            console.log('error ' + error)
             setError(error)
         }
     }

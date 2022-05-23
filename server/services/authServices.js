@@ -137,10 +137,17 @@ async function loginUser(data) {
         throw 'Incorect email or password'
     }
 
-    let token = jwt.sign({ 'email': email, 'id': user._id, }, JWT_SECRET);
-    console.log(token)
+    let token = jwt.sign({ 'email': email, 'id': user[0]._id, }, JWT_SECRET);
 
-    return token
+
+    console.log(user)
+    let localStorageObj = {
+        'userEmail': `${user[0].userEmail}`,
+        'userID': user[0]._id,
+        'token': token,
+    }
+
+    return localStorageObj
 };
 
 
