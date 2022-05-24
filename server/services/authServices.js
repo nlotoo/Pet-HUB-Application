@@ -91,7 +91,7 @@ async function CreateUser(data) {
     if (userNameExist) {
         throw "This username is  exist"
     }
-    else if (emailUserExist) {
+    if (emailUserExist) {
         throw "This email is exist"
     }
 
@@ -116,6 +116,7 @@ async function CreateUser(data) {
     obj.password = hash
 
     let newUserData = new User(obj)
+
     return newUserData.save()
 };
 
@@ -124,14 +125,28 @@ async function loginUser(data) {
 
 
     let { email, password } = data;
-    let user = await User.find({ userEmail: email });
+    console.log(data)
+    let user = await User.find({ userEmail: email }).exec();
+
+
+    console.log(user.length)
+    // let user = await User.find({use});
+
+    // console.log(user)
+    // findTheUserWTF = user.map((x) => {
+    //     if ('nayde@abv.bg' === 'nayde@abv.bg') {
+    //         return x
+    //     }
+    // })
+    // console.log(findTheUserWTF)
 
     if (user.length == 0) {
-        console.log('error')
         throw 'Incorect User';
     }
 
     itTrue = bcrypt.compareSync(data.password, user[0].password)
+
+    console.log(itTrue)
 
     if (!itTrue) {
         throw 'Incorect email or password'

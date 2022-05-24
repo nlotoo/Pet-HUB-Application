@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './loginPage.css'
 import { loginUserValidation } from '../../../services/loginUserValidation'
 import ErrorBar from '../ErrorBar/ErrorBar'
@@ -12,7 +12,7 @@ const LoginForm = () => {
 
   let [userInfo, setUser] = useState({ email: '', password: '' })
 
-  let [token, setToken] = useState()
+  let [token, setToken] = useState({})
 
   function submitHandler(e) {
     e.preventDefault()
@@ -25,10 +25,15 @@ const LoginForm = () => {
           if (responce.message) {
             setError(responce)
             setToken(undefined)
+            window.localStorage.clear();
 
           } else {
             setToken(responce)
             setError({})
+            window.localStorage.setItem('User Token', responce.token)
+            window.localStorage.setItem('User email', responce.userEmail)
+            window.localStorage.setItem('User ID', responce.userID)
+
           }
           return responce
         })
@@ -38,10 +43,7 @@ const LoginForm = () => {
     }
   }
 
-  console.log(token)
-  window.localStorage.setItem('User Token', token.token)
-  window.localStorage.setItem('User email', token.userEmail)
-  window.localStorage.setItem('User ID', token.userID)
+
 
 
 

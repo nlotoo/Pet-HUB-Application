@@ -25,7 +25,6 @@ const createUser = async (data) => {
     return fetch(url, requestOptions)
         .then(res => res.json())
         .then(userObj => {
-            console.log(userObj)
             return userObj
         })
         .catch(err => { console.log('error ', err); return err })
