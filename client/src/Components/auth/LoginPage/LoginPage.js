@@ -26,14 +26,12 @@ const LoginForm = () => {
             setError(responce)
             setToken(undefined)
             window.localStorage.clear();
-
           } else {
             setToken(responce)
             setError({})
             window.localStorage.setItem('User Token', responce.token)
             window.localStorage.setItem('User email', responce.userEmail)
             window.localStorage.setItem('User ID', responce.userID)
-
           }
           return responce
         })

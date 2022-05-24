@@ -1,17 +1,27 @@
-.site-card-border-less-wrapper {
-    padding: 30px;
+.root-card-class {
     background: #ececec;
-    text-align: center;
-    display: -webkit-box;
-    
+    display: flex;
+
+
 }
 
-.card-button-register{
-    margin-left: 20px;
+.our-story-img {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    margin-right: 50px;
 }
 
-
-.button-in-about-us-page{
-   display:-webkit-inline-box;
+.our-story-heading {
+    margin-top: 70px;
+    margin-left: 300px;
+    font-size: xx-large;
+    font-family: math;
+    /* text-shadow: .1em .1em 0 hsl(200 50% 30%); */
 }
 
+.our-story-text {
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
