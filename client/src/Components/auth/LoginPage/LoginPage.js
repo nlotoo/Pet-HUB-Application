@@ -52,7 +52,7 @@ const LoginForm = () => {
   })
 
   return (
-    <div className='login-card '>
+    <div className='login-card'>
       <form className='form-class-login' onSubmit={submitHandler}>
         <label>Email</label>
         <input id="email" name="email" onChange={handleInputChange} ></input>

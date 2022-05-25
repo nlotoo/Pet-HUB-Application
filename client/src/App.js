@@ -7,9 +7,10 @@ import Footer from './Components/core/Footer/Footer';
 import AboutUsPage from './Components/AboutUsPage/AboutUsPage';
 import LoginPage from './Components/auth/LoginPage/LoginPage'
 import SignUpPage from './Components/auth/SignUpPage/SingUpPage'
+import Logout from './Components/auth/Logout/Logout';
 
 const App = () => {
-  
+
   return (
     <div className='root'>
       <header>
@@ -23,6 +24,7 @@ const App = () => {
           <Route path='/home-page' element={<HomePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/sign-up' element={<SignUpPage />} />
+          <Route path='/logout' element={<Logout />} />
         </Routes>
       </div>
       <footer className='footer-content'>
