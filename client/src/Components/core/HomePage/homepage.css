@@ -1,7 +1,102 @@
-.carousel-card {
-    height: 600px;
-    color: white;
-    line-height: 600px;
-    text-align: center;
-    background: #364d79;
-}
+.carousel-wrapper {
+    width: 520px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+    border-radius: 20px;
+    margin: 100px auto 20px;
+  }
+  
+  .carousel-container {
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .carousel {
+    display: flex;
+    width: 1200px;
+    animation: sliding 12s infinite;
+  }
+  .carousel div {
+    width: 400px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+  }
+  .carousel:hover {
+    animation-play-state: paused;
+  }
+  .carousel .image-one {
+    background-image: url("https://images.unsplash.com/photo-1480936600919-bffa6b7ecf1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+  }
+  .carousel .image-two {
+    background-image: url("https://images.unsplash.com/photo-1475053081036-c8eb31d187b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+  }
+  .carousel .image-three {
+    background-image: url("https://images.unsplash.com/photo-1525278070609-779c7adb7b71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+  }
+  
+  @keyframes sliding {
+    30% {
+      transform: translateX(0);
+    }
+    35% {
+      transform: translateX(-400px);
+    }
+    65% {
+      transform: translateX(-400px);
+    }
+    70% {
+      transform: translateX(-800px);
+    }
+    98% {
+      transform: translateX(-800px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .carousel-wrapper {
+      width: 312px;
+      height: 210px;
+    }
+  
+    .carousel-container {
+      width: 240px;
+      height: 150px;
+    }
+  
+    .carousel {
+      width: 720px;
+    }
+    .carousel > div {
+      width: 240px;
+      height: 150px;
+    }
+  
+    @keyframes sliding {
+      30% {
+        transform: translateX(0);
+      }
+      35% {
+        transform: translateX(-240px);
+      }
+      65% {
+        transform: translateX(-240px);
+      }
+      70% {
+        transform: translateX(-480px);
+      }
+      98% {
+        transform: translateX(-480px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
