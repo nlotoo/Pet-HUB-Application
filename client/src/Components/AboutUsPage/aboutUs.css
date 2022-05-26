@@ -1,16 +1,33 @@
+/* css for mobile version*/
+
 .root-card-class-mobile {
     background: rgba(130, 118, 204, 0.307);
     display: block;
 
 }
 
+.our-story-heading-mobile {
+    font-size: xxx-large;
+    font-family: math;
+    margin-bottom: 20px;
+}
+
+.our-story-text-mobile {
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+/* end of css mobile version */
+
+/* css for descktop version */
 .root-card-class {
     background: #ececec;
     display: flex;
     width: 100%;
 
 }
-
 
 .our-story-img {
     width: 100%;
@@ -32,22 +49,11 @@
     /* text-shadow: .1em .1em 0 hsl(200 50% 30%); */
 }
 
-.our-story-heading-mobile {
-    font-size: xxx-large;
-    font-family: math;
-    margin-bottom: 20px;
-}
-
-.our-story-text-mobile {
-    text-align: center;
-    margin-left: 20px;
-    margin-right: 20px;
-
-}
-
 .our-story-text {
     text-align: center;
     margin-left: 50px;
     margin-right: 50px;
 
 }
+
+/* end of css for desktop */
