@@ -4,8 +4,7 @@
 
 import { useMediaQuery } from 'react-responsive'
 
-
-const useCustom = () => {
+const useResponsiveDesign = () => {
 
     const isMobile = useMediaQuery({ query: '(max-width: 415px)' })
     const isTablet = useMediaQuery({ query: '(max-width: 821px)' })
@@ -24,4 +23,4 @@ const useCustom = () => {
 
 }
 
-export default useCustom
+export default useResponsiveDesign
