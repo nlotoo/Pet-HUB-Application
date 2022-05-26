@@ -3,7 +3,6 @@ import useResponsiveDesign from '../../services/useResposiveDisplayTool'
 
 const AboutUsPage = () => {
 
-
     return (
         <div className={`root-card-class${useResponsiveDesign()}`}>
             <div className={`our-story-text${useResponsiveDesign()}`}>

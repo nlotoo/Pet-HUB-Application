@@ -8,7 +8,9 @@ const useResponsiveDesign = () => {
 
     const isMobile = useMediaQuery({ query: '(max-width: 415px)' })
     const isTablet = useMediaQuery({ query: '(max-width: 821px)' })
-    const isDesktopOrLaptop = useMediaQuery({ query: '(max-width: 1224px)' })
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 821px)' })
+
+    console.log(isDesktopOrLaptop)
 
     if (isMobile) {
         console.log('(max-width: 415px)')
@@ -18,7 +20,7 @@ const useResponsiveDesign = () => {
         return '-tablet'
     } else if (isDesktopOrLaptop) {
         console.log('(max-width: 1224px)')
-        return ''
+        return '-desktop'
     }
 
 }
