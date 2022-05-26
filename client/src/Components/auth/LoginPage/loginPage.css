@@ -1,15 +1,36 @@
 .inside-login-card {
-    margin-top: 10em;
-    margin-bottom: 13em;
     background: #ececec;
 
 }
 
-.login-card{
+.login-card-desktop {
     text-align: -webkit-center;
     background: #ececec;
 }
 
-.form-class-login {
+.form-class-login-desktop {
+    display: inline-grid;
+    margin-top: 150px;
+}
+
+/* css for tablet */
+
+.login-card-tablet {
+    text-align: -webkit-center;
+    background: #ececec;
+}
+
+.form-class-login-tablet {
+    display: inline-grid;
+}
+
+/* css for mobile */
+
+.login-card-mobile {
+    text-align: -webkit-center;
+    background: #ececec;
+}
+
+.form-class-login-mobile {
     display: inline-grid;
 }

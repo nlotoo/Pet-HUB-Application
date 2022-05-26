@@ -3,6 +3,7 @@ import './loginPage.css'
 import { loginUserValidation } from '../../../services/loginUserValidation'
 import ErrorBar from '../ErrorBar/ErrorBar'
 import authService from '../authService'
+import useResponsiveDesign from '../../../services/useResposiveDisplayTool'
 
 const LoginForm = () => {
 
@@ -41,19 +42,14 @@ const LoginForm = () => {
     }
   }
 
-
-
-
-
-
   const handleInputChange = (e) => setUser({
     ...userInfo,
     [e.currentTarget.name]: e.currentTarget.value
   })
 
   return (
-    <div className='login-card'>
-      <form className='form-class-login' onSubmit={submitHandler}>
+    <div className={`login-card${useResponsiveDesign()}`}>
+      <form className={`form-class-login${useResponsiveDesign()}`} onSubmit={submitHandler}>
         <label>Email</label>
         <input id="email" name="email" onChange={handleInputChange} ></input>
         <label>Password</label>

@@ -14,6 +14,7 @@
 .form-class {
     display: inline-grid;
     width: 200px;
+    margin-top: 100px;
 }
 
 .sign-up-card {
