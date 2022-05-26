@@ -11,12 +11,16 @@ const AboutUsPage = () => {
 
     const isDesktopOrLaptop = useMediaQuery({ query: '(max-width: 1224px)' })
     const isMobile = useMediaQuery({ query: '(max-width: 415px)' })
+
+    console.log(window.screen.height, window.screen.width)
+
     console.log(isDesktopOrLaptop, 'is 414')
     console.log(isMobile, 'is 724px')
     return (
         <div className={isMobile ? 'root-card-class-mobile' : 'root-card-class'}>
             <div className={isMobile ? 'our-story-text-mobile' : 'our-story-text'}>
                 <p className={isMobile ? 'our-story-heading-mobile' : 'our-story-heading'}>Our Story</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque soluta culpa adipisci ut error cupiditate quis explicabo harum rem eum tempore, architecto minima exercitationem tempora, deleniti laboriosam cum cumque numquam nemo obcaecati neque quo magni officia. Nobis cum nisi vel et aliquid illo magni animi atque sed fugiat deserunt necessitatibus architecto, libero labore voluptas velit omnis veniam? Ipsum, ducimus consequuntur.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque soluta culpa adipisci ut error cupiditate quis explicabo harum rem eum tempore, architecto minima exercitationem tempora, deleniti laboriosam cum cumque numquam nemo obcaecati neque quo magni officia. Nobis cum nisi vel et aliquid illo magni animi atque sed fugiat deserunt necessitatibus architecto, libero labore voluptas velit omnis veniam? Ipsum, ducimus consequuntur.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque soluta culpa adipisci ut error cupiditate quis explicabo harum rem eum tempore, architecto minima exercitationem tempora, deleniti laboriosam cum cumque numquam nemo obcaecati neque quo magni officia. Nobis cum nisi vel et aliquid illo magni animi atque sed fugiat deserunt necessitatibus architecto, libero labore voluptas velit omnis veniam? Ipsum, ducimus consequuntur.</p>
 

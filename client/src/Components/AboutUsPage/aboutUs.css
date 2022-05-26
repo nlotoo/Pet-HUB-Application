@@ -1,5 +1,5 @@
 .root-card-class-mobile {
-    background: #ececec;
+    background: rgba(130, 118, 204, 0.307);
     display: block;
 
 }
@@ -12,13 +12,13 @@
 }
 
 
-/* .our-story-img {
+.our-story-img {
     width: 100%;
     margin-top: 50px;
     margin-bottom: 50px;
-    margin-right: 50px;
+    margin-right: 20px;
 
-} */
+}
 
 .image-in-card {
     width: 100%;
@@ -27,7 +27,6 @@
 
 .our-story-heading {
     margin-top: 70px;
-    margin-left: 350px;
     font-size: xx-large;
     font-family: math;
     /* text-shadow: .1em .1em 0 hsl(200 50% 30%); */
@@ -36,17 +35,19 @@
 .our-story-heading-mobile {
     font-size: xxx-large;
     font-family: math;
-    margin-left: 30px;
+    margin-bottom: 20px;
 }
 
 .our-story-text-mobile {
+    text-align: center;
     margin-left: 20px;
     margin-right: 20px;
 
 }
 
 .our-story-text {
-    margin-left: 150px;
-    margin-right: 150px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
 
 }
