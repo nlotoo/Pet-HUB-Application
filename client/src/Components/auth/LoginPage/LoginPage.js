@@ -4,9 +4,11 @@ import { loginUserValidation } from '../../../services/loginUserValidation'
 import ErrorBar from '../ErrorBar/ErrorBar'
 import authService from '../authService'
 import useResponsiveDesign from '../../../services/useResposiveDisplayTool'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
 
+  let navigate = useNavigate()
 
 
   let [errorArr, setError] = useState()
@@ -33,6 +35,8 @@ const LoginForm = () => {
             window.localStorage.setItem('User Token', responce.token)
             window.localStorage.setItem('User email', responce.userEmail)
             window.localStorage.setItem('User ID', responce.userID)
+            navigate('/home-page')
+            window.location.reload();
           }
           return responce
         })

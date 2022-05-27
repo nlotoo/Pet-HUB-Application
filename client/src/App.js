@@ -11,8 +11,9 @@ import LoginPage from './Components/auth/LoginPage/LoginPage'
 import SignUpPage from './Components/auth/SignUpPage/SingUpPage'
 import Logout from './Components/auth/Logout/Logout';
 import Example from './Components/example/Example';
-
+import { loginStorageCheker } from './services/loginStorage';
 const App = () => {
+
 
   return (
     <div className='root'>
