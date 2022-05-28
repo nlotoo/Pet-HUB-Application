@@ -2,6 +2,10 @@ import './profile-page.css'
 
 const ProfilePage = () => {
 
+    let myPetsButtonHandle =()=> {
+        console.log('my pets button')
+    }
+
     return (
 
         <div className='user-profile-heading'>
@@ -17,27 +21,27 @@ const ProfilePage = () => {
                     <h3>Jhon Doe</h3>
                     <div className='user-info'>
                         <div>
-                            <i class='fas fa-dog'></i>
+                            <i className='fas fa-dog'></i>
                             <span>&nbsp;&nbsp;Missy,Stuard,Barry</span>
                         </div>
 
                         <div>
-                            <i class='fas fa-mobile'></i>
+                            <i className='fas fa-mobile'></i>
                             <span>&nbsp;&nbsp;+88888888</span>
                         </div>
 
                         <div>
-                            <i class='fas fa-location'></i>
+                            <i className='fas fa-location'></i>
                             <span>&nbsp;&nbsp;Crediton</span>
                         </div>
                         <div>
-                            <i class='fas fa-envelope'></i>
+                            <i className='fas fa-envelope'></i>
                             <span>&nbsp;&nbsp;example@abv.bg</span>
                         </div>
 
                     </div>
                     <footer>
-
+                        <button onClick={myPetsButtonHandle} className='my-pets-button'> My pets</button>
                     </footer>
                 </div>
 
