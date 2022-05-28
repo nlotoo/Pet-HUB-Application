@@ -9,20 +9,27 @@
     clip-path: circle();
 }
 
+.user-profile-heading {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
 .card {
     background-color: #C6E5F1;
     border-radius: 32px;
-    margin-top: 50px;
     border: 2px solid black;
     width: 250px;
     height: 400px;
     text-align: center;
 
 }
-h3{
+
+h3 {
     margin-top: 15px;
 }
 
 .user-info {
+    text-align: left;
     margin-top: 20px;
+    margin-left: 50px;
 }
