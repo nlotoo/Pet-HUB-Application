@@ -1,0 +1,28 @@
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar {
+    margin-top: 20px;
+    clip-path: circle();
+}
+
+.card {
+    background-color: #C6E5F1;
+    border-radius: 32px;
+    margin-top: 50px;
+    border: 2px solid black;
+    width: 250px;
+    height: 400px;
+    text-align: center;
+
+}
+h3{
+    margin-top: 15px;
+}
+
+.user-info {
+    margin-top: 20px;
+}

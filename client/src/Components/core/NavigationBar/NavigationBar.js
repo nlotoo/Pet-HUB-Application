@@ -1,29 +1,29 @@
-import { useEffect } from 'react';
+
+import { Link,  } from 'react-router-dom'
+
 import { loginStorageCheker } from '../../../services/loginStorage';
 import './NavigationBar.css'
 
 const NavigationBar = () => {
 
     let isLoged = loginStorageCheker()
-    useEffect(() => {
 
-    }, [])
 
     return (<div className='navbar-root' >
         <header>
             <nav className="nav-bar">
                 <ul className='nav-bar-ul-list'>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about-us">About</a></li>
-                    <li><a href="/contact-us">Contatct us</a></li>
-                    {!isLoged && <li><a href="/sign-up">Register</a></li>}
-                    {!isLoged && <li><a href="/login">Login</a></li>}
-
-                    {isLoged && <li><a href="/logout">Logout</a></li>}
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about-us">About</Link></li>
+                    <li><Link to="/contact-us">Contatct us</Link></li>
+                    <li><Link to="/user-profile">Profile</Link></li>
+                    {!isLoged && <li><Link to="/sign-up">Register</Link></li>}
+                    {!isLoged && <li><Link to="/login">Login</Link></li>}
+                    {isLoged && <li><Link to="/logout">Logout</Link></li>}
                 </ul>
             </nav>
         </header>
-    </div>)
+    </div >)
 
 };
 

@@ -10,6 +10,9 @@ import AboutUsPage from './Components/AboutUsPage/AboutUsPage';
 import LoginPage from './Components/auth/LoginPage/LoginPage'
 import SignUpPage from './Components/auth/SignUpPage/SingUpPage'
 import Logout from './Components/auth/Logout/Logout';
+import ProfilePage from './Components/ProfilePage/ProfilePage';
+
+
 import Example from './Components/example/Example';
 import { loginStorageCheker } from './services/loginStorage';
 const App = () => {
@@ -29,7 +32,7 @@ const App = () => {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/sign-up' element={<SignUpPage />} />
           <Route path='/logout' element={<Logout />} />
-          <Route path='/example' element={<Example />} />
+          <Route path='/user-profile' element={<ProfilePage />} />
 
         </Routes>
       </div>
