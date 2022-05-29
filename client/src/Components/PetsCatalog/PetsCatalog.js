@@ -11,7 +11,7 @@ const PetsCatalog = () => {
     return (
         <div className="pets-catalog-wraper">
             <h3 className="pets-heading">Catalog</h3>
-            <div className="pets-cards-content">
+            <div >
                 <PetsCard />
             </div>
 

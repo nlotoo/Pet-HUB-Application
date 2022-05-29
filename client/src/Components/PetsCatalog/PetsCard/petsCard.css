@@ -1,3 +1,43 @@
-.pets-card {
-    border: black sloid;
+h2 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#pet-card {
+    border-radius: 20px;
+    border: solid 2px #C6E5F1;
+    background-color: aliceblue;
+    width: 200px;
+    height: 430px;
+    margin-left: 25px;
+    box-shadow: 1px 1px 2px black, 0 0 25px #171425, 0 0 5px #686d67;
+}
+
+#card-img {
+    margin-left: 20px;
+    width: 150px;
+    height: 80px;
+    clip-path: circle();
+}
+p{
+    margin-bottom: 0%;
+}
+
+
+#pet-info {
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    border: solid 2px #C6E5F1;
+}
+
+#pet-card-buttons{
+    text-align: center;
+}
+#pet-card-button {
+    
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    border: solid 2px #C6E5F1;
 }
