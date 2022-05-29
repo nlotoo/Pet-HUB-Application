@@ -9,12 +9,14 @@ const PetsCatalog = () => {
 
 
     return (
-        <div className="pets-catalog-wraper">
+        <div className="catalog-root">
             <h3 className="pets-heading">Catalog</h3>
-            <div >
-                <PetsCard />
+            <div className="pets-catalog-wraper">
+                <div className="pets-catalog-rail">
+                    <PetsCard />
+                    <PetsCard />
+                </div>
             </div>
-
 
 
         </div>

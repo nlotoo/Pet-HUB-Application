@@ -19,7 +19,8 @@ h2 {
     height: 80px;
     clip-path: circle();
 }
-p{
+
+p {
     margin-bottom: 0%;
 }
 
@@ -31,11 +32,12 @@ p{
     border: solid 2px #C6E5F1;
 }
 
-#pet-card-buttons{
+#pet-card-buttons {
     text-align: center;
 }
+
 #pet-card-button {
-    
+
     margin: 10px;
     border-radius: 20px;
     text-align: center;

@@ -2,3 +2,18 @@
     text-align: center;
 }
 
+
+
+.pets-catalog-wraper {
+    margin: 22px;
+    height: 480px;
+    border: solid 2px #C6E5F1;
+    border-radius: 20px;
+    background: rgba(150, 197, 217, 0.36);
+}
+
+.pets-catalog-rail {
+    display: inline-flex;
+    margin-top: 25px;
+
+}
