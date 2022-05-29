@@ -13,8 +13,6 @@ import Logout from './Components/auth/Logout/Logout';
 import ProfilePage from './Components/ProfilePage/ProfilePage';
 
 
-import Example from './Components/example/Example';
-import { loginStorageCheker } from './services/loginStorage';
 import PetsCatalog from './Components/PetsCatalog/PetsCatalog';
 const App = () => {
 
