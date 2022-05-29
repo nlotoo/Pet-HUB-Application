@@ -3,8 +3,8 @@
 const loginStorageCheker = () => {
 
     if (window.localStorage.getItem('User Token')) {
-       return true
-    }else{
+        return true
+    } else {
         return false
     }
 

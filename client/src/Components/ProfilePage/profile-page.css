@@ -10,7 +10,7 @@
 }
 
 .user-profile-heading {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     text-align: center;
 }
 
@@ -34,15 +34,27 @@ h3 {
     margin-left: 50px;
 }
 
-.my-pets-button {
-    margin-top: 20px;
-    background-color: #ffffff;
+.my-pets-button{
     border-radius: 32px;
-    border: 1px solid green;
 
 }
-
-
-button:active {
-    color: green;
-}
+.my-pets-button {
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #75d2f7;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .my-pets-button:hover {background-color: #8b61d9}
+  
+  .my-pets-button:active {
+    background-color:   #8b61d9;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

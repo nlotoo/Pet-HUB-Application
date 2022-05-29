@@ -15,6 +15,7 @@ import ProfilePage from './Components/ProfilePage/ProfilePage';
 
 import Example from './Components/example/Example';
 import { loginStorageCheker } from './services/loginStorage';
+import PetsCatalog from './Components/PetsCatalog/PetsCatalog';
 const App = () => {
 
 
@@ -33,6 +34,8 @@ const App = () => {
           <Route path='/sign-up' element={<SignUpPage />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/user-profile' element={<ProfilePage />} />
+          <Route path='/pets-catalog' element={<PetsCatalog />} />
+
 
         </Routes>
       </div>

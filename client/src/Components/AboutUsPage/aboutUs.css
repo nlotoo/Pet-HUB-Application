@@ -38,6 +38,7 @@
 }
 
 .image-in-card {
+    border-radius: 9%;
     width: 100%;
     object-fit: cover;
 }
