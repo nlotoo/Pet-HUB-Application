@@ -11,7 +11,7 @@ import LoginPage from './Components/auth/LoginPage/LoginPage'
 import SignUpPage from './Components/auth/SignUpPage/SingUpPage'
 import Logout from './Components/auth/Logout/Logout';
 import ProfilePage from './Components/ProfilePage/ProfilePage';
-
+import CreatePetPage from './Components/CreatePetPage/CreatePetPage';
 
 import PetsCatalog from './Components/PetsCatalog/PetsCatalog';
 const App = () => {
@@ -33,6 +33,7 @@ const App = () => {
           <Route path='/logout' element={<Logout />} />
           <Route path='/user-profile' element={<ProfilePage />} />
           <Route path='/pets-catalog' element={<PetsCatalog />} />
+          <Route path='/create-new-pet' element={<CreatePetPage />} />
 
 
         </Routes>

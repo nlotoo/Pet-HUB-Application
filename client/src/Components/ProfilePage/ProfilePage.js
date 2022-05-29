@@ -1,15 +1,17 @@
+import {Link} from 'react-router-dom'
 import './profile-page.css'
-
 const ProfilePage = () => {
 
-    let myPetsButtonHandle =()=> {
+    let myPetsButtonHandle = () => {
         console.log('my pets button')
     }
 
     return (
 
         <div className='user-profile-heading'>
+
             <h2>User Profile</h2>
+
             <div className="cards-container">
                 <div className="card card-one">
                     <header>
@@ -41,7 +43,7 @@ const ProfilePage = () => {
 
                     </div>
                     <footer>
-                        <button onClick={myPetsButtonHandle} className='my-pets-button'> My pets</button>
+                        <button onClick={myPetsButtonHandle} className='my-pets-button'><Link className='link-button-class' to="/pets-catalog"> My pets</Link></button>
                     </footer>
                 </div>
 

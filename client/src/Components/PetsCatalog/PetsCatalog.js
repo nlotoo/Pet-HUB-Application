@@ -1,6 +1,6 @@
 
 
-
+import { Link } from 'react-router-dom'
 import '../PetsCatalog/petsCatalog.css'
 
 import PetsCard from './PetsCard/PetsCard'
@@ -15,7 +15,11 @@ const PetsCatalog = () => {
                 <div className="pets-catalog-rail">
                     <PetsCard />
                     <PetsCard />
+                    <div className='add-new-pet-wraper'>
+                        <button className='add-new-pet-button'><Link to='/create-new-pet'>Add new pet</Link></button>
+                    </div>
                 </div>
+
             </div>
 
 
