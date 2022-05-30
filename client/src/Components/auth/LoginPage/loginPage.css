@@ -41,11 +41,12 @@
     border-radius: 20px;
     border: 2px solid black;
     color: white;
-    background: #F0F8FF;
+   background: #F0F8FF;
     padding: 0px;
     text-align: center;
     margin-top: 20px;
     color: #171425;
+    /* text-shadow: 2px 3px 5px black; */
     box-shadow: 2px 1px 10px #54B3D6;
 }
 

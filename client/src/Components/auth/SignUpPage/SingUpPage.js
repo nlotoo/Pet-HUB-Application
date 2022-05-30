@@ -54,25 +54,41 @@ const SingUpPage = () => {
     return (<div>
 
         <div className='sign-up-card'>
-            <form className='form-class' onSubmit={SingUpFormHandler}>
-                <label>Username</label>
-                <input name='username' type='text' id='username' onChange={handleInputChange}></input>
-                <label>Email</label>
-                <input name='userEmail' type='text' id='email' onChange={handleInputChange}></input>
-                <label>Password</label>
-                <input name='password' type='password' id='password' onChange={handleInputChange} ></input>
-                <label>Comfirm password</label>
-                <input name='rePassword' type='password' id='rePassword' onChange={handleInputChange} ></input>
-                <label>Sex</label>
-                <select name='gender' onChange={handleInputChange}>
-                    <option id='default' value='default' defaultChecked >Please choice </option>
-                    <option id='female' value='female'>Female </option>
-                    <option id='male' value='male'>Male </option>
-                </select>
+            <div className='register-wrapper-class'>
+            <h2 className='register-heading-class'>Register</h2>
 
-                {errorArr ? <ErrorBar data={errorArr} /> : ''}
-                <button className='register-button' type="submit">Register</button>
-            </form>
+                <form className='form-register-class' onSubmit={SingUpFormHandler}>
+                    <label>Username</label>
+                    <div>
+                        <input className='input-register-class' name='username' type='text' id='username' onChange={handleInputChange}></input>
+                    </div>
+                    <label>Email</label>
+                    <div>
+                        <input className='input-register-class' name='userEmail' type='text' id='email' onChange={handleInputChange}></input>
+                    </div>
+                    <label>Password</label>
+                    <div>
+                        <input className='input-register-class' name='password' type='password' id='password' onChange={handleInputChange} ></input>
+                    </div>
+                    <label>Comfirm password</label>
+                    <div>
+
+                        <input className='input-register-class' name='rePassword' type='password' id='rePassword' onChange={handleInputChange} ></input>
+                    </div>
+                    <label>Sex</label>
+                    <div>
+
+                        <select className='input-register-class' name='gender' onChange={handleInputChange}>
+                            <option id='default' value='default' defaultChecked >Please choice </option>
+                            <option id='female' value='female'>Female </option>
+                            <option id='male' value='male'>Male </option>
+                        </select>
+                    </div>
+
+                    <button className='register-button' type="submit">Register</button>
+                    {errorArr ? <ErrorBar data={errorArr} /> : ''}
+                </form>
+            </div>
         </div >
     </div>
     )

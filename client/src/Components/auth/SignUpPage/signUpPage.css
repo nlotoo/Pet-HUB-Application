@@ -2,19 +2,48 @@
     margin-top: 7em;
     margin-bottom: 4em;
     background: #ececec;
+}
 
-
+.register-heading-class {
+    padding-top: 40px;
+}
+.register-wrapper-class{
+    text-align: -webkit-center;
+}
+.input-register-class{
+    text-align: center;
+    border-radius: 20px;
 }
 
 .register-button {
 
+    width: 150px;
+    border-radius: 20px;
+    border: 2px solid black;
+    color: white;
+    background: #F0F8FF;
+    padding: 0px;
+    text-align: center;
     margin-top: 20px;
+    color: #171425;
+   
+    box-shadow: 2px 1px 10px #54B3D6;
+    margin-bottom: 20px;
 }
 
-.form-class {
-    display: inline-grid;
-    width: 200px;
-    margin-top: 100px;
+.form-register-class {
+    width: 250px;
+    border-radius: 20px;
+    border: 2px solid black;
+    color: white;
+    background: #F0F8FF;
+    padding: 0px;
+    text-align: center;
+    margin-top: 20px;
+    color: #171425;
+    /* text-shadow: 2px 3px 5px black; */
+    box-shadow: 2px 1px 10px #54B3D6;
+
 }
 
 .sign-up-card {

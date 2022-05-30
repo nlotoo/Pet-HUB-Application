@@ -10,6 +10,8 @@ const ErrorBar = (errorData) => {
         return <div className="p-error-bar-two alert alert-danger error-class-bubble">{errorData.data.message}</div>
     } else if (errorData.data.username) {
         return <div className="p-error-bar-two alert alert-success error-class-bubble">You create sucessful user: {errorData.data.username}</div>
+    }else{
+        return
     }
 
 
