@@ -7,8 +7,9 @@
 
 }
 
-h2 {
-    padding-top: 30px;
+.add-new-pet-heading {
+    text-align: center;
+    padding-top: 20px;
 }
 
 .input-create-pet-class {

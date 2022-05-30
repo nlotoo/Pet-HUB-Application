@@ -10,7 +10,7 @@ const CreatePetPage = () => {
 
     return (
         <div className='create-new-pet-root'>
-            <h2>Add new pet</h2>
+            <h2 className='add-new-pet-heading'>Add new pet</h2>
             <div className='create-new-pet-wrapper'>
                 <form className='create-new-pet-form' onSubmit={CreatePet} >
                     <div>
