@@ -1,3 +1,7 @@
 .p-error-bar {
     max-width: fit-content;
 }
+
+.error-class-bubble{
+    border-radius: 50px;
+}

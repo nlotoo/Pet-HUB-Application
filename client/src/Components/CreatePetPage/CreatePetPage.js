@@ -40,7 +40,7 @@ const CreatePetPage = () => {
                     </div>
 
 
-                    <button className='create-pet-button' >Create new pet</button>
+                    <button className='create-pet-button' >Add new pet</button>
                 </form>
             </div>
         </div>
