@@ -18,16 +18,16 @@
 
 }
 
-.add-new-pet-button{
+.add-new-pet-button {
     width: 150px;
-   
     border-radius: 20px;
-    border: 2px  solid black;
+    border: 2px solid black;
     color: white;
     background: rgba(150, 197, 217, 0.36);
     padding: 0px;
-    text-align:center;
+    text-align: center;
     margin-left: 25px;
     margin-top: 12em;
     text-shadow: 2px 3px 5px black;
 }
+

@@ -2,10 +2,14 @@
 
 import { Link } from 'react-router-dom'
 import '../PetsCatalog/petsCatalog.css'
-
+import { useNavigate } from 'react-router-dom'
 import PetsCard from './PetsCard/PetsCard'
 
 const PetsCatalog = () => {
+    let navigate = useNavigate()
+    const CreateNewPet = () => {
+        navigate('/create-new-pet')
+    }
 
 
     return (
@@ -16,7 +20,7 @@ const PetsCatalog = () => {
                     <PetsCard />
                     <PetsCard />
                     <div className='add-new-pet-wraper'>
-                        <button className='add-new-pet-button'><Link to='/create-new-pet'>Add new pet</Link></button>
+                        <button onClick={CreateNewPet} className='add-new-pet-button'>Add new pet</button>
                     </div>
                 </div>
 
