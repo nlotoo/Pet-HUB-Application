@@ -1,12 +1,15 @@
 .pets-heading {
+    padding-top: 10px;
     text-align: center;
 }
 
 
 
+
 .pets-catalog-wraper {
-    margin: 22px;
-    height: 480px;
+    margin-left: 22px;
+    margin-right: 22px;
+    height: 510px;
     border: solid 2px #C6E5F1;
     border-radius: 20px;
     background: rgba(150, 197, 217, 0.36);
@@ -31,3 +34,12 @@
     text-shadow: 2px 3px 5px black;
 }
 
+.add-new-pet-button:hover {
+
+    box-shadow: 2px 3px 5px black;
+}
+
+.add-new-pet-button :active {
+    box-shadow: 2px 3px 5px black;
+
+}

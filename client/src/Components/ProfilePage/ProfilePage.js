@@ -1,8 +1,9 @@
-import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './profile-page.css'
 const ProfilePage = () => {
-
+    let navigate = useNavigate()
     let myPetsButtonHandle = () => {
+        navigate('/pets-catalog')
         console.log('my pets button')
     }
 
@@ -24,7 +25,7 @@ const ProfilePage = () => {
                     <div className='user-info'>
                         <div>
                             <i className='fas fa-dog'></i>
-                            <span>&nbsp;&nbsp;Missy,Stuard,Barry</span>
+                            <span>&nbsp;&nbsp;Missy, Stuard, Barry</span>
                         </div>
 
                         <div>
@@ -43,7 +44,7 @@ const ProfilePage = () => {
 
                     </div>
                     <footer>
-                        <button onClick={myPetsButtonHandle} className='my-pets-button'><Link className='link-button-class' to="/pets-catalog"> My pets</Link></button>
+                        <button onClick={myPetsButtonHandle} className='my-pets-button'>My pets</button>
                     </footer>
                 </div>
 

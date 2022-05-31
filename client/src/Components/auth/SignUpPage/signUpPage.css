@@ -30,6 +30,9 @@
     box-shadow: 2px 1px 10px #54B3D6;
     margin-bottom: 20px;
 }
+.register-button:active {
+    box-shadow: 2px 3px 5px black;
+}
 
 .form-register-class {
     width: 250px;

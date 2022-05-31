@@ -4,9 +4,17 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 } */
 
+
+.pet-label-class{
+    font-weight: bold;;
+}
+
+.pet-info-wraper{
+    text-align: center;
+}
+
 #petHeadig-class{
     text-align: center;
-    padding-top: 10px;
 }
 
 #pet-card {
@@ -14,7 +22,7 @@
     border: solid 2px #C6E5F1;
     background-color: aliceblue;
     width: 200px;
-    height: 430px;
+    height: 460px;
     margin-left: 25px;
     box-shadow: 1px 1px 2px black, 0 0 25px #171425, 0 0 5px #686d67;
 }
@@ -26,13 +34,11 @@
     clip-path: circle();
 }
 
-p {
-    margin-bottom: 0%;
-}
+
 
 
 #pet-info {
-    margin: 10px;
+    margin-bottom: 5px;
     border-radius: 20px;
     text-align: center;
     border: solid 2px #C6E5F1;
@@ -43,9 +49,14 @@ p {
 }
 
 #pet-card-button {
-
-    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 2px;
     border-radius: 20px;
     text-align: center;
     border: solid 2px #C6E5F1;
+}
+#pet-card-button:active{
+    box-shadow: 2px 3px 5px black;
+
 }
