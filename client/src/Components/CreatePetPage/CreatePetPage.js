@@ -4,7 +4,7 @@ const CreatePetPage = () => {
 
     const CreatePet = (e) => {
         e.preventDefault()
-      
+
         console.log('created pet clicked')
     }
 
@@ -34,9 +34,12 @@ const CreatePetPage = () => {
                         <input className='input-create-pet-class' id='petAge' name='petAge' ></input>
                     </div>
                     <div>
-
                         <label>Pet photo</label>
                         <input className='input-create-pet-class' id='petPhoto' name='petPhoto' ></input>
+                    </div>
+                    <div>
+                        <label>Pet ifno</label>
+                        <textarea className='input-create-pet-class' id='petPhoto' name='petPhoto' />
                     </div>
 
 
