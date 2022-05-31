@@ -1,5 +1,5 @@
 
-import { Link,  } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 
 import { loginStorageCheker } from '../../../services/loginStorage';
 import './NavigationBar.css'
@@ -16,8 +16,8 @@ const NavigationBar = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about-us">About</Link></li>
                     <li><Link to="/contact-us">Contatct us</Link></li>
+                    {isLoged && <li><Link to="/user-profile">Profile</Link></li>}
                     <li><Link to="/pets-catalog">Pets Catalog</Link></li>
-                    <li><Link to="/user-profile">Profile</Link></li>
                     <li><Link to="/create-new-pet">Add new pet</Link></li>
                     {!isLoged && <li><Link to="/sign-up">Register</Link></li>}
                     {!isLoged && <li><Link to="/login">Login</Link></li>}

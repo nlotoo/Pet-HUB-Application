@@ -1,4 +1,4 @@
-import '../CreatePetPage/createPetPage.css'
+import './createPetPage.css'
 
 const CreatePetPage = () => {
 

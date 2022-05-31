@@ -1,6 +1,5 @@
 
 
-import { Link } from 'react-router-dom'
 import '../PetsCatalog/petsCatalog.css'
 import { useNavigate } from 'react-router-dom'
 import PetsCard from './PetsCard/PetsCard'

@@ -125,11 +125,9 @@ async function loginUser(data) {
 
 
     let { email, password } = data;
-    console.log(data)
     let user = await User.find({ userEmail: email }).exec();
 
 
-    console.log(user.length)
     // let user = await User.find({use});
 
     // console.log(user)
@@ -146,7 +144,6 @@ async function loginUser(data) {
 
     itTrue = bcrypt.compareSync(data.password, user[0].password)
 
-    console.log(itTrue)
 
     if (!itTrue) {
         throw 'Incorect email or password'
@@ -155,7 +152,6 @@ async function loginUser(data) {
     let token = jwt.sign({ 'email': email, 'id': user[0]._id, }, JWT_SECRET);
 
 
-    console.log(user)
     let localStorageObj = {
         'userEmail': `${user[0].userEmail}`,
         'userID': user[0]._id,
@@ -165,10 +161,20 @@ async function loginUser(data) {
     return localStorageObj
 };
 
+async function getUserProfile(data) {
+
+    let { email, password } = data;
+    let user = await User.find({ userEmail: email }).exec();
+
+    return user
+
+}
+
 
 
 
 module.exports = {
     CreateUser,
     loginUser,
+    getUserProfile,
 };

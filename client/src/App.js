@@ -10,10 +10,10 @@ import AboutUsPage from './Components/AboutUsPage/AboutUsPage';
 import LoginPage from './Components/auth/LoginPage/LoginPage'
 import SignUpPage from './Components/auth/SignUpPage/SingUpPage'
 import Logout from './Components/auth/Logout/Logout';
-import ProfilePage from './Components/ProfilePage/ProfilePage';
-import CreatePetPage from './Components/CreatePetPage/CreatePetPage';
+import ProfilePage from './Components/ProfileComponents/ProfilePage/ProfilePage';
+import CreatePetPage from './Components/ProfileComponents/CreatePetPage/CreatePetPage';
 
-import PetsCatalog from './Components/PetsCatalog/PetsCatalog';
+import PetsCatalog from './Components/ProfileComponents/PetsCatalog/PetsCatalog';
 const App = () => {
 
 
