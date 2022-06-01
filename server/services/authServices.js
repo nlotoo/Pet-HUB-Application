@@ -163,10 +163,13 @@ async function loginUser(data) {
 
 async function getUserProfile(data) {
 
-    let { email, password } = data;
-    let user = await User.find({ userEmail: email }).exec();
+    
+    console.log(data)
+    let { userEmail } = data;
+    let user = await User.find({ userEmail: userEmail }).exec();
+    console.log(user)
 
-    return user
+    return user[0]
 
 }
 

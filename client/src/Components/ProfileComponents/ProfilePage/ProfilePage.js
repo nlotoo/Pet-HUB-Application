@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getUserInfo } from '../profile.service'
 import './profile-page.css'
 const ProfilePage = () => {
     let navigate = useNavigate()
@@ -6,6 +8,23 @@ const ProfilePage = () => {
         navigate('/pets-catalog')
         console.log('my pets button')
     }
+
+    let [userInfo, setInfo] = useState()
+
+    useEffect(() => {
+
+        getUserInfo()
+            .then(
+                info => {
+                    setInfo(info)
+                    console.log(info)
+                }
+            )
+
+    }, [])
+
+    console.log(userInfo)
+
 
     return (
 
@@ -21,7 +40,7 @@ const ProfilePage = () => {
                         </div>
                     </header>
 
-                    <h3>Jhon Doe</h3>
+                    <h3>{userInfo.username}</h3>
                     <div className='user-info'>
                         <div>
                             <i className='fas fa-dog'></i>
@@ -39,7 +58,7 @@ const ProfilePage = () => {
                         </div>
                         <div>
                             <i className='fas fa-envelope'></i>
-                            <span>&nbsp;&nbsp;example@abv.bg</span>
+                            <span>&nbsp;&nbsp;{userInfo.userEmail}</span>
                         </div>
 
                     </div>
