@@ -1,11 +1,12 @@
 const createUser = async (data) => {
 
-    let { username, userEmail, password, gender } = data
+    let { username, userEmail, password, gender,location } = data
 
     let obj = {
         username: username,
         userEmail: userEmail,
         password: password,
+        location:location,
         gender: gender
 
     }

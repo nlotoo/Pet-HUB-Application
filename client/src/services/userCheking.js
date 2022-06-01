@@ -3,7 +3,8 @@
 export const userValidation = (data) => {
 
 
-    let { username, userEmail, password, rePassword, gender } = data
+    let { username, userEmail, password, rePassword, gender, location } = data
+    console.log(data)
 
     let errorArr = [];
 
@@ -18,7 +19,7 @@ export const userValidation = (data) => {
         errorArr.push("All fields are required!");
     }
 
-    if (username.length < 4 || password.length < 4 || rePassword.length < 4 || userEmail.length < 4) {
+    if (username.length < 4 || password.length < 4 || rePassword.length < 4 || userEmail.length < 4 || location.length < 4) {
         errorArr.push("All fields must be at least 4 characters!");
     }
     if (rePassword !== password) {

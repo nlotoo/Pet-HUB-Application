@@ -1,7 +1,7 @@
 import './signUpPage.css'
 import authService from '../authService'
 import { userValidation } from '../../../services/userCheking';
-import { useEffect, useState, } from 'react';
+import { useState, } from 'react';
 
 import ErrorBar from '../ErrorBar/ErrorBar'
 
@@ -19,6 +19,7 @@ const SingUpPage = () => {
             'password': '',
             'rePassword': '',
             'gender': '',
+            'location': '',
         }
     )
 
@@ -55,7 +56,7 @@ const SingUpPage = () => {
 
         <div className='sign-up-card'>
             <div className='register-wrapper-class'>
-            <h2 className='register-heading-class'>Register</h2>
+                <h2 className='register-heading-class'>Register</h2>
 
                 <form className='form-register-class' onSubmit={SingUpFormHandler}>
                     <label>Username</label>
@@ -74,6 +75,11 @@ const SingUpPage = () => {
                     <div>
 
                         <input className='input-register-class' name='rePassword' type='password' id='rePassword' onChange={handleInputChange} ></input>
+                    </div>
+                    <label>Where you live</label>
+                    <div>
+
+                        <input className='input-register-class' name='location' type='text' id='location' onChange={handleInputChange} ></input>
                     </div>
                     <label>Sex</label>
                     <div>

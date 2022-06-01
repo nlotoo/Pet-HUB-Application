@@ -6,7 +6,11 @@
 
 .avatar {
     margin-top: 20px;
-    clip-path: circle();
+    clip-path: circle()
+}
+.profile-img-class{
+    width: 100px;
+    height: 100px;
 }
 
 .user-profile-heading {
@@ -62,7 +66,7 @@
     padding: 0px;
     text-align: center;
     margin-top: 20px;
-    
+
     box-shadow: 2px 1px 10px #54B3D6;
 }
 

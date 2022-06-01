@@ -6,10 +6,19 @@ const ProfilePage = () => {
     let navigate = useNavigate()
     let myPetsButtonHandle = () => {
         navigate('/pets-catalog')
-        console.log('my pets button')
     }
 
-    let [userInfo, setInfo] = useState()
+
+    let [userInfo, setInfo] = useState({
+
+        'username': '',
+        'userEmail': '',
+        'password': '',
+        'rePassword': '',
+        'gender': '',
+        'location': '',
+    })
+
 
     useEffect(() => {
 
@@ -34,10 +43,15 @@ const ProfilePage = () => {
 
             <div className="cards-container">
                 <div className="card card-one">
-                    <header>
-                        <div className="avatar">
-                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Jhon Doe" />
+                    <header>{
+                        userInfo.gender == 'male' ? <div className="avatar">
+                            <img className='profile-img-class' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2HoveSx5prCIWhGymQ6z5-G-F3rejFBbVuA&usqp=CAU" alt="user-image-male" />
+                        </div> : <div className="avatar">
+                            <img className='profile-img-class' src="https://cdn-icons-png.flaticon.com/512/146/146025.png" alt="user-img-female" />
                         </div>
+                    }
+
+
                     </header>
 
                     <h3>{userInfo.username}</h3>
@@ -54,7 +68,7 @@ const ProfilePage = () => {
 
                         <div>
                             <i className='fas fa-location'></i>
-                            <span>&nbsp;&nbsp;Crediton</span>
+                            <span>&nbsp;&nbsp;{userInfo?.location[0]?.toUpperCase() + userInfo.location?.slice(1)}</span>
                         </div>
                         <div>
                             <i className='fas fa-envelope'></i>

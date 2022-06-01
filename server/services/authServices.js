@@ -68,7 +68,7 @@ async function CreateUser(data) {
 
 
 
-    let { username, password, userEmail, gender } = data
+    let { username, password, userEmail, gender, location } = data
 
 
     let obj = {
@@ -76,6 +76,7 @@ async function CreateUser(data) {
         password: password.toLowerCase().trim(),
         userEmail: userEmail.toLowerCase().trim(),
         gender: gender.toLowerCase().trim(),
+        location: location.toLowerCase().trim(),
     }
 
     let emailUserExist = await User.findOne({ userEmail: obj.userEmail })
@@ -97,6 +98,9 @@ async function CreateUser(data) {
 
     emailUserExist = ''
     userNameExist = ''
+    if (obj.location.length < 3) {
+        throw new Error('Location name is to short!')
+    }
 
     if (obj.username.length < 5) {
         throw new Error('User name is to short!')
@@ -163,7 +167,7 @@ async function loginUser(data) {
 
 async function getUserProfile(data) {
 
-    
+
     console.log(data)
     let { userEmail } = data;
     let user = await User.find({ userEmail: userEmail }).exec();
