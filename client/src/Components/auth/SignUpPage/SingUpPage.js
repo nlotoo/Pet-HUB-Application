@@ -20,6 +20,7 @@ const SingUpPage = () => {
             'rePassword': '',
             'gender': '',
             'location': '',
+            'phoneNumber': ''
         }
     )
 
@@ -75,6 +76,12 @@ const SingUpPage = () => {
                     <div>
 
                         <input className='input-register-class' name='rePassword' type='password' id='rePassword' onChange={handleInputChange} ></input>
+                    </div>
+
+                    <label>Phone Number</label>
+                    <div>
+
+                        <input className='input-register-class' name='phoneNumber' type='text' id='phoneNumber' onChange={handleInputChange} ></input>
                     </div>
                     <label>Where you live</label>
                     <div>
