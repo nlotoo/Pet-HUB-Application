@@ -2,10 +2,9 @@
   text-align: center;
 }
 
-.content{
+.content {
   height: 560px;
-  background:#ececec
-
+  background: #ececec
 }
 
 .App-logo {
@@ -38,12 +37,21 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 
-.footer-content{
-  margin-top: 5px;
+.footer-content {
+  margin-top: auto;
+}
+
+body {
+ height: auto; 
+}
+
+.content{
+  height: auto;
 }

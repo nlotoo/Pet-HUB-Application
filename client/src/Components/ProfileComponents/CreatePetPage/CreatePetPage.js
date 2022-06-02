@@ -1,8 +1,11 @@
 import './createPetPage.css'
 import { chekingWhenCreatingElement } from '../../../services/chekingWhenCreatingElement'
-
+import { useState } from 'react'
+import ErrorBar from '../ErrorBar/ErrorBar'
 
 const CreatePetPage = () => {
+
+    let [errorArray, setError] = useState()
 
     const CreatePet = (e) => {
         e.preventDefault()
@@ -19,11 +22,16 @@ const CreatePetPage = () => {
         try {
             chekingWhenCreatingElement(petObj)
 
+
+
         } catch (err) {
-            console.log(err)
+            setError(err)
         }
 
     }
+
+
+    console.log(errorArray)
 
     return (
         <div className='create-new-pet-root'>
@@ -58,12 +66,17 @@ const CreatePetPage = () => {
                         <label>Pet ifno (optional)</label>
                         <textarea className='input-create-pet-class' id='petInfo' name='petInfo' />
                     </div>
-
-
                     <button className='create-pet-button' >Add new pet</button>
+                    <div>
+
+                        {
+                            errorArray && <ErrorBar errorMessages={errorArray} />
+                        }
+
+                    </div>
                 </form>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 
