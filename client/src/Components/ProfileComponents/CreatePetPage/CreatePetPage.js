@@ -1,11 +1,28 @@
 import './createPetPage.css'
+import { chekingWhenCreatingElement } from '../../../services/chekingWhenCreatingElement'
+
 
 const CreatePetPage = () => {
 
     const CreatePet = (e) => {
         e.preventDefault()
+        let petObj = {
+            petName: e.target.petName.value,
+            petWeight: e.target.petWeight.value,
+            petBreed: e.target.petBreed.value,
+            petAge: e.target.petAge.value,
+            petPhoto: e.target.petPhoto.value,
+            petInfo: e.target.petInfo.value,
+        }
 
-        console.log('created pet clicked')
+
+        try {
+            chekingWhenCreatingElement(petObj)
+
+        } catch (err) {
+            console.log(err)
+        }
+
     }
 
     return (
@@ -21,7 +38,7 @@ const CreatePetPage = () => {
                     <div>
 
                         <label>Pet weight</label>
-                        <input className='input-create-pet-class' id='petWeight' name='petWeight' ></input>
+                        <input className='input-create-pet-class' type='number' id='petWeight' name='petWeight' ></input>
                     </div>
                     <div>
 
@@ -31,15 +48,15 @@ const CreatePetPage = () => {
                     <div>
 
                         <label>Pet age</label>
-                        <input className='input-create-pet-class' id='petAge' name='petAge' ></input>
+                        <input className='input-create-pet-class' type='number' id='petAge' name='petAge' ></input>
                     </div>
                     <div>
                         <label>Pet photo</label>
                         <input className='input-create-pet-class' id='petPhoto' name='petPhoto' ></input>
                     </div>
                     <div>
-                        <label>Pet ifno</label>
-                        <textarea className='input-create-pet-class' id='petPhoto' name='petPhoto' />
+                        <label>Pet ifno (optional)</label>
+                        <textarea className='input-create-pet-class' id='petInfo' name='petInfo' />
                     </div>
 
 

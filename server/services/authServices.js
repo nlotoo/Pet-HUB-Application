@@ -123,8 +123,6 @@ async function CreateUser(data) {
 
     return newUserData.save()
 };
-
-
 async function loginUser(data) {
 
 
@@ -164,7 +162,6 @@ async function loginUser(data) {
 
     return localStorageObj
 };
-
 async function getUserProfile(data) {
 
 

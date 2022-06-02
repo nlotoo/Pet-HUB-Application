@@ -44,7 +44,7 @@ const ProfilePage = () => {
             <div className="cards-container">
                 <div className="card card-one">
                     <header>{
-                        userInfo.gender == 'male' ? <div className="avatar">
+                        userInfo.gender === 'male' ? <div className="avatar">
                             <img className='profile-img-class' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2HoveSx5prCIWhGymQ6z5-G-F3rejFBbVuA&usqp=CAU" alt="user-image-male" />
                         </div> : <div className="avatar">
                             <img className='profile-img-class' src="https://cdn-icons-png.flaticon.com/512/146/146025.png" alt="user-img-female" />
