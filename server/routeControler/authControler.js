@@ -43,14 +43,14 @@ router.post('/user-profile', async (req, res) => {
 })
 
 
-router.post('/create-pet', async (req, res) => {
+router.post('/create-new-pet', async (req, res) => {
 
     try {
-        console.log(req.body)
         let data = await profileService.createPet(req.body)
         res.status(200).json(data)
     }
     catch (err) {
+        console.log(err)
         res.status(401).json({ message: err })
     }
 

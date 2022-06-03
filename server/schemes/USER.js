@@ -21,7 +21,11 @@ const userSchema = new mongoose.Schema({
 
     location: {
         type: String
-    }
+    },
+    pets: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Pet"
+    }]
 
 })
 

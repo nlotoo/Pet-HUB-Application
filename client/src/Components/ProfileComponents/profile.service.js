@@ -26,10 +26,16 @@ const createPet = async (data) => {
     };
 
 
-    fetch('http://localhost:3000/create-new-pet', requestOptions)
+    return fetch('http://localhost:5000/create-new-pet', requestOptions)
+        .then(userObj => {
+            return userObj
+        })
+        .catch(err => { console.log('error ', err); return err })
 
 
 }
+
+
 
 // const requestOptions = {
 //     method: 'GET',

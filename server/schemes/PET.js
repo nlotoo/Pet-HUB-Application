@@ -22,9 +22,10 @@ const petSchema = new mongoose.Schema({
     petInfo: {
         type: String
     },
-    petOwner: {
-        type: String
-    }
+    petOwner: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }]
 
 }
 

@@ -1,6 +1,7 @@
 import './createPetPage.css'
 import { chekingWhenCreatingElement } from '../../../services/chekingWhenCreatingElement'
 import { useState } from 'react'
+import { createPet } from '../profile.service.js'
 import ErrorBar from '../ErrorBar/ErrorBar'
 
 const CreatePetPage = () => {
@@ -9,6 +10,7 @@ const CreatePetPage = () => {
 
     const CreatePet = (e) => {
         e.preventDefault()
+        let petOwner = window.localStorage.getItem('User ID')
         let petObj = {
             petName: e.target.petName.value,
             petWeight: e.target.petWeight.value,
@@ -16,11 +18,19 @@ const CreatePetPage = () => {
             petAge: e.target.petAge.value,
             petPhoto: e.target.petPhoto.value,
             petInfo: e.target.petInfo.value,
+            petOwner: petOwner
         }
 
 
         try {
-            chekingWhenCreatingElement(petObj)
+            let result = chekingWhenCreatingElement(petObj)
+            setError(undefined)
+
+            let back = createPet(result)
+            //fetch need
+            back.then((rs) => console.log(rs))
+
+            console.log(back)
 
 
 
@@ -31,7 +41,7 @@ const CreatePetPage = () => {
     }
 
 
-    console.log(errorArray)
+    // console.log(errorArray)
 
     return (
         <div className='create-new-pet-root'>
