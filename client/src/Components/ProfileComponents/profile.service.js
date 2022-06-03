@@ -27,8 +27,9 @@ const createPet = async (data) => {
 
 
     return fetch('http://localhost:5000/create-new-pet', requestOptions)
-        .then(userObj => {
-            return userObj
+        .then(res => res.json())
+        .then(rs => {
+            return rs
         })
         .catch(err => { console.log('error ', err); return err })
 

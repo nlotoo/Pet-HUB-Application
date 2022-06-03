@@ -8,6 +8,7 @@ async function createPet(data) {
 
 
     try {
+
         if (petName.length < 2) {
             throw 'Pet name is to short'
         }
@@ -57,6 +58,7 @@ async function createPet(data) {
         return newPetDocument.save()
     } catch (err) {
         console.log(err)
+        return { errorMessage: err }
     }
 
 

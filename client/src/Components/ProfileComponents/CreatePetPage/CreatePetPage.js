@@ -1,13 +1,14 @@
 import './createPetPage.css'
 import { chekingWhenCreatingElement } from '../../../services/chekingWhenCreatingElement'
-import { useState } from 'react'
+import { useState,  } from 'react'
 import { createPet } from '../profile.service.js'
 import ErrorBar from '../ErrorBar/ErrorBar'
 
+import { useNavigate } from "react-router-dom";
 const CreatePetPage = () => {
 
     let [errorArray, setError] = useState()
-
+    let navigate =useNavigate()
     const CreatePet = (e) => {
         e.preventDefault()
         let petOwner = window.localStorage.getItem('User ID')
@@ -26,11 +27,17 @@ const CreatePetPage = () => {
             let result = chekingWhenCreatingElement(petObj)
             setError(undefined)
 
-            let back = createPet(result)
-            //fetch need
-            back.then((rs) => console.log(rs))
+            let response = createPet(result)
+            response.then((rs) => {
+                if (rs.errorMessage) {
+                    setError(rs.errorMessage)
+                    return
+                }
+                navigate('/pets-catalog')
+            }
+            )
 
-            console.log(back)
+
 
 
 
