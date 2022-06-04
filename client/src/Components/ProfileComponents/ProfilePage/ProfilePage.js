@@ -26,13 +26,11 @@ const ProfilePage = () => {
             .then(
                 info => {
                     setInfo(info)
-                    console.log(info)
                 }
             )
 
     }, [])
 
-    console.log(userInfo)
 
 
     return (

@@ -165,7 +165,7 @@ async function loginUser(data) {
 async function getUserProfile(data) {
 
 
-    console.log(data)
+
     let { userEmail } = data;
     let user = await User.find({ userEmail: userEmail }).exec();
     console.log(user)

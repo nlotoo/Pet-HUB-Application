@@ -11,10 +11,9 @@ const getUserInfo = async () => {
 
     return fetch('http://localhost:5000/user-profile', requestOptions)
         .then(response => response.json())
-        .then(data => { console.log(data); return data })
+        .then(data => { return data })
 
 }
-
 
 const createPet = async (data) => {
 
@@ -26,6 +25,7 @@ const createPet = async (data) => {
     };
 
 
+
     return fetch('http://localhost:5000/create-new-pet', requestOptions)
         .then(res => res.json())
         .then(rs => {
@@ -35,6 +35,30 @@ const createPet = async (data) => {
 
 
 }
+
+const getUserPets = async () => {
+
+    let userId = window.localStorage.getItem('User ID')
+
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data: userId })
+    };
+
+    return fetch('http://localhost:5000/pets-catalog', requestOptions)
+        .then(res => res.json())
+        .then(response => {
+            return response
+        })
+        .catch(err => { console.log('error ', err); return err })
+
+
+
+
+}
+
 
 
 
@@ -59,4 +83,5 @@ const createPet = async (data) => {
 module.exports = {
     getUserInfo,
     createPet,
+    getUserPets,
 }

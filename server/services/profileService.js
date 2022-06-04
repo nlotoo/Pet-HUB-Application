@@ -94,6 +94,17 @@ async function populateAllPets(petOwner, petName) {
 }
 
 
+async function getUserPets(userID) {
+
+    let { data } = userID
+
+    let user = await User.findById({ _id: data }).populate('pets')
+
+
+    return user.pets
+}
+
+
 
 
 
@@ -103,4 +114,5 @@ async function populateAllPets(petOwner, petName) {
 
 module.exports = {
     createPet,
+    getUserPets,
 }
