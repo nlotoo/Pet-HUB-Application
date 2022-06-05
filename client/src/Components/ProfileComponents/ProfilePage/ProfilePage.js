@@ -47,13 +47,11 @@ const ProfilePage = () => {
 
     let displayedPets;
 
-    if (userInfo?.pets.length > 0) {
+    if (userInfo.pets.length !== 0) {
         displayedPets = userInfo.pets.slice(0, 3)
-        console.log(displayedPets)
     } else {
-        displayedPets = 'You don`t have pet yet!'
+        displayedPets = null;
     }
-    console.log(userInfo?.pets.length)
 
     return (
 
@@ -79,13 +77,13 @@ const ProfilePage = () => {
                         <div>
                             <i className='fas fa-dog'></i>
 
-                            <span>&nbsp;{displayedPets.map((x, i) => <span key={i + x.petName}> {x.petName} </span>)}
+                            <span>&nbsp;{displayedPets ? displayedPets.map((x, i) => <span key={i + x.petName}> {x.petName} </span>) : 'You don`t have pet yet!'}
                             </span>
                         </div>
 
                         <div>
                             <i className='fas fa-mobile'></i>
-                            <span>&nbsp;&nbsp;+88888888</span>
+                            <span>&nbsp;&nbsp;+</span>
                         </div>
 
                         <div>

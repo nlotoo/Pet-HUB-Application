@@ -31,13 +31,7 @@ const PetsCatalog = () => {
             getUserPets()
                 .then((rs) => {
                     setUserPets(rs)
-
-
-
-
-
                 })
-
 
         }, [])
 
@@ -47,7 +41,6 @@ const PetsCatalog = () => {
 
     // .slice(pageVisited, pageVisited + petsPerPage)
     if (userPets === undefined) {
-
         return (<div className='loader-wraper'>
             <div className='loader'></div>
         </div>)
@@ -58,13 +51,12 @@ const PetsCatalog = () => {
     }
     return (
         <div className="catalog-root">
-
-
             <h3 className="pets-heading">Catalog</h3>
             <div className="pets-catalog-wraper">
                 <div className="pets-catalog-rail">
+                    {userPets.length === 0 && <div className='no-pet-message'><span> You still don`t have pet.</span></div>}
                     <PetsCard userPetData={userPets.slice(pageVisited, pageVisited + petsPerPage)} />
-                    {/* <PetsCard /> */}
+
                     <div className='add-new-pet-wraper'>
                         <button onClick={CreateNewPet} className='add-new-pet-button'>Add new pet</button>
                     </div>
