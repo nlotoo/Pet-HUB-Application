@@ -8,7 +8,7 @@
 
 .pets-catalog-wraper {
     margin-left: 22px;
-    margin-right: 22px;
+    margin-right: auto;
     height: 510px;
     border: solid 2px #C6E5F1;
     border-radius: 20px;
@@ -42,4 +42,41 @@
 .add-new-pet-button :active {
     box-shadow: 2px 3px 5px black;
 
+}
+
+
+.paginator {
+    margin-top: 20px;
+}
+
+.paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: solid 2px #C6E5F1;
+    color: grey;
+    cursor: pointer;
+}
+
+.paginationBttns a:hover {
+    color: white;
+    background-color: #2b2eff;
+}
+
+.paginationActive a {
+    color: white;
+    background-color: #C6E5F1;
+}
+
+.paginationDisabled a {
+    color: grey;
+    background-color: grey;
 }

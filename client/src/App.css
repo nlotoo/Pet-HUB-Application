@@ -45,6 +45,8 @@
 
 
 .footer-content {
+  background: #ececec;
+
   margin-top: auto;
 }
 
@@ -54,4 +56,5 @@ body {
 
 .content{
   height: auto;
+  width: auto;
 }
