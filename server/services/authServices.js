@@ -166,11 +166,11 @@ async function getUserProfile(data) {
 
 
 
-    let { userEmail } = data;
-    let user = await User.find({ userEmail: userEmail }).exec();
+    let { userID } = data;
+    let user = await User.findById({ _id: userID }).populate('pets')
     console.log(user)
 
-    return user[0]
+    return user
 
 }
 

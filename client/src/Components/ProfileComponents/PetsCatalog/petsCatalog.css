@@ -47,6 +47,7 @@
 
 .paginator {
     margin-top: 20px;
+    margin-left: 10em;
 }
 
 .paginationBttns {
@@ -77,6 +78,18 @@
 }
 
 .paginationDisabled a {
-    color: grey;
-    background-color: grey;
+    color: white;
+    background-color: grey
 }
+
+.loader {
+  
+
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }

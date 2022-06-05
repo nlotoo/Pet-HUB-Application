@@ -1,11 +1,11 @@
 
 
 const getUserInfo = async () => {
-    let user = window.localStorage.getItem('User email')
+    let userID =  window.localStorage.getItem('User ID')
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userEmail: user })
+        body: JSON.stringify({ userID: userID })
     };
 
 

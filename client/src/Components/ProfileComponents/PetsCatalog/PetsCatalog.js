@@ -48,8 +48,8 @@ const PetsCatalog = () => {
     // .slice(pageVisited, pageVisited + petsPerPage)
 
     if (userPets === undefined) {
-        console.log('loading spinner')
-        return <div><p>loading spinner</p></div>
+   
+        return <div className='loader'></div>
     }
     const pageCount = Math.ceil(userPets.length / petsPerPage)
     const changePage = ({ selected }) => {

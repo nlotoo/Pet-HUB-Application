@@ -9,6 +9,11 @@ const ProfilePage = () => {
     }
 
 
+
+
+
+
+
     let [userInfo, setInfo] = useState({
 
         'username': '',
@@ -22,6 +27,9 @@ const ProfilePage = () => {
 
     useEffect(() => {
 
+
+
+
         getUserInfo()
             .then(
                 info => {
@@ -31,7 +39,19 @@ const ProfilePage = () => {
 
     }, [])
 
+    if (userInfo.pets == undefined) {
+        return <div className='loader'></div>
+    }
 
+    let displayedPets;
+
+    if (userInfo?.pets.length > 0) {
+        displayedPets = userInfo.pets.slice(0, 3)
+        console.log(displayedPets)
+    } else {
+        displayedPets = 'You don`t have pet yet!'
+    }
+    console.log(userInfo?.pets.length)
 
     return (
 
@@ -52,11 +72,13 @@ const ProfilePage = () => {
 
                     </header>
 
-                    <h3>{userInfo.username}</h3>
+                    <h3>{userInfo?.username[0]?.toUpperCase() + userInfo.username?.slice(1)}</h3>
                     <div className='user-info'>
                         <div>
                             <i className='fas fa-dog'></i>
-                            <span>&nbsp;&nbsp;Missy, Stuard, Barry</span>
+                           
+                            <span>&nbsp;{displayedPets.map((x,i) => <span key={i + x.petName}> {x.petName} </span>)}
+                            </span>
                         </div>
 
                         <div>
