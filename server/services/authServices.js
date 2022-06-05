@@ -68,7 +68,7 @@ async function CreateUser(data) {
 
 
 
-    let { username, password, userEmail, gender, location } = data
+    let { username, password, userEmail, gender, location, userPhoneNumber } = data
 
 
     let obj = {
@@ -77,6 +77,7 @@ async function CreateUser(data) {
         userEmail: userEmail.toLowerCase().trim(),
         gender: gender.toLowerCase().trim(),
         location: location.toLowerCase().trim(),
+        userPhoneNumber:userPhoneNumber.trim()
     }
 
     let emailUserExist = await User.findOne({ userEmail: obj.userEmail })
@@ -164,12 +165,8 @@ async function loginUser(data) {
 };
 async function getUserProfile(data) {
 
-
-
     let { userID } = data;
     let user = await User.findById({ _id: userID }).populate('pets')
-    console.log(user)
-
     return user
 
 }

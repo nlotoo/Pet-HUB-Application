@@ -1,7 +1,7 @@
 
 
 const getUserInfo = async () => {
-    let userID =  window.localStorage.getItem('User ID')
+    let userID = window.localStorage.getItem('User ID')
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -60,6 +60,27 @@ const getUserPets = async () => {
 }
 
 
+const deleltePetFunc = async (petCardId) => {
+
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ petID: petCardId })
+    }
+
+
+    fetch(`http://localhost:5000/pets-delete`, requestOptions)
+        .then(res => res.json())
+        .then(response => {
+            return response
+        })
+        .catch(err => { console.log('error', err); return err })
+
+
+
+
+}
 
 
 // const requestOptions = {
@@ -84,4 +105,5 @@ module.exports = {
     getUserInfo,
     createPet,
     getUserPets,
+    deleltePetFunc,
 }

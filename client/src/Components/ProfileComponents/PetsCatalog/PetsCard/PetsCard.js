@@ -1,13 +1,11 @@
-
-import { useEffect, useState } from 'react'
 import '../PetsCard/petsCard.css'
-
+import { deleltePetFunc } from '../../profile.service'
 const PetsCard = (data) => {
 
-    let [userPets, setUserPets] = useState()
-
-
-
+    const deletePet = (e) => {
+        deleltePetFunc(e.target.id);
+        window.location.reload();
+    }
 
     if (data.userPetData == undefined) {
         console.log('Loading spinner')
@@ -19,7 +17,7 @@ const PetsCard = (data) => {
                 return (
                     <div id="pet-card" className='pets-card' key={x.petName + i}>
                         <h2 id="petHeadig-class">{x.petName}</h2>
-                        <img id="card-img" alt="img" src="https://cbsnews3.cbsistatic.com/hub/i/r/2020/10/15/a11ade40-1d79-4170-8fab-b42721a4cc79/thumbnail/1200x630/9ec24c01427232d790dd32a559a2effe/www-vieler-photography-com23.jpg" />
+                        <img id="card-img" alt="img" src={x.petPhoto} />
                         <div className='pet-info-wraper'>
                             <label className='pet-label-class'>Age</label>
                             <div id="pet-info">{x.petAge}</div>
@@ -30,40 +28,22 @@ const PetsCard = (data) => {
                             <div id="pet-info">
                                 <label className='pet-label-class' >Info:</label>
                                 <p>
-                                  {x.petInfo}
-                                  Lorem ipsum dolor sit amet.
+                                    {x.petInfo}
+
                                 </p>
                             </div>
                             <div id="pet-card-buttons">
-                                <button id="pet-card-button">edit</button>
-                                <button id="pet-card-button">delete</button>
+                                <button className="pet-card-button" id={x._id}>edit</button>
+                                <button onClick={deletePet} name='deleteBTN' id={x._id} className="pet-card-button" >Delete </button>
                             </div>
                         </div>
-
-
                     </div>
 
                 )
 
-            })
-
-
-
-
+            });
 
     }
-
-
-
-
-
-    // let infoo = data.userPetData
-    //     .map((pet) => {
-    //         console.log(pet);
-    //     });
-
-
-
 
 
 

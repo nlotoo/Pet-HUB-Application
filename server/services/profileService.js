@@ -105,6 +105,13 @@ async function getUserPets(userID) {
 }
 
 
+async function deleltePetFuncServerSide(data) {
+
+  
+  return await Pet.findOneAndDelete({ _id: data.petID })
+
+}
+
 
 
 
@@ -115,4 +122,5 @@ async function getUserPets(userID) {
 module.exports = {
     createPet,
     getUserPets,
+    deleltePetFuncServerSide,
 }

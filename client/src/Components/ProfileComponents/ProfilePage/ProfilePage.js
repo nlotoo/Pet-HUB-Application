@@ -83,7 +83,7 @@ const ProfilePage = () => {
 
                         <div>
                             <i className='fas fa-mobile'></i>
-                            <span>&nbsp;&nbsp;+</span>
+                            <span>&nbsp;&nbsp;+{userInfo.userPhoneNumber}</span>
                         </div>
 
                         <div>

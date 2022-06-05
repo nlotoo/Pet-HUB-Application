@@ -8,7 +8,7 @@ const chekingWhenCreatingElement = (data) => {
         petWeight: petWeight.toLowerCase().trim(),
         petBreed: petBreed.toLowerCase().trim(),
         petAge: petAge.toLowerCase().trim(),
-        petPhoto: petPhoto.toLowerCase().trim(),
+        petPhoto: petPhoto.trim(),
         petInfo: petInfo.toLowerCase().trim(),
         petOwner:petOwner
     }
