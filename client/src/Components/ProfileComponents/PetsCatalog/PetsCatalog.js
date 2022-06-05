@@ -46,10 +46,11 @@ const PetsCatalog = () => {
     }
 
     // .slice(pageVisited, pageVisited + petsPerPage)
-
     if (userPets === undefined) {
-   
-        return <div className='loader'></div>
+
+        return (<div className='loader-wraper'>
+            <div className='loader'></div>
+        </div>)
     }
     const pageCount = Math.ceil(userPets.length / petsPerPage)
     const changePage = ({ selected }) => {
@@ -57,6 +58,8 @@ const PetsCatalog = () => {
     }
     return (
         <div className="catalog-root">
+
+
             <h3 className="pets-heading">Catalog</h3>
             <div className="pets-catalog-wraper">
                 <div className="pets-catalog-rail">

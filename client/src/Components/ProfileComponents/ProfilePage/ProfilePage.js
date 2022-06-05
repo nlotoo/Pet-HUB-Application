@@ -40,7 +40,9 @@ const ProfilePage = () => {
     }, [])
 
     if (userInfo.pets == undefined) {
-        return <div className='loader'></div>
+        return (<div className='loader-wraper'>
+            <div className='loader'></div>
+        </div>)
     }
 
     let displayedPets;
@@ -76,8 +78,8 @@ const ProfilePage = () => {
                     <div className='user-info'>
                         <div>
                             <i className='fas fa-dog'></i>
-                           
-                            <span>&nbsp;{displayedPets.map((x,i) => <span key={i + x.petName}> {x.petName} </span>)}
+
+                            <span>&nbsp;{displayedPets.map((x, i) => <span key={i + x.petName}> {x.petName} </span>)}
                             </span>
                         </div>
 
