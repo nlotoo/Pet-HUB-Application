@@ -1,18 +1,18 @@
-.nav-bar{
+.nav-bar-desktop {
     margin-left: 27em
 }
 
-.nav-bar-ul-list {
+.nav-bar-ul-list-desktop {
     display: flex;
 }
 
-.nav-bar-ul-list li {
+.nav-bar-ul-list-desktop li {
     list-style-type: none;
     margin-right: 20px;
     margin-top: 15px;
 }
 
-.nav-bar-ul-list a {
+.nav-bar-ul-list-desktop a {
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     box-shadow: inset 0 0 0 0 #54b3d6;
@@ -26,4 +26,64 @@
 a:hover {
     box-shadow: inset 100px 0 0 0 #54b3d6;
     color: white;
+}
+
+/* css for tablet */
+
+
+
+
+.nav-bar-tablet {
+    margin-left: 0;
+}
+.nav-bar-tablet ul {
+    display: none;
+}
+
+.nav-bar-ul-list-tablet {
+    display: block;
+    text-align: center;
+}
+
+.nav-bar-ul-list-tablet li {
+    list-style-type: none;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.nav-bar-ul-list-tablet a {
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: inset 0 0 0 0 #54b3d6;
+    color: #54b3d6;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+
+}
+
+a:hover {
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: white;
+
+}
+
+.icon button {
+    border: 0px;
+    border-radius: 20%;
+    text-decoration: none;
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: white;
+
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+
+}
+
+
+.icon {
+    position: absolute;
+    top: 3px;
+    float: right;
+    font-size: 30px;
+
 }

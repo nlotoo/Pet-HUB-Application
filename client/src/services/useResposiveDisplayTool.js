@@ -13,13 +13,13 @@ const useResponsiveDesign = () => {
 
 
     if (isMobile) {
-        console.log('(max-width: 415px)')
+        // console.log('(max-width: 415px)')
         return '-mobile'
     } else if (isTablet) {
-        console.log('(max-width: 821px)')
+        // console.log('(max-width: 821px)')
         return '-tablet'
     } else if (isDesktopOrLaptop) {
-        console.log('(max-width: 1224px)')
+        // console.log('(max-width: 1224px)')
         return '-desktop'
     }
 
