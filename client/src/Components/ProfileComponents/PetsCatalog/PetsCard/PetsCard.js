@@ -11,9 +11,9 @@ const PetsCard = (data) => {
         console.log('Loading spinner')
         return (< div > <p>loading spinner</p> </div >)
     } else {
-
         return data.userPetData
             .map((x, i) => {
+               console.log(x.petPhoto)
                 return (
                     <div id="pet-card" className='pets-card' key={x.petName + i}>
                         <h2 id="petHeadig-class">{x.petName}</h2>

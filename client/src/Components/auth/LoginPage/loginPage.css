@@ -3,11 +3,11 @@
 
 }
 
-.login-heading-class{
+.login-heading-class {
     padding-top: 40px;
 }
 
-.login-button-class{
+.login-button-class {
     width: 150px;
     border-radius: 20px;
     border: 2px solid black;
@@ -17,7 +17,7 @@
     text-align: center;
     margin-top: 20px;
     color: #171425;
-   
+
     box-shadow: 2px 1px 10px #54B3D6;
     margin-bottom: 20px;
 }
@@ -56,9 +56,16 @@
 
 
 
+@media screen and (max-width: 415px) {
+
+
+
+}
+
+
 
 /* css for tablet */
-
+/* 
 .login-card-tablet {
     text-align: -webkit-center;
     background: #ececec;
@@ -66,15 +73,15 @@
 
 .form-class-login-tablet {
     display: inline-grid;
-}
+} */
 
 /* css for mobile */
 
-.login-card-mobile {
+/* .login-card-mobile {
     text-align: -webkit-center;
     background: #ececec;
 }
 
 .form-class-login-mobile {
     display: inline-grid;
-}
+} */

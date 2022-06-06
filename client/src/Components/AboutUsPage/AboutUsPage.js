@@ -3,15 +3,24 @@ import useResponsiveDesign from '../../services/useResposiveDisplayTool'
 
 const AboutUsPage = () => {
 
-    return (
+    const aboutUsText = ['Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque soluta culpa adipisci ut error cupiditate quis explicabo harum rem eum tempore, architecto minima exercitationem tempora, deleniti laboriosam cum cumque numquam nemo obcaecati neque quo magni officia. Nobis cum nisi vel et aliquid illo magni animi atque sed fugiat deserunt necessitatibus architecto, libero labore voluptas velit omnis veniam? Ipsum, ducimus consequuntur.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque soluta culpa adipisci ut error cupiditate quis explicabo harum rem eum tempore, architecto minima exercitationem tempora, deleniti laboriosam cum cumque numquam nemo obcaecati neque quo magni officia. Nobis cum nisi vel et aliquid illo magni animi atque sed fugiat deserunt necessitatibus architecto, libero labore voluptas velit omnis veniam? Ipsum, ducimus consequuntur.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deleniti alias nemo praesentium ea eligendi et voluptate saepe nihil, amet laborum fugit. Dolor quos unde quis quidem ad impedit odio?']
 
+
+
+
+
+    return (
         <div className={`root-card-class${useResponsiveDesign()}`}>
             <div className='pets-about-us-wraper'>
                 <div className={`our-story-text${useResponsiveDesign()}`}>
                     <p className={`our-story-heading${useResponsiveDesign()}`}>Our Story</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque soluta culpa adipisci ut error cupiditate quis explicabo harum rem eum tempore, architecto minima exercitationem tempora, deleniti laboriosam cum cumque numquam nemo obcaecati neque quo magni officia. Nobis cum nisi vel et aliquid illo magni animi atque sed fugiat deserunt necessitatibus architecto, libero labore voluptas velit omnis veniam? Ipsum, ducimus consequuntur.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque soluta culpa adipisci ut error cupiditate quis explicabo harum rem eum tempore, architecto minima exercitationem tempora, deleniti laboriosam cum cumque numquam nemo obcaecati neque quo magni officia. Nobis cum nisi vel et aliquid illo magni animi atque sed fugiat deserunt necessitatibus architecto, libero labore voluptas velit omnis veniam? Ipsum, ducimus consequuntur.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, deleniti alias nemo praesentium ea eligendi et voluptate saepe nihil, amet laborum fugit. Dolor quos unde quis quidem ad impedit odio?</p>
+                    {aboutUsText ? aboutUsText.map((x, i) => {
+                        return (
+                            <p key={i + x[10]}>{x}</p>
+                        )
+                    }) : <div className='loader-wraper'>
+                        <div className='loader'></div>
+                    </div>}
                 </div>
             </div >
 
