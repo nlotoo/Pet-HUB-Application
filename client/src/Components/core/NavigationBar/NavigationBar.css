@@ -36,6 +36,7 @@ a:hover {
 .nav-bar-tablet {
     margin-left: 0;
 }
+
 .nav-bar-tablet ul {
     display: none;
 }
@@ -72,11 +73,14 @@ a:hover {
     border: 0px;
     border-radius: 20%;
     text-decoration: none;
-    box-shadow: inset 100px 0 0 0 #54b3d6;
+    background-color: #54b3d6;
+    /* box-shadow: inset 100px 0 0 0 #54b3d6; */
     color: white;
 
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
 
+.icon button:active {
+    box-shadow: 2px 3px 5px black;
 }
 
 
@@ -85,5 +89,65 @@ a:hover {
     top: 3px;
     float: right;
     font-size: 30px;
+
+}
+
+
+
+/* // NEXT LEVEL CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 8vh;
+    background-color: #54b3d6;
+}
+
+.logo {
+    color: #204451;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.navigation-bar a {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #204451;
+    text-decoration: none;
+}
+
+.navigation-bar ul li {
+    list-style: none;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.burger div {
+    width: 25px;
+    background-color: white;
+    height: 3px;
+    margin: 5px;
+}
+
+/* .burger {
+    display: none;
+} */
+
+
+@media screen and (min-width:768) {
+    .burger {
+        background-color: red;
+    }
 
 }
