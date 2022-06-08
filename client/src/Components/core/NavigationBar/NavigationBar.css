@@ -127,27 +127,58 @@ a:hover {
     list-style: none;
 }
 
-.nav-links {
+.nav-links-desktop {
     display: flex;
     justify-content: space-around;
     width: 30%;
 }
 
-.burger div {
+.burger-desktop div {
     width: 25px;
     background-color: white;
     height: 3px;
     margin: 5px;
 }
 
-/* .burger {
-    display: none;
+/* .burger-desktop {
+  
 } */
 
+/* css tablet */
 
-@media screen and (min-width:768) {
-    .burger {
-        background-color: red;
-    }
+
+.nav-links-tablet {
+
+    position: absolute;
+    right: 0px;
+    height: 60vh;
+    top: 7vh;
+    background-color: #54b3d6;
+    width: 30%;
+
+    transform: translateX(100%);
+}
+
+.nav-links-tablet::active {
+    transform: translateX(0%);
+
+}
+
+.nav-links-tablet li {
+
+    opacity: 0;
+    margin-bottom: 20px;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+
+
+}
+
+.burger-tablet div {
+    width: 25px;
+    background-color: white;
+    height: 3px;
+    margin: 5px;
 
 }

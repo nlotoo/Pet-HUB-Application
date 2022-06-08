@@ -29,7 +29,7 @@ const NavigationBar = () => {
                 <h4>The Nav</h4>
             </div>
 
-            <ul className='nav-links' >
+            <ul className={`nav-links${useResponsiveDesign()}`} >
                 <li>
                     <Link to='#'>Home</Link>
                 </li>
@@ -40,7 +40,7 @@ const NavigationBar = () => {
                     <Link to='#'>Work</Link>
                 </li>
             </ul>
-            <div className='burger'>
+            <div className={`burger${useResponsiveDesign()}`}>
                 <div className='line1'></div>
                 <div className='line2'></div>
                 <div className='line3'></div>
