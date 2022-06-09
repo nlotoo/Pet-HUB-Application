@@ -16,10 +16,15 @@ const NavigationBar = () => {
 
 
 
-    const menuDrop = (e) => {
-        return '-tablet-menu-down'
-    }
 
+
+
+    const navSlide = (e) => {
+
+        
+        let navLink = document.getElementsByClassName('nav-links-desktop')[0]
+        navLink.classList.add('nav-active')
+    }
 
 
     return (
@@ -29,7 +34,7 @@ const NavigationBar = () => {
                 <h4>The Nav</h4>
             </div>
 
-            <ul className={`nav-links${useResponsiveDesign()}`} >
+            <ul className='nav-links-desktop' >
                 <li>
                     <Link to='#'>Home</Link>
                 </li>
@@ -40,14 +45,14 @@ const NavigationBar = () => {
                     <Link to='#'>Work</Link>
                 </li>
             </ul>
-            <div className={`burger${useResponsiveDesign()}`}>
+            <div onClick={navSlide} className={`burger-desktop`} >
                 <div className='line1'></div>
                 <div className='line2'></div>
                 <div className='line3'></div>
             </div>
 
 
-        </nav>
+        </nav >
     )
 
     // return (<div className='navbar-root' >

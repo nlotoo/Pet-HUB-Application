@@ -144,10 +144,63 @@ a:hover {
   
 } */
 
+
+@media only screen and (max-width: 1024px) {
+
+
+    .nav-links-desktop {
+
+        width: 50%;
+    }
+
+
+}
+
+@media only screen and (max-width: 760px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links-desktop {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 5.4vh;
+        background-color: #54b3d6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        transform: translateX(100%);
+
+        transition: transform 0.5s ease-in;
+
+    }
+
+    .nav-links-desktop li {
+        opacity: 0;
+    }
+
+    .burger-desktop {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+
+
+
+}
+
+
 /* css tablet */
 
 
-.nav-links-tablet {
+/* .nav-links-tablet {
 
     position: absolute;
     right: 0px;
@@ -159,14 +212,17 @@ a:hover {
     transform: translateX(100%);
 }
 
-.nav-links-tablet::active {
-    transform: translateX(0%);
+.burger-tablet {
+    cursor: pointer;
 
+}
+
+.active {
+    transform: translateX(0%);
 }
 
 .nav-links-tablet li {
 
-    opacity: 0;
     margin-bottom: 20px;
     align-items: center;
     flex-direction: column;
@@ -175,10 +231,11 @@ a:hover {
 
 }
 
-.burger-tablet div {
+.burger-tablet div { 
     width: 25px;
     background-color: white;
     height: 3px;
     margin: 5px;
 
 }
+*/
