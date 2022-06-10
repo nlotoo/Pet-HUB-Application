@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, } from 'react-router-dom'
 
 import { loginStorageCheker } from '../../../services/loginStorage';
@@ -7,23 +7,35 @@ import useResponsiveDesign from '../../../services/useResposiveDisplayTool';
 import './NavigationBar.css'
 
 
+
 const NavigationBar = () => {
 
-    // let isLoged = loginStorageCheker()
+    let isLoged = loginStorageCheker()
+
+    let [clasActive, setClassActive] = useState()
 
 
 
 
+    useEffect(() => {
 
+    }, [])
 
 
 
 
     const navSlide = (e) => {
+        const navLink = document.getElementsByClassName('nav-links-desktop')[0]
+        navLink.classList.toggle('nav-active')
+        const NavLinksLI = document.querySelectorAll('.nav-links-desktop li')
+        NavLinksLI.forEach((link, index) => {
+            link.style.animation = `navLinkFade 0.5 ease forwards ${index / 7 + 2}s`
+        })
+        console.log(NavLinksLI)
 
-        
-        let navLink = document.getElementsByClassName('nav-links-desktop')[0]
-        navLink.classList.add('nav-active')
+        const burgur = document.getElementsByClassName('burger-desktop')
+        burgur.classList.toggle('toggle')
+
     }
 
 
@@ -35,15 +47,15 @@ const NavigationBar = () => {
             </div>
 
             <ul className='nav-links-desktop' >
-                <li>
-                    <Link to='#'>Home</Link>
-                </li>
-                <li>
-                    <Link to='#'>About</Link>
-                </li>
-                <li>
-                    <Link to='#'>Work</Link>
-                </li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about-us">About</Link></li>
+                <li><Link to="/contact-us">Contatct us</Link></li>
+                {isLoged && <li><Link to="/user-profile">Profile</Link></li>}
+                {isLoged && <li><Link to="/pets-catalog">Pets Catalog</Link></li>}
+                {isLoged && <li><Link to="/create-new-pet">Add new pet</Link></li>}
+                {!isLoged && <li><Link to="/sign-up">Register</Link></li>}
+                {!isLoged && <li><Link to="/login">Login</Link></li>}
+                {isLoged && <li><Link to="/logout">Logout</Link></li>}
             </ul>
             <div onClick={navSlide} className={`burger-desktop`} >
                 <div className='line1'></div>
@@ -54,25 +66,6 @@ const NavigationBar = () => {
 
         </nav >
     )
-
-    // return (<div className='navbar-root' >
-    //     <header>
-    //         <nav className={`nav-bar${useResponsiveDesign()}`}>
-    //             {"-tablet" === useResponsiveDesign() ? <div className='icon'><button onClick={menuDrop} >&#9776;</button></div> : ''}
-    //             <ul className={`nav-bar-ul-list${useResponsiveDesign()}`}>
-    //                 <li><Link to="/">Home</Link></li>
-    //                 <li><Link to="/about-us">About</Link></li>
-    //                 <li><Link to="/contact-us">Contatct us</Link></li>
-    //                 {isLoged && <li><Link to="/user-profile">Profile</Link></li>}
-    //                 {isLoged && <li><Link to="/pets-catalog">Pets Catalog</Link></li>}
-    //                 {isLoged && <li><Link to="/create-new-pet">Add new pet</Link></li>}
-    //                 {!isLoged && <li><Link to="/sign-up">Register</Link></li>}
-    //                 {!isLoged && <li><Link to="/login">Login</Link></li>}
-    //                 {isLoged && <li><Link to="/logout">Logout</Link></li>}
-    //             </ul>
-    //         </nav>
-    //     </header>
-    // </div >)
 
 };
 
