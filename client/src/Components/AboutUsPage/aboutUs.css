@@ -1,6 +1,6 @@
 
 .root-card-class-desktop {
-
+    height: 550px;
     display: flex;
     width: 100%;
 
@@ -55,6 +55,7 @@
     }
 
     .pets-about-us-wraper {
+        
     }
 
     .our-story-text-desktop {
