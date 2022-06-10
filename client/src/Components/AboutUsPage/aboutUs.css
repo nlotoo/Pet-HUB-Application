@@ -1,4 +1,4 @@
-/* css for mobile version*/
+/* css for mobile version
 
 .root-card-class-mobile {
     background: rgba(130, 118, 204, 0.307);
@@ -17,7 +17,7 @@
     margin-left: 20px;
     margin-right: 20px;
 
-}
+} */
 
 /* end of css mobile version */
 
@@ -65,23 +65,34 @@
 
 }
 
+
+@media only screen and (max-width: 760px) {
+    .our-story-heading-desktop {
+        margin-bottom: 10px;
+    }
+
+    .root-card-class-desktop {
+        display: block;
+    
+    }
+
+    .our-story-text-desktop {
+        max-width: fit-content;
+        
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+    
+    }
+
+
+}
+
 /* end of css for desktop */
 
 /* css for tablets */
-.root-card-class-tablet {
-    display: block;
+/* 
 
-}
 
-.our-story-heading-tablet {
-    font-size: xxx-large;
-    font-family: math;
-    margin-bottom: 20px;
-}
 
-.our-story-text-tablet {
-    text-align: center;
-    margin-left: 20px;
-    margin-right: 20px;
-
-}
+ */

@@ -1,5 +1,4 @@
 import './aboutUs.css'
-import useResponsiveDesign from '../../services/useResposiveDisplayTool'
 
 const AboutUsPage = () => {
 
@@ -7,13 +6,11 @@ const AboutUsPage = () => {
 
 
 
-
-
     return (
-        <div className={`root-card-class${useResponsiveDesign()}`}>
+        <div className='root-card-class-desktop'>
             <div className='pets-about-us-wraper'>
-                <div className={`our-story-text${useResponsiveDesign()}`}>
-                    <p className={`our-story-heading${useResponsiveDesign()}`}>Our Story</p>
+                <div className='our-story-text-desktop'>
+                    <p className='our-story-heading-desktop'>Our Story</p>
                     {aboutUsText ? aboutUsText.map((x, i) => {
                         return (
                             <p key={i + x[10]}>{x}</p>
