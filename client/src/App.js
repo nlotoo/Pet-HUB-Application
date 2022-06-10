@@ -35,12 +35,7 @@ const App = () => {
           <Route path='/user-profile' element={<ProfilePage />} />
           <Route path='/pets-catalog' element={<PetsCatalog />} />
           <Route path='/create-new-pet' element={<CreatePetPage />} />
-
-
-
         </Routes>
-
-
         <footer className='footer-content'>
           <Footer />
         </footer>

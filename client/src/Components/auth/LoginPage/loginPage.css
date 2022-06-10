@@ -1,6 +1,7 @@
 .inside-login-card {
     background: #F0F8FF;
 
+
 }
 
 .login-heading-class {
@@ -38,7 +39,11 @@
 .login-card-desktop {
     text-align: -webkit-center;
     background: #ececec;
+    min-height: 570px;
+
 }
+
+
 
 .form-class-login-desktop {
     width: 250px;
@@ -56,7 +61,7 @@
 
 
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 768px) {
 
 
 
@@ -64,24 +69,3 @@
 
 
 
-/* css for tablet */
-/* 
-.login-card-tablet {
-    text-align: -webkit-center;
-    background: #ececec;
-}
-
-.form-class-login-tablet {
-    display: inline-grid;
-} */
-
-/* css for mobile */
-
-/* .login-card-mobile {
-    text-align: -webkit-center;
-    background: #ececec;
-}
-
-.form-class-login-mobile {
-    display: inline-grid;
-} */

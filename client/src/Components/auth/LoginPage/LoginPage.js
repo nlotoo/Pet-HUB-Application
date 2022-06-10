@@ -52,18 +52,18 @@ const LoginForm = () => {
   })
 
   return (
-    <div className={`login-card${useResponsiveDesign()}`}>
+    <div className={`login-card-desktop`}>
       <h2 className='login-heading-class'>Login user</h2>
-      <form className={`form-class-login${useResponsiveDesign()}`} onSubmit={submitHandler}>
+      <form className={`form-class-login-desktop`} onSubmit={submitHandler}>
         <label>Email</label>
         <div>
 
-          <input className={`input-login-class${useResponsiveDesign()}`} id="email" name="email" onChange={handleInputChange} ></input>
+          <input className={`input-login-class-desktop`} id="email" name="email" onChange={handleInputChange} ></input>
         </div>
         <label>Password</label>
         <div>
 
-          <input className={`input-login-class${useResponsiveDesign()}`} id="password" name="password" onChange={handleInputChange}></input>
+          <input className={`input-login-class-desktop`} id="password" name="password" onChange={handleInputChange}></input>
         </div>
         <button className='login-button-class'>Login</button>
         <div>  {errorArr ? <ErrorBar data={errorArr} /> : ''}</div>

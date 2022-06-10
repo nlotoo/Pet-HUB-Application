@@ -8,6 +8,7 @@
     padding-top: 40px;
 }
 .register-wrapper-class{
+    min-height: 570px;
     text-align: -webkit-center;
 }
 .input-register-class{
