@@ -56,7 +56,7 @@ const NavigationBar = () => {
             <ul className='nav-links-desktop' >
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about-us">About</Link></li>
-                <li><Link aria-disabled='true' to="/contact-us">Contatct us</Link></li>
+                <li><Link aria-disabled='true' to="/our-catalog">Our Catalog</Link></li>
                 {isLoged && <li><Link to="/user-profile">Profile</Link></li>}
                 {isLoged && <li><Link to="/pets-catalog">Pets Catalog</Link></li>}
                 {isLoged && <li><Link to="/create-new-pet">Add new pet</Link></li>}

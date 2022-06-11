@@ -13,7 +13,7 @@ const PetsCard = (data) => {
     } else {
         return data.userPetData
             .map((x, i) => {
-               console.log(x.petPhoto)
+                console.log(x.petPhoto)
                 return (
                     <div id="pet-card" className='pets-card' key={x.petName + i}>
                         <h2 id="petHeadig-class">{x.petName}</h2>
@@ -25,13 +25,12 @@ const PetsCard = (data) => {
                             <div id="pet-info">{x.petBreed}</div>
                             <label className='pet-label-class' >kg.</label>
                             <div id="pet-info">{x.petWeight}</div>
-                            <div id="pet-info">
-                                <label className='pet-label-class' >Info:</label>
-                                <p>
-                                    {x.petInfo}
+                            <label className='pet-label-class info' >Info:</label>
 
-                                </p>
-                            </div>
+                            <textarea id="pet-info" disabled>
+                                {x.petInfo}
+                            </textarea>
+
                             <div id="pet-card-buttons">
                                 <button className="pet-card-button" id={x._id}>edit</button>
                                 <button onClick={deletePet} name='deleteBTN' id={x._id} className="pet-card-button" >Delete </button>
