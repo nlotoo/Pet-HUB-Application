@@ -13,7 +13,6 @@ const PetsCard = (data) => {
     } else {
         return data.userPetData
             .map((x, i) => {
-                console.log(x.petPhoto)
                 return (
                     <div id="pet-card" className='pets-card' key={x.petName + i}>
                         <h2 id="petHeadig-class">{x.petName}</h2>

@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+
+
+
 .navigation-bar {
     display: flex;
     justify-content: space-around;
