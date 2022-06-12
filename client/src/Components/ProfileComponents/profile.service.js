@@ -2,6 +2,9 @@
 
 const getUserInfo = async () => {
     let userID = window.localStorage.getItem('User ID')
+
+
+
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -59,7 +62,6 @@ const getUserPets = async () => {
 
 }
 
-
 const deleltePetFunc = async (petCardId) => {
 
 
@@ -82,6 +84,30 @@ const deleltePetFunc = async (petCardId) => {
 
 }
 
+const isAuthorizated = async () => {
+    let userID = window.localStorage.getItem('User ID');
+    console.log(userID)
+
+    if (userID == null) { 
+        return 
+    }
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userID: userID })
+    };
+
+
+    return fetch('http://localhost:5000/isAuth', requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            return data
+        })
+        .catch(err => console.log(err))
+
+}
 
 // const requestOptions = {
 //     method: 'GET',
@@ -106,4 +132,5 @@ module.exports = {
     createPet,
     getUserPets,
     deleltePetFunc,
+    isAuthorizated,
 }

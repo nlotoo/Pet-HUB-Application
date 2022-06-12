@@ -68,8 +68,6 @@ async function createPet(data) {
 
 
 }
-
-
 async function populateAllPets(petOwner, petName) {
 
 
@@ -92,8 +90,6 @@ async function populateAllPets(petOwner, petName) {
 
 
 }
-
-
 async function getUserPets(userID) {
 
     let { data } = userID
@@ -103,12 +99,20 @@ async function getUserPets(userID) {
 
     return user.pets
 }
-
-
 async function deleltePetFuncServerSide(data) {
 
-  
-  return await Pet.findOneAndDelete({ _id: data.petID })
+    return await Pet.findOneAndDelete({ _id: data.petID })
+}
+
+async function isAuth(data) {
+
+    let { userID } = data;
+    try {
+        let user = await User.findById({ _id: userID })
+        return user
+    } catch (err) {
+        return console.log('You don`t have authorization !')
+    }
 
 }
 
@@ -123,4 +127,5 @@ module.exports = {
     createPet,
     getUserPets,
     deleltePetFuncServerSide,
+    isAuth,
 }

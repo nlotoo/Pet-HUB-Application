@@ -5,6 +5,7 @@ import { createPet } from '../profile.service.js'
 import ErrorBar from '../ErrorBar/ErrorBar'
 
 import { useNavigate } from "react-router-dom";
+import isAuthHOC from '../../../services/HOC'
 const CreatePetPage = () => {
 
     let [errorArray, setError] = useState()
@@ -97,4 +98,4 @@ const CreatePetPage = () => {
     )
 }
 
-export default CreatePetPage
+export default isAuthHOC(CreatePetPage)

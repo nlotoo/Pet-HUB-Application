@@ -42,7 +42,6 @@ router.post('/user-profile', async (req, res) => {
     }
 })
 
-
 router.post('/create-new-pet', async (req, res) => {
 
     try {
@@ -82,6 +81,18 @@ router.post('/pets-delete', async (req, res) => {
         res.status(401).json({ message: err })
     }
 });
+
+
+router.post('/isAuth', async (req, res) => {
+    try {
+
+        
+        let data = await profileService.isAuth(req.body);
+        res.status(200).json(data)
+    } catch (err) {
+        res.status(401).json({ message: err })
+    }
+})
 
 
 module.exports = router

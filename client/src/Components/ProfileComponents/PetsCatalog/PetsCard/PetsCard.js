@@ -26,8 +26,8 @@ const PetsCard = (data) => {
                             <div id="pet-info">{x.petWeight}</div>
                             <label className='pet-label-class info' >Info:</label>
 
-                            <textarea id="pet-info" disabled>
-                                {x.petInfo}
+                            <textarea value={x.petInfo} id="pet-info" disabled>
+                                
                             </textarea>
 
                             <div id="pet-card-buttons">

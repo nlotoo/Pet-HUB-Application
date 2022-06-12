@@ -10,4 +10,4 @@ const OurCatalog = () => {
     </div>)
 }
 
-export default isAuthHOC(OurCatalog)
+export default OurCatalog

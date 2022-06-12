@@ -6,6 +6,7 @@ import PetsCard from './PetsCard/PetsCard'
 import { useEffect, useState } from 'react'
 import { getUserPets } from '../profile.service'
 import ReactPaginate from 'react-paginate';
+import isAuthHOC from '../../../services/HOC'
 
 
 
@@ -83,4 +84,4 @@ const PetsCatalog = () => {
 
 }
 
-export default PetsCatalog
+export default isAuthHOC(PetsCatalog)
