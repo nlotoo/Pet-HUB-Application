@@ -29,12 +29,11 @@ const NavigationBar = () => {
 
     return (
         <nav className='navigation-bar'>
-
             <div className='logo'>
                 <h4>The Pet Care</h4>
             </div>
 
-            <ul style={theme} className='nav-links-desktop' >
+            <ul  className='nav-links-desktop' >
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about-us">About</Link></li>
                 <li><Link className='disabled' to="/our-catalog">Our Catalog</Link></li>
@@ -47,7 +46,7 @@ const NavigationBar = () => {
             </ul>
             <div onClick={navSlide} className={`burger-desktop`} >
                 <div  className='line1'></div>
-                <div className='line2'></div>
+                <div style={theme} className='line2'></div>
                 <div className='line3'></div>
             </div>
 

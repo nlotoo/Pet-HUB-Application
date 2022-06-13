@@ -51,9 +51,6 @@ const LoginForm = () => {
   })
 
   return (
-
-
-
     <div className={`login-card-desktop`}>
       <h2 className='login-heading-class'>Login user</h2>
       <form className={`form-class-login-desktop`} onSubmit={submitHandler}>
