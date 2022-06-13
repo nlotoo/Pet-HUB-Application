@@ -86,7 +86,6 @@ const deleltePetFunc = async (petCardId) => {
 
 const isAuthorizated = async () => {
     let userID = window.localStorage.getItem('User ID');
-    console.log(userID)
 
     if (userID == null) { 
         return 
@@ -102,7 +101,6 @@ const isAuthorizated = async () => {
     return fetch('http://localhost:5000/isAuth', requestOptions)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             return data
         })
         .catch(err => console.log(err))

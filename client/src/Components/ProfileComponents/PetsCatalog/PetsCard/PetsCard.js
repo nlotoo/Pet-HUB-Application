@@ -1,7 +1,14 @@
 import '../PetsCard/petsCard.css'
 import { deleltePetFunc } from '../../profile.service'
-const PetsCard = (data) => {
+import { ThemeContext } from '../../../../App';
+import { useContext } from 'react';
 
+
+const PetsCard = (data) => {
+    
+    let theme = useContext(ThemeContext)
+    console.log(theme)
+    
     const deletePet = (e) => {
         deleltePetFunc(e.target.id);
         window.location.reload();
@@ -14,28 +21,30 @@ const PetsCard = (data) => {
         return data.userPetData
             .map((x, i) => {
                 return (
-                    <div id="pet-card" className='pets-card' key={x.petName + i}>
-                        <h2 id="petHeadig-class">{x.petName}</h2>
-                        <img id="card-img" alt="img" src={x.petPhoto} />
-                        <div className='pet-info-wraper'>
-                            <label className='pet-label-class'>Age</label>
-                            <div id="pet-info">{x.petAge}</div>
-                            <label className='pet-label-class' >Breed</label>
-                            <div id="pet-info">{x.petBreed}</div>
-                            <label className='pet-label-class' >kg.</label>
-                            <div id="pet-info">{x.petWeight}</div>
-                            <label className='pet-label-class info' >Info:</label>
 
-                            <textarea value={x.petInfo} id="pet-info" disabled>
-                                
-                            </textarea>
+                        <div id="pet-card" className='pets-card' key={x.petName + i}>
+                       
+                            <h2  id="petHeadig-class">{x.petName}</h2>
+                            <img id="card-img" alt="img" src={x.petPhoto} />
+                            <div className='pet-info-wraper'>
+                                <label className='pet-label-class'>Age</label>
+                                <div id="pet-info">{x.petAge}</div>
+                                <label className='pet-label-class' >Breed</label>
+                                <div id="pet-info">{x.petBreed}</div>
+                                <label className='pet-label-class' >kg.</label>
+                                <div id="pet-info">{x.petWeight}</div>
+                                <label className='pet-label-class info' >Info:</label>
 
-                            <div id="pet-card-buttons">
-                                <button className="pet-card-button" id={x._id}>edit</button>
-                                <button onClick={deletePet} name='deleteBTN' id={x._id} className="pet-card-button" >Delete </button>
+                                <textarea value={x.petInfo} id="pet-info" disabled>
+
+                                </textarea>
+
+                                <div id="pet-card-buttons">
+                                    <button className="pet-card-button" id={x._id}>edit</button>
+                                    <button onClick={deletePet} name='deleteBTN' id={x._id} className="pet-card-button" >Delete </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                 )
 

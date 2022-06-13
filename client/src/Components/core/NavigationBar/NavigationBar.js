@@ -1,50 +1,31 @@
 
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Link, } from 'react-router-dom'
-
+import { ThemeContext } from '../../../App';
 import { loginStorageCheker } from '../../../services/loginStorage';
-import useResponsiveDesign from '../../../services/useResposiveDisplayTool';
 import './NavigationBar.css'
 
 
 
 const NavigationBar = () => {
+    let theme = useContext(ThemeContext)
 
     let isLoged = loginStorageCheker()
 
-    let [clasActive, setClassActive] = useState()
-
-
-
-
-    useEffect(() => {
-
-    }, [])
-
-
-
 
     const navSlide = (e) => {
-        const burger = document.getElementsByClassName('burger-desktop')[0]
-            console.log(burger)
+        const burger = document.getElementsByClassName('burger-desktop')[0]  
         burger.classList?.toggle('toggle')
+
         const navLink = document.getElementsByClassName('nav-links-desktop')[0]
         navLink.classList.toggle('nav-active')
 
         const NavLinksLI = document.querySelectorAll('.nav-links-desktop li')
         NavLinksLI.forEach((link, index) => {
-            link.style.animation = `navLinkFade 0.5 ease forwards ${index / 7 + 2}s`
+            link.style.animation = `navLinkFade 0.5 ease forwards ${index / 7 + index}s`
         })
-      
 
     }
-
-    const changeState = (e) => {
-        console.log('change')
-
-
-    }
-
 
     return (
         <nav className='navigation-bar'>
@@ -53,7 +34,7 @@ const NavigationBar = () => {
                 <h4>The Pet Care</h4>
             </div>
 
-            <ul className='nav-links-desktop' >
+            <ul style={theme} className='nav-links-desktop' >
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about-us">About</Link></li>
                 <li><Link className='disabled' to="/our-catalog">Our Catalog</Link></li>
@@ -65,7 +46,7 @@ const NavigationBar = () => {
                 {isLoged && <li><Link to="/logout">Logout</Link></li>}
             </ul>
             <div onClick={navSlide} className={`burger-desktop`} >
-                <div className='line1'></div>
+                <div  className='line1'></div>
                 <div className='line2'></div>
                 <div className='line3'></div>
             </div>

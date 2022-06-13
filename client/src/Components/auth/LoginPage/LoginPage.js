@@ -1,26 +1,25 @@
-import { useState } from 'react'
-import './loginPage.css'
-import { loginUserValidation } from '../../../services/loginUserValidation'
-import ErrorBar from '../ErrorBar/ErrorBar'
-import authService from '../authService'
-import useResponsiveDesign from '../../../services/useResposiveDisplayTool'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+import './loginPage.css';
+import { loginUserValidation } from '../../../services/loginUserValidation';
+import ErrorBar from '../ErrorBar/ErrorBar';
+import authService from '../authService';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
 
-  let [errorArr, setError] = useState()
+  let [errorArr, setError] = useState();
 
-  let [userInfo, setUser] = useState({ email: '', password: '' })
+  let [userInfo, setUser] = useState({ email: '', password: '' });
 
-  let [token, setToken] = useState({})
+  let [token, setToken] = useState({});
 
   function submitHandler(e) {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      loginUserValidation(userInfo)
+      loginUserValidation(userInfo);
 
       authService.loginUser(userInfo)
         .then((responce) => {
@@ -38,11 +37,11 @@ const LoginForm = () => {
             navigate('/home-page')
             window.location.reload();
           }
-          return responce
+          return responce;
         })
-        .catch((err) => { console.log(err) })
+        .catch((err) => { console.log(err) });
     } catch (err) {
-      setError(err)
+      setError(err);
     }
   }
 
@@ -52,6 +51,9 @@ const LoginForm = () => {
   })
 
   return (
+
+
+
     <div className={`login-card-desktop`}>
       <h2 className='login-heading-class'>Login user</h2>
       <form className={`form-class-login-desktop`} onSubmit={submitHandler}>
@@ -70,7 +72,7 @@ const LoginForm = () => {
       </form>
 
     </div>
-  )
-}
+  );
+};
 
 export default LoginForm;
