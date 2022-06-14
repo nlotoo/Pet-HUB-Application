@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import '../src/App.css'
+import '../src/App.css';
 
-import LoadingSpinner from './Components/LoadingSpinner/LoadingSpinner'
+import LoadingSpinner from './Components/LoadingSpinner/LoadingSpinner';
 import NavigationBar from './Components/core/NavigationBar/NavigationBar';
 import HomePage from './Components/core/HomePage/HomePage';
 import LoginPage from './Components/auth/LoginPage/LoginPage';
@@ -11,6 +11,7 @@ import SignUpPage from './Components/auth/SignUpPage/SingUpPage';
 import Logout from './Components/auth/Logout/Logout';
 import Footer from './Components/core/Footer/Footer';
 import OurCatalog from './Components/OurCatalog/OurCatalog';
+import EditPetPage from './Components/ProfileComponents/EditPetPage/EditPetPage';
 
 
 const AboutUsPage = lazy(() => import('./Components/AboutUsPage/AboutUsPage'));
@@ -43,10 +44,7 @@ const App = () => {
 
             <Route path='/about-us' element={<AboutUsPage />} />
             <Route path='/' element={<HomePage />} />
-
-
             <Route path='/our-catalog' element={<OurCatalog />} />
-
             <Route path='/home-page-banner' element={<HomePage />} />
             <Route path='/home-page' element={<HomePage />} />
             <Route path='/login' element={<LoginPage />} />
@@ -55,6 +53,7 @@ const App = () => {
             <Route path='/user-profile' element={<ProfilePage />} />
             <Route path='/pets-catalog' element={<PetsCatalog />} />
             <Route path='/create-new-pet' element={<CreatePetPage />} />
+            <Route path='/edit-pet/:id' element={<EditPetPage />} />
 
           </Routes>
         </Suspense>
@@ -65,7 +64,7 @@ const App = () => {
 
 
     </div >
-  )
+  );
 };
 
 export default App;

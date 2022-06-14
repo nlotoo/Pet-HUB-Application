@@ -3,6 +3,15 @@
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 } */
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color: black
+}
+
 .sk-chase-dot {
     width: 100%;
     height: 100%;
@@ -35,15 +44,26 @@ textarea {
     text-align: center;
 }
 
-.pet-card-button {
+.pet-card-link {
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 10px;
     border-radius: 20px;
     text-align: center;
+    background-color: rgba(198, 198, 198, 0.445);
     border: solid 2px #C6E5F1;
 
 }
+
+.pet-card-link:active {
+    box-shadow: none;
+
+}
+.pet-card-link:hover {
+    box-shadow: 2px 3px 5px black;
+
+}
+
 
 #petHeadig-class {
     text-align: center;
@@ -78,23 +98,13 @@ textarea {
 
 }
 
-.pet-card-buttons {
+#pet-card-links {
     text-align: center;
+    margin-bottom: 10px;
 }
 
-#pet-card-button {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 10px;
-    border-radius: 20px;
-    text-align: center;
-    border: solid 2px #C6E5F1;
-}
 
-.pet-card-button:active {
-    box-shadow: 2px 3px 5px black;
 
-}
 
 .loader-wraper {
     display: flex;

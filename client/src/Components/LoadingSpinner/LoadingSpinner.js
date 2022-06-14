@@ -3,9 +3,11 @@ import './loading-spinner.css'
 const LoadingSpinner = () => {
 
 
-    return (<div className='loader-wraper'>
+    return (
+    <div className='loader-wraper'>
         <div className='loader'></div>
-    </div>);
+    </div>
+    );
 };
 
 export default LoadingSpinner;

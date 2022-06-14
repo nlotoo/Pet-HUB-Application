@@ -1,0 +1,58 @@
+/* .create-new-pet-root {} */
+
+.create-new-pet-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.add-new-pet-heading {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.input-create-pet-class {
+    text-align: center;
+    border-radius: 20px;
+    resize: none;
+}
+
+.input-create-pet-class:active {
+    box-shadow: 2px 3px 10px black;
+}
+
+.create-pet-button {
+    width: 150px;
+    border-radius: 20px;
+    border: 2px solid black;
+    color: white;
+    background: rgba(150, 197, 217, 0.36);
+    padding: 0px;
+    text-align: center;
+    margin-top: 10px;
+    color: #171425;
+    /* text-shadow: 2px 3px 5px black; */
+    box-shadow: 2px 1px 10px #54B3D6;
+}
+
+.create-pet-button:active {
+    box-shadow: 2px 3px 5px black;
+}
+
+.create-new-pet-form {
+    margin: 10px;
+    padding: 20px;
+
+    background-color: #C6E5F1;
+    border-radius: 32px;
+    width: 250px;
+    height: auto;
+    text-align: center;
+
+    border: solid 2px #C6E5F1;
+    background-color: aliceblue;
+    margin-left: 25px;
+    box-shadow: 1px 1px 2px black, 0 0 25px #171425, 0 0 5px #686d67;
+
+}
