@@ -1,18 +1,19 @@
-import './edit-page.css'
-import { chekingWhenCreatingElement } from '../../../services/chekingWhenCreatingElement'
-import { useState, } from 'react'
-import { createPet } from '../profile.service.js'
-import ErrorBar from '../ErrorBar/ErrorBar'
+import './edit-page.css';
+import { chekingWhenCreatingOrEditingElement } from '../../../services/chekingWhenCreatingElement';
+import { useState, } from 'react';
+import ErrorBar from '../ErrorBar/ErrorBar';
+import { editPetSubmit } from '../profile.service';
+import { useNavigate, useParams } from "react-router-dom";
 
-import { useNavigate } from "react-router-dom";
-import isAuthHOC from '../../../services/HOC'
+import isAuthHOC from '../../../services/HOC';
 const EditPetPage = () => {
+    const id = useParams()
 
-    let [errorArray, setError] = useState()
-    let navigate = useNavigate()
+    let [errorArray, setError] = useState();
+    let navigate = useNavigate();
     const EditPet = (e) => {
-        e.preventDefault()
-        let petOwner = window.localStorage.getItem('User ID')
+        e.preventDefault();
+        let petOwner = window.localStorage.getItem('User ID');
         let petObj = {
             petName: e.target.petName.value,
             petWeight: e.target.petWeight.value,
@@ -21,29 +22,25 @@ const EditPetPage = () => {
             petPhoto: e.target.petPhoto.value,
             petInfo: e.target.petInfo.value,
             petOwner: petOwner
-        }
+        };
 
-
+        
         try {
-            let result = chekingWhenCreatingOrEditingElement(petObj)
-            setError(undefined)
-
-            let response = EditPet(result)
+            let result = chekingWhenCreatingOrEditingElement(petObj);
+            setError(undefined);
+            
+            let response = editPetSubmit(result,id);
             response.then((rs) => {
                 if (rs.errorMessage) {
-                    setError(rs.errorMessage)
+                    setError(rs.errorMessage);
                     return
                 }
-                navigate('/pets-catalog')
+                
             }
-            )
-
-
-
-
+            );
 
         } catch (err) {
-            setError(err)
+            setError(err);
         }
 
     }
@@ -51,39 +48,39 @@ const EditPetPage = () => {
 
 
     return (
-        <div className='create-new-pet-root'>
+        <div className='edit-new-pet-root'>
             <h2 className='add-new-pet-heading'>Edit your pet</h2>
-            <div className='create-new-pet-wrapper'>
-                <form className='create-new-pet-form' onSubmit={EditPet} >
+            <div className='edit-new-pet-wrapper'>
+                <form className='edit-new-pet-form' onSubmit={EditPet} >
                     <div>
 
                         <label>Pet name </label>
-                        <input className='input-create-pet-class' id='petName' name='petName'></input>
+                        <input className='input-edit-pet-class' id='petName' name='petName'></input>
                     </div>
                     <div>
 
                         <label>Pet weight</label>
-                        <input className='input-create-pet-class' type='number' id='petWeight' name='petWeight' ></input>
+                        <input className='input-edit-pet-class' type='number' id='petWeight' name='petWeight' ></input>
                     </div>
                     <div>
 
                         <label>Pet breed</label>
-                        <input className='input-create-pet-class' id='petBreed' name='petBreed' ></input>
+                        <input className='input-edit-pet-class' id='petBreed' name='petBreed' ></input>
                     </div>
                     <div>
 
                         <label>Pet age</label>
-                        <input className='input-create-pet-class' type='number' id='petAge' name='petAge' ></input>
+                        <input className='input-edit-pet-class' type='number' id='petAge' name='petAge' ></input>
                     </div>
                     <div>
                         <label>Pet photo</label>
-                        <input className='input-create-pet-class' id='petPhoto' name='petPhoto' ></input>
+                        <input className='input-edit-pet-class' id='petPhoto' name='petPhoto' ></input>
                     </div>
                     <div>
                         <label>Pet ifno (optional)</label>
-                        <textarea className='input-create-pet-class' id='petInfo' name='petInfo' />
+                        <textarea className='input-edit-pet-class' id='petInfo' name='petInfo' />
                     </div>
-                    <button className='create-pet-button' >Add new pet</button>
+                    <button className='edit-pet-button' >Edit your pet details</button>
                     <div>
 
                         {
@@ -94,7 +91,7 @@ const EditPetPage = () => {
                 </form>
             </div >
         </div >
-    )
-}
+    );
+};
 
-export default isAuthHOC(EditPetPage)
+export default isAuthHOC(EditPetPage);

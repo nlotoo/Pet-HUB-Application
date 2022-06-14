@@ -116,6 +116,53 @@ async function isAuth(data) {
 
 }
 
+async function EditPet(data,petID) {
+
+    let { petName, petWeight, petBreed, petAge, petPhoto, petInfo, petOwner } = data
+
+    console.log(petID)
+
+    if (petName.length < 2) {
+        throw 'Pet name is to short'
+    }
+
+    if (petWeight < 0 || petWeight === '') {
+        throw 'Pet weight  isn`t corect!'
+    }
+    if (petBreed.length < 2) {
+        throw 'Pet breed  isn`t corect!'
+    }
+    if (petAge < 0 || petAge === '') {
+        throw 'Pet age  isn`t corect!'
+    }
+
+    let pattern = /(^| )(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,8}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g
+
+    if (!pattern.test(petPhoto)) {
+        throw 'Pet image url is not corect!'
+    }
+
+    if (petInfo.length > 50) {
+        throw 'Your description is to long, should be below 50 characters!'
+
+    }
+
+
+    let chekingPet = await Pet.findById({ _id: petID.id })
+
+    // проверка за съществува не и после записване в базата данни
+    console.log(chekingPet)
+
+
+    if (chekingPet) {
+        throw 'This pet name exist!'
+    }
+
+
+
+    console.log('asd')
+    return 'inside mDf'
+}
 
 
 
@@ -128,4 +175,5 @@ module.exports = {
     getUserPets,
     deleltePetFuncServerSide,
     isAuth,
+    EditPet,
 }

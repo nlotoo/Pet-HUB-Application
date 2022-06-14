@@ -1,4 +1,4 @@
-const chekingWhenCreatingElement = (data) => {
+const chekingWhenCreatingOrEditingElement = (data) => {
 
     let { petName, petWeight, petBreed, petAge, petPhoto, petInfo, petOwner } = data
 
@@ -48,5 +48,5 @@ const chekingWhenCreatingElement = (data) => {
 
 
 module.exports = {
-    chekingWhenCreatingElement,
+    chekingWhenCreatingOrEditingElement,
 }

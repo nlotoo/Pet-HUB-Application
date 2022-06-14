@@ -3,7 +3,7 @@ import { deleltePetFunc } from '../../profile.service'
 import { ThemeContext } from '../../../../App';
 import { useContext } from 'react';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,  } from 'react-router-dom';
 
 
 const PetsCard = (data) => {
@@ -11,17 +11,13 @@ const PetsCard = (data) => {
     let theme = useContext(ThemeContext)
     console.log(theme)
 
-    let navigate = useNavigate()
 
     const deletePet = (e) => {
         deleltePetFunc(e.target.id);
         window.location.reload();
     }
 
-    const editPet = (e) => {
-        navigate('/edit-pet')
 
-    }
 
     if (data.userPetData == undefined) {
         console.log('Loading spinner')

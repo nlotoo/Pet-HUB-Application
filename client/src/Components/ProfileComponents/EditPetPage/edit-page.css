@@ -1,6 +1,6 @@
-/* .create-new-pet-root {} */
+/* .edit-new-pet-root {} */
 
-.create-new-pet-wrapper {
+.edit-new-pet-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,17 +12,17 @@
     padding-top: 40px;
 }
 
-.input-create-pet-class {
+.input-edit-pet-class {
     text-align: center;
     border-radius: 20px;
     resize: none;
 }
 
-.input-create-pet-class:active {
+.input-edit-pet-class:active {
     box-shadow: 2px 3px 10px black;
 }
 
-.create-pet-button {
+.edit-pet-button {
     width: 150px;
     border-radius: 20px;
     border: 2px solid black;
@@ -36,11 +36,11 @@
     box-shadow: 2px 1px 10px #54B3D6;
 }
 
-.create-pet-button:active {
+.edit-pet-button:active {
     box-shadow: 2px 3px 5px black;
 }
 
-.create-new-pet-form {
+.edit-new-pet-form {
     margin: 10px;
     padding: 20px;
 

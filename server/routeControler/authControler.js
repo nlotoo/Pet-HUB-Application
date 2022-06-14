@@ -41,6 +41,20 @@ router.post('/user-profile', async (req, res) => {
         res.status(401).json({ message: err })
     }
 })
+router.post('/edit-pet/:id', async (req, res) => {
+
+    try {
+        let data = await profileService.EditPet(req.body,req.params)
+        res.status(200).json(data)
+    }
+    catch (err) {
+        console.log(err)
+        res.status(401).json({ message: err })
+    }
+
+})
+
+
 
 router.post('/create-new-pet', async (req, res) => {
 
