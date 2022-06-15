@@ -1,6 +1,6 @@
 import './edit-page.css';
 import { chekingWhenCreatingOrEditingElement } from '../../../services/chekingWhenCreatingElement';
-import { useState, } from 'react';
+import { useEffect, useState, } from 'react';
 import ErrorBar from '../ErrorBar/ErrorBar';
 import { editPetSubmit } from '../profile.service';
 import { useNavigate, useParams } from "react-router-dom";
@@ -12,6 +12,11 @@ const EditPetPage = () => {
     let [errorArray, setError] = useState();
     let navigate = useNavigate();
     const EditPet = (e) => {
+
+
+
+
+
         e.preventDefault();
         let petOwner = window.localStorage.getItem('User ID');
         let petObj = {
@@ -24,18 +29,18 @@ const EditPetPage = () => {
             petOwner: petOwner
         };
 
-        
+
         try {
             let result = chekingWhenCreatingOrEditingElement(petObj);
             setError(undefined);
-            
-            let response = editPetSubmit(result,id);
-            response.then((rs) => {
-                if (rs.errorMessage) {
-                    setError(rs.errorMessage);
-                    return
-                }
-                
+
+            let response = editPetSubmit(result, id);
+            return response.then((rs) => {
+                if (rs.message) {
+                    setError(rs.message);
+                    return;
+                };
+                navigate('/pets-catalog')
             }
             );
 
@@ -55,7 +60,7 @@ const EditPetPage = () => {
                     <div>
 
                         <label>Pet name </label>
-                        <input className='input-edit-pet-class' id='petName' name='petName'></input>
+                        <input className='input-edit-pet-class' id='petName' name='petName' ></input>
                     </div>
                     <div>
 
@@ -65,12 +70,12 @@ const EditPetPage = () => {
                     <div>
 
                         <label>Pet breed</label>
-                        <input className='input-edit-pet-class' id='petBreed' name='petBreed' ></input>
+                        <input className='input-edit-pet-class' id='petBreed' name='petBreed'  ></input>
                     </div>
                     <div>
 
                         <label>Pet age</label>
-                        <input className='input-edit-pet-class' type='number' id='petAge' name='petAge' ></input>
+                        <input className='input-edit-pet-class' type='number' id='petAge' name='petAge'></input>
                     </div>
                     <div>
                         <label>Pet photo</label>

@@ -1,6 +1,6 @@
 import './createPetPage.css'
-import { chekingWhenCreatingElement } from '../../../services/chekingWhenCreatingElement'
-import { useState,  } from 'react'
+import { chekingWhenCreatingOrEditingElement } from '../../../services/chekingWhenCreatingElement'
+import { useState, } from 'react'
 import { createPet } from '../profile.service.js'
 import ErrorBar from '../ErrorBar/ErrorBar'
 
@@ -9,7 +9,7 @@ import isAuthHOC from '../../../services/HOC'
 const CreatePetPage = () => {
 
     let [errorArray, setError] = useState()
-    let navigate =useNavigate()
+    let navigate = useNavigate()
     const CreatePet = (e) => {
         e.preventDefault()
         let petOwner = window.localStorage.getItem('User ID')
@@ -25,11 +25,13 @@ const CreatePetPage = () => {
 
 
         try {
-            let result = chekingWhenCreatingElement(petObj)
+
+            let result = chekingWhenCreatingOrEditingElement(petObj)
             setError(undefined)
 
             let response = createPet(result)
             response.then((rs) => {
+                console.log(rs)
                 if (rs.errorMessage) {
                     setError(rs.errorMessage)
                     return
@@ -38,10 +40,6 @@ const CreatePetPage = () => {
             }
             )
 
-
-
-
-
         } catch (err) {
             setError(err)
         }
@@ -49,7 +47,7 @@ const CreatePetPage = () => {
     }
 
 
-    // console.log(errorArray)
+   console.log(errorArray)
 
     return (
         <div className='create-new-pet-root'>

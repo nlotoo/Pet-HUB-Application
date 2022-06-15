@@ -5,21 +5,15 @@ export const loginUserValidation = (data) => {
 
 
     if (data.email == '') {
-        errorArr.push('You need to type corect email')
-    }
+        errorArr.push('You need to type corect email');
+    };
 
     if (data.password == '') {
-        errorArr.push('You need to type corect password')
-    }
+        errorArr.push('You need to type corect password');
+    };
 
     if (errorArr.length > 0) {
-        throw { errorArr }
-    }
+        throw { errorArr };
+    };
 
-
-    // console.log(errorArr)
-
-
-
-
-}
+};

@@ -54,7 +54,7 @@ async function createPet(data) {
         if (resulta) {
             throw 'This pet name exist!'
         }
-
+        console.log(newPetDocument)
         return newPetDocument.save()
     } catch (err) {
         console.log(err)
@@ -116,53 +116,66 @@ async function isAuth(data) {
 
 }
 
-async function EditPet(data,petID) {
+async function EditPet(data, petID) {
 
-    let { petName, petWeight, petBreed, petAge, petPhoto, petInfo, petOwner } = data
+    let { petName, petWeight, petBreed, petAge, petPhoto, petInfo, } = data;
 
-    console.log(petID)
+
 
     if (petName.length < 2) {
-        throw 'Pet name is to short'
-    }
+        throw 'Pet name is to short';
+    };
 
     if (petWeight < 0 || petWeight === '') {
-        throw 'Pet weight  isn`t corect!'
-    }
+        throw 'Pet weight  isn`t corect!';
+    };
     if (petBreed.length < 2) {
-        throw 'Pet breed  isn`t corect!'
-    }
+        throw 'Pet breed  isn`t corect!';
+    };
     if (petAge < 0 || petAge === '') {
-        throw 'Pet age  isn`t corect!'
-    }
+        throw 'Pet age  isn`t corect!';
+    };
 
     let pattern = /(^| )(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,8}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g
 
     if (!pattern.test(petPhoto)) {
-        throw 'Pet image url is not corect!'
-    }
+        throw 'Pet image url is not corect!';
+    };
 
     if (petInfo.length > 50) {
-        throw 'Your description is to long, should be below 50 characters!'
+        throw 'Your description is to long, should be below 50 characters!';
 
-    }
-
-
-    let chekingPet = await Pet.findById({ _id: petID.id })
-
-    // проверка за съществува не и после записване в базата данни
-    console.log(chekingPet)
+    };
 
 
-    if (chekingPet) {
-        throw 'This pet name exist!'
-    }
+    let chekingPet = await Pet.find({ petName: petName });
+
+    if (chekingPet.length == 1) {
+        throw 'This pet name exist!';
+    };
 
 
 
-    console.log('asd')
-    return 'inside mDf'
-}
+    let updatePet = await Pet.findOne({ _id: petID.id }, petName)
+
+    let newPetInfo = {
+        petName,
+        petWeight,
+        petBreed,
+        petAge,
+        petPhoto,
+        petInfo,
+
+    };
+
+    await Pet.updateOne({ _id: petID.id }, newPetInfo);
+
+    updatePet.save();
+    let result = await Pet.findById({ _id: petID.id });
+
+    console.log(result);
+    return result;
+};
 
 
 

@@ -1,29 +1,29 @@
 
 
-import '../PetsCatalog/petsCatalog.css'
-import { useNavigate } from 'react-router-dom'
-import PetsCard from './PetsCard/PetsCard'
-import { useEffect, useState } from 'react'
-import { getUserPets } from '../profile.service'
+import '../PetsCatalog/petsCatalog.css';
+import { useNavigate } from 'react-router-dom';
+import PetsCard from './PetsCard/PetsCard';
+import { useEffect, useState } from 'react';
+import { getUserPets } from '../profile.service';
 import ReactPaginate from 'react-paginate';
-import isAuthHOC from '../../../services/HOC'
+import isAuthHOC from '../../../services/HOC';
 
 
 
 const PetsCatalog = () => {
-    let navigate = useNavigate()
+    let navigate = useNavigate();
     const CreateNewPet = () => {
-        navigate('/create-new-pet')
-    }
+        navigate('/create-new-pet');
+    };
 
-    let [errorArray, setError] = useState()
-    let [userPets, setUserPets] = useState()
+    let [errorArray, setError] = useState();
+    let [userPets, setUserPets] = useState();
 
 
-    let [pageNumber, setPageNumber] = useState(0)
+    let [pageNumber, setPageNumber] = useState(0);
 
-    const petsPerPage = 4
-    const pageVisited = pageNumber * petsPerPage
+    const petsPerPage = 4;
+    const pageVisited = pageNumber * petsPerPage;
 
     try {
 
@@ -31,25 +31,25 @@ const PetsCatalog = () => {
 
             getUserPets()
                 .then((rs) => {
-                    setUserPets(rs)
+                    setUserPets(rs);
                 })
 
         }, [])
 
     } catch (err) {
-        console.log(err)
+        console.log(err);
     }
 
     // .slice(pageVisited, pageVisited + petsPerPage)
     if (userPets === undefined) {
         return (<div className='loader-wraper'>
             <div className='loader'></div>
-        </div>)
-    }
-    const pageCount = Math.ceil(userPets.length / petsPerPage)
+        </div>);
+    };
+    const pageCount = Math.ceil(userPets.length / petsPerPage);
     const changePage = ({ selected }) => {
-        setPageNumber(selected)
-    }
+        setPageNumber(selected);
+    };
     return (
         <div className="catalog-root">
             <h3 className="pets-heading">Catalog</h3>
@@ -80,8 +80,8 @@ const PetsCatalog = () => {
             </div>
 
         </div>
-    )
+    );
 
-}
+};
 
-export default isAuthHOC(PetsCatalog)
+export default isAuthHOC(PetsCatalog);

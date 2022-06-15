@@ -1,7 +1,7 @@
 
 
 const getUserInfo = async () => {
-    let userID = window.localStorage.getItem('User ID')
+    let userID = window.localStorage.getItem('User ID');
 
 
 
@@ -14,9 +14,9 @@ const getUserInfo = async () => {
 
     return fetch('http://localhost:5000/user-profile', requestOptions)
         .then(response => response.json())
-        .then(data => { return data })
+        .then(data => { return data });
 
-}
+};
 
 const createPet = async (data) => {
 
@@ -28,19 +28,19 @@ const createPet = async (data) => {
     };
 
 
+   
 
     return fetch('http://localhost:5000/create-new-pet', requestOptions)
         .then(res => res.json())
         .then(rs => {
             return rs
         })
-        .catch(err => { console.log('error ', err); return err })
+        .catch(err => { console.log('error ', err); return err });
 
 
-}
+};
 
 const editPetSubmit = async (data, petID) => {
-
 
     const requestOptions = {
         method: 'POST',
@@ -52,18 +52,19 @@ const editPetSubmit = async (data, petID) => {
     return fetch(`http://localhost:5000/edit-pet/${petID.id}`, requestOptions)
         .then(res => res.json())
         .then(rs => {
+            console.log(rs)
             return rs
         })
-        .catch(err => { console.log('error ', err); return err })
+        .catch(err => { console.log('error ', err); return err });
 
 
-}
+};
 
 
 
 const getUserPets = async () => {
 
-    let userId = window.localStorage.getItem('User ID')
+    let userId = window.localStorage.getItem('User ID');
 
 
     const requestOptions = {
@@ -77,12 +78,12 @@ const getUserPets = async () => {
         .then(response => {
             return response
         })
-        .catch(err => { console.log('error ', err); return err })
+        .catch(err => { console.log('error ', err); return err });
 
 
 
 
-}
+};
 
 const deleltePetFunc = async (petCardId) => {
 
@@ -91,7 +92,7 @@ const deleltePetFunc = async (petCardId) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ petID: petCardId })
-    }
+    };
 
 
     fetch(`http://localhost:5000/pets-delete`, requestOptions)
@@ -99,19 +100,19 @@ const deleltePetFunc = async (petCardId) => {
         .then(response => {
             return response
         })
-        .catch(err => { console.log('error', err); return err })
+        .catch(err => { console.log('error', err); return err });
 
 
 
 
-}
+};
 
 const isAuthorizated = async () => {
     let userID = window.localStorage.getItem('User ID');
 
     if (userID == null) {
-        return
-    }
+        return;
+    };
 
     const requestOptions = {
         method: 'POST',
@@ -123,11 +124,11 @@ const isAuthorizated = async () => {
     return fetch('http://localhost:5000/isAuth', requestOptions)
         .then(response => response.json())
         .then(data => {
-            return data
+            return data;
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
 
-}
+};
 
 // const requestOptions = {
 //     method: 'GET',

@@ -3,15 +3,15 @@
 const loginStorageCheker = () => {
 
     if (window.localStorage.getItem('User Token')) {
-        return true
+        return true;
     } else {
-        return false
+        return false;
     }
 
-}
+};
 
 
 
 module.exports = {
-    loginStorageCheker
-}
+    loginStorageCheker,
+};

@@ -1,27 +1,24 @@
-import '../PetsCard/petsCard.css'
-import { deleltePetFunc } from '../../profile.service'
-import { ThemeContext } from '../../../../App';
-import { useContext } from 'react';
+import '../PetsCard/petsCard.css';
+import { deleltePetFunc } from '../../profile.service';
 
-import { Link,  } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 
 
 const PetsCard = (data) => {
 
-    let theme = useContext(ThemeContext)
-    console.log(theme)
+
 
 
     const deletePet = (e) => {
         deleltePetFunc(e.target.id);
         window.location.reload();
-    }
+    };
 
 
 
-    if (data.userPetData == undefined) {
-        console.log('Loading spinner')
-        return (< div > <p>loading spinner</p> </div >)
+    if (data.userPetData === undefined) {
+        console.log('Loading spinner');
+        return (<div> <p>loading spinner</p> </div >);
     } else {
         return data.userPetData
             .map((x, i) => {
@@ -51,7 +48,7 @@ const PetsCard = (data) => {
                         </div>
                     </div>
 
-                )
+                );
 
             });
 
@@ -59,6 +56,6 @@ const PetsCard = (data) => {
 
 
 
-}
+};
 
-export default PetsCard
+export default PetsCard;
