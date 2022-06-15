@@ -1,3 +1,68 @@
+.pets-heading {
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+
+
+.pets-catalog-wraper {
+    margin-left: 22px;
+    margin-right: auto;
+    height: 510px;
+    border: solid 2px #C6E5F1;
+    border-radius: 20px;
+    background: rgba(150, 197, 217, 0.36);
+}
+
+.pets-catalog-rail {
+    display: inline-flex;
+    margin-top: 25px;
+
+}
+
+
+
+
+
+
+.paginator {
+    margin-top: 20px;
+    margin-left: 10em;
+}
+
+.paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: solid 2px #C6E5F1;
+    color: grey;
+    cursor: pointer;
+}
+
+.paginationBttns a:hover {
+    color: white;
+    background-color: #2b2eff;
+}
+
+.paginationActive a {
+    color: white;
+    background-color: #C6E5F1;
+}
+
+.paginationDisabled a {
+    color: white;
+    background-color: grey
+}
+
 .loader {
 
 
@@ -11,6 +76,20 @@
     animation: spin 2s linear infinite;
 }
 
-.loader-wraper{
-    height: 560px;
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
+
+.no-pet-message {
+    margin-top: 12em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+

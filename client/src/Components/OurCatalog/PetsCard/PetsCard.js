@@ -1,5 +1,5 @@
 import '../PetsCard/petsCard.css';
-import { deleltePetFunc } from '../../profile.service';
+import { deleltePetFunc } from '../../ProfileComponents/profile.service';
 
 import { Link, } from 'react-router-dom';
 

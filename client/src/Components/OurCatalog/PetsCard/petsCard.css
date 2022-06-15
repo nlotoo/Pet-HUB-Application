@@ -1,0 +1,133 @@
+/* h2 {
+    
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+} */
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color: black
+}
+
+.sk-chase-dot {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: sk-chase-dot 2.0s infinite ease-in-out both;
+}
+
+.pet-label-class {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+
+}
+
+.info {
+  margin: 0;
+}
+
+textarea {
+    width: 180px;
+    height:80px;
+    resize: none;
+    border-radius: 10px;
+
+}
+
+.pet-info-wraper {
+    text-align: center;
+}
+
+.pet-card-link {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(198, 198, 198, 0.445);
+    border: solid 2px #C6E5F1;
+
+}
+
+.pet-card-link:active {
+    box-shadow: none;
+
+}
+.pet-card-link:hover {
+    box-shadow: 2px 3px 5px black;
+
+}
+
+
+#petHeadig-class {
+    text-align: center;
+}
+
+#pet-card {
+    border-radius: 20px;
+    border: solid 2px #C6E5F1;
+    background-color: aliceblue;
+    height: auto;
+    width: 200px;
+    /* height: 430px; */
+    margin-left: 25px;
+    box-shadow: 1px 1px 2px black, 0 0 25px #171425, 0 0 5px #686d67;
+}
+
+#card-img {
+    margin-left: 20px;
+    width: 150px;
+    height: 80px;
+    clip-path: circle();
+}
+
+
+
+
+#pet-info {
+    margin-bottom: 5px;
+    border-radius: 20px;
+    text-align: center;
+    border: solid 2px #C6E5F1;
+
+}
+
+#pet-card-links {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+
+.loader-wraper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+
+
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

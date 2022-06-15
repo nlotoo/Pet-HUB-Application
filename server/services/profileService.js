@@ -178,6 +178,19 @@ async function EditPet(data, petID) {
 };
 
 
+async function getAllPet() {
+
+
+
+    let user = await Pet.find({})
+
+
+    return user
+}
+
+
+
+
 
 
 
@@ -189,4 +202,5 @@ module.exports = {
     deleltePetFuncServerSide,
     isAuth,
     EditPet,
-}
+    getAllPet,
+};

@@ -54,8 +54,6 @@ router.post('/edit-pet/:id', async (req, res) => {
 
 })
 
-
-
 router.post('/create-new-pet', async (req, res) => {
 
     try {
@@ -106,6 +104,21 @@ router.post('/isAuth', async (req, res) => {
     } catch (err) {
         res.status(401).json({ message: err })
     }
+})
+
+router.post('/our-catalog', async (req, res) => {
+    try {
+
+        let data = await profileService.getAllPet()
+        res.status(200).json(data)
+
+    } catch (err) {
+        console.log(err)
+        res.status(401).json({ message: err })
+    }
+
+
+
 })
 
 
