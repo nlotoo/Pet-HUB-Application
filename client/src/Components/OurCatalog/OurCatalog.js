@@ -2,13 +2,15 @@
 
 import './our-catalog.css';
 import PetsCard from './PetsCard/PetsCard';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { getAllPets } from '../ProfileComponents/profile.service';
 import ReactPaginate from 'react-paginate';
-
+import { UserContext } from '../../App';
 
 
 const OutCatalog = () => {
+    const theme = useContext(UserContext)
+    console.log(theme)
 
     let [userPets, setUserPets] = useState();
     let [pageNumber, setPageNumber] = useState(0);
@@ -21,7 +23,6 @@ const OutCatalog = () => {
 
             getAllPets()
                 .then((rs) => {
-                    console.log(rs)
                     setUserPets(rs);
                 })
 

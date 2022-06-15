@@ -1,8 +1,8 @@
-import './createPetPage.css'
-import { chekingWhenCreatingOrEditingElement } from '../../../services/chekingWhenCreatingElement'
-import { useState, } from 'react'
-import { createPet } from '../profile.service.js'
-import ErrorBar from '../ErrorBar/ErrorBar'
+import './createPetPage.css';
+import { chekingWhenCreatingOrEditingElement } from '../../../services/chekingWhenCreatingElement';
+import { useState, } from 'react';
+import { createPet } from '../profile.service.js';
+import ErrorBar from '../ErrorBar/ErrorBar';
 
 import { useNavigate } from "react-router-dom";
 import isAuthHOC from '../../../services/HOC'

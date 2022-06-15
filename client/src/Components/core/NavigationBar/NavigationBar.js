@@ -1,16 +1,11 @@
 
-import { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, } from 'react-router-dom'
-import { ThemeContext } from '../../../App';
 import { loginStorageCheker } from '../../../services/loginStorage';
 import { getUserInfo } from '../../ProfileComponents/profile.service'
 
 import './NavigationBar.css'
-
-
-
 const NavigationBar = () => {
-    let theme = useContext(ThemeContext)
 
     let isLoged = loginStorageCheker()
 
@@ -34,7 +29,6 @@ const NavigationBar = () => {
     useEffect(() => {
         getUserInfo()
             .then(userInfo => {
-                console.log(userInfo.username)
                 return setUserName(userInfo.username)
             })
 

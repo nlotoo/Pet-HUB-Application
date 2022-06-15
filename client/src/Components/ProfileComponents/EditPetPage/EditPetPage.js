@@ -4,15 +4,14 @@ import { useEffect, useState, } from 'react';
 import ErrorBar from '../ErrorBar/ErrorBar';
 import { editPetSubmit } from '../profile.service';
 import { useNavigate, useParams } from "react-router-dom";
-
 import isAuthHOC from '../../../services/HOC';
 const EditPetPage = () => {
     const id = useParams()
 
     let [errorArray, setError] = useState();
-    
+
     let navigate = useNavigate();
-    
+
     const EditPet = (e) => {
 
 
@@ -32,6 +31,7 @@ const EditPetPage = () => {
         try {
             let result = chekingWhenCreatingOrEditingElement(petObj);
             setError(undefined);
+
 
             // let petInfo = getPetInfo(id)
             // return petInfo.then((pet) => {

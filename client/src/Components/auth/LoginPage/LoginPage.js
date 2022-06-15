@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './loginPage.css';
 import { loginUserValidation } from '../../../services/loginUserValidation';
 import ErrorBar from '../ErrorBar/ErrorBar';
 import authService from '../authService';
 import { useNavigate } from 'react-router-dom';
+
+
 
 const LoginForm = () => {
 
@@ -29,26 +31,35 @@ const LoginForm = () => {
             setToken(undefined)
             window.localStorage.clear();
           } else {
+            console.log(responce)
+
             setToken(responce)
             setError({})
             window.localStorage.setItem('User Token', responce.token)
             window.localStorage.setItem('User email', responce.userEmail)
             window.localStorage.setItem('User ID', responce.userID)
+
             navigate('/home-page')
             window.location.reload();
           }
           return responce;
         })
         .catch((err) => { console.log(err) });
+
     } catch (err) {
       setError(err);
     }
   }
 
+
+
   const handleInputChange = (e) => setUser({
     ...userInfo,
     [e.currentTarget.name]: e.currentTarget.value
   })
+
+
+
 
   return (
     <div className={`login-card-desktop`}>

@@ -5,8 +5,8 @@ import { Link, } from 'react-router-dom';
 
 
 const PetsCard = (data) => {
-
-
+    
+    
 
 
     const deletePet = (e) => {

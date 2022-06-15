@@ -19,45 +19,42 @@ const PetsCatalog = lazy(() => import('./Components/ProfileComponents/PetsCatalo
 const ProfilePage = lazy(() => import('./Components/ProfileComponents/ProfilePage/ProfilePage'));
 const EditPetPage = lazy(() => import('./Components/ProfileComponents/EditPetPage/EditPetPage'));
 
-
-export const ThemeContext = React.createContext();
+// chek our-catalog
+export const UserContext = React.createContext();
 
 const App = () => {
 
-  const Theme = {
-    background: 'brown'
-  }
 
 
 
   return (
     <div className='root'>
       <header>
+        <NavigationBar />
 
-        <ThemeContext.Provider value={Theme}>
-          <NavigationBar />
-        </ThemeContext.Provider>
 
       </header>
       <div className='content'>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
+        <UserContext.Provider value={'red'}>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
 
-            <Route path='/about-us' element={<AboutUsPage />} />
-            <Route path='/' element={<HomePage />} />
-            <Route path='/our-catalog' element={<OurCatalog />} />
-            <Route path='/home-page-banner' element={<HomePage />} />
-            <Route path='/home-page' element={<HomePage />} />
-            <Route path='/login' element={<LoginPage />} />
-            <Route path='/logout' element={<Logout />} />
-            <Route path='/sign-up' element={<SignUpPage />} />
-            <Route path='/user-profile' element={<ProfilePage />} />
-            <Route path='/pets-catalog' element={<PetsCatalog />} />
-            <Route path='/create-new-pet' element={<CreatePetPage />} />
-            <Route path='/edit-pet/:id' element={<EditPetPage />} />
+              <Route path='/about-us' element={<AboutUsPage />} />
+              <Route path='/' element={<HomePage />} />
+              <Route path='/our-catalog' element={<OurCatalog />} />
+              <Route path='/home-page-banner' element={<HomePage />} />
+              <Route path='/home-page' element={<HomePage />} />
+              <Route path='/login' element={<LoginPage />} />
+              <Route path='/logout' element={<Logout />} />
+              <Route path='/sign-up' element={<SignUpPage />} />
+              <Route path='/user-profile' element={<ProfilePage />} />
+              <Route path='/pets-catalog' element={<PetsCatalog />} />
+              <Route path='/create-new-pet' element={<CreatePetPage />} />
+              <Route path='/edit-pet/:id' element={<EditPetPage />} />
 
-          </Routes>
-        </Suspense>
+            </Routes>
+          </Suspense>
+        </UserContext.Provider>
         <footer className='footer-content'>
           <Footer />
         </footer>

@@ -8,6 +8,9 @@ import { getUserPets } from '../profile.service';
 import ReactPaginate from 'react-paginate';
 import isAuthHOC from '../../../services/HOC';
 
+import React from 'react';
+import { UserContext } from '../../../App';
+
 
 
 const PetsCatalog = () => {
@@ -15,6 +18,9 @@ const PetsCatalog = () => {
     const CreateNewPet = () => {
         navigate('/create-new-pet');
     };
+
+    const value = React.useContext(UserContext);
+    console.log(value)
 
     let [errorArray, setError] = useState();
     let [userPets, setUserPets] = useState();
