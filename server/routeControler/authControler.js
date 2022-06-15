@@ -44,7 +44,7 @@ router.post('/user-profile', async (req, res) => {
 router.post('/edit-pet/:id', async (req, res) => {
 
     try {
-        let data = await profileService.EditPet(req.body,req.params)
+        let data = await profileService.EditPet(req.body, req.params)
         res.status(200).json(data)
     }
     catch (err) {
@@ -98,7 +98,7 @@ router.post('/pets-delete', async (req, res) => {
 router.post('/isAuth', async (req, res) => {
     try {
 
-        
+
         let data = await profileService.isAuth(req.body);
         res.status(200).json(data)
     } catch (err) {
@@ -109,17 +109,31 @@ router.post('/isAuth', async (req, res) => {
 router.post('/our-catalog', async (req, res) => {
     try {
 
-        let data = await profileService.getAllPet()
+        let data = await profileService.getAllPet();
+        res.status(200).json(data);
+
+    } catch (err) {
+        console.log(err);
+        res.status(401).json({ message: err });
+    };
+
+
+
+});
+router.post('/pet-info', async (req, res) => {
+
+    try {
+
+        let data = await authService.getUserProfile(req.body)
+
         res.status(200).json(data)
 
     } catch (err) {
         console.log(err)
         res.status(401).json({ message: err })
     }
-
-
-
 })
 
 
-module.exports = router
+
+module.exports = router;

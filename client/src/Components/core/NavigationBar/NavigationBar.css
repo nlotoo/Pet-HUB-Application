@@ -5,7 +5,9 @@
 }
 
 
-
+.greeting{
+    margin-top: 5px;
+}
 
 .navigation-bar {
     display: flex;
@@ -23,7 +25,8 @@
 }
 
 
-.navigation-bar a {
+
+.menu-a-tag {
     font-size: 14px;
     letter-spacing: 3px;
     color: #204451;
@@ -34,6 +37,8 @@
     color: white;
     
 }
+
+
 
 
 

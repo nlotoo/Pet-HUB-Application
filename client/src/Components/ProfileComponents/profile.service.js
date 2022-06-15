@@ -62,8 +62,6 @@ const editPetSubmit = async (data, petID) => {
 
 };
 
-
-
 const getUserPets = async () => {
 
     let userId = window.localStorage.getItem('User ID');
@@ -149,6 +147,24 @@ const getAllPets = async () => {
 
 
 };
+
+const getPetInfo = async (petID) => {
+
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(petID)
+    };
+
+    return fetch('http://localhost:5000/pet-info', requestOptions)
+        .then(res => res.json())
+        .then(response => {
+            return response
+        })
+        .catch(err => { console.log('error ', err); return err });
+
+}
 // const requestOptions = {
 //     method: 'GET',
 // };
@@ -175,4 +191,5 @@ module.exports = {
     isAuthorizated,
     editPetSubmit,
     getAllPets,
+    getPetInfo,
 }

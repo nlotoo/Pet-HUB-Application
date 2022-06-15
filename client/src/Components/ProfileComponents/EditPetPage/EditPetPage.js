@@ -10,11 +10,10 @@ const EditPetPage = () => {
     const id = useParams()
 
     let [errorArray, setError] = useState();
+    
     let navigate = useNavigate();
+    
     const EditPet = (e) => {
-
-
-
 
 
         e.preventDefault();
@@ -34,6 +33,16 @@ const EditPetPage = () => {
             let result = chekingWhenCreatingOrEditingElement(petObj);
             setError(undefined);
 
+            // let petInfo = getPetInfo(id)
+            // return petInfo.then((pet) => {
+
+            //     console.log(pet)
+
+            // }
+            // );
+
+
+
             let response = editPetSubmit(result, id);
             return response.then((rs) => {
                 if (rs.message) {
@@ -49,6 +58,8 @@ const EditPetPage = () => {
         }
 
     }
+
+
 
 
 

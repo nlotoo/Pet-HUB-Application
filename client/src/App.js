@@ -11,13 +11,14 @@ import SignUpPage from './Components/auth/SignUpPage/SingUpPage';
 import Logout from './Components/auth/Logout/Logout';
 import Footer from './Components/core/Footer/Footer';
 import OurCatalog from './Components/OurCatalog/OurCatalog';
-import EditPetPage from './Components/ProfileComponents/EditPetPage/EditPetPage';
 
 
 const AboutUsPage = lazy(() => import('./Components/AboutUsPage/AboutUsPage'));
 const CreatePetPage = lazy(() => import('./Components/ProfileComponents/CreatePetPage/CreatePetPage'));
 const PetsCatalog = lazy(() => import('./Components/ProfileComponents/PetsCatalog/PetsCatalog'));
 const ProfilePage = lazy(() => import('./Components/ProfileComponents/ProfilePage/ProfilePage'));
+const EditPetPage = lazy(() => import('./Components/ProfileComponents/EditPetPage/EditPetPage'));
+
 
 export const ThemeContext = React.createContext();
 

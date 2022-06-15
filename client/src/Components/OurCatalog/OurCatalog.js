@@ -11,10 +11,7 @@ import ReactPaginate from 'react-paginate';
 const OutCatalog = () => {
 
     let [userPets, setUserPets] = useState();
-
-
     let [pageNumber, setPageNumber] = useState(0);
-
     const petsPerPage = 4;
     const pageVisited = pageNumber * petsPerPage;
 
