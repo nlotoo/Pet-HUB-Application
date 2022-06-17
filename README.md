@@ -36,5 +36,5 @@
 
 ## Contact
 Created by [@nlotoo](https://www.flynerd.pl/) - feel free to contact me!
-
+email: nlotoo93@gmail.com
 
