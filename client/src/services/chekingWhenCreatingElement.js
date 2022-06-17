@@ -10,7 +10,7 @@ const chekingWhenCreatingOrEditingElement = (data) => {
         petAge: petAge.toLowerCase().trim(),
         petPhoto: petPhoto.trim(),
         petInfo: petInfo.toLowerCase().trim(),
-        petOwner:petOwner
+        petOwner: petOwner,
     };
 
 
@@ -28,7 +28,7 @@ const chekingWhenCreatingOrEditingElement = (data) => {
     if (petBreed.length < 2) {
         errArray.push('Pet breed name is to short!');
     };
-
+    //eslint-disable-next-line
     let pattern = /(^| )(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,8}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g
 
     if (!pattern.test(petPhoto)) {

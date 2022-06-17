@@ -1,5 +1,3 @@
-import React, { useContext, useMemo } from 'react';
-import { UserContext } from '../../services/UserContex'
 import './aboutUs.css';
 
 const AboutUsPage = () => {
@@ -35,6 +33,6 @@ const AboutUsPage = () => {
         </div>
 
     );
-}
+};
 
 export default AboutUsPage;

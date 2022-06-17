@@ -8,11 +8,11 @@ import { useNavigate } from "react-router-dom";
 import isAuthHOC from '../../../services/HOC'
 const CreatePetPage = () => {
 
-    let [errorArray, setError] = useState()
-    let navigate = useNavigate()
+    let [errorArray, setError] = useState();
+    let navigate = useNavigate();
     const CreatePet = (e) => {
-        e.preventDefault()
-        let petOwner = window.localStorage.getItem('User ID')
+        e.preventDefault();
+        let petOwner = window.localStorage.getItem('User ID');
         let petObj = {
             petName: e.target.petName.value,
             petWeight: e.target.petWeight.value,
@@ -21,33 +21,33 @@ const CreatePetPage = () => {
             petPhoto: e.target.petPhoto.value,
             petInfo: e.target.petInfo.value,
             petOwner: petOwner
-        }
+        };
 
 
         try {
 
-            let result = chekingWhenCreatingOrEditingElement(petObj)
-            setError(undefined)
+            let result = chekingWhenCreatingOrEditingElement(petObj);
+            setError(undefined);
 
-            let response = createPet(result)
+            let response = createPet(result);
             response.then((rs) => {
-                console.log(rs)
+  
                 if (rs.errorMessage) {
-                    setError(rs.errorMessage)
-                    return
+                    setError(rs.errorMessage);
+                    return;
                 }
-                navigate('/pets-catalog')
+                navigate('/pets-catalog');
             }
             )
 
         } catch (err) {
-            setError(err)
+            setError(err);
         }
 
     }
 
 
-   console.log(errorArray)
+
 
     return (
         <div className='create-new-pet-root'>
@@ -93,7 +93,7 @@ const CreatePetPage = () => {
                 </form>
             </div >
         </div >
-    )
-}
+    );
+};
 
-export default isAuthHOC(CreatePetPage)
+export default isAuthHOC(CreatePetPage);

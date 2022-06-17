@@ -1,12 +1,12 @@
 import './edit-page.css';
 import { chekingWhenCreatingOrEditingElement } from '../../../services/chekingWhenCreatingElement';
-import { useEffect, useState, } from 'react';
+import {  useState, } from 'react';
 import ErrorBar from '../ErrorBar/ErrorBar';
 import { editPetSubmit } from '../profile.service';
 import { useNavigate, useParams } from "react-router-dom";
 import isAuthHOC from '../../../services/HOC';
 const EditPetPage = () => {
-    const id = useParams()
+    const id = useParams();
 
     let [errorArray, setError] = useState();
 
@@ -31,25 +31,13 @@ const EditPetPage = () => {
         try {
             let result = chekingWhenCreatingOrEditingElement(petObj);
             setError(undefined);
-
-
-            // let petInfo = getPetInfo(id)
-            // return petInfo.then((pet) => {
-
-            //     console.log(pet)
-
-            // }
-            // );
-
-
-
             let response = editPetSubmit(result, id);
             return response.then((rs) => {
                 if (rs.message) {
                     setError(rs.message);
                     return;
                 };
-                navigate('/pets-catalog')
+                navigate('/pets-catalog');
             }
             );
 

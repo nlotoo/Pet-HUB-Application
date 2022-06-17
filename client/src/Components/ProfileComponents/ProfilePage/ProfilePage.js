@@ -3,24 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import isAuthHOC from '../../../services/HOC';
 import { getUserInfo } from '../profile.service';
 import './profile-page.css';
-const ProfilePage = (data) => {
-
-    console.log(data)
-
-
-
-
+const ProfilePage = () => {
 
     let navigate = useNavigate()
     let myPetsButtonHandle = () => {
         navigate('/pets-catalog')
     };
-
-
-
-
-
-
 
     let [userInfo, setInfo] = useState({
 
@@ -34,10 +22,6 @@ const ProfilePage = (data) => {
 
 
     useEffect(() => {
-
-
-
-
         getUserInfo()
             .then(
                 info => {
@@ -47,10 +31,10 @@ const ProfilePage = (data) => {
 
     }, []);
 
-    if (userInfo.pets == undefined) {
+    if (userInfo.pets === undefined) {
         return (<div className='loader-wraper'>
             <div className='loader'></div>
-        </div>)
+        </div>);
     };
 
     let displayedPets;
@@ -68,9 +52,9 @@ const ProfilePage = (data) => {
                 <div className="card card-one">
                     <header>{
                         userInfo.gender === 'male' ? <div className="avatar">
-                            <img className='profile-img-class' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2HoveSx5prCIWhGymQ6z5-G-F3rejFBbVuA&usqp=CAU" alt="user-image-male" />
+                            <img  className='profile-img-class' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2HoveSx5prCIWhGymQ6z5-G-F3rejFBbVuA&usqp=CAU" alt="user-male-pic" />
                         </div> : <div className="avatar">
-                            <img className='profile-img-class' src="https://cdn-icons-png.flaticon.com/512/146/146025.png" alt="user-img-female" />
+                            <img className='profile-img-class' src="https://cdn-icons-png.flaticon.com/512/146/146025.png" alt="user-female-pic" />
                         </div>
                     }
                     </header>
@@ -101,6 +85,6 @@ const ProfilePage = (data) => {
             </div>
         </div>
     );
-}
+};
 
 export default isAuthHOC(ProfilePage);

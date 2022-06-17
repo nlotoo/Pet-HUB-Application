@@ -1,4 +1,3 @@
-import React from 'react';
 import { isAuthorizated } from '../Components/ProfileComponents/profile.service';
 
 

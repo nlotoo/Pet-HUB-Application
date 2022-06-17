@@ -1,9 +1,9 @@
-import '../HomePage/homepage.css'
-import { useState } from 'react'
+import '../HomePage/homepage.css';
+import { useState } from 'react';
 
 const HomePage = () => {
 
-    let [mainImage, setMainImage] = useState("https://wallpaperaccess.com/full/463527.jpg")
+    let [mainImage, setMainImage] = useState("https://wallpaperaccess.com/full/463527.jpg");
 
     
 
@@ -12,8 +12,8 @@ const HomePage = () => {
             .then(res => res.json())
             .then(dogImageResponce => {
                 setMainImage(dogImageResponce.message)
-            })
-    }
+            });
+    };
 
 
 
@@ -24,12 +24,12 @@ const HomePage = () => {
                 <div className="inside-container">
                     <h3>Wellcome our hub ! </h3>
 
-                    <div className="dog-image"> <img src={mainImage}></img></div>
+                    <div className="dog-image"> <img alt='main-img' src={mainImage}></img></div>
                     <button onClick={advetiseSlider}>Click me!</button>
                 </div>
             </div>
         </div>
-    )
-}
-export default HomePage
+    );
+};
+export default HomePage;
 

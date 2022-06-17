@@ -1,6 +1,6 @@
 const createUser = async (data) => {
 
-    let { username, userEmail, password, gender, location, userPhoneNumber } = data
+    let { username, userEmail, password, gender, location, userPhoneNumber } = data;
 
     let obj = {
         username: username,
@@ -10,7 +10,7 @@ const createUser = async (data) => {
         gender: gender,
         userPhoneNumber: userPhoneNumber
 
-    }
+    };
 
     const requestOptions = {
         method: 'POST',
@@ -19,28 +19,26 @@ const createUser = async (data) => {
     };
     const url = 'http://localhost:5000/sign-up'
 
-    // let responce = await fetch(url, requestOptions)
-    // let result = await responce.json()
-    // return result
+
 
 
     return fetch(url, requestOptions)
         .then(res => res.json())
         .then(userObj => {
-            return userObj
+            return userObj;
         })
         .catch(err => { console.log('error ', err); return err })
 
 
 
-}
+};
 
 const loginUser = async (data) => {
 
     let userObj = {
         email: data.email,
         password: data.password,
-    }
+    };
 
 
 
@@ -49,21 +47,21 @@ const loginUser = async (data) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userObj)
     };
-    const url = 'http://localhost:5000/sing-in'
+    const url = 'http://localhost:5000/sing-in';
 
 
     return fetch(url, requestOptions)
         .then(res => res.json())
         .then(userObj => {
 
-            return userObj
+            return userObj;
         })
         .catch(err => { console.log('error ', err); return err })
 
 
-}
+};
 
 module.exports = {
     createUser,
     loginUser,
-}
+};

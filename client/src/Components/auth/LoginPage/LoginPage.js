@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import './loginPage.css';
 import { loginUserValidation } from '../../../services/loginUserValidation';
 import ErrorBar from '../ErrorBar/ErrorBar';
@@ -10,14 +10,14 @@ const LoginForm = () => {
 
   let navigate = useNavigate();
 
-  let { value, setValue } = useContext(UserContext);
+  let { setValue } = useContext(UserContext);
 
 
   let [errorArr, setError] = useState();
 
   let [userInfo, setUser] = useState({ email: '', password: '' });
 
-  let [token, setToken] = useState({});
+  let [, setToken] = useState({});
 
   function submitHandler(e) {
     e.preventDefault();
@@ -26,13 +26,11 @@ const LoginForm = () => {
 
       authService.loginUser(userInfo)
         .then((responce) => {
-          console.log(responce)
           if (responce.message) {
             setError(responce)
             setToken(undefined)
             window.localStorage.clear();
           } else {
-            console.log(responce)
 
             setToken(responce)
             setError({})
@@ -49,41 +47,41 @@ const LoginForm = () => {
 
     } catch (err) {
       setError(err);
-    }
+    };
 
 
-  }
+  };
 
 
 
   const handleInputChange = (e) => setUser({
     ...userInfo,
     [e.currentTarget.name]: e.currentTarget.value
-  })
+  });
 
 
 
 
-  return (
-    <div className={`login-card-desktop`}>
-      <h2 className='login-heading-class'>Login user</h2>
-      <form className={`form-class-login-desktop`} onSubmit={submitHandler}>
-        <label>Email  </label>
-        <div>
+return (
+  <div className={`login-card-desktop`}>
+    <h2 className='login-heading-class'>Login user</h2>
+    <form className={`form-class-login-desktop`} onSubmit={submitHandler}>
+      <label>Email  </label>
+      <div>
 
-          <input className={`input-login-class-desktop`} id="email" name="email" onChange={handleInputChange} ></input>
-        </div>
-        <label>Password</label>
-        <div>
+        <input className={`input-login-class-desktop`} id="email" name="email" onChange={handleInputChange} ></input>
+      </div>
+      <label>Password</label>
+      <div>
 
-          <input className={`input-login-class-desktop`} id="password" name="password" onChange={handleInputChange}></input>
-        </div>
-        <button className='login-button-class'>Login</button>
-        <div>  {errorArr ? <ErrorBar data={errorArr} /> : ''}</div>
-      </form>
+        <input className={`input-login-class-desktop`} id="password" name="password" onChange={handleInputChange}></input>
+      </div>
+      <button className='login-button-class'>Login</button>
+      <div>  {errorArr ? <ErrorBar data={errorArr} /> : ''}</div>
+    </form>
 
-    </div>
-  );
+  </div>
+);
 };
 
 export default LoginForm;

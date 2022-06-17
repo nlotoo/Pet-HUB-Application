@@ -1,9 +1,9 @@
-import React, { lazy, Suspense, useState, useMemo } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import '../src/App.css';
 
-import LoadingSpinner from './Components/LoadingSpinner/LoadingSpinner';
+import LoadingSpinner from './Components/AdditionalComponents/LoadingSpinner/LoadingSpinner';
 import NavigationBar from './Components/core/NavigationBar/NavigationBar';
 import HomePage from './Components/core/HomePage/HomePage';
 import LoginPage from './Components/auth/LoginPage/LoginPage';
@@ -16,27 +16,16 @@ import globalState from './services/globalStateHOC';
 import { UserContext } from './services/UserContex';
 
 
-const AboutUsPage = lazy(() => import('./Components/AboutUsPage/AboutUsPage'));
+const AboutUsPage = lazy(() => import('./Components/AdditionalComponents/AboutUsPage/AboutUsPage'));
 const CreatePetPage = lazy(() => import('./Components/ProfileComponents/CreatePetPage/CreatePetPage'));
 const PetsCatalog = lazy(() => import('./Components/ProfileComponents/PetsCatalog/PetsCatalog'));
 const ProfilePage = lazy(() => import('./Components/ProfileComponents/ProfilePage/ProfilePage'));
 const EditPetPage = lazy(() => import('./Components/ProfileComponents/EditPetPage/EditPetPage'));
 
-// chek our-catalog
-// export const UserContext = React.createContext();
-
-
-
 const App = () => {
 
-
-
-  let [value, setValue] = useState(null)
-  // const providerValue = useMemo(() => ({ value, setValue }), [value, setValue])
-
-
-
-
+  let [value, setValue] = useState(null);
+ 
   return (
     <UserContext.Provider value={{ value, setValue }}>
       <div className='root'>

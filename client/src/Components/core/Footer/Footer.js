@@ -1,6 +1,4 @@
-
-
-import './footer.css'
+import './footer.css';
 
 const Footer = () => {
 
@@ -8,7 +6,7 @@ const Footer = () => {
         <div className="footer-content">
             <span>Copyright © 2022 Yordan Nikolov</span>
         </div>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

@@ -9,7 +9,7 @@ import ReactPaginate from 'react-paginate';
 import isAuthHOC from '../../../services/HOC';
 
 import React from 'react';
-import { UserContext } from '../../../App';
+
 
 
 
@@ -19,10 +19,7 @@ const PetsCatalog = () => {
         navigate('/create-new-pet');
     };
 
-    // const value = React.useContext(UserContext);
-    // console.log(value)
 
-    let [errorArray, setError] = useState();
     let [userPets, setUserPets] = useState();
 
 
@@ -46,7 +43,7 @@ const PetsCatalog = () => {
         console.log(err);
     }
 
-    // .slice(pageVisited, pageVisited + petsPerPage)
+
     if (userPets === undefined) {
         return (<div className='loader-wraper'>
             <div className='loader'></div>

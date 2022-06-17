@@ -5,9 +5,6 @@ import { Link, } from 'react-router-dom';
 
 
 const PetsCard = (data) => {
-    
-    
-
 
     const deletePet = (e) => {
         deleltePetFunc(e.target.id);
@@ -23,8 +20,7 @@ const PetsCard = (data) => {
         return data.userPetData
             .map((x, i) => {
 
-                
-                
+
                 return (
 
                     <div id="pet-card" className='pets-card' key={x.petName + i}>
@@ -46,7 +42,6 @@ const PetsCard = (data) => {
                             </textarea>
                             <div id="pet-card-links">
                                 <Link to={`/edit-pet/${x._id}`} className="pet-card-link" id={x._id}>Edit</Link>
-                                {/* <Link to={`/pets-delete`} className="pet-card-link" id={x._id}>Delete</Link> */}
                                 <button onClick={deletePet} name='deleteBTN' id={x._id} className="pet-card-link" >Delete </button>
                             </div>
                         </div>
@@ -57,8 +52,6 @@ const PetsCard = (data) => {
             });
 
     }
-
-
 
 };
 

@@ -1,5 +1,5 @@
 
-import './errorStyle.css'
+import './errorStyle.css';
 const ErrorBar = (data) => {
 
     if (data.errorMessages) {
@@ -8,9 +8,9 @@ const ErrorBar = (data) => {
             return <div className="alert alert-danger div-errors-class" role="alert"> {errors}</div>
         } else {
             return <div className="alert alert-danger div-errors-class" role="alert"> {data.errorMessages}</div>
-        }
-    }
+        };
+    };
 
-}
+};
 
-export default ErrorBar
+export default ErrorBar;

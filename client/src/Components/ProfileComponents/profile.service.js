@@ -5,8 +5,6 @@
 const getUserInfo = async () => {
     let userID = window.localStorage.getItem('User ID');
 
-
-
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -35,7 +33,7 @@ const createPet = async (data) => {
     return fetch('http://localhost:5000/create-new-pet', requestOptions)
         .then(res => res.json())
         .then(rs => {
-            return rs
+            return rs;
         })
         .catch(err => { console.log('error ', err); return err });
 
@@ -54,8 +52,8 @@ const editPetSubmit = async (data, petID) => {
     return fetch(`http://localhost:5000/edit-pet/${petID.id}`, requestOptions)
         .then(res => res.json())
         .then(rs => {
-            console.log(rs)
-            return rs
+
+            return rs;
         })
         .catch(err => { console.log('error ', err); return err });
 
@@ -76,7 +74,7 @@ const getUserPets = async () => {
     return fetch('http://localhost:5000/pets-catalog', requestOptions)
         .then(res => res.json())
         .then(response => {
-            return response
+            return response;
         })
         .catch(err => { console.log('error ', err); return err });
 
@@ -98,7 +96,7 @@ const deleltePetFunc = async (petCardId) => {
     fetch(`http://localhost:5000/pets-delete`, requestOptions)
         .then(res => res.json())
         .then(response => {
-            return response
+            return response;
         })
         .catch(err => { console.log('error', err); return err });
 
@@ -141,7 +139,7 @@ const getAllPets = async () => {
     return fetch('http://localhost:5000/our-catalog', requestOptions)
         .then(res => res.json())
         .then(response => {
-            return response
+            return response;
         })
         .catch(err => { console.log('error ', err); return err });
 
@@ -160,26 +158,12 @@ const getPetInfo = async (petID) => {
     return fetch('http://localhost:5000/pet-info', requestOptions)
         .then(res => res.json())
         .then(response => {
-            return response
+            return response;
         })
         .catch(err => { console.log('error ', err); return err });
 
 }
-// const requestOptions = {
-//     method: 'GET',
-// };
-// const url = 'http://localhost:5000/user-profile'
 
-
-// return fetch(url, requestOptions)
-//     .then(res => res.json())
-//     .then(userObj => {
-
-//         console.log(userObj)
-
-//         return userObj
-//     })
-//     .catch(err => { console.log('error ', err); return err })}
 
 
 
@@ -192,4 +176,4 @@ module.exports = {
     editPetSubmit,
     getAllPets,
     getPetInfo,
-}
+};

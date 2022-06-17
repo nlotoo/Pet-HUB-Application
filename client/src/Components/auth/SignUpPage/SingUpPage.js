@@ -1,16 +1,16 @@
-import './signUpPage.css'
-import authService from '../authService'
+import './signUpPage.css';
+import authService from '../authService';
 import { userValidation } from '../../../services/userCheking';
 import { useState, } from 'react';
 
-import ErrorBar from '../ErrorBar/ErrorBar'
+import ErrorBar from '../ErrorBar/ErrorBar';
 
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const SingUpPage = () => {
 
-    let navigate = useNavigate()
-    let [errorArr, setError] = useState()
+    let navigate = useNavigate();
+    let [errorArr, setError] = useState();
 
     let [userInfo, setUser] = useState(
         {
@@ -22,10 +22,10 @@ const SingUpPage = () => {
             'location': '',
             'userPhoneNumber': ''
         }
-    )
+    );
 
     const SingUpFormHandler = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         try {
 
@@ -45,12 +45,12 @@ const SingUpPage = () => {
             console.log('error ' + error)
             setError(error)
         }
-    }
+    };
 
     const handleInputChange = (e) => setUser({
         ...userInfo,
         [e.currentTarget.name]: e.currentTarget.value
-    })
+    });
 
 
     return (<div>
@@ -104,7 +104,7 @@ const SingUpPage = () => {
             </div>
         </div >
     </div>
-    )
-}
+    );
+};
 
-export default SingUpPage
+export default SingUpPage;
