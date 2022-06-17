@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState, useMemo } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import '../src/App.css';
@@ -11,6 +11,9 @@ import SignUpPage from './Components/auth/SignUpPage/SingUpPage';
 import Logout from './Components/auth/Logout/Logout';
 import Footer from './Components/core/Footer/Footer';
 import OurCatalog from './Components/OurCatalog/OurCatalog';
+import globalState from './services/globalStateHOC';
+
+import { UserContext } from './services/UserContex';
 
 
 const AboutUsPage = lazy(() => import('./Components/AboutUsPage/AboutUsPage'));
@@ -20,23 +23,31 @@ const ProfilePage = lazy(() => import('./Components/ProfileComponents/ProfilePag
 const EditPetPage = lazy(() => import('./Components/ProfileComponents/EditPetPage/EditPetPage'));
 
 // chek our-catalog
-export const UserContext = React.createContext();
+// export const UserContext = React.createContext();
+
+
 
 const App = () => {
 
 
 
+  let [value, setValue] = useState(null)
+  // const providerValue = useMemo(() => ({ value, setValue }), [value, setValue])
+
+
+
 
   return (
-    <div className='root'>
-      <header>
-        <NavigationBar />
+    <UserContext.Provider value={{ value, setValue }}>
+      <div className='root'>
+        <header>
+          <NavigationBar />
 
 
-      </header>
-      <div className='content'>
-        <UserContext.Provider value={'red'}>
+        </header>
+        <div className='content'>
           <Suspense fallback={<LoadingSpinner />}>
+
             <Routes>
 
               <Route path='/about-us' element={<AboutUsPage />} />
@@ -54,15 +65,15 @@ const App = () => {
 
             </Routes>
           </Suspense>
-        </UserContext.Provider>
-        <footer className='footer-content'>
-          <Footer />
-        </footer>
-      </div>
+          <footer className='footer-content'>
+            <Footer />
+          </footer>
+        </div>
 
 
-    </div >
+      </div >
+    </UserContext.Provider>
   );
 };
 
-export default App;
+export default globalState(App);

@@ -5,7 +5,7 @@
 }
 
 
-.greeting{
+.greeting {
     margin-top: 5px;
 }
 
@@ -33,9 +33,17 @@
     text-decoration: none;
 }
 
+p {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #204451;
+    font-family: 'Poppins', sans-serif;
+
+}
+
 .navigation-bar a:hover {
     color: white;
-    
+
 }
 
 
@@ -77,8 +85,8 @@
     body {
         overflow-x: hidden;
     }
-    
-  
+
+
     .nav-links-desktop {
         position: absolute;
         right: 0px;
@@ -97,8 +105,8 @@
 
     .nav-links-desktop li {
         opacity: 0;
-        
-        
+
+
     }
 
     .burger-desktop {
@@ -116,7 +124,7 @@
         background-color: white;
         height: 3px;
         margin: 5px;
-        transition: all  0.5s ease-in;
+        transition: all 0.5s ease-in;
 
     }
 

@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import isAuthHOC from '../../../services/HOC';
 import { getUserInfo } from '../profile.service';
 import './profile-page.css';
-const ProfilePage = () => {
+const ProfilePage = (data) => {
+
+    console.log(data)
 
 
 

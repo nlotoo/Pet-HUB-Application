@@ -1,16 +1,16 @@
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, } from 'react-router-dom'
 import { loginStorageCheker } from '../../../services/loginStorage';
-import { getUserInfo } from '../../ProfileComponents/profile.service'
+
+import { UserContext } from '../../../services/UserContex';
 
 import './NavigationBar.css'
 const NavigationBar = () => {
 
-    let isLoged = loginStorageCheker()
+    let isLoged = loginStorageCheker();
 
-    let [userName, setUserName] = useState()
-
+    const { value, setValue } = useContext(UserContext);
 
     const navSlide = (e) => {
         const burger = document.getElementsByClassName('burger-desktop')[0]
@@ -25,15 +25,6 @@ const NavigationBar = () => {
         })
 
     }
-
-    useEffect(() => {
-        getUserInfo()
-            .then(userInfo => {
-                return setUserName(userInfo.username)
-            })
-
-    }, [])
-
 
 
 
@@ -62,8 +53,8 @@ const NavigationBar = () => {
                 <div className='line3'></div>
             </div >
             <div>
-                {isLoged && <Link className='menu-a-tag' to="/user-profile"> Welcome to hub {userName ? userName[0].toUpperCase() + userName.slice(1) : ''}!</Link>}
-
+                {isLoged && <Link className='menu-a-tag' to="/user-profile"> Welcome to our hub !</Link>}
+                <p>{value}</p>
             </div>
 
         </nav >

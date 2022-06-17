@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './loginPage.css';
 import { loginUserValidation } from '../../../services/loginUserValidation';
 import ErrorBar from '../ErrorBar/ErrorBar';
 import authService from '../authService';
 import { useNavigate } from 'react-router-dom';
 
-
-
+import { UserContext } from '../../../services/UserContex';
 const LoginForm = () => {
 
   let navigate = useNavigate();
+
+  let { value, setValue } = useContext(UserContext);
 
 
   let [errorArr, setError] = useState();
@@ -38,17 +39,19 @@ const LoginForm = () => {
             window.localStorage.setItem('User Token', responce.token)
             window.localStorage.setItem('User email', responce.userEmail)
             window.localStorage.setItem('User ID', responce.userID)
-
+            setValue(responce.userEmail)
             navigate('/home-page')
-            window.location.reload();
           }
           return responce;
         })
         .catch((err) => { console.log(err) });
 
+
     } catch (err) {
       setError(err);
     }
+
+
   }
 
 
@@ -65,7 +68,7 @@ const LoginForm = () => {
     <div className={`login-card-desktop`}>
       <h2 className='login-heading-class'>Login user</h2>
       <form className={`form-class-login-desktop`} onSubmit={submitHandler}>
-        <label>Email</label>
+        <label>Email  </label>
         <div>
 
           <input className={`input-login-class-desktop`} id="email" name="email" onChange={handleInputChange} ></input>

@@ -19,8 +19,8 @@ const PetsCatalog = () => {
         navigate('/create-new-pet');
     };
 
-    const value = React.useContext(UserContext);
-    console.log(value)
+    // const value = React.useContext(UserContext);
+    // console.log(value)
 
     let [errorArray, setError] = useState();
     let [userPets, setUserPets] = useState();
