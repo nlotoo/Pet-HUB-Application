@@ -7,7 +7,7 @@
 - Ability to freely view the  users pets.
 - Ability to view your own users pets.
 - Ability to edit and delete personal posts.
-- Interactive UX.
+- Full responsive application.
 
 
 ## Technologies Used
