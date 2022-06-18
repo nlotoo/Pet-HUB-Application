@@ -63,9 +63,7 @@ p {
 
 
 
-/* .burger-desktop {
-  
-} */
+
 
 
 @media only screen and (max-width: 1024px) {
@@ -119,7 +117,6 @@ p {
     }
 
     .burger-desktop div {
-
         width: 25px;
         background-color:  #54b3d6;
         height: 3px;

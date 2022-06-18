@@ -4,23 +4,15 @@ import { useFetch } from '../../../services/useFetch';
 import './profile-page.css';
 const ProfilePage = () => {
 
-    let navigate = useNavigate()
-    const url = 'http://localhost:5000/user-profile/62999ddbabb5b44a60d0c35d'
+    let navigate = useNavigate();
+    const url = 'http://localhost:5000/user-profile/62999ddbabb5b44a60d0c35d';
 
     let myPetsButtonHandle = () => {
-        navigate('/pets-catalog')
+        navigate('/pets-catalog');
     };
 
-    let userFetch = useFetch(url)
-
-    // if (userFetch.loading) {
-    //     return (<div className='loader-wraper'>
-    //         <div className='loader'></div>
-    //     </div>);
-    // };
-
-    let petCount = userFetch.data?.pets.length
-
+    let userFetch = useFetch(url);
+    let petCount = userFetch.data?.pets.length;
 
 
     return (

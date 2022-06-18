@@ -12,7 +12,6 @@ export const useFetch = (url) => {
             .then(response => {
                 return response.json()
             })
-          
             .then(setData)
             .catch(setError)
             .finally(() => setLoading(false));
