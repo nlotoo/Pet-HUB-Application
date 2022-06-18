@@ -14,7 +14,7 @@
     justify-content: space-around;
     align-items: center;
     min-width: 8vh;
-    background-color: #54b3d6;
+    background-color: white;
     border: 1px solid;
     box-shadow: 0px 5px 10px 10px lightblue;
 }
@@ -42,7 +42,7 @@ p {
 }
 
 .navigation-bar a:hover {
-    color: white;
+    color: #54b3d6;
 
 }
 
@@ -121,7 +121,7 @@ p {
     .burger-desktop div {
 
         width: 25px;
-        background-color: white;
+        background-color:  #54b3d6;
         height: 3px;
         margin: 5px;
         transition: all 0.5s ease-in;

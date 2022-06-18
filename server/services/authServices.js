@@ -77,7 +77,7 @@ async function CreateUser(data) {
         userEmail: userEmail.toLowerCase().trim(),
         gender: gender.toLowerCase().trim(),
         location: location.toLowerCase().trim(),
-        userPhoneNumber:userPhoneNumber.trim()
+        userPhoneNumber: userPhoneNumber.trim()
     }
 
     let emailUserExist = await User.findOne({ userEmail: obj.userEmail })
@@ -171,6 +171,12 @@ async function getUserProfile(data) {
 
 }
 
+async function fetchProfile(data) {
+
+
+    return await User.findById({ _id: data })
+}
+
 
 
 
@@ -178,4 +184,5 @@ module.exports = {
     CreateUser,
     loginUser,
     getUserProfile,
+    fetchProfile,
 };

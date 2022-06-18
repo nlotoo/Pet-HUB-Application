@@ -41,6 +41,20 @@ router.post('/user-profile', async (req, res) => {
         res.status(401).json({ message: err })
     }
 })
+router.get('/user-profile/:id', async (req, res) => {
+
+    try {
+
+        let data = await authService.fetchProfile(req.params.id)
+        res.status(200).json(data)
+
+    } catch (err) {
+        console.log(err)
+        res.status(401).json({ message: err })
+    }
+})
+
+
 router.post('/edit-pet/:id', async (req, res) => {
 
     try {
