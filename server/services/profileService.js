@@ -188,6 +188,16 @@ async function getAllPet() {
     return user
 }
 
+async function getAllPet2() {
+
+
+
+    let user = await Pet.find({})
+
+
+    return user
+}
+
 
 
 
@@ -203,4 +213,5 @@ module.exports = {
     isAuth,
     EditPet,
     getAllPet,
+    getAllPet2,
 };

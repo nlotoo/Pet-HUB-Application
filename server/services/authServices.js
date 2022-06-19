@@ -163,13 +163,7 @@ async function loginUser(data) {
 
     return localStorageObj
 };
-async function getUserProfile(data) {
 
-    let { userID } = data;
-    let user = await User.findById({ _id: userID }).populate('pets')
-    return user
-
-}
 
 async function fetchProfile(data) {
 
@@ -183,6 +177,6 @@ async function fetchProfile(data) {
 module.exports = {
     CreateUser,
     loginUser,
-    getUserProfile,
+
     fetchProfile,
 };

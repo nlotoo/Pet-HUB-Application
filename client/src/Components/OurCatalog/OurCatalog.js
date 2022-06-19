@@ -1,9 +1,10 @@
 import './our-catalog.css';
 import PetsCard from './PetsCard/PetsCard';
-import {  useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllPets } from '../ProfileComponents/profile.service';
 import ReactPaginate from 'react-paginate';
 
+import { useFetch } from '../../services/useFetch';
 
 
 const OutCatalog = () => {
@@ -14,16 +15,21 @@ const OutCatalog = () => {
     const petsPerPage = 4;
     const pageVisited = pageNumber * petsPerPage;
 
+    const url = 'http://localhost:5000/all-pets-catalog';
+
     try {
+        
+                    let catalogData = useFetch(url)
+                    console.log(catalogData)
 
-        useEffect(() => {
+        // useEffect(() => {
 
-            getAllPets()
-                .then((rs) => {
-                    setUserPets(rs);
-                })
+        //     getAllPets()
+        //         .then((rs) => {
+        //             setUserPets(rs);
+        //         })
 
-        }, [])
+        // }, [])
 
     } catch (err) {
         console.log(err);
@@ -34,6 +40,7 @@ const OutCatalog = () => {
             <div className='loader'></div>
         </div>);
     };
+
     const pageCount = Math.ceil(userPets.length / petsPerPage);
     const changePage = ({ selected }) => {
         setPageNumber(selected);

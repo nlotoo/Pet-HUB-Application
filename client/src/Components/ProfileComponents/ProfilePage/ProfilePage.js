@@ -1,11 +1,13 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import isAuthHOC from '../../../services/HOC';
 import { useFetch } from '../../../services/useFetch';
 import './profile-page.css';
 const ProfilePage = () => {
 
     let navigate = useNavigate();
-    const url = 'http://localhost:5000/user-profile/62999ddbabb5b44a60d0c35d';
+    let { id } = useParams()
+  
+    const url = `http://localhost:5000/user-profile/${id}`;
 
     let myPetsButtonHandle = () => {
         navigate('/pets-catalog');
