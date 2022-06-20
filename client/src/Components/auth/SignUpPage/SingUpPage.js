@@ -55,55 +55,48 @@ const SingUpPage = () => {
 
     return (<div>
 
-        <div className='sign-up-card'>
-            <div className='register-wrapper-class'>
+
+        <div className='register-wrapper-class'>
+
+            <form className='form-register-class' onSubmit={SingUpFormHandler}>
                 <h2 className='register-heading-class'>Register</h2>
+                <div>
+                    <input placeholder='Username' className='input-register-class' name='username' type='text' id='username' onChange={handleInputChange}></input>
+                </div>
+                <div>
+                    <input placeholder='Email' className='input-register-class' name='userEmail' type='text' id='email' onChange={handleInputChange}></input>
+                </div>
+                <div>
+                    <input placeholder='Password' className='input-register-class' name='password' type='password' id='password' onChange={handleInputChange} ></input>
+                </div>
+                <div>
 
-                <form className='form-register-class' onSubmit={SingUpFormHandler}>
-                    <label>Username</label>
-                    <div>
-                        <input className='input-register-class' name='username' type='text' id='username' onChange={handleInputChange}></input>
-                    </div>
-                    <label>Email</label>
-                    <div>
-                        <input className='input-register-class' name='userEmail' type='text' id='email' onChange={handleInputChange}></input>
-                    </div>
-                    <label>Password</label>
-                    <div>
-                        <input className='input-register-class' name='password' type='password' id='password' onChange={handleInputChange} ></input>
-                    </div>
-                    <label>Comfirm password</label>
-                    <div>
+                    <input placeholder='Comfirm password' className='input-register-class' name='rePassword' type='password' id='rePassword' onChange={handleInputChange} ></input>
+                </div>
 
-                        <input className='input-register-class' name='rePassword' type='password' id='rePassword' onChange={handleInputChange} ></input>
-                    </div>
+                <div>
 
-                    <label>Phone Number</label>
-                    <div>
+                    <input placeholder='Phone number' className='input-register-class' name='userPhoneNumber' type='text' id='userPhoneNumber' onChange={handleInputChange} ></input>
+                </div>
+                <div>
 
-                        <input className='input-register-class' name='userPhoneNumber' type='text' id='userPhoneNumber' onChange={handleInputChange} ></input>
-                    </div>
-                    <label>Where you live</label>
-                    <div>
+                    <input placeholder='Where you live' className='input-register-class' name='location' type='text' id='location' onChange={handleInputChange} ></input>
+                </div>
+                <div>
 
-                        <input className='input-register-class' name='location' type='text' id='location' onChange={handleInputChange} ></input>
-                    </div>
-                    <label>Sex</label>
-                    <div>
+                    <select className='input-register-class' name='gender' onChange={handleInputChange}>
+                        <option id='default' value='default' defaultChecked >Please choice your sex </option>
+                        <option id='female' value='female'>Female </option>
+                        <option id='male' value='male'>Male </option>
+                    </select>
+                </div>
 
-                        <select className='input-register-class' name='gender' onChange={handleInputChange}>
-                            <option id='default' value='default' defaultChecked >Please choice </option>
-                            <option id='female' value='female'>Female </option>
-                            <option id='male' value='male'>Male </option>
-                        </select>
-                    </div>
+                <button className='register-button' type="submit">Register</button>
+                {errorArr ? <ErrorBar data={errorArr} /> : ''}
+            </form>
+        </div>
+    </div >
 
-                    <button className='register-button' type="submit">Register</button>
-                    {errorArr ? <ErrorBar data={errorArr} /> : ''}
-                </form>
-            </div>
-        </div >
-    </div>
     );
 };
 

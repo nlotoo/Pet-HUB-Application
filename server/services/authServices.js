@@ -164,7 +164,6 @@ async function loginUser(data) {
     return localStorageObj
 };
 
-
 async function fetchProfile(data) {
 
 

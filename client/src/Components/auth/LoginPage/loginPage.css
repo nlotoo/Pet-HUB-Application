@@ -1,71 +1,77 @@
-.inside-login-card {
-    background: #F0F8FF;
-
-
+.wrapper-login-card {
+    display: flex;
+    justify-content: center;
+    margin-left: 350px;
+    width: 50%;
+    padding: 10px;
+    height: 570px;
 }
 
 .login-heading-class {
-    padding-top: 40px;
+    text-align: center;
 }
 
-.login-button-class {
-    width: 150px;
-    border-radius: 20px;
-    border: 2px solid black;
-    color: white;
-    background: #F0F8FF;
-    padding: 0px;
+.inputs-login-in-card {
     text-align: center;
+    margin-top: 15px;
+    border-radius: 5px;
+    
+}
+.inputs-login-in-card:hover{
+   color:black
+}
+
+.login-button {
     margin-top: 20px;
-    color: #171425;
-
-    box-shadow: 2px 1px 10px #54B3D6;
-    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: rgb(33, 21, 21);
+    color: white;
+    width: 30%;
+    margin-bottom: 10px;
 }
 
-.login-button-class:active {
-    box-shadow: 2px 3px 5px black;
+.login-button:hover {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    background-color: grey;
 }
 
-.input-login-class-desktop {
-    text-align: center;
-    border-radius: 20px;
+.login-button:active {
+    -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
-.input-login-class:active {
-    box-shadow: 2px 3px 10px black;
-}
-
-.login-card-desktop {
+.form-login-card {
+    border: 1px solid black;
+    margin-top: 7em;
+    -webkit-box-shadow: 6px -4px 8px -2px #000000;
+    box-shadow: 6px -4px 8px -2px #000000;
+    width: 70%;
+    padding: 10px;
+    height: fit-content;
     text-align: -webkit-center;
-    background: #ececec;
-    min-height: 570px;
-
+    background-color: whitesmoke;
+    opacity: 0.9;
 }
 
+.forgot-passwrod {
 
-
-.form-class-login-desktop {
-    width: 250px;
-    border-radius: 20px;
-    border: 2px solid black;
-    color: white;
-    background: #F0F8FF;
-    padding: 0px;
+    width: 40%;
     text-align: center;
-    margin-top: 20px;
-    color: #171425;
-    /* text-shadow: 2px 3px 5px black; */
-    box-shadow: 2px 1px 10px #54B3D6;
+    margin-top: 0px;
+    font-size: small;
+
 }
 
+.forgot-passwrod:hover {
+    text-decoration: underline;
+}
 
 
 @media screen and (max-width: 768px) {
 
-
+    .wrapper-login-card {
+        margin-left: 140px;
+    }
 
 }
-
-
-

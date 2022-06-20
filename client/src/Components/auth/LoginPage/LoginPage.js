@@ -3,7 +3,7 @@ import './loginPage.css';
 import { loginUserValidation } from '../../../services/loginUserValidation';
 import ErrorBar from '../ErrorBar/ErrorBar';
 import authService from '../authService';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import { UserContext } from '../../../services/UserContex';
 const LoginForm = () => {
@@ -23,7 +23,6 @@ const LoginForm = () => {
     e.preventDefault();
     try {
       loginUserValidation(userInfo);
-
       authService.loginUser(userInfo)
         .then((responce) => {
           if (responce.message) {
@@ -62,26 +61,28 @@ const LoginForm = () => {
 
 
 
-return (
-  <div className={`login-card-desktop`}>
-    <h2 className='login-heading-class'>Login user</h2>
-    <form className={`form-class-login-desktop`} onSubmit={submitHandler}>
-      <label>Email  </label>
-      <div>
+  return (
+    <div className='wrapper-login-card'>
+      <form className='form-login-card' onSubmit={submitHandler}>
+        <h2 className='login-heading-class'>Sign in to your account</h2>
 
-        <input className={`input-login-class-desktop`} id="email" name="email" onChange={handleInputChange} ></input>
-      </div>
-      <label>Password</label>
-      <div>
 
-        <input className={`input-login-class-desktop`} id="password" name="password" onChange={handleInputChange}></input>
-      </div>
-      <button className='login-button-class'>Login</button>
-      <div>  {errorArr ? <ErrorBar data={errorArr} /> : ''}</div>
-    </form>
+        <div>
 
-  </div>
-);
+          <input placeholder='Type your email' className='inputs-login-in-card' id="email" name="email" onChange={handleInputChange} ></input>
+        </div>
+
+        <div>
+
+          <input placeholder='Type your password' className='inputs-login-in-card' id="password" name="password" onChange={handleInputChange}></input>
+        </div>
+        <div className='forgot-passwrod'><Link to="/">Forgot your password</Link></div>
+        <div>  {errorArr ? <ErrorBar data={errorArr} /> : ''}</div>
+        <button className='login-button'>Login</button>
+      </form>
+
+    </div>
+  );
 };
 
 export default LoginForm;

@@ -20,16 +20,16 @@
 }
 
 .logo {
-    color: #204451;
+    color: #68988C;
     font-family: 'Poppins', sans-serif;
 }
 
 
 
 .menu-a-tag {
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 3px;
-    color: #204451;
+    color: black;
     text-decoration: none;
 }
 
@@ -39,13 +39,18 @@ p {
     color: #204451;
     font-family: 'Poppins', sans-serif;
 
+
 }
 
 .navigation-bar a:hover {
-    color: #54b3d6;
+    color: green;
 
 }
 
+.navigation-bar ul li:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
 
 
 
@@ -79,6 +84,10 @@ p {
 
 @media only screen and (max-width: 760px) {
 
+    .menu-a-tag {
+        font-weight:600;
+
+    }
 
     body {
         overflow-x: hidden;
@@ -90,7 +99,9 @@ p {
         right: 0px;
         height: 92vh;
         top: 3.4vh;
-        background-color: #54b3d6;
+        background-color: #68988C;
+        border-left: solid 1px black;
+        opacity: 0.9;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -118,7 +129,7 @@ p {
 
     .burger-desktop div {
         width: 25px;
-        background-color:  #54b3d6;
+        background-color: #68988C;
         height: 3px;
         margin: 5px;
         transition: all 0.5s ease-in;

@@ -33,7 +33,6 @@ const NavigationBar = () => {
     return (
         <nav className='navigation-bar'>
             <div className='logo'>
-
                 <h4><Link className='logo-heading' to="/">The Pet Care</Link></h4>
             </div>
 
@@ -54,7 +53,7 @@ const NavigationBar = () => {
                 <div className='line3'></div>
             </div >
             <div>
-                {isLoged && <Link className='menu-a-tag' to="/user-profile"> Welcome to our hub !</Link>}
+                {isLoged && <Link className='menu-a-tag' to={'/user-profile/' + userID}> Welcome to our hub !</Link>}
                 <p>{value}</p>
             </div>
 

@@ -1,6 +1,3 @@
-
-
-
 .App-link {
   color: #61dafb;
 }
@@ -15,16 +12,13 @@
 }
 
 
+
 .content {
-  margin-top: 15px;
-  background-color: #ECECEC;
-  height: auto;
+  background-image: url("https://www.miltonandking.com/wp-content/uploads/2021/02/Wallpaper-Linz-Doggies-Turquiose-1.jpg");
+  background-repeat: repeat;
+  background-size: 760px;
   width: auto;
 }
 
 
-@media screen and (max-width: 768px) {
-
-
-
-}
+@media screen and (max-width: 768px) {}
