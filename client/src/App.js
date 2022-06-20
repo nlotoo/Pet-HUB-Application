@@ -48,7 +48,7 @@ const App = () => {
               <Route path='/logout' element={<Logout />} />
               <Route path='/sign-up' element={<SignUpPage />} />
               <Route path='/user-profile/:id' element={<ProfilePage />} />
-              <Route path='/pets-catalog' element={<PetsCatalog />} />
+              <Route path='/get-user-pets/:id' element={<PetsCatalog />} />
               <Route path='/create-new-pet' element={<CreatePetPage />} />
               <Route path='/edit-pet/:id' element={<EditPetPage />} />
 

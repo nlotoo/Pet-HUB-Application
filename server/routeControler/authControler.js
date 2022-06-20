@@ -69,6 +69,7 @@ router.post('/create-new-pet', async (req, res) => {
 
 })
 
+// стар
 router.post('/pets-catalog', async (req, res) => {
     try {
 
@@ -112,23 +113,8 @@ router.post('/isAuth', async (req, res) => {
 router.get('/get-all-pets', async (req, res) => {
 
     try {
-        console.log('das')
-        let data = await profileService.getAllPet2();
-        console.log(data)
-        res.status(200).json(data);
-
-    } catch (err) {
-        console.log(err);
-        res.status(401).json({ message: err });
-    };
-
-
-});
-
-router.post('/our-catalog', async (req, res) => {
-    try {
-
         let data = await profileService.getAllPet();
+
         res.status(200).json(data);
 
     } catch (err) {
@@ -137,8 +123,25 @@ router.post('/our-catalog', async (req, res) => {
     };
 
 
+});
+
+router.get('/get-user-pets/:id', async (req, res) => {
+
+    try {
+       
+
+        let data = await profileService.getUserPets(req.params.id);
+        res.status(200).json(data);
+
+    } catch (err) {
+        console.log(err);
+        res.status(401).json({ message: err });
+    };
+
 
 });
+
+
 router.post('/pet-info', async (req, res) => {
 
     try {

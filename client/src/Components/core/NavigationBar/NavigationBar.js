@@ -11,7 +11,7 @@ const NavigationBar = () => {
     let isLoged = loginStorageCheker();
     let userID = window.localStorage.getItem('User ID')
 
-    const { value,  } = useContext(UserContext);
+    const { value, } = useContext(UserContext);
 
     const navSlide = (e) => {
         const burger = document.getElementsByClassName('burger-desktop')[0];
@@ -41,8 +41,8 @@ const NavigationBar = () => {
                 <li><Link className='menu-a-tag' to="/">Home</Link></li>
                 <li><Link className='menu-a-tag' to="/about-us">About </Link></li>
                 <li><Link className='menu-a-tag' to="/get-all-pets">Our Catalog </Link></li>
-                {isLoged && <li><Link className='menu-a-tag' to={"/user-profile/"+userID}>Profile </Link></li>}
-                {isLoged && <li><Link className='menu-a-tag' to="/pets-catalog">Pets Catalog </Link></li>}
+                {isLoged && <li><Link className='menu-a-tag' to={"/user-profile/" + userID}>Profile </Link></li>}
+                {isLoged && <li><Link className='menu-a-tag' to={"/get-user-pets/" + userID}>Pets Catalog </Link></li>}
                 {isLoged && <li><Link className='menu-a-tag' to="/create-new-pet">Add new pet </Link></li>}
                 {!isLoged && <li><Link className='menu-a-tag' to="/sign-up">Register </Link></li>}
                 {!isLoged && <li><Link className='menu-a-tag' to="/login">Login </Link></li>}
