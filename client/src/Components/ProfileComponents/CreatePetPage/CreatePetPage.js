@@ -31,7 +31,7 @@ const CreatePetPage = () => {
 
             let response = createPet(result);
             response.then((rs) => {
-  
+
                 if (rs.errorMessage) {
                     setError(rs.errorMessage);
                     return;
@@ -51,36 +51,31 @@ const CreatePetPage = () => {
 
     return (
         <div className='create-new-pet-root'>
-            <h2 className='add-new-pet-heading'>Add new pet</h2>
             <div className='create-new-pet-wrapper'>
                 <form className='create-new-pet-form' onSubmit={CreatePet} >
+                    <h2 className='add-new-pet-heading'>Create new pet</h2>
                     <div>
 
-                        <label>Pet name </label>
-                        <input className='input-create-pet-class' id='petName' name='petName'></input>
-                    </div>
-                    <div>
 
-                        <label>Pet weight</label>
-                        <input className='input-create-pet-class' type='number' id='petWeight' name='petWeight' ></input>
+                        <input placeholder='Pet name' className='input-create-pet-class' id='petName' name='petName'></input>
                     </div>
                     <div>
 
-                        <label>Pet breed</label>
-                        <input className='input-create-pet-class' id='petBreed' name='petBreed' ></input>
+                        <input placeholder='Pet weight' className='input-create-pet-class' type='number' id='petWeight' name='petWeight' ></input>
                     </div>
                     <div>
 
-                        <label>Pet age</label>
-                        <input className='input-create-pet-class' type='number' id='petAge' name='petAge' ></input>
+                        <input placeholder='Pet breed' className='input-create-pet-class' id='petBreed' name='petBreed' ></input>
                     </div>
                     <div>
-                        <label>Pet photo</label>
-                        <input className='input-create-pet-class' id='petPhoto' name='petPhoto' ></input>
+
+                        <input placeholder='Pet age' className='input-create-pet-class' type='number' id='petAge' name='petAge' ></input>
                     </div>
                     <div>
-                        <label>Pet ifno (optional)</label>
-                        <textarea className='input-create-pet-class' id='petInfo' name='petInfo' />
+                        <input placeholder='Pet photo' className='input-create-pet-class' id='petPhoto' name='petPhoto' ></input>
+                    </div>
+                    <div>
+                        <textarea placeholder='Pet info (optional)' className='input-create-pet-class' id='petInfo' name='petInfo' />
                     </div>
                     <button className='create-pet-button' >Add new pet</button>
                     <div>
