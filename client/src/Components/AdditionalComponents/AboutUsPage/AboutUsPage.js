@@ -21,7 +21,7 @@ const AboutUsPage = () => {
 
             <div className='our-story-img' >
 
-                <img className='image-in-card' alt='our-story-img' height={460} src={'https://advice.cdn.betterhelp.com/cro-people-who-love-animals-more-than-people-psychology-of-empathy-4.jpg'} />
+                <img className='image-in-card' alt='our-story-img' height={660} src={'https://advice.cdn.betterhelp.com/cro-people-who-love-animals-more-than-people-psychology-of-empathy-4.jpg'} />
 
             </div>
 

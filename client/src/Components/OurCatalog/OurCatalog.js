@@ -3,6 +3,7 @@ import PetsCard from './PetsCard/PetsCard';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useFetch } from '../../services/useFetch';
+import PetsCardU from './PetCardU.js/PetCardU';
 
 
 const OutCatalog = () => {
@@ -19,10 +20,11 @@ const OutCatalog = () => {
         setPageNumber(selected);
     };
 
+    console.log(petCatalog)
 
     return (
         <div className="catalog-root">
-            <h3 className="pets-heading">Catalog</h3>
+            <h3 className="pets-heading">Our Catalog</h3>
             <div className="pets-catalog-wraper">
                 {petCatalog?.data?.length === 0 ? <div className='no-pet-message'>
                     <span> You still don`t have pet.</span>
@@ -30,8 +32,12 @@ const OutCatalog = () => {
                 {petCatalog?.data?.length === undefined ? <div className='loader-wraper'>
                     <div className='loader'></div>
                 </div> : <div className="pets-catalog-rail">
-                    <PetsCard userPetData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
+                    {/* <PetsCard userPetData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} /> */}
+                    <PetsCardU  petsData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
+      
+
                 </div>}
+
             </div>
             <div className='paginator' >
                 <ReactPaginate

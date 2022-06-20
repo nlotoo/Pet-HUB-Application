@@ -33,6 +33,7 @@ const NavigationBar = () => {
     return (
         <nav className='navigation-bar'>
             <div className='logo'>
+                
                 <h4><Link className='logo-heading' to="/">The Pet Care</Link></h4>
             </div>
 

@@ -1,18 +1,26 @@
 .root-card-class-desktop {
-    height: 550px;
+ 
     display: flex;
     width: 100%;
     text-align: center;
 }
 
+  
+
 .pets-about-us-wraper {
-
-
+    border: 1px solid black;
+    margin-top: 7em;
+    -webkit-box-shadow: 6px -4px 8px -2px #000000;
+    box-shadow: 6px -4px 8px -2px #000000;
+    padding: 10px;
+    height: fit-content;
+    text-align: -webkit-center;
+    background-color: whitesmoke;
+    opacity: 0.9;
     margin: 55px;
+
     max-height: fit-content;
-    border: solid 2px #C6E5F1;
-    border-radius: 20px;
-    background: rgba(150, 197, 217, 0.36);
+
 }
 
 .our-story-img {
@@ -27,10 +35,12 @@
     border-radius: 9%;
     width: 100%;
     object-fit: cover;
+    height: 450px;
+    margin-top: 10px;
 }
 
 .our-story-heading-desktop {
-  
+
     margin-top: 20px;
     font-size: xx-large;
     font-family: math;
@@ -43,6 +53,7 @@
     margin-left: 50px;
     margin-right: 50px;
 
+
 }
 
 
@@ -53,11 +64,11 @@
 
     .root-card-class-desktop {
         display: block;
-
+        height: fit-content;
 
     }
 
-    p .pets-about-us-wraper {}
+
 
     .our-story-text-desktop {
         max-width: fit-content;

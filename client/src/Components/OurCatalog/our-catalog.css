@@ -8,11 +8,13 @@
 
 .pets-catalog-wraper {
     margin-left: 22px;
-    margin-right: auto;
-    height: 510px;
+    margin-right: 22px;
+    height: 450px;
+    background-color: rgba(241, 236, 226, 0.688);
     border: solid 2px #C6E5F1;
-    border-radius: 20px;
-    background: rgba(150, 197, 217, 0.36);
+    -webkit-box-shadow: 6px -4px 8px -2px #000000;
+    box-shadow: 6px -4px 8px -2px #000000;
+
 }
 
 .pets-catalog-rail {
@@ -39,18 +41,46 @@
     justify-content: center;
 }
 
+.card-button {
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgb(33, 21, 21);
+    color: white;
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.card-button:hover {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    background-color: grey;
+}
+
+.card-button:active {
+    -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+
 .paginationBttns a {
     padding: 10px;
     margin: 8px;
     border-radius: 5px;
     border: solid 2px #C6E5F1;
-    color: grey;
+    background-color: rgb(33, 21, 21);
+    color: white;
     cursor: pointer;
 }
 
 .paginationBttns a:hover {
-    color: white;
-    background-color: #2b2eff;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    background-color: grey;
+}
+
+.paginationBttns a:active {
+    -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .paginationActive a {
@@ -92,4 +122,3 @@
     margin-top: 12em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
