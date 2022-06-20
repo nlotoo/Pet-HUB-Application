@@ -1,60 +1,37 @@
 import './our-catalog.css';
 import PetsCard from './PetsCard/PetsCard';
-import { useEffect, useState } from 'react';
-import { getAllPets } from '../ProfileComponents/profile.service';
+import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
-
 import { useFetch } from '../../services/useFetch';
 
 
 const OutCatalog = () => {
 
 
-    let [userPets, setUserPets] = useState();
+    const url = 'http://localhost:5000/get-all-pets';
+    let petCatalog = useFetch(url);
+
     let [pageNumber, setPageNumber] = useState(0);
     const petsPerPage = 4;
     const pageVisited = pageNumber * petsPerPage;
-
-    const url = 'http://localhost:5000/all-pets-catalog';
-
-    try {
-        
-                    let catalogData = useFetch(url)
-                    console.log(catalogData)
-
-        // useEffect(() => {
-
-        //     getAllPets()
-        //         .then((rs) => {
-        //             setUserPets(rs);
-        //         })
-
-        // }, [])
-
-    } catch (err) {
-        console.log(err);
-    }
-
-    if (userPets === undefined) {
-        return (<div className='loader-wraper'>
-            <div className='loader'></div>
-        </div>);
-    };
-
-    const pageCount = Math.ceil(userPets.length / petsPerPage);
+    const pageCount = Math.ceil(petCatalog?.data?.length / petsPerPage);
     const changePage = ({ selected }) => {
         setPageNumber(selected);
     };
+
+
     return (
         <div className="catalog-root">
             <h3 className="pets-heading">Catalog</h3>
             <div className="pets-catalog-wraper">
-                <div className="pets-catalog-rail">
-                    {userPets.length === 0 && <div className='no-pet-message'><span> You still don`t have pet.</span></div>}
-                    <PetsCard userPetData={userPets.slice(pageVisited, pageVisited + petsPerPage)} />
-
-                </div>
-
+                {petCatalog?.data?.length === 0 ? <div className='no-pet-message'>
+                    <span> You still don`t have pet.</span>
+                </div> : ''}
+                {petCatalog?.data?.length === undefined ? <div className='loader-wraper'>
+                    <div className='loader'></div>
+                </div> : <div className="pets-catalog-rail">
+                    <PetsCard userPetData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
+                </div>}
             </div>
             <div className='paginator' >
                 <ReactPaginate

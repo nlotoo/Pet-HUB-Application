@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { getUserPets } from '../profile.service';
 import ReactPaginate from 'react-paginate';
 import isAuthHOC from '../../../services/HOC';
-
+import { useFetch } from '../../../services/useFetch';
 import React from 'react';
 
 
@@ -19,14 +19,15 @@ const PetsCatalog = () => {
         navigate('/create-new-pet');
     };
 
-
     let [userPets, setUserPets] = useState();
-
-
     let [pageNumber, setPageNumber] = useState(0);
-
     const petsPerPage = 4;
     const pageVisited = pageNumber * petsPerPage;
+
+    const url = 'http://localhost:5000/get-user-pets';
+    let petCatalog = useFetch(url);
+    console.log(petCatalog)
+
 
     try {
 
