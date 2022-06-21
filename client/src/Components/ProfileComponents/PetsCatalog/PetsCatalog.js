@@ -16,12 +16,12 @@ import PetsCardU from './PetCardU/PetCardU';
 
 const PetsCatalog = () => {
     let navigate = useNavigate();
+    const { id } = useParams()
     const CreateNewPet = () => {
-        navigate('/create-new-pet');
+        navigate('/create-new-pet/' + id);
     };
 
 
-    const { id } = useParams()
     const url = `http://localhost:5000/get-user-pets/${id}`;
     let petCatalog = useFetch(url)
 
@@ -43,7 +43,7 @@ const PetsCatalog = () => {
                 </div> : <div className="pets-catalog-rail">
                     <PetsCardU petsData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
                     {petCatalog?.data?.length === 0 && <span className='no-pet-message' > You still don`t have pet.</span>}
-                    <button onClick={CreateNewPet} className='add-new-pet-button'>Add new pet </button>
+                    {petCatalog?.data?.length < 4 && <button onClick={CreateNewPet} className='add-new-pet-button'>Add new pet </button>}
                 </div>}
             </div>
 

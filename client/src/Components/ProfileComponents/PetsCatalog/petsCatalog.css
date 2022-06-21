@@ -23,7 +23,7 @@
 
 .add-new-pet-button {
 
-    margin-top: 8em;
+    margin-top: 7em;
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -87,7 +87,7 @@
     margin: 8px;
     border-radius: 5px;
     border: solid 2px #C6E5F1;
-    background-color: rgb(33, 21, 21);
+    background-color: grey;
     color: white;
     cursor: pointer;
 }

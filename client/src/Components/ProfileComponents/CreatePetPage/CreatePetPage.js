@@ -4,12 +4,14 @@ import { useState, } from 'react';
 import { createPet } from '../profile.service.js';
 import ErrorBar from '../ErrorBar/ErrorBar';
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import isAuthHOC from '../../../services/HOC'
 const CreatePetPage = () => {
 
     let [errorArray, setError] = useState();
     let navigate = useNavigate();
+    const id = useParams()
+    console.log(id)
     const CreatePet = (e) => {
         e.preventDefault();
         let petOwner = window.localStorage.getItem('User ID');
@@ -36,7 +38,7 @@ const CreatePetPage = () => {
                     setError(rs.errorMessage);
                     return;
                 }
-                navigate('/pets-catalog');
+                navigate('/pets-catalog/' + id );
             }
             )
 
