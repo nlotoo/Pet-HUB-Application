@@ -6,11 +6,11 @@ const ProfilePage = () => {
 
     let navigate = useNavigate();
     let { id } = useParams()
-  
+
     const url = `http://localhost:5000/user-profile/${id}`;
 
     let myPetsButtonHandle = () => {
-        navigate('/pets-catalog');
+        navigate('/get-user-pets/' + id);
     };
 
     let userFetch = useFetch(url);
@@ -19,17 +19,19 @@ const ProfilePage = () => {
 
     return (
         <div className='user-profile-heading'>
-            <h2>User Profile</h2>{
+            {
                 userFetch.loading ? (<div className='loader-wraper'>
                     <div className='loader'></div>
                 </div>) : <div className="cards-container">
                     <div className="card card-one">
+                        <h2>User Profile</h2>
                         <header>{
-                            userFetch.data?.gender === 'male' ? <div className="avatar">
-                                <img className='profile-img-class' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2HoveSx5prCIWhGymQ6z5-G-F3rejFBbVuA&usqp=CAU" alt="user-male-pic" />
-                            </div> : <div className="avatar">
-                                <img className='profile-img-class' src="https://cdn-icons-png.flaticon.com/512/146/146025.png" alt="user-female-pic" />
-                            </div>
+                            userFetch.data?.gender === 'male' ?
+                                <div className="avatar">
+                                    <img className='profile-img-class' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2HoveSx5prCIWhGymQ6z5-G-F3rejFBbVuA&usqp=CAU" alt="user-male-pic" />
+                                </div> : <div className="avatar">
+                                    <img className='profile-img-class' src="https://cdn-icons-png.flaticon.com/512/146/146025.png" alt="user-female-pic" />
+                                </div>
                         }
                         </header>
                         <h3>{userFetch.data?.username[0]?.toUpperCase() + userFetch.data?.username?.slice(1)}</h3>
@@ -51,15 +53,29 @@ const ProfilePage = () => {
                                 <i className='fas fa-envelope'></i>
                                 <span>&nbsp;&nbsp;{userFetch.data?.userEmail}</span>
                             </div>
+
+
+                        </div>
+
+                        <div className='social-media'>
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                            </ul>
+
                         </div>
                         <footer>
                             <button onClick={myPetsButtonHandle} className='my-pets-button'>My pets</button>
+
                         </footer>
                     </div>
                 </div>
             }
 
-        </div>
+        </div >
     );
 };
 

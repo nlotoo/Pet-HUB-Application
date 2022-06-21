@@ -5,8 +5,8 @@
 }
 
 .avatar {
-    margin-top: 20px;
-    clip-path: circle()
+    margin-top: 5px;
+    border-radius: 5px;
 }
 
 .profile-img-class {
@@ -20,18 +20,16 @@
 }
 
 .card {
-    width: 250px;
-    height: 370px;
-    border-radius: 20px;
-    border: 2px solid black;
-    color: white;
-    background: #F0F8FF;
-    padding: 0px;
-    text-align: center;
-    margin-top: 20px;
-    color: #171425;
-    /* text-shadow: 2px 3px 5px black; */
-    box-shadow: 2px 1px 10px #54B3D6;
+    width: 350px;
+    border: 1px solid black;
+    margin-top: 4em;
+    -webkit-box-shadow: 6px -4px 8px -2px #000000;
+    box-shadow: 6px -4px 8px -2px #000000;
+    padding: 10px;
+    text-align: -webkit-center;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    margin-bottom: 100px;
 }
 
 
@@ -40,35 +38,34 @@
 .user-info {
     text-align: left;
     margin-top: 10px;
-    margin-left: 50px;
+    margin-left: 70px;
 }
 
-/* .my-pets-button {
-    width: 150px;
-    border-radius: 20px;
-    border: 2px solid black;
+.user-info div {
 
-    background: #F0F8FF;
-    padding: 0px;
-    text-align: center;
-    margin-top: 20px;
-    color: #171425;
+    font-size: 18px;
+}
 
-    box-shadow: 2px 1px 10px #54B3D6;
-    margin-bottom: 20px;
-
-} */
 
 .my-pets-button {
-    width: 150px;
-    border-radius: 20px;
-    border: 2px solid black;
-    background: rgba(150, 197, 217, 0.36);
-    padding: 0px;
-    text-align: center;
-    margin-top: 20px;
+    height: 45px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgb(33, 21, 21);
+    color: white;
+    width: 40%;
+    margin-bottom: 30px;
+}
 
-    box-shadow: 2px 1px 10px #54B3D6;
+.my-pets-button:hover {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    background-color: grey;
+}
+
+.my-pets-button:active {
+    -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 /* .my-pets-button:hover {
@@ -95,4 +92,19 @@
     -webkit-animation: spin 2s linear infinite;
     /* Safari */
     animation: spin 2s linear infinite;
+}
+
+.social-media{
+    margin-top: 20px;
+}
+
+.social-media ul li i {
+    width: 55px;
+}
+
+.social-media ul li {
+    width: 100%;
+    display: inline;
+    list-style: none;
+    font-size: 20px;
 }
