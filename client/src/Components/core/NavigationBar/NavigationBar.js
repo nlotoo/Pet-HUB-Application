@@ -33,7 +33,7 @@ const NavigationBar = () => {
     return (
         <nav className='navigation-bar'>
             <div className='logo'>
-                
+
                 <h4><Link className='logo-heading' to="/">The Pet Care</Link></h4>
             </div>
 
@@ -43,7 +43,7 @@ const NavigationBar = () => {
                 <li><Link className='menu-a-tag' to="/get-all-pets">Our Catalog </Link></li>
                 {isLoged && <li><Link className='menu-a-tag' to={"/user-profile/" + userID}>Profile </Link></li>}
                 {isLoged && <li><Link className='menu-a-tag' to={"/get-user-pets/" + userID}>Pets Catalog </Link></li>}
-                {isLoged && <li><Link className='menu-a-tag' to="/create-new-pet">Add new pet </Link></li>}
+                {isLoged && <li><Link className='menu-a-tag' to={"/create-new-pet/" + userID}>Add new pet </Link></li>}
                 {!isLoged && <li><Link className='menu-a-tag' to="/sign-up">Register </Link></li>}
                 {!isLoged && <li><Link className='menu-a-tag' to="/login">Login </Link></li>}
                 {isLoged && <li><Link className='menu-a-tag' to="/logout">Logout </Link></li>}

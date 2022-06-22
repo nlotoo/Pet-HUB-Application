@@ -13,6 +13,8 @@ import Footer from './Components/core/Footer/Footer';
 import OurCatalog from './Components/OurCatalog/OurCatalog';
 import globalState from './services/globalStateHOC';
 
+import DetailsPetPage from './Components/ProfileComponents/DetailsPetPage/DetailsPetPage';
+
 import { UserContext } from './services/UserContex';
 
 
@@ -25,7 +27,7 @@ const EditPetPage = lazy(() => import('./Components/ProfileComponents/EditPetPag
 const App = () => {
 
   let [value, setValue] = useState(null);
- 
+
   return (
     <UserContext.Provider value={{ value, setValue }}>
       <div className='root'>
@@ -51,7 +53,7 @@ const App = () => {
               <Route path='/get-user-pets/:id' element={<PetsCatalog />} />
               <Route path='/create-new-pet/:id' element={<CreatePetPage />} />
               <Route path='/edit-pet/:id' element={<EditPetPage />} />
-
+              <Route path='/pet-details/:id' element={<DetailsPetPage />} />
             </Routes>
           </Suspense>
           <footer className='footer-content'>
