@@ -3,13 +3,10 @@
     text-align: center;
 }
 
-
-
-
 .pets-catalog-wraper {
     margin-left: 22px;
     margin-right: 22px;
-    height: 450px;
+    height:fit-content;
     background-color: rgba(241, 236, 226, 0.688);
     border: solid 2px #C6E5F1;
     -webkit-box-shadow: 6px -4px 8px -2px #000000;
@@ -61,13 +58,12 @@
     box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
-
 .paginationBttns a {
     padding: 10px;
     margin: 8px;
     border-radius: 5px;
     border: solid 2px #C6E5F1;
-    background-color: rgb(33, 21, 21);
+    background-color: grey;
     color: white;
     cursor: pointer;
 }

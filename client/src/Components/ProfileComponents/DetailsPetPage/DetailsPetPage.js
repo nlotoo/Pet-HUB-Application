@@ -8,7 +8,7 @@ const DetailsPetPage = () => {
     const url = `http://localhost:5000/pet-details/${id}`;
 
     const { data, error, loading } = useFetch(url);
-    if(error){
+    if (error) {
         console.log(error);
     };
 
@@ -22,17 +22,17 @@ const DetailsPetPage = () => {
                     <h2 className="heading-class" >Pet detail</h2>
                     <h5>{data?.petName} </h5>
                     <img className='imgs-details-page' alt='pet-details-img' src={`${data?.petPhoto}`} ></img>
-                    <div>
-                        <label>Pet breed</label>
+                    <div className="pet-info">
+                        <div>Pet breed</div>
                         <p>{data?.petBreed}</p>
                     </div>
-                    <div>
-                        <label>Pet age</label>
+                    <div className="pet-info">
+                        <div>Pet age</div>
                         <p>{data?.petAge}</p>
                     </div>
-                    <div>
-                        <label>Pet info</label>
-                        <p>{data?.petInfo}</p>
+                    <div className="pet-info">
+                        <div>Pet info</div>
+                        <p>{data?.petInfo} Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, totam?</p>
                     </div>
                     <div className="button-bar">
                         <Link to={'/pet-edit/' + id} className='card-button'>Edit</Link>

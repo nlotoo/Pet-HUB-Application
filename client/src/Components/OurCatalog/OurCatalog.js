@@ -1,5 +1,4 @@
 import './our-catalog.css';
-import PetsCard from './PetsCard/PetsCard';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useFetch } from '../../services/useFetch';

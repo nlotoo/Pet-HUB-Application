@@ -1,16 +1,16 @@
 .root-element {
     display: flex;
     justify-content: center;
-    height: 570px
+    height: 690px
 }
 
-.heading-class{
-    margin-top: 40px;
+.heading-class {
+    margin-top: 20px;
 }
-.pet-card-wrapper{
+
+.pet-card-wrapper {
     margin-top: 5em;
 }
-
 .details-pet-card {
     width: 300px;
     border: 1px solid #68988C;
@@ -19,7 +19,7 @@
     background-color: rgb(255, 255, 255);
     text-align: center;
 
-    height: 460px;
+    height: fit-content;
 
 }
 
@@ -56,9 +56,16 @@
     margin-left: 20px;
     font-size: 30px;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .button-bar {
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+.pet-info div {
+    margin-bottom: 6px;
+    border-top: 2px solid #68988C;
+    border-bottom: 2px solid #68988C;
 }
