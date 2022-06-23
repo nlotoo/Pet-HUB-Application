@@ -128,7 +128,7 @@ router.get('/get-all-pets', async (req, res) => {
 router.get('/get-user-pets/:id', async (req, res) => {
 
     try {
-       
+
 
         let data = await profileService.getUserPets(req.params.id);
         res.status(200).json(data);
@@ -157,5 +157,20 @@ router.post('/pet-info', async (req, res) => {
 })
 
 
+router.get('/pet-details/:id', async (req, res) => {
 
+    try {
+
+
+        let data = await profileService.getPetDetail(req.params.id);
+        console.log(data)
+        res.status(200).json(data);
+
+    } catch (err) {
+        console.log(err);
+        res.status(401).json({ message: err });
+    };
+
+
+});
 module.exports = router;
