@@ -66,7 +66,14 @@ p {
     width: 70%;
 }
 
+.logo-heading {
+    text-decoration: none;
+    color: #68988C
+}
 
+.logo-heading:hover {
+    text-decoration: underline;
+}
 
 
 
@@ -85,7 +92,7 @@ p {
 @media only screen and (max-width: 760px) {
 
     .menu-a-tag {
-        font-weight:600;
+        font-weight: 600;
 
     }
 

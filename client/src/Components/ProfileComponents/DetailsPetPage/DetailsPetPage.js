@@ -1,5 +1,5 @@
-import { Link, useParams } from "react-router-dom";
 import './pet-detail-card.css';
+import { Link, useParams } from "react-router-dom";
 import { useFetch } from '../../../services/useFetch';
 import LoadingSpinner from "../../AdditionalComponents/LoadingSpinner/LoadingSpinner";
 const DetailsPetPage = () => {
@@ -12,13 +12,22 @@ const DetailsPetPage = () => {
         console.log(error);
     };
 
+    const urlPetOwner = `http://localhost:5000/user-profile/${data?.petOwner[0]}`
+    if (urlPetOwner.error) {
+        console.log(urlPetOwner.error);
+    };
+    let petOwnerName = useFetch(urlPetOwner)
+
+    const liked = () => {
+        console.log('liked')
+    }
+
+    console.log(data?.petInfo)
+
     return (
-
-
-        < div className="root-element" >
+        <div className="root-element" >
             <div className="pet-card-wrapper">
-                <div className="details-pet-card">
-                    {loading ? <LoadingSpinner /> : ''}
+                {loading ? <LoadingSpinner /> : <div className="details-pet-card">
                     <h2 className="heading-class" >Pet detail</h2>
                     <h5>{data?.petName} </h5>
                     <img className='imgs-details-page' alt='pet-details-img' src={`${data?.petPhoto}`} ></img>
@@ -31,12 +40,16 @@ const DetailsPetPage = () => {
                         <p>{data?.petAge}</p>
                     </div>
                     <div className="pet-info">
+                        <div>Pet owner</div>
+                        <p>{petOwnerName.data?.username?.slice(0, 1).toUpperCase() + petOwnerName.data?.username?.slice(1)}</p>
+                    </div>
+                    <div className="pet-info">
                         <div>Pet info</div>
-                        <p>{data?.petInfo} Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, totam?</p>
+                        <p>{data?.petInfo} </p>
                     </div>
                     <div className="button-bar">
-                        <Link to={'/pet-edit/' + id} className='card-button'>Edit</Link>
-                        <Link to={'pet-delete/' + id} className='card-button'>Like</Link>
+                        <Link to={'/edit-pet/' + id} className='card-button'>Edit</Link>
+                        <Link to='#'  className='card-button'>Like</Link>
                     </div>
                     <div className="icon-bar">
                         <i className="fa-solid fa-heart-circle-plus"></i>
@@ -44,7 +57,8 @@ const DetailsPetPage = () => {
                         <i className="fa-brands fa-facebook"></i>
                         <i className="fa-brands fa-twitter"></i>
                     </div>
-                </div>
+                </div>}
+
 
 
             </div>

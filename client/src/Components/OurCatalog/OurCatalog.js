@@ -19,7 +19,6 @@ const OutCatalog = () => {
         setPageNumber(selected);
     };
 
-    console.log(petCatalog)
 
     return (
         <div className="catalog-root">
