@@ -2,9 +2,12 @@ import './pet-detail-card.css';
 import { Link, useParams } from "react-router-dom";
 import { useFetch } from '../../../services/useFetch';
 import LoadingSpinner from "../../AdditionalComponents/LoadingSpinner/LoadingSpinner";
+import { isLiked } from '../profile.service';
+import { useState } from 'react';
 const DetailsPetPage = () => {
-
+    let [like, setLike] = useState(null)
     let { id } = useParams();
+    let userID = localStorage.getItem('User ID');
     const url = `http://localhost:5000/pet-details/${id}`;
 
     const { data, error, loading } = useFetch(url);
@@ -18,11 +21,21 @@ const DetailsPetPage = () => {
     };
     let petOwnerName = useFetch(urlPetOwner)
 
-    const liked = () => {
-        console.log('liked')
-    }
 
-    console.log(data?.petInfo)
+    const LikedPet = (e) => {
+        let asd1 = {
+            id, userID,
+        }
+        isLiked(asd1)
+            .then(rs => {
+                if (rs.message) {
+                    setLike(rs.message)
+                }
+            }
+            )
+
+
+    }
 
     return (
         <div className="root-element" >
@@ -49,7 +62,11 @@ const DetailsPetPage = () => {
                     </div>
                     <div className="button-bar">
                         <Link to={'/edit-pet/' + id} className='card-button'>Edit</Link>
-                        <Link to='#'  className='card-button'>Like</Link>
+                        {like}
+                        {
+                            data?.petLikes?.find((a) => a == userID) ? <button  onClick={LikedPet} >Liked</button> : <button  onClick={LikedPet} >Like</button>
+                        }
+
                     </div>
                     <div className="icon-bar">
                         <i className="fa-solid fa-heart-circle-plus"></i>

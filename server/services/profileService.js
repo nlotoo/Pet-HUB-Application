@@ -201,6 +201,26 @@ async function getPetDetail(petID) {
 }
 
 
+async function LikeThePet(data) {
+
+
+    let petDetail = await Pet.findById({ _id: data.id })
+
+    if (petDetail.petLikes.find((a) => a == data.userID)) {
+        throw 'this user is liked the pet';
+    }
+
+    petDetail.petLikes.push(data.userID)
+
+    let result = await petDetail.save()
+
+    console.log(petDetail)
+
+
+    return petDetail
+}
+
+
 
 
 
@@ -219,4 +239,5 @@ module.exports = {
     EditPet,
     getAllPet,
     getPetDetail,
+    LikeThePet,
 };

@@ -1,4 +1,51 @@
 
+const isLiked = async (data) => {
+    console.log(data)
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    };
+
+
+
+
+    return fetch(`http://localhost:5000/like-the-pet`, requestOptions)
+        .then(res => res.json())
+        .then(rs => {
+            return rs;
+        })
+        .catch(err => { console.log('error ', err); return err });
+
+
+};
+
+
+const unLiked = async (data) => {
+    console.log(data)
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    };
+
+
+
+
+    return fetch(`http://localhost:5000/like-the-pet`, requestOptions)
+        .then(res => res.json())
+        .then(rs => {
+            return rs;
+        })
+        .catch(err => { console.log('error ', err); return err });
+
+
+};
+
+
+
 const createPet = async (data) => {
 
 
@@ -14,6 +61,7 @@ const createPet = async (data) => {
     return fetch('http://localhost:5000/create-new-pet', requestOptions)
         .then(res => res.json())
         .then(rs => {
+            console.log(rs)
             return rs;
         })
         .catch(err => { console.log('error ', err); return err });
@@ -130,12 +178,12 @@ const getPetInfo = async (petID) => {
 
 
 module.exports = {
-
+    isLiked,
     createPet,
     getUserPets,
     deleltePetFunc,
     isAuthorizated,
     editPetSubmit,
-
+    unLiked,
     getPetInfo,
 };

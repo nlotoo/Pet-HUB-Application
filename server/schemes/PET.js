@@ -25,6 +25,10 @@ const petSchema = new mongoose.Schema({
     petOwner: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
+    }],
+    petLikes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }]
 
 }
