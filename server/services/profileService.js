@@ -221,6 +221,27 @@ async function LikeThePet(data) {
 }
 
 
+async function disLikeThePet(data) {
+
+    console.log(data)
+
+    let petDetail = await Pet.findById({ _id: data.id })
+
+    // if (petDetail.petLikes.find((a) => a == data.userID)) {
+    //     throw 'this user is liked the pet';
+    // }
+
+    petDetail.petLikes.remove(data.userID)
+
+    // let result = await petDetail.save()
+
+    console.log(petDetail)
+
+
+    return petDetail
+}
+
+
 
 
 
@@ -232,6 +253,7 @@ async function LikeThePet(data) {
 
 
 module.exports = {
+    disLikeThePet,
     createPet,
     getUserPets,
     deleltePetFuncServerSide,

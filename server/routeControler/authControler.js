@@ -186,6 +186,20 @@ router.post('/like-the-pet', async (req, res) => {
     }
 })
 
+router.post('/dislike-the-pet', async (req, res) => {
+
+    try {
+        
+
+        let data = await profileService.disLikeThePet(req.body)
+        res.status(200).json(data)
+
+    } catch (err) {
+        console.log(err)
+        res.status(401).json({ message: err })
+    }
+})
+
 
 
 module.exports = router;

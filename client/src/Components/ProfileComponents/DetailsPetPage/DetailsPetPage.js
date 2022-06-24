@@ -2,7 +2,7 @@ import './pet-detail-card.css';
 import { Link, useParams } from "react-router-dom";
 import { useFetch } from '../../../services/useFetch';
 import LoadingSpinner from "../../AdditionalComponents/LoadingSpinner/LoadingSpinner";
-import { isLiked } from '../profile.service';
+import { isLiked, unLiked } from '../profile.service';
 import { useState } from 'react';
 const DetailsPetPage = () => {
     let [like, setLike] = useState(null)
@@ -23,10 +23,10 @@ const DetailsPetPage = () => {
 
 
     const LikedPet = (e) => {
-        let asd1 = {
+        let userData = {
             id, userID,
         }
-        isLiked(asd1)
+        isLiked(userData)
             .then(rs => {
                 if (rs.message) {
                     setLike(rs.message)
@@ -35,6 +35,13 @@ const DetailsPetPage = () => {
             )
 
 
+    }
+
+    const UnLikedPet = () => {
+        let userData = {
+            id, userID,
+        }
+        unLiked(userData)
     }
 
     return (
@@ -64,7 +71,7 @@ const DetailsPetPage = () => {
                         <Link to={'/edit-pet/' + id} className='card-button'>Edit</Link>
                         {like}
                         {
-                            data?.petLikes?.find((a) => a == userID) ? <button  onClick={LikedPet} >Liked</button> : <button  onClick={LikedPet} >Like</button>
+                            data?.petLikes?.find((a) => a == userID) ? <button onClick={UnLikedPet} >Liked</button> : <button onClick={LikedPet} >Like</button>
                         }
 
                     </div>
