@@ -38,6 +38,7 @@ const DetailsPetPage = () => {
     }
 
     const UnLikedPet = () => {
+        console.log('unlike')
         let userData = {
             id, userID,
         }
@@ -69,11 +70,11 @@ const DetailsPetPage = () => {
                     </div>
                     <div className="button-bar">
                         <Link to={'/edit-pet/' + id} className='card-button'>Edit</Link>
-                        {like}
-                        {
-                            data?.petLikes?.find((a) => a == userID) ? <button onClick={UnLikedPet} >Liked</button> : <button onClick={LikedPet} >Like</button>
-                        }
 
+                        {
+                            !data?.petLikes?.find((a) => a == userID) ? <button onClick={LikedPet} >Like</button> : ''
+                        }
+                        <button onClick={UnLikedPet} >Liked</button>
                     </div>
                     <div className="icon-bar">
                         <i className="fa-solid fa-heart-circle-plus"></i>

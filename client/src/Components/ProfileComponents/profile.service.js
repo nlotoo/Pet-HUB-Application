@@ -34,7 +34,7 @@ const unLiked = async (data) => {
 
 
 
-    return fetch(`http://localhost:5000/like-the-pet`, requestOptions)
+    return fetch(`http://localhost:5000/dislike-the-pet`, requestOptions)
         .then(res => res.json())
         .then(rs => {
             return rs;

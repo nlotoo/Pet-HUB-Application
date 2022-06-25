@@ -193,7 +193,6 @@ async function getAllPet() {
 async function getPetDetail(petID) {
 
 
-
     let petDetail = await Pet.findById({ _id: petID })
 
 
@@ -223,7 +222,7 @@ async function LikeThePet(data) {
 
 async function disLikeThePet(data) {
 
-    console.log(data)
+    console.log(data.userID)
 
     let petDetail = await Pet.findById({ _id: data.id })
 
@@ -231,8 +230,12 @@ async function disLikeThePet(data) {
     //     throw 'this user is liked the pet';
     // }
 
-    petDetail.petLikes.remove(data.userID)
+    // petDetail.petLikes.remove(data.userID);
+    console.log(petDetail.petLikes)
+    petDetail.petLikes.filter(uerID => uerID !== data.userID)
+    console.log(petDetail.petLikes)
 
+    // petDetail.save();
     // let result = await petDetail.save()
 
     console.log(petDetail)
