@@ -4,8 +4,9 @@ import { useFetch } from '../../../services/useFetch';
 import LoadingSpinner from "../../AdditionalComponents/LoadingSpinner/LoadingSpinner";
 import { isLiked, unLiked } from '../profile.service';
 import { useState } from 'react';
+
 const DetailsPetPage = () => {
-    let [like, setLike] = useState(null)
+    let [like, setLike] = useState(null);
     let { id } = useParams();
     let userID = localStorage.getItem('User ID');
     const url = `http://localhost:5000/pet-details/${id}`;
@@ -15,11 +16,11 @@ const DetailsPetPage = () => {
         console.log(error);
     };
 
-    const urlPetOwner = `http://localhost:5000/user-profile/${data?.petOwner[0]}`
+    const urlPetOwner = `http://localhost:5000/user-profile/${data?.petOwner[0]}`;
     if (urlPetOwner.error) {
         console.log(urlPetOwner.error);
     };
-    let petOwnerName = useFetch(urlPetOwner)
+    let petOwnerName = useFetch(urlPetOwner);
 
 
     const LikedPet = (e) => {
@@ -29,20 +30,18 @@ const DetailsPetPage = () => {
         isLiked(userData)
             .then(rs => {
                 if (rs.message) {
-                    setLike(rs.message)
+                    setLike(rs.message);
                 }
             }
-            )
-
-
-    }
+            );
+    };
 
     const UnLikedPet = () => {
         console.log('unlike')
         let userData = {
             id, userID,
         }
-        unLiked(userData)
+        unLiked(userData);
     }
 
     return (

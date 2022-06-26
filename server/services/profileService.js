@@ -222,23 +222,26 @@ async function LikeThePet(data) {
 
 async function disLikeThePet(data) {
 
-    console.log(data.userID)
 
     let petDetail = await Pet.findById({ _id: data.id })
 
-    // if (petDetail.petLikes.find((a) => a == data.userID)) {
-    //     throw 'this user is liked the pet';
-    // }
 
     // petDetail.petLikes.remove(data.userID);
-    console.log(petDetail.petLikes)
-    petDetail.petLikes.filter(uerID => uerID !== data.userID)
-    console.log(petDetail.petLikes)
+    // console.log(petDetail.petLikes)
+    let filterResult = petDetail.petLikes.filter(uerID => {
 
-    // petDetail.save();
-    // let result = await petDetail.save()
+        return uerID != data.userID
+    })
+
+    await Pet.updateOne({ _id: data.id }, { petLikes: filterResult })
+
+
+    petDetail.save();
 
     console.log(petDetail)
+
+
+
 
 
     return petDetail
