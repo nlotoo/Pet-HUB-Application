@@ -4,7 +4,6 @@ import './pet-card-our-catalog.css'
 
 const PetsCardU = (data) => {
     let { petsData } = data
-    console.log(petsData)
     const userId = localStorage.getItem('User ID')
 
 
@@ -19,7 +18,6 @@ const PetsCardU = (data) => {
                 {x.petOwner[0] === userId ? <Link className='card-button-our-catalog' to={'/edit-pet/' + x._id}>Edit</Link>
                     : ''}
                 <Link to={'/pet-details/' + x._id} className='card-button-our-catalog'>Details</Link>
-                <Link to={'pet-like/' + x._id} className='card-button-our-catalog'>Like</Link>
             </div>
 
         )

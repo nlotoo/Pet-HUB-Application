@@ -9,12 +9,39 @@ const DetailsPetPage = () => {
     let [like, setLike] = useState(null);
     let { id } = useParams();
     let userID = localStorage.getItem('User ID');
+
     const url = `http://localhost:5000/pet-details/${id}`;
 
     const { data, error, loading } = useFetch(url);
     if (error) {
         console.log(error);
     };
+
+    const LikedPet = (e) => {
+        let userData = {
+            id, userID,
+        };
+        isLiked(userData)
+            .then(rs => {
+                if (rs.message) {
+                    setLike(rs.message);
+                }
+            }
+            );
+        window.location.reload(false);
+    };
+
+    const UnLikedPet = () => {
+        let userData = {
+            id, userID,
+        };
+        unLiked(userData);
+        window.location.reload(false);
+
+
+    };
+
+
 
     const urlPetOwner = `http://localhost:5000/user-profile/${data?.petOwner[0]}`;
     if (urlPetOwner.error) {
@@ -23,26 +50,7 @@ const DetailsPetPage = () => {
     let petOwnerName = useFetch(urlPetOwner);
 
 
-    const LikedPet = (e) => {
-        let userData = {
-            id, userID,
-        }
-        isLiked(userData)
-            .then(rs => {
-                if (rs.message) {
-                    setLike(rs.message);
-                }
-            }
-            );
-    };
 
-    const UnLikedPet = () => {
-        console.log('unlike')
-        let userData = {
-            id, userID,
-        }
-        unLiked(userData);
-    }
 
     return (
         <div className="root-element" >
@@ -71,9 +79,9 @@ const DetailsPetPage = () => {
                         <Link to={'/edit-pet/' + id} className='card-button'>Edit</Link>
 
                         {
-                            !data?.petLikes?.find((a) => a == userID) ? <button onClick={LikedPet} >Like</button> : ''
+                            !data?.petLikes?.find((a) => a === userID) ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Liked</button>
                         }
-                        <button onClick={UnLikedPet} >Liked</button>
+
                     </div>
                     <div className="icon-bar">
                         <i className="fa-solid fa-heart-circle-plus"></i>

@@ -10,7 +10,7 @@ const PetCardCatalog = (data) => {
         return (<div className="pet-card-wrapper-pets-catalog">
             <div className="details-pet-card-pets-catalog">
                 <h2>{x.petName}</h2>
-                <img className='imgs' alt='pet-card-img' src="https://image.shutterstock.com/image-photo/happy-puppy-dog-smiling-on-260nw-1799966587.jpg" ></img>
+                <img className='imgs' alt='pet-card-img' src={x.petPhoto} ></img>
                 
                     <h3>breed</h3>
                     <p>{x.petBreed}</p>

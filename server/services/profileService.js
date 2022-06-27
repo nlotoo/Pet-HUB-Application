@@ -226,8 +226,6 @@ async function disLikeThePet(data) {
     let petDetail = await Pet.findById({ _id: data.id })
 
 
-    // petDetail.petLikes.remove(data.userID);
-    // console.log(petDetail.petLikes)
     let filterResult = petDetail.petLikes.filter(uerID => {
 
         return uerID != data.userID
@@ -237,12 +235,6 @@ async function disLikeThePet(data) {
 
 
     petDetail.save();
-
-    console.log(petDetail)
-
-
-
-
 
     return petDetail
 }

@@ -11,6 +11,7 @@
 .pet-card-wrapper {
     margin-top: 5em;
 }
+
 .details-pet-card {
     width: 300px;
     border: 1px solid #68988C;
@@ -18,16 +19,29 @@
     box-shadow: 6px -4px 8px -2px #000000;
     background-color: rgb(255, 255, 255);
     text-align: center;
-    
+
     height: fit-content;
 
 }
+
 .button-bar button {
     padding: 5px;
     border-radius: 5px;
     background-color: rgb(33, 21, 21);
     color: white;
+    width: 20%;
     margin-bottom: 10px;
+}
+
+.button-bar button:hover {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    background-color: grey;
+}
+
+.button-bar button:active {
+    -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .imgs-details-page {
@@ -40,7 +54,7 @@
     border-radius: 5px;
     background-color: rgb(33, 21, 21);
     color: white;
-    width: 30%;
+    width: 20%;
     margin-bottom: 10px;
 }
 
