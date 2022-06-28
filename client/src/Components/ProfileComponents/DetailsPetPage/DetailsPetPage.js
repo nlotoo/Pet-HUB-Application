@@ -1,5 +1,5 @@
 import './pet-detail-card.css';
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useFetch } from '../../../services/useFetch';
 import LoadingSpinner from "../../AdditionalComponents/LoadingSpinner/LoadingSpinner";
 import { isLiked, unLiked } from '../profile.service';
@@ -9,6 +9,7 @@ const DetailsPetPage = () => {
     let [like, setLike] = useState(null);
     let { id } = useParams();
     let userID = localStorage.getItem('User ID');
+    const navigate = useNavigate();
 
     const url = `http://localhost:5000/pet-details/${id}`;
 
@@ -76,7 +77,7 @@ const DetailsPetPage = () => {
                         <p>{data?.petInfo} </p>
                     </div>
                     <div className="button-bar">
-                        <Link to={'/edit-pet/' + id} className='card-button'>Edit</Link>
+                        <button onClick={() => { navigate(`/edit-pet/${id}`) }} >Edit</button>
 
                         {
                             !data?.petLikes?.find((a) => a === userID) ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Liked</button>
