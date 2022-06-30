@@ -1,15 +1,11 @@
 
 const isLiked = async (data) => {
-    console.log(data)
 
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     };
-
-
-
 
     return fetch(`http://localhost:5000/like-the-pet`, requestOptions)
         .then(res => res.json())
@@ -23,7 +19,6 @@ const isLiked = async (data) => {
 
 
 const unLiked = async (data) => {
-    console.log(data)
 
     const requestOptions = {
         method: 'POST',

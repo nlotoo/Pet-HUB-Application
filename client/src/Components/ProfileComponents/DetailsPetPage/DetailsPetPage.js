@@ -3,10 +3,9 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useFetch } from '../../../services/useFetch';
 import LoadingSpinner from "../../AdditionalComponents/LoadingSpinner/LoadingSpinner";
 import { isLiked, unLiked } from '../profile.service';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const DetailsPetPage = () => {
-    let [like, setLike] = useState(null);
 
     let { id } = useParams();
     let userID = localStorage.getItem('User ID');
@@ -15,6 +14,17 @@ const DetailsPetPage = () => {
     const url = `http://localhost:5000/pet-details/${id}`;
 
     const { data, error, loading } = useFetch(url);
+
+    
+    let [like, setLike] = useState(null);
+    const itsTrue = data?.petLikes.some(x => x === userID);
+
+    useEffect(()=> {
+        if(itsTrue){
+            setLike(itsTrue);
+        };
+    },[itsTrue]);
+
     if (error) {
         console.log(error);
     };
@@ -25,7 +35,6 @@ const DetailsPetPage = () => {
         };
         isLiked(userData)
             .then(rs => {
-                console.log(rs)
                 if (rs.message) {
                     setLike(rs.message);
                 }
@@ -41,13 +50,12 @@ const DetailsPetPage = () => {
         unLiked(userData);
         setLike(false)
 
-       
+
 
 
     };
 
 
-    console.log(like)
 
 
 
@@ -91,9 +99,9 @@ const DetailsPetPage = () => {
                             petOwnerName.data?._id === userID ? <button onClick={() => { navigate(`/edit-pet/${id}`) }} >Edit</button> : ''
                         }
                         {
-                           !like === true ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Liked</button>
+                            !like === true ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Liked</button>
                         }
-                        
+
                     </div>
                     <div className="icon-bar">
 
