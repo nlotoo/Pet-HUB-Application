@@ -1,6 +1,6 @@
 import './edit-page.css';
 import { chekingWhenCreatingOrEditingElement } from '../../../services/chekingWhenCreatingElement';
-import {  useState, } from 'react';
+import { useState, } from 'react';
 import ErrorBar from '../ErrorBar/ErrorBar';
 import { editPetSubmit } from '../profile.service';
 import { useNavigate, useParams } from "react-router-dom";
@@ -37,7 +37,7 @@ const EditPetPage = () => {
                     setError(rs.message);
                     return;
                 };
-                navigate('/pets-catalog');
+                navigate(`/pets-catalog/${petOwner}`);
             }
             );
 
@@ -53,39 +53,34 @@ const EditPetPage = () => {
 
     return (
         <div className='edit-new-pet-root'>
-            <h2 className='add-new-pet-heading'>Edit your pet</h2>
             <div className='edit-new-pet-wrapper'>
                 <form className='edit-new-pet-form' onSubmit={EditPet} >
+                    <h2 className='add-new-pet-heading'>Edit your pet</h2>
                     <div>
 
-                        <label>Pet name </label>
-                        <input className='input-edit-pet-class' id='petName' name='petName' ></input>
-                    </div>
-                    <div>
-
-                        <label>Pet weight</label>
-                        <input className='input-edit-pet-class' type='number' id='petWeight' name='petWeight' ></input>
+                        <input placeholder='Pet name' className='input-edit-pet-class' id='petName' name='petName' ></input>
                     </div>
                     <div>
 
-                        <label>Pet breed</label>
-                        <input className='input-edit-pet-class' id='petBreed' name='petBreed'  ></input>
+                        
+                        <input placeholder='Pet weight' className='input-edit-pet-class' type='number' id='petWeight' name='petWeight' ></input>
                     </div>
                     <div>
 
-                        <label>Pet age</label>
-                        <input className='input-edit-pet-class' type='number' id='petAge' name='petAge'></input>
+                        <input placeholder='Pet breed' className='input-edit-pet-class' id='petBreed' name='petBreed'  ></input>
                     </div>
                     <div>
-                        <label>Pet photo</label>
-                        <input className='input-edit-pet-class' id='petPhoto' name='petPhoto' ></input>
+
+                        <input placeholder='Pet age' className='input-edit-pet-class' type='number' id='petAge' name='petAge'></input>
                     </div>
                     <div>
-                        <label>Pet ifno (optional)</label>
-                        <textarea className='input-edit-pet-class' id='petInfo' name='petInfo' />
+                        <input placeholder='Pet photo' className='input-edit-pet-class' id='petPhoto' name='petPhoto' ></input>
                     </div>
-                    <button className='edit-pet-button' >Edit your pet details</button>
                     <div>
+                        <textarea placeholder='Pet ifno (optinal)' className='input-edit-pet-class pet-info-textarea' id='petInfo' name='petInfo' />
+                    </div>
+                    <div className='button-div'>
+                        <button className='edit-pet-button' >Edit your pet details</button>
 
                         {
                             errorArray && <ErrorBar errorMessages={errorArray} />

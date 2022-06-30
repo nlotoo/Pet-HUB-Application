@@ -33,17 +33,19 @@
 }
 
 
-
+.user-info div {
+    width: 200px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    
+    font-size: 18px;
+}
 
 .user-info {
     text-align: left;
     margin-top: 10px;
     margin-left: 70px;
-}
 
-.user-info div {
-
-    font-size: 18px;
 }
 
 
@@ -94,7 +96,7 @@
     animation: spin 2s linear infinite;
 }
 
-.social-media{
+.social-media {
     margin-top: 20px;
 }
 

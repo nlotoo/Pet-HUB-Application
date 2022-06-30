@@ -8,7 +8,7 @@ const PetsCardU = (data) => {
 
 
     return petsData.map((x, i) => {
-        console.log(x.petOwner[0])
+      
         return (
             <div  className="details-pet-card-our-catalog" >
                 <h2>{x.petName}</h2>

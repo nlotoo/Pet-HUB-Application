@@ -50,6 +50,7 @@ const DetailsPetPage = () => {
     };
     let petOwnerName = useFetch(urlPetOwner);
 
+    console.log(petOwnerName)
 
 
 
@@ -77,12 +78,12 @@ const DetailsPetPage = () => {
                         <p>{data?.petInfo} </p>
                     </div>
                     <div className="button-bar">
-                        <button onClick={() => { navigate(`/edit-pet/${id}`) }} >Edit</button>
-
+                        {
+                            petOwnerName.data?._id === userID ? <button onClick={() => { navigate(`/edit-pet/${id}`) }} >Edit</button> : ''
+                        }
                         {
                             !data?.petLikes?.find((a) => a === userID) ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Liked</button>
                         }
-
                     </div>
                     <div className="icon-bar">
                         <i className="fa-solid fa-heart-circle-plus"></i>
