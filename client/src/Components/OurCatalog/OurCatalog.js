@@ -22,7 +22,7 @@ const OutCatalog = () => {
 
     return (
         <div className="catalog-root">
-            <h3 className="pets-heading">Our Catalog</h3>
+            <h3 className="pets-heading">All dog Catalog</h3>
             <div className="pets-catalog-wraper">
                 {petCatalog?.data?.length === 0 ? <div className='no-pet-message'>
                     <span> You still don`t have pet.</span>

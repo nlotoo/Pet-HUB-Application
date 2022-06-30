@@ -50,7 +50,7 @@ const DetailsPetPage = () => {
     };
     let petOwnerName = useFetch(urlPetOwner);
 
-    console.log(petOwnerName)
+
 
 
 

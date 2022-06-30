@@ -122,7 +122,7 @@ const deleltePetFunc = async (petCardId) => {
     };
 
 
-    fetch(`http://localhost:5000/pets-delete`, requestOptions)
+    fetch(`http://localhost:5000/delete/${petCardId}`, requestOptions)
         .then(res => res.json())
         .then(response => {
             return response;
@@ -156,8 +156,12 @@ const isAuthorizated = async () => {
         .catch(err => console.log(err));
 
 };
+
+
+// стар
 const getPetInfo = async (petID) => {
 
+    console.log(petID)
 
     const requestOptions = {
         method: 'POST',

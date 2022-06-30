@@ -40,9 +40,9 @@ const NavigationBar = () => {
             <ul className='nav-links-desktop' >
                 <li><Link className='menu-a-tag' to="/">Home</Link></li>
                 <li><Link className='menu-a-tag' to="/about-us">About </Link></li>
-                <li><Link className='menu-a-tag' to="/get-all-pets">Our Catalog </Link></li>
+                <li><Link className='menu-a-tag' to="/get-all-pets">All dog Catalog </Link></li>
                 {isLoged && <li><Link className='menu-a-tag' to={"/user-profile/" + userID}>Profile </Link></li>}
-                {isLoged && <li><Link className='menu-a-tag' to={"/get-user-pets/" + userID}>Pets Catalog </Link></li>}
+                {isLoged && <li><Link className='menu-a-tag' to={"/get-user-pets/" + userID}>Your Catalog </Link></li>}
                 {isLoged && <li><Link className='menu-a-tag' to={"/create-new-pet/" + userID}>Add new pet </Link></li>}
                 {!isLoged && <li><Link className='menu-a-tag' to="/sign-up">Register </Link></li>}
                 {!isLoged && <li><Link className='menu-a-tag' to="/login">Login </Link></li>}

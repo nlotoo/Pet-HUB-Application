@@ -92,10 +92,8 @@ async function populateAllPets(petOwner, petName) {
 }
 async function getUserPets(userID) {
 
-
-
+    console.log(userID)
     let user = await User.findById({ _id: userID }).populate('pets')
-    console.log(user)
     return user.pets
 }
 
@@ -192,7 +190,7 @@ async function getAllPet() {
 
 async function getPetDetail(petID) {
 
-
+    console.log(petID)
     let petDetail = await Pet.findById({ _id: petID })
 
 

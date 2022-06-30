@@ -20,18 +20,20 @@
 }
 
 .card-button {
+    text-decoration: none;
     padding: 10px;
     border-radius: 5px;
     background-color: rgb(33, 21, 21);
     color: white;
     width: 30%;
-    margin-bottom: 10px;
+    margin: 6px;
 }
 
 .card-button:hover {
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     background-color: grey;
+    color: salmon;
 }
 
 .card-button:active {

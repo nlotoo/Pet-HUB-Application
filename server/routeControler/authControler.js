@@ -3,8 +3,7 @@ router = Router()
 
 const authService = require('../services/authServices.js')
 const profileService = require('../services/profileService.js')
-const isAuth = require('../midlleware/isAuth.js')
-const auth = require('../midlleware/auth.js');
+
 
 router.post('/sign-up', async (req, res) => {
     try {
@@ -69,21 +68,6 @@ router.post('/create-new-pet', async (req, res) => {
 
 })
 
-// стар
-router.post('/pets-catalog', async (req, res) => {
-    try {
-
-        let data = await profileService.getUserPets(req.body)
-        res.status(200).json(data)
-
-    } catch (err) {
-        console.log(err)
-        res.status(401).json({ message: err })
-    }
-
-
-
-})
 
 router.post('/pets-delete', async (req, res) => {
 
@@ -141,7 +125,7 @@ router.get('/get-user-pets/:id', async (req, res) => {
 
 });
 
-
+//стар
 router.post('/pet-info', async (req, res) => {
 
     try {

@@ -37,7 +37,7 @@ const EditPetPage = () => {
                     setError(rs.message);
                     return;
                 };
-                navigate(`/pets-catalog/${petOwner}`);
+                navigate(`/get-user-pets/${petOwner}`);
             }
             );
 
