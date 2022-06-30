@@ -12,7 +12,7 @@ const OutCatalog = () => {
     let petCatalog = useFetch(url);
 
     let [pageNumber, setPageNumber] = useState(0);
-    const petsPerPage = 4;
+    const petsPerPage = 5;
     const pageVisited = pageNumber * petsPerPage;
     const pageCount = Math.ceil(petCatalog?.data?.length / petsPerPage);
     const changePage = ({ selected }) => {

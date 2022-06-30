@@ -5,8 +5,10 @@ import ErrorBar from '../ErrorBar/ErrorBar';
 import { editPetSubmit } from '../profile.service';
 import { useNavigate, useParams } from "react-router-dom";
 import isAuthHOC from '../../../services/HOC';
+import { useFetch } from '../../../services/useFetch';
+
 const EditPetPage = () => {
-    const id = useParams();
+    const { id } = useParams();
 
     let [errorArray, setError] = useState();
 
@@ -26,6 +28,8 @@ const EditPetPage = () => {
             petInfo: e.target.petInfo.value,
             petOwner: petOwner
         };
+
+
 
 
         try {
@@ -49,35 +53,46 @@ const EditPetPage = () => {
 
 
 
+    const url = `http://localhost:5000/pet-details/${id}`;
+
+    const petInfo = useFetch(url);
+    console.log(petInfo.data)
+
+    const ReturnPage = () => {
+        navigate(`/pet-details/${id}`)
+    }
 
 
     return (
         <div className='edit-new-pet-root'>
             <div className='edit-new-pet-wrapper'>
                 <form className='edit-new-pet-form' onSubmit={EditPet} >
+                    <button onClick={ReturnPage} className='left-arrow'>
+                        <i className="fa-solid fa-arrow-left"></i>
+                    </button>
                     <h2 className='add-new-pet-heading'>Edit your pet</h2>
                     <div>
 
-                        <input placeholder='Pet name' className='input-edit-pet-class' id='petName' name='petName' ></input>
+                        <input placeholder='Pet name' className='input-edit-pet-class' id='petName' name='petName' defaultValue={petInfo?.data?.petName} ></input>
                     </div>
                     <div>
 
-                        
-                        <input placeholder='Pet weight' className='input-edit-pet-class' type='number' id='petWeight' name='petWeight' ></input>
+
+                        <input placeholder='Pet weight' className='input-edit-pet-class' type='number' id='petWeight' name='petWeight' defaultValue={petInfo?.data?.petWeight} ></input>
                     </div>
                     <div>
 
-                        <input placeholder='Pet breed' className='input-edit-pet-class' id='petBreed' name='petBreed'  ></input>
+                        <input placeholder='Pet breed' className='input-edit-pet-class' id='petBreed' name='petBreed' defaultValue={petInfo?.data?.petBreed} ></input>
                     </div>
                     <div>
 
-                        <input placeholder='Pet age' className='input-edit-pet-class' type='number' id='petAge' name='petAge'></input>
+                        <input placeholder='Pet age' className='input-edit-pet-class' type='number' id='petAge' name='petAge' defaultValue={petInfo?.data?.petAge} ></input>
                     </div>
                     <div>
-                        <input placeholder='Pet photo' className='input-edit-pet-class' id='petPhoto' name='petPhoto' ></input>
+                        <input placeholder='Pet photo' className='input-edit-pet-class' id='petPhoto' name='petPhoto' defaultValue={petInfo?.data?.petPhoto}></input>
                     </div>
                     <div>
-                        <textarea placeholder='Pet ifno (optinal)' className='input-edit-pet-class pet-info-textarea' id='petInfo' name='petInfo' />
+                        <textarea placeholder='Pet ifno (optinal)' className='input-edit-pet-class pet-info-textarea' id='petInfo' name='petInfo' defaultValue={petInfo?.data?.petInfo} />
                     </div>
                     <div className='button-div'>
                         <button className='edit-pet-button' >Edit your pet details</button>
