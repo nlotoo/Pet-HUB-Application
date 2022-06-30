@@ -1,5 +1,5 @@
 import './pet-detail-card.css';
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useFetch } from '../../../services/useFetch';
 import LoadingSpinner from "../../AdditionalComponents/LoadingSpinner/LoadingSpinner";
 import { isLiked, unLiked } from '../profile.service';
@@ -8,22 +8,23 @@ import { useEffect, useState } from 'react';
 const DetailsPetPage = () => {
 
     let { id } = useParams();
-    let userID = localStorage.getItem('User ID');
     const navigate = useNavigate();
 
     const url = `http://localhost:5000/pet-details/${id}`;
 
     const { data, error, loading } = useFetch(url);
-
-    
+    let userID = localStorage.getItem('User ID');
+    let [user, setUser] = useState(null)
     let [like, setLike] = useState(null);
     const itsTrue = data?.petLikes.some(x => x === userID);
 
-    useEffect(()=> {
-        if(itsTrue){
+
+    useEffect(() => {
+        setUser(userID)
+        if (itsTrue) {
             setLike(itsTrue);
         };
-    },[itsTrue]);
+    }, [itsTrue]);
 
     if (error) {
         console.log(error);
@@ -56,19 +57,11 @@ const DetailsPetPage = () => {
     };
 
 
-
-
-
     const urlPetOwner = `http://localhost:5000/user-profile/${data?.petOwner[0]}`;
     let petOwnerName = useFetch(urlPetOwner);
     if (petOwnerName.error) {
         console.log(petOwnerName.error);
-
     };
-
-
-
-
 
 
     return (
@@ -99,7 +92,13 @@ const DetailsPetPage = () => {
                             petOwnerName.data?._id === userID ? <button onClick={() => { navigate(`/edit-pet/${id}`) }} >Edit</button> : ''
                         }
                         {
-                            !like === true ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Liked</button>
+                            user &&
+                            <div>
+
+                                {
+                                    !like === true ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Liked</button>
+                                }
+                            </div>
                         }
 
                     </div>

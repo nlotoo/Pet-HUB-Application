@@ -67,7 +67,7 @@ async function createPet(data) {
 
 
 
-}
+};
 async function populateAllPets(petOwner, petName) {
 
 
@@ -89,18 +89,18 @@ async function populateAllPets(petOwner, petName) {
     return existName
 
 
-}
+};
 async function getUserPets(userID) {
 
     console.log(userID)
     let user = await User.findById({ _id: userID }).populate('pets')
     return user.pets
-}
+};
 
 async function deleltePetFuncServerSide(data) {
 
     return await Pet.findOneAndDelete({ _id: data.petID })
-}
+};
 
 async function isAuth(data) {
 
@@ -112,7 +112,7 @@ async function isAuth(data) {
         return console.log('You don`t have authorization !')
     }
 
-}
+};
 
 async function EditPet(data, petID) {
 
@@ -171,7 +171,6 @@ async function EditPet(data, petID) {
     return result;
 };
 
-
 async function getAllPet() {
 
 
@@ -180,7 +179,7 @@ async function getAllPet() {
 
 
     return user
-}
+};
 
 async function getPetDetail(petID) {
 
@@ -188,54 +187,58 @@ async function getPetDetail(petID) {
 
 
     return petDetail
-}
+};
 
 
 async function LikeThePet(data) {
 
 
     let petDetail = await Pet.findById({ _id: data.id })
+    let userDetails = await User.findById({ _id: data.userID })
 
     if (petDetail.petLikes.find((a) => a == data.userID)) {
         throw 'this user is liked the pet';
     }
 
     petDetail.petLikes.push(data.userID)
-
-    let result = await petDetail.save()
-
-    console.log(petDetail)
+    userDetails.liked.push(data.id)
+    
+    await petDetail.save()
+    await userDetails.save()
 
 
     return petDetail
-}
+};
 
 
 async function disLikeThePet(data) {
 
 
     let petDetail = await Pet.findById({ _id: data.id })
+    let userDetails = await User.findById({ _id: data.userID })
 
-
-    let filterResult = petDetail.petLikes.filter(uerID => {
-
+    let filteredResult = petDetail.petLikes.filter(uerID => {
         return uerID != data.userID
     })
 
-    await Pet.updateOne({ _id: data.id }, { petLikes: filterResult })
+    let filteredResultUserDetails = userDetails.liked.filter(likedPetId => {
 
+        return likedPetId != data.id
+    })
 
+    await Pet.updateOne({ _id: data.id }, { petLikes: filteredResult })
+    await User.updateOne({ _id: data.userID }, { liked: filteredResultUserDetails })
+
+    userDetails.save()
     petDetail.save();
 
     return petDetail
-}
+};
 
 async function getFavorites(id) {
-    console.log(id)
-    let data = await User.findById({ _id: id }).populate('pets')
-    console.log(data)
-    return id
-}
+    let data = await User.findById({ _id: id }).populate('liked')
+    return data.liked
+};
 
 
 

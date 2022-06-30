@@ -24,12 +24,11 @@ const OutCatalog = () => {
             <h3 className="pets-heading">All dog Catalog</h3>
             <div className="pets-catalog-wraper">
                 {petCatalog?.data?.length === 0 ? <div className='no-pet-message'>
-                    <span> You still don`t have pet.</span>
+                    <span> Still don`t have pet.</span>
                 </div> : ''}
                 {petCatalog?.data?.length === undefined ? <div className='loader-wraper'>
                     <div className='loader'></div>
                 </div> : <div className="pets-catalog-rail">
-                    {/* <PetsCard userPetData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} /> */}
                     <PetsCardU  petsData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
       
 

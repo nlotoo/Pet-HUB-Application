@@ -77,7 +77,7 @@ const CreatePetPage = () => {
                         <input placeholder='Pet photo' className='input-create-pet-class' id='petPhoto' name='petPhoto' ></input>
                     </div>
                     <div>
-                        <textarea placeholder='Pet info (optional)' className='input-create-pet-class' id='petInfo' name='petInfo' />
+                        <textarea placeholder='Pet info (optional)' className='input-create-pet-class textarea-class' id='petInfo' name='petInfo' />
                     </div>
                     <button className='create-pet-button' >Add new pet</button>
                     <div>

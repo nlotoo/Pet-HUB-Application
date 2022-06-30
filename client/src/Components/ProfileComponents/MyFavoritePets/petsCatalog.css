@@ -1,0 +1,146 @@
+.pets-heading {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.pets-catalog-wraper {
+    margin-left: 22px;
+    margin-right: 22px;
+    height: 450px;
+    background-color: rgba(241, 236, 226, 0.688);
+    border: solid 2px #C6E5F1;
+    -webkit-box-shadow: 6px -4px 8px -2px #000000;
+    box-shadow: 6px -4px 8px -2px #000000;
+}
+
+.pets-catalog-rail {
+    display: inline-flex;
+    margin-top: 25px;
+
+}
+
+
+
+.add-new-pet-button {
+
+    margin-top: 7em;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 10px;
+    
+    background-color:#68988C;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.add-new-pet-button:hover {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    background-color: grey;
+    color: salmon;
+
+}
+
+.add-new-pet-button:active {
+    -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+
+
+
+.paginator {
+    margin-top: 20px;
+    margin-left: 10em;
+}
+
+.paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.card-button {
+    margin: 10px;
+    border-radius: 5px;
+    background-color: rgb(33, 21, 21);
+    color: white;
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.card-button:hover {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    background-color: grey;
+}
+
+.card-button:active {
+    -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+
+.paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: solid 2px #C6E5F1;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+
+.paginationBttns a:hover {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    background-color: grey;
+}
+
+.paginationBttns a:active {
+    -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.paginationActive a {
+    color: white;
+    background-color: #C6E5F1;
+}
+
+.paginationDisabled a {
+    color: white;
+    background-color: grey
+}
+
+.loader {
+
+
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.no-pet-message {
+    margin-top: 12em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
