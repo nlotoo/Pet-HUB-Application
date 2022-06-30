@@ -158,25 +158,6 @@ const isAuthorizated = async () => {
 };
 
 
-// стар
-const getPetInfo = async (petID) => {
-
-    console.log(petID)
-
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(petID)
-    };
-
-    return fetch('http://localhost:5000/pet-info', requestOptions)
-        .then(res => res.json())
-        .then(response => {
-            return response;
-        })
-        .catch(err => { console.log('error ', err); return err });
-
-}
 
 
 
@@ -189,5 +170,5 @@ module.exports = {
     isAuthorizated,
     editPetSubmit,
     unLiked,
-    getPetInfo,
+ 
 };

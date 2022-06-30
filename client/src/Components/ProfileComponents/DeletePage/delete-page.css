@@ -1,0 +1,38 @@
+.delete-pet-button {
+    padding: 5px;
+    margin: 9px;
+    border-radius: 5px;
+    background-color: rgb(33, 21, 21);
+    color: white;
+    width: 40%;
+}
+
+.delete-pet-button:hover {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    background-color: grey;
+    color: salmon;
+
+}
+
+.delete-pet-button:active {
+    -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.delete-question {
+    padding: 5px;
+
+    width: 350px;
+    height: 100px;
+    border: 1px solid black;
+    -webkit-box-shadow: 6px -4px 8px -2px #000000;
+    box-shadow: 6px -4px 8px -2px #000000;
+    text-align: center;
+    background-color: whitesmoke;
+    opacity: 0.9;
+}
+.delete-wraper{
+    padding: 16em;
+    text-align: -webkit-center;
+}

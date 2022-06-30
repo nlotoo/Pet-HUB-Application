@@ -16,6 +16,7 @@ import globalState from './services/globalStateHOC';
 import DetailsPetPage from './Components/ProfileComponents/DetailsPetPage/DetailsPetPage';
 
 import { UserContext } from './services/UserContex';
+import DeletePage from './Components/ProfileComponents/DeletePage/DeletePage';
 
 
 const AboutUsPage = lazy(() => import('./Components/AdditionalComponents/AboutUsPage/AboutUsPage'));
@@ -54,6 +55,8 @@ const App = () => {
               <Route path='/create-new-pet/:id' element={<CreatePetPage />} />
               <Route path='/edit-pet/:id' element={<EditPetPage />} />
               <Route path='/pet-details/:id' element={<DetailsPetPage />} />
+              <Route path='/delete-page/:id' element={<DeletePage />} />
+
             </Routes>
           </Suspense>
           <footer className='footer-content'>

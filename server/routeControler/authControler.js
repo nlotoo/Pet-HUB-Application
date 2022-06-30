@@ -69,7 +69,7 @@ router.post('/create-new-pet', async (req, res) => {
 })
 
 
-router.post('/pets-delete', async (req, res) => {
+router.post('/delete/:id', async (req, res) => {
 
     try {
 
@@ -125,25 +125,13 @@ router.get('/get-user-pets/:id', async (req, res) => {
 
 });
 
-//стар
-router.post('/pet-info', async (req, res) => {
 
-    try {
-
-        let data = await authService.getUserProfile(req.body)
-
-        res.status(200).json(data)
-
-    } catch (err) {
-        console.log(err)
-        res.status(401).json({ message: err })
-    }
-})
 
 router.get('/pet-details/:id', async (req, res) => {
 
     try {
 
+        console.log(req.params.id)
 
         let data = await profileService.getPetDetail(req.params.id);
         res.status(200).json(data);

@@ -186,11 +186,8 @@ async function getAllPet() {
     return user
 }
 
-
-
 async function getPetDetail(petID) {
 
-    console.log(petID)
     let petDetail = await Pet.findById({ _id: petID })
 
 

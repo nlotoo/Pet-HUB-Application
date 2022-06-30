@@ -10,7 +10,7 @@ const CreatePetPage = () => {
 
     let [errorArray, setError] = useState();
     let navigate = useNavigate();
-    const id = useParams()
+    const { id } = useParams()
     console.log(id)
     const CreatePet = (e) => {
         e.preventDefault();
@@ -38,7 +38,7 @@ const CreatePetPage = () => {
                     setError(rs.errorMessage);
                     return;
                 }
-                navigate('/pets-catalog/' + id );
+                navigate(`/get-user-pets/${id}`);
             }
             )
 

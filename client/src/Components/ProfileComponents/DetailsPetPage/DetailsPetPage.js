@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useFetch } from '../../../services/useFetch';
 import LoadingSpinner from "../../AdditionalComponents/LoadingSpinner/LoadingSpinner";
 import { isLiked, unLiked } from '../profile.service';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const DetailsPetPage = () => {
     let [like, setLike] = useState(null);
@@ -42,14 +42,23 @@ const DetailsPetPage = () => {
 
     };
 
+    if (data?.petOwner[0] === undefined) {
+        console.log('loading...')
+    } else {
+        console.log('load')
+    }
+
 
 
     const urlPetOwner = `http://localhost:5000/user-profile/${data?.petOwner[0]}`;
-    if (urlPetOwner.error) {
-        console.log(urlPetOwner.error);
-    };
     let petOwnerName = useFetch(urlPetOwner);
+    if (petOwnerName.error) {
+        console.log(petOwnerName.error);
 
+    };
+
+
+    console.log(petOwnerName)
 
 
 
@@ -82,11 +91,11 @@ const DetailsPetPage = () => {
                             petOwnerName.data?._id === userID ? <button onClick={() => { navigate(`/edit-pet/${id}`) }} >Edit</button> : ''
                         }
                         {
-                            !data?.petLikes?.find((a) => a === userID) ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Liked</button>
+                            !data?.petLikes?.find((a) => a === userID) ? <button onClick={LikedPet} >Like</button> :  <button onClick={UnLikedPet} >Liked</button>  
                         }
                     </div>
                     <div className="icon-bar">
-                        <i className="fa-solid fa-heart-circle-plus"></i>
+                        
                         <i className="fa-brands fa-instagram"></i>
                         <i className="fa-brands fa-facebook"></i>
                         <i className="fa-brands fa-twitter"></i>
