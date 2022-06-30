@@ -27,7 +27,6 @@ router.post('/sing-in', async (req, res) => {
 
 })
 
-
 router.get('/user-profile/:id', async (req, res) => {
 
     try {
@@ -125,13 +124,9 @@ router.get('/get-user-pets/:id', async (req, res) => {
 
 });
 
-
-
 router.get('/pet-details/:id', async (req, res) => {
 
     try {
-
-        console.log(req.params.id)
 
         let data = await profileService.getPetDetail(req.params.id);
         res.status(200).json(data);
@@ -147,7 +142,7 @@ router.get('/pet-details/:id', async (req, res) => {
 router.post('/like-the-pet', async (req, res) => {
 
     try {
-        
+
 
         let data = await profileService.LikeThePet(req.body)
         res.status(200).json(data)
@@ -156,12 +151,12 @@ router.post('/like-the-pet', async (req, res) => {
         console.log(err)
         res.status(401).json({ message: err })
     }
-})
+});
 
 router.post('/dislike-the-pet', async (req, res) => {
 
     try {
-        
+
 
         let data = await profileService.disLikeThePet(req.body)
         res.status(200).json(data)
@@ -170,8 +165,21 @@ router.post('/dislike-the-pet', async (req, res) => {
         console.log(err)
         res.status(401).json({ message: err })
     }
-})
+});
 
+router.get('/my-favorites/:id', async (req, res) => {
+
+    try {
+
+        let data = await profileService.getFavorites(req.params.id)
+        res.status(200).json(data)
+
+    } catch (err) {
+        console.log(err)
+        res.status(401).json({ message: err })
+    }
+
+});
 
 
 module.exports = router;

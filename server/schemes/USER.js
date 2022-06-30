@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema({
     pets: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Pet"
+    }],
+    liked: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Pet"
     }]
 
 })

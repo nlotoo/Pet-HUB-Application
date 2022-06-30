@@ -10,6 +10,8 @@
 }
 
 .loader-wraper {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 560px;
 }

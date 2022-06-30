@@ -7,14 +7,12 @@ import { deleltePetFunc } from '../../profile.service'
 const PetCardCatalog = (data) => {
     let { petsData } = data
 
-    const deleteBtn = (x) => {
-        console.log(x)
-    }
 
     return petsData.map((x, i) => {
         return (<div className="pet-card-wrapper-pets-catalog">
             <div className="details-pet-card-pets-catalog">
-                <h2>{x.petName}</h2>
+                <h2>{x.petName.slice(0, 1).toUpperCase() + x.petName.slice(1,)}</h2>
+
                 <img className='imgs' alt='pet-card-img' src={x.petPhoto} ></img>
 
                 <h3>breed</h3>

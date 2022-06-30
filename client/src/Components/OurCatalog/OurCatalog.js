@@ -19,7 +19,6 @@ const OutCatalog = () => {
         setPageNumber(selected);
     };
 
-
     return (
         <div className="catalog-root">
             <h3 className="pets-heading">All dog Catalog</h3>

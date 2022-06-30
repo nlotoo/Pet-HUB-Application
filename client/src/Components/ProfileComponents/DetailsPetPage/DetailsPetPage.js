@@ -3,10 +3,11 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useFetch } from '../../../services/useFetch';
 import LoadingSpinner from "../../AdditionalComponents/LoadingSpinner/LoadingSpinner";
 import { isLiked, unLiked } from '../profile.service';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const DetailsPetPage = () => {
     let [like, setLike] = useState(null);
+
     let { id } = useParams();
     let userID = localStorage.getItem('User ID');
     const navigate = useNavigate();
@@ -24,12 +25,13 @@ const DetailsPetPage = () => {
         };
         isLiked(userData)
             .then(rs => {
+                console.log(rs)
                 if (rs.message) {
                     setLike(rs.message);
                 }
+                setLike(true)
             }
             );
-        window.location.reload(false);
     };
 
     const UnLikedPet = () => {
@@ -37,16 +39,15 @@ const DetailsPetPage = () => {
             id, userID,
         };
         unLiked(userData);
-        window.location.reload(false);
+        setLike(false)
+
+       
 
 
     };
 
-    if (data?.petOwner[0] === undefined) {
-        console.log('loading...')
-    } else {
-        console.log('load')
-    }
+
+    console.log(like)
 
 
 
@@ -58,7 +59,6 @@ const DetailsPetPage = () => {
     };
 
 
-    console.log(petOwnerName)
 
 
 
@@ -91,11 +91,12 @@ const DetailsPetPage = () => {
                             petOwnerName.data?._id === userID ? <button onClick={() => { navigate(`/edit-pet/${id}`) }} >Edit</button> : ''
                         }
                         {
-                            !data?.petLikes?.find((a) => a === userID) ? <button onClick={LikedPet} >Like</button> :  <button onClick={UnLikedPet} >Liked</button>  
+                           !like === true ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Liked</button>
                         }
+                        
                     </div>
                     <div className="icon-bar">
-                        
+
                         <i className="fa-brands fa-instagram"></i>
                         <i className="fa-brands fa-facebook"></i>
                         <i className="fa-brands fa-twitter"></i>

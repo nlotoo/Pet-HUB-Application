@@ -2,7 +2,7 @@ import './edit-page.css';
 import { chekingWhenCreatingOrEditingElement } from '../../../services/chekingWhenCreatingElement';
 import { useState, } from 'react';
 import ErrorBar from '../ErrorBar/ErrorBar';
-import { editPetSubmit } from '../profile.service';
+import { deleltePetFunc, editPetSubmit } from '../profile.service';
 import { useNavigate, useParams } from "react-router-dom";
 import isAuthHOC from '../../../services/HOC';
 import { useFetch } from '../../../services/useFetch';
@@ -49,31 +49,30 @@ const EditPetPage = () => {
             setError(err);
         }
 
-    }
+    };
 
 
 
     const url = `http://localhost:5000/pet-details/${id}`;
-
     const petInfo = useFetch(url);
-    console.log(petInfo.data)
 
-    const ReturnPage = () => {
-        navigate(`/pet-details/${id}`)
-    }
 
 
     return (
         <div className='edit-new-pet-root'>
             <div className='edit-new-pet-wrapper'>
                 <form className='edit-new-pet-form' onSubmit={EditPet} >
-                    <button onClick={ReturnPage} className='left-arrow'>
+                    <button onClick={
+                        () => {
+                            navigate(`/pet-details/${id}`);
+                        }
+                    } className='left-arrow'>
                         <i className="fa-solid fa-arrow-left"></i>
                     </button>
                     <h2 className='add-new-pet-heading'>Edit your pet</h2>
                     <div>
 
-                        <input placeholder='Pet name' className='input-edit-pet-class' id='petName' name='petName' defaultValue={petInfo?.data?.petName} ></input>
+                        <input placeholder='Pet new name' className='input-edit-pet-class' id='petName' name='petName' defaultValue={petInfo?.data?.petName} ></input>
                     </div>
                     <div>
 
@@ -96,12 +95,16 @@ const EditPetPage = () => {
                     </div>
                     <div className='button-div'>
                         <button className='edit-pet-button' >Edit your pet details</button>
+                        <button className='edit-pet-button' onClick={ ()=> {
+                            deleltePetFunc(id)                            
+                        }} >Delete</button>
 
-                        {
-                            errorArray && <ErrorBar errorMessages={errorArray} />
-                        }
 
                     </div>
+                    
+                    {
+                            errorArray && <ErrorBar errorMessages={errorArray} />
+                        }
                 </form>
             </div >
         </div >

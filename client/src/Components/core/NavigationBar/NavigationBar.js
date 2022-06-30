@@ -41,6 +41,8 @@ const NavigationBar = () => {
                 <li><Link className='menu-a-tag' to="/">Home</Link></li>
                 <li><Link className='menu-a-tag' to="/about-us">About </Link></li>
                 <li><Link className='menu-a-tag' to="/get-all-pets">All dog Catalog </Link></li>
+                {isLoged && <li><Link className='menu-a-tag' to={"/my-favorites/" + userID}>My Favorites </Link></li>}
+
                 {isLoged && <li><Link className='menu-a-tag' to={"/user-profile/" + userID}>Profile </Link></li>}
                 {isLoged && <li><Link className='menu-a-tag' to={"/get-user-pets/" + userID}>Your Catalog </Link></li>}
                 {isLoged && <li><Link className='menu-a-tag' to={"/create-new-pet/" + userID}>Add new pet </Link></li>}

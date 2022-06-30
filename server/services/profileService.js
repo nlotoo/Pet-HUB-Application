@@ -146,11 +146,7 @@ async function EditPet(data, petID) {
     };
 
 
-    let chekingPet = await Pet.find({ petName: petName });
 
-    if (chekingPet.length == 1) {
-        throw 'This pet name exist!';
-    };
 
 
 
@@ -234,6 +230,12 @@ async function disLikeThePet(data) {
     return petDetail
 }
 
+async function getFavorites(id) {
+    console.log(id)
+    let data = await User.findById({ _id: id }).populate('pets')
+    console.log(data)
+    return id
+}
 
 
 
@@ -255,4 +257,5 @@ module.exports = {
     getAllPet,
     getPetDetail,
     LikeThePet,
+    getFavorites,
 };

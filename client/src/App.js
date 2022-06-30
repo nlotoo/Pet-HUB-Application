@@ -11,6 +11,10 @@ import SignUpPage from './Components/auth/SignUpPage/SingUpPage';
 import Logout from './Components/auth/Logout/Logout';
 import Footer from './Components/core/Footer/Footer';
 import OurCatalog from './Components/OurCatalog/OurCatalog';
+import MyFavorite from './Components/ProfileComponents/MyFavoritePets/MyFavoritePets';
+
+
+
 import globalState from './services/globalStateHOC';
 
 import DetailsPetPage from './Components/ProfileComponents/DetailsPetPage/DetailsPetPage';
@@ -56,7 +60,7 @@ const App = () => {
               <Route path='/edit-pet/:id' element={<EditPetPage />} />
               <Route path='/pet-details/:id' element={<DetailsPetPage />} />
               <Route path='/delete-page/:id' element={<DeletePage />} />
-
+              <Route path='/my-favorites/:id' element={<MyFavorite />} />
             </Routes>
           </Suspense>
           <footer className='footer-content'>
