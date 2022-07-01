@@ -12,12 +12,12 @@ import Logout from './Components/auth/Logout/Logout';
 import Footer from './Components/core/Footer/Footer';
 import OurCatalog from './Components/OurCatalog/OurCatalog';
 import MyFavorite from './Components/ProfileComponents/MyFavoritePets/MyFavoritePets';
+import DetailsPetPage from './Components/ProfileComponents/DetailsPetPage/DetailsPetPage';
 
 
 
 import globalState from './services/globalStateHOC';
 
-import DetailsPetPage from './Components/ProfileComponents/DetailsPetPage/DetailsPetPage';
 
 import { UserContext } from './services/UserContex';
 import DeletePage from './Components/ProfileComponents/DeletePage/DeletePage';

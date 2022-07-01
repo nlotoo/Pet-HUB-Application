@@ -1,16 +1,13 @@
-import { useContext, useState } from 'react';
 import './loginPage.css';
 import { loginUserValidation } from '../../../services/loginUserValidation';
 import ErrorBar from '../ErrorBar/ErrorBar';
 import authService from '../authService';
 import { useNavigate, Link } from 'react-router-dom';
-
-import { UserContext } from '../../../services/UserContex';
+import { useState } from 'react';
 const LoginForm = () => {
 
   let navigate = useNavigate();
 
-  let { setValue } = useContext(UserContext);
 
 
   let [errorArr, setError] = useState();
@@ -36,7 +33,7 @@ const LoginForm = () => {
             window.localStorage.setItem('User Token', responce.token)
             window.localStorage.setItem('User email', responce.userEmail)
             window.localStorage.setItem('User ID', responce.userID)
-            setValue(responce.userEmail)
+            
             navigate('/home-page')
           }
           return responce;

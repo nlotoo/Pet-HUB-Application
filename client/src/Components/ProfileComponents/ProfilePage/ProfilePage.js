@@ -9,9 +9,7 @@ const ProfilePage = () => {
 
     const url = `http://localhost:5000/user-profile/${id}`;
 
-    let myPetsButtonHandle = () => {
-        navigate('/get-user-pets/' + id);
-    };
+
 
     let userFetch = useFetch(url);
     let petCount = userFetch.data?.pets.length;
@@ -68,10 +66,12 @@ const ProfilePage = () => {
 
                         </div>
                         <footer>
-                            <button onClick={myPetsButtonHandle} className='my-pets-button'>My pets</button>
+                            <button onClick={() => {
+                                navigate('/get-user-pets/' + id);
+                            }} className='my-pets-button'>My pets</button>
 
-                        </footer>
-                    </div>
+                    </footer>
+                </div>
                 </div>
             }
 

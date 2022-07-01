@@ -75,6 +75,83 @@ p {
     text-decoration: underline;
 }
 
+/* menu end */
+
+.menu-a-tag {
+    font-weight: 600;
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.nav-links-desktop {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 3.4vh;
+    background-color: #68988C;
+    border-left: solid 1px black;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    transform: translateX(100%);
+
+    transition: transform 0.5s ease-in;
+
+}
+
+
+.burger-desktop {
+    display: block;
+    cursor: pointer;
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+.burger-desktop div {
+    width: 25px;
+    background-color: #68988C;
+    height: 3px;
+    margin: 5px;
+    transition: all 0.5s ease-in;
+
+}
+
+@keyframes navLinkFade {
+
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-2px, 12px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(1px, -9px);
+
+}
+
+/* end first menu */
 
 
 
@@ -85,6 +162,7 @@ p {
 
         width: 70%;
     }
+    
 
 
 }

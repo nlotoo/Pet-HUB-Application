@@ -1,12 +1,10 @@
 import './our-catalog.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useFetch } from '../../services/useFetch';
 import PetsCardU from './PetCardU.js/PetCardU';
-
-
+import { UserContext } from '../../services/UserContex';
 const OutCatalog = () => {
-
 
     const url = 'http://localhost:5000/get-all-pets';
     let petCatalog = useFetch(url);
@@ -19,6 +17,10 @@ const OutCatalog = () => {
         setPageNumber(selected);
     };
 
+    const { value } = useContext(UserContext);
+
+    console.log(value)
+
     return (
         <div className="catalog-root">
             <h3 className="pets-heading">All dog Catalog</h3>
@@ -29,8 +31,8 @@ const OutCatalog = () => {
                 {petCatalog?.data?.length === undefined ? <div className='loader-wraper'>
                     <div className='loader'></div>
                 </div> : <div className="pets-catalog-rail">
-                    <PetsCardU  petsData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
-      
+                    <PetsCardU petsData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
+
 
                 </div>}
 

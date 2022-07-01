@@ -1,17 +1,18 @@
 import './NavigationBar.css';
 
-import React, { useContext } from 'react';
 import { Link, } from 'react-router-dom';
 import { loginStorageCheker } from '../../../services/loginStorage';
 
-import { UserContext } from '../../../services/UserContex';
+
+import SearchBox from '../../SearchBox/SearchBox';
 
 const NavigationBar = () => {
 
     let isLoged = loginStorageCheker();
     let userID = window.localStorage.getItem('User ID')
 
-    const { value, } = useContext(UserContext);
+
+
 
     const navSlide = (e) => {
         const burger = document.getElementsByClassName('burger-desktop')[0];
@@ -32,6 +33,11 @@ const NavigationBar = () => {
 
     return (
         <nav className='navigation-bar'>
+            <div onClick={navSlide} className={`burger-desktop`} >
+                <div className='line1'></div>
+                <div className='line2'></div>
+                <div className='line3'></div>
+            </div >
             <div className='logo'>
 
                 <h4><Link className='logo-heading' to="/">The Pet Care</Link></h4>
@@ -49,17 +55,11 @@ const NavigationBar = () => {
                 {!isLoged && <li><Link className='menu-a-tag' to="/sign-up">Register </Link></li>}
                 {!isLoged && <li><Link className='menu-a-tag' to="/login">Login </Link></li>}
                 {isLoged && <li><Link className='menu-a-tag' to="/logout">Logout </Link></li>}
-            </ul>
-            <div onClick={navSlide} className={`burger-desktop`} >
-                <div className='line1'></div>
-                <div className='line2'></div>
-                <div className='line3'></div>
-            </div >
-            <div>
-                {isLoged && <Link className='menu-a-tag' to={'/user-profile/' + userID}> Welcome to our hub !</Link>}
-                <p>{value}</p>
-            </div>
 
+            </ul>
+
+
+            <SearchBox />
         </nav >
     );
 
