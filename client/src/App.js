@@ -13,14 +13,14 @@ import Footer from './Components/core/Footer/Footer';
 import OurCatalog from './Components/OurCatalog/OurCatalog';
 import MyFavorite from './Components/ProfileComponents/MyFavoritePets/MyFavoritePets';
 import DetailsPetPage from './Components/ProfileComponents/DetailsPetPage/DetailsPetPage';
-
-
-
-import globalState from './services/globalStateHOC';
+import DeletePage from './Components/ProfileComponents/DeletePage/DeletePage';
 
 
 import { UserContext } from './services/UserContex';
-import DeletePage from './Components/ProfileComponents/DeletePage/DeletePage';
+import globalState from './services/globalStateHOC';
+
+
+
 
 
 const AboutUsPage = lazy(() => import('./Components/AdditionalComponents/AboutUsPage/AboutUsPage'));

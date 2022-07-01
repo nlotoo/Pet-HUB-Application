@@ -1,5 +1,5 @@
 import './our-catalog.css';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useFetch } from '../../services/useFetch';
 import PetsCardU from './PetCardU.js/PetCardU';
@@ -10,6 +10,7 @@ const OutCatalog = () => {
     let petCatalog = useFetch(url);
 
     let [pageNumber, setPageNumber] = useState(0);
+
     const petsPerPage = 5;
     const pageVisited = pageNumber * petsPerPage;
     const pageCount = Math.ceil(petCatalog?.data?.length / petsPerPage);
@@ -17,9 +18,18 @@ const OutCatalog = () => {
         setPageNumber(selected);
     };
 
-    const { value } = useContext(UserContext);
 
-    console.log(value)
+    const { value } = useContext(UserContext);
+    let [searchQuery, setSearchQuery] = useState('')
+    useEffect(() => {
+        setSearchQuery(value)
+    }, [value]);
+
+    const searchUrl = `http://localhost:5000/search-pet/query/${value}`;
+    let searchedPets = useFetch(url);
+
+
+    console.log(searchedPets)
 
     return (
         <div className="catalog-root">
@@ -31,7 +41,11 @@ const OutCatalog = () => {
                 {petCatalog?.data?.length === undefined ? <div className='loader-wraper'>
                     <div className='loader'></div>
                 </div> : <div className="pets-catalog-rail">
-                    <PetsCardU petsData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
+                    {value == ''
+                        ? <PetsCardU petsData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
+                        : <h2>{searchQuery}</h2>
+                    }
+
 
 
                 </div>}

@@ -202,7 +202,7 @@ async function LikeThePet(data) {
 
     petDetail.petLikes.push(data.userID)
     userDetails.liked.push(data.id)
-    
+
     await petDetail.save()
     await userDetails.save()
 
@@ -240,7 +240,11 @@ async function getFavorites(id) {
     return data.liked
 };
 
+async function getCustomPet(id) {
 
+    console.log(id)
+ return id
+};
 
 
 
@@ -261,4 +265,5 @@ module.exports = {
     getPetDetail,
     LikeThePet,
     getFavorites,
+    getCustomPet,
 };

@@ -23,7 +23,7 @@ const SearchBox = () => {
     return (
         <div className="box">
             <form name="search" onSubmit={SubmitHandler}>
-                <input type="text" className="input" name="txt" />
+                <input type="text" placeholder='Search your pet by name' className="input" name="txt" />
             </form>
             <i className="fas fa-search"></i>
 

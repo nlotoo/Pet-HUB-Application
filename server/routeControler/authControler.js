@@ -181,5 +181,20 @@ router.get('/my-favorites/:id', async (req, res) => {
 
 });
 
+router.get('/search-pet/query/:id', async (req, res) => {
+
+    try {
+
+        let data = await profileService.getCustomPet(req.params.id)
+        res.status(200).json(data)
+
+    } catch (err) {
+        console.log(err)
+        res.status(401).json({ message: err })
+    }
+
+});
+
+
 
 module.exports = router;
