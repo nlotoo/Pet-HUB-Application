@@ -240,10 +240,13 @@ async function getFavorites(id) {
     return data.liked
 };
 
-async function getCustomPet(id) {
+async function getCustomPet(petQuery) {
 
-    console.log(id)
- return id
+    let result = await Pet.find({ petName: petQuery });
+    console.log(result);
+
+    console.log(petQuery)
+    return result
 };
 
 

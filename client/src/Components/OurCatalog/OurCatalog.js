@@ -24,12 +24,11 @@ const OutCatalog = () => {
     useEffect(() => {
         setSearchQuery(value)
     }, [value]);
-
+    
     const searchUrl = `http://localhost:5000/search-pet/query/${value}`;
-    let searchedPets = useFetch(url);
-
-
+    let searchedPets = useFetch(searchUrl);
     console.log(searchedPets)
+    //до тук трябва .. не вади правилен  резултат
 
     return (
         <div className="catalog-root">
