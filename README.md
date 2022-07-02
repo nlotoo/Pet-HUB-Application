@@ -25,7 +25,7 @@
 - About - desctiption for the site all users can see that(All users can view that) .
 - Profile - view information about the user and their pets (Only for authorized users can view).
 - Add new pet - inset and save it in the database  (Only for authorized users can view).
-
+- My favorites - inset and save it in the database  (Only for authorized users can view).
 
 
 
