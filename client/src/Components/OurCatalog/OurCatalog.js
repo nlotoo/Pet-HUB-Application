@@ -24,12 +24,11 @@ const OutCatalog = () => {
     useEffect(() => {
         setSearchQuery(value)
     }, [value]);
-    
+
     const searchUrl = `http://localhost:5000/search-pet/query/${value}`;
     let searchedPets = useFetch(searchUrl);
-    console.log(searchedPets)
-    //до тук трябва .. не вади правилен  резултат
 
+    console.log(value)
     return (
         <div className="catalog-root">
             <h3 className="pets-heading">All dog Catalog</h3>
@@ -40,9 +39,11 @@ const OutCatalog = () => {
                 {petCatalog?.data?.length === undefined ? <div className='loader-wraper'>
                     <div className='loader'></div>
                 </div> : <div className="pets-catalog-rail">
-                    {value == ''
+                    {value === '' || value === null
                         ? <PetsCardU petsData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
-                        : <h2>{searchQuery}</h2>
+                        : searchedPets.data?.length === 0
+                            ? <h2>Please Search your corecly  pet name in search bar</h2>
+                            : <PetsCardU petsData={searchedPets?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
                     }
 
 
