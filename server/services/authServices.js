@@ -73,15 +73,7 @@ async function loginUser(data) {
     let user = await User.find({ userEmail: email }).exec();
 
 
-    // let user = await User.find({use});
 
-    // console.log(user)
-    // findTheUserWTF = user.map((x) => {
-    //     if ('nayde@abv.bg' === 'nayde@abv.bg') {
-    //         return x
-    //     }
-    // })
-    // console.log(findTheUserWTF)
 
     if (user.length == 0) {
         throw 'Incorect User';

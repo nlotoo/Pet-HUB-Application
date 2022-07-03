@@ -12,7 +12,7 @@ const SearchBox = () => {
 
     const SubmitHandler = (e) => {
         e.preventDefault()
-        let value = e.target.txt.value
+        let value = e.target.txt.value.toLowerCase().trim()
         setValue(value)
         e.target.txt.value = ''
         navigate('/get-all-pets')
