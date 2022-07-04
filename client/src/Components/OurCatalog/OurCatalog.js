@@ -45,7 +45,7 @@ const OutCatalog = () => {
                     {value === '' || value === null
                         ? <PetsCardU petsData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
                         : searchedPets.data?.length === 0
-                            ? <h2>Please Search your corecly  pet name in search bar</h2>
+                            ? <h2 className='not-found-text'><i class="fa-solid fa-circle-question"></i>&nbsp;The pet is not found. Please review what you loking for.&nbsp;<i class="fa-solid fa-circle-question"></i></h2>
                             : <PetsCardU petsData={searchedPets?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
                     }
 

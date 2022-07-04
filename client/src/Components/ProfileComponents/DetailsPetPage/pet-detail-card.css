@@ -25,7 +25,10 @@
 
 }
 
-
+.button-bar{
+    display: flex;
+    justify-content: center;
+}
 
 .button-bar button {
     margin-left: 10px;

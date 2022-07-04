@@ -3,8 +3,7 @@ import './NavigationBar.css';
 import { Link, } from 'react-router-dom';
 import { loginStorageCheker } from '../../../services/loginStorage';
 import { navSlide } from '../../../services/Slider';
-
-import SearchBox from '../../SearchBox/SearchBox';
+import SearchBox from '../../AdditionalComponents/SearchBox/SearchBox';
 
 const NavigationBar = () => {
 

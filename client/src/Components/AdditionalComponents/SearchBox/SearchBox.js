@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import './search-box.css'
 
 import { useContext } from 'react';
-import { UserContext } from '../../services/UserContex';
+import { UserContext } from '../../../services/UserContex';
 
 
 const SearchBox = () => {
