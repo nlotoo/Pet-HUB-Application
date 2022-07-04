@@ -16,10 +16,15 @@
     outline: none;
     transition: .5s;
 }
+
+
+
+
 .box:hover input{
     width: 355px;
     background: #3b3640;
     border-radius: 10px;
+
 }
 .box i{
     position: absolute;

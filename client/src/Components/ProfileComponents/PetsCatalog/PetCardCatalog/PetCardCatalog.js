@@ -1,6 +1,5 @@
 import './pet-card.css'
 import { Link } from 'react-router-dom'
-import { deleltePetFunc } from '../../profile.service'
 
 
 

@@ -10,7 +10,7 @@ import isAuthHOC from '../../../services/HOC';
 import { useFetch } from '../../../services/useFetch';
 import React from 'react';
 import PetCardCatalog from './PetCardCatalog/PetCardCatalog';
-
+import useResponsiveDesign from '../../../services/useResposiveDisplayTool';
 
 
 
@@ -26,7 +26,7 @@ const PetsCatalog = () => {
     let petCatalog = useFetch(url)
 
     let [pageNumber, setPageNumber] = useState(0);
-    const petsPerPage = 4;
+    const petsPerPage = useResponsiveDesign();
     const pageVisited = pageNumber * petsPerPage;
     const pageCount = Math.ceil(petCatalog?.data?.length / petsPerPage);
     const changePage = ({ selected }) => {

@@ -3,6 +3,7 @@ import PetCardCatalog from "../MyFavoritePets/PetCardCatalog/PetCardCatalog";
 import ReactPaginate from 'react-paginate';
 import { useState } from 'react';
 import './petsCatalog.css'
+import useResponsiveDesign from "../../../services/useResposiveDisplayTool";
 
 const MyFavorite = () => {
 
@@ -13,7 +14,7 @@ const MyFavorite = () => {
     let petFavorites = useFetch(url)
 
     let [pageNumber, setPageNumber] = useState(0);
-    const petsPerPage = 4;
+    const petsPerPage = useResponsiveDesign();
     const pageVisited = pageNumber * petsPerPage;
     const pageCount = Math.ceil(petFavorites?.data?.length / petsPerPage);
     const changePage = ({ selected }) => {

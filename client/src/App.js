@@ -18,6 +18,7 @@ import DeletePage from './Components/ProfileComponents/DeletePage/DeletePage';
 
 import { UserContext } from './services/UserContex';
 import globalState from './services/globalStateHOC';
+import NotFound from './Components/AdditionalComponents/NotFound/NotFound';
 
 
 
@@ -61,6 +62,7 @@ const App = () => {
               <Route path='/pet-details/:id' element={<DetailsPetPage />} />
               <Route path='/delete-page/:id' element={<DeletePage />} />
               <Route path='/my-favorites/:id' element={<MyFavorite />} />
+              <Route path='*' element={<NotFound />} />
             </Routes>
           </Suspense>
           <footer className='footer-content'>

@@ -243,11 +243,6 @@ async function getFavorites(id) {
 async function getCustomPet(petQuery) {
 
     let result = await Pet.find({ petName: petQuery });
-    // if (result == []) {
-    //     result = { message: 'This pet name doesn`t exist' }
-    // }
-    // console.log(result);
-
     return result
 };
 

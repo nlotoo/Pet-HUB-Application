@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import LoadingSpinner from '../../AdditionalComponents/LoadingSpinner/LoadingSpinner'
 import './pet-card-our-catalog.css'
 
 

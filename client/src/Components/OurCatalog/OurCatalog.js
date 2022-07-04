@@ -4,6 +4,7 @@ import ReactPaginate from 'react-paginate';
 import { useFetch } from '../../services/useFetch';
 import PetsCardU from './PetCardU.js/PetCardU';
 import { UserContext } from '../../services/UserContex';
+import useResponsiveDesign from '../../services/useResposiveDisplayTool';
 const OutCatalog = () => {
 
     const url = 'http://localhost:5000/get-all-pets';
@@ -11,16 +12,19 @@ const OutCatalog = () => {
 
     let [pageNumber, setPageNumber] = useState(0);
 
-    const petsPerPage = 5;
+
+
+    const petsPerPage = useResponsiveDesign();
     const pageVisited = pageNumber * petsPerPage;
     const pageCount = Math.ceil(petCatalog?.data?.length / petsPerPage);
+
     const changePage = ({ selected }) => {
         setPageNumber(selected);
     };
 
 
     const { value } = useContext(UserContext);
-    let [searchQuery, setSearchQuery] = useState('')
+    let [, setSearchQuery] = useState('')
     useEffect(() => {
         setSearchQuery(value)
     }, [value]);
@@ -28,7 +32,6 @@ const OutCatalog = () => {
     const searchUrl = `http://localhost:5000/search-pet/query/${value}`;
     let searchedPets = useFetch(searchUrl);
 
-    console.log(value)
     return (
         <div className="catalog-root">
             <h3 className="pets-heading">All dog Catalog</h3>

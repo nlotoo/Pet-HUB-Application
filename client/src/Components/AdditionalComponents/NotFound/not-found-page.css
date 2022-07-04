@@ -1,0 +1,17 @@
+.error-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 580px;
+}
+
+.error-wrapper div {
+    padding: 9px;
+    background-color: whitesmoke;
+    opacity: 0.8;
+    border: 1px solid black;
+    -webkit-box-shadow: 6px -4px 8px -2px #000000;
+    box-shadow: 6px -4px 8px -2px #000000;
+    cursor: pointer;
+}
+
