@@ -35,6 +35,7 @@ const LoginForm = () => {
             window.localStorage.setItem('User ID', responce.userID)
             
             navigate('/home-page')
+            window.location.reload();
           }
           return responce;
         })

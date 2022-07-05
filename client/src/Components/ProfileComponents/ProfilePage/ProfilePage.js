@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import isAuthHOC from '../../../services/HOC';
 import { useFetch } from '../../../services/useFetch';
 import './profile-page.css';
@@ -57,11 +57,11 @@ const ProfilePage = () => {
 
                         <div className='social-media'>
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><Link alt='ico-sample' to=''><i class="fab fa-facebook" aria-hidden="true"></i></Link></li>
+                                <li><Link alt='ico-sample' to=''><i class="fab fa-twitter" aria-hidden="true"></i></Link></li>
+                                <li><Link alt='ico-sample' to=''><i class="fab fa-google-plus-g" aria-hidden="true"></i></Link></li>
+                                <li><Link alt='ico-sample' to=''><i class="fab fa-linkedin" aria-hidden="true"></i></Link></li>
+                                <li><Link alt='ico-sample' to=''><i class="fab fa-instagram" aria-hidden="true"></i></Link></li>
                             </ul>
 
                         </div>
@@ -70,8 +70,8 @@ const ProfilePage = () => {
                                 navigate('/get-user-pets/' + id);
                             }} className='my-pets-button'>My pets</button>
 
-                    </footer>
-                </div>
+                        </footer>
+                    </div>
                 </div>
             }
 

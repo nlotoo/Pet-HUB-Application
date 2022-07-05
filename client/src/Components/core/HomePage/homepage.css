@@ -4,17 +4,10 @@ h3{
   font-family: 'Poppins', sans-serif;
 }
 
-img {
-  width: 720px;
-  height: 420px;
-  border-radius: 20%;
-
-}
 
 .container {
-  height: 530px;
+  height: 540px;
   width: auto;
-  border-radius: 20%;
   display: grid;
   place-items: center;
   background-color: #84bdd2;
@@ -31,25 +24,10 @@ img {
   /* border: 1px solid green; */
 }
 
-.inside-container button {
-  width: 150px;
-  border-radius: 20px;
-  border: 2px solid black;
-  color: white;
-  background: #F0F8FF;
-  padding: 0px;
-  text-align: center;
-  margin-top: 20px;
-  color: #171425;
 
-  box-shadow: 2px 1px 10px #54B3D6;
-  margin-bottom: 20px;
 
-}
 
-.inside-container button:active {
-  box-shadow: 2px 3px 5px black;
-}
+
 
 
 .wrapper {

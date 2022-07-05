@@ -1,0 +1,39 @@
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 600px;
+    height: 400px;
+    border-radius: 5px;
+}
+
+.slider button {
+    margin: 30px;
+    width: 30px;
+    background-color: rgba(250, 235, 215, 0);
+
+
+    border-radius: 20px;
+
+
+  
+}
+
+.slider button:active {
+    box-shadow: 2px 3px 5px black;
+  }
+  
+
+.slide {
+    opacity: 0;
+    transition-duration: 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}

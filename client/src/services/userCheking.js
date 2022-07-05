@@ -30,7 +30,7 @@ export const userValidation = (data) => {
         errorArr.push('Paswwords must be equal');
     };
 
-    if (gender === 'default' || gender == '') {
+    if (gender === 'default' || gender === '') {
         errorArr.push('You must to choice you gender!');
     };
 
@@ -38,7 +38,8 @@ export const userValidation = (data) => {
 
 
     if (errorArr.length > 0) {
-        throw { errorArr };
+        // eslint-disable-next-line
+        throw { errorArr }
     };
 
 };

@@ -113,6 +113,7 @@ body {
 
 .nav-active {
     transform: translateX(0%);
+    border: 1px solid black;
 }
 
 .burger-desktop div {
