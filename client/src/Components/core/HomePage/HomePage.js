@@ -10,10 +10,9 @@ const HomePage = () => {
 
         <div className="wrapper">
             <div className="container">
-                    <h3>Wellcome our hub ! </h3>
+                <h3>Wellcome in our hub ! </h3>
                 <div className="inside-container">
-                    <ImageSlider/>
-                
+                    <ImageSlider />
                 </div>
             </div>
         </div>

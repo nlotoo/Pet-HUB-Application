@@ -2,11 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .image {
-    width: 600px;
-    height: 400px;
+    width: 500px;
+    height: 300px;
     border-radius: 5px;
 }
 

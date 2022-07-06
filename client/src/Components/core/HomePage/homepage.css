@@ -5,8 +5,10 @@ h3{
 }
 
 
+
 .container {
-  height: 540px;
+  height: 440px;
+  margin-bottom: 40px;
   width: auto;
   display: grid;
   place-items: center;
