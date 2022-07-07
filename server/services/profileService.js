@@ -186,7 +186,7 @@ async function getPetDetail(petID) {
     let petDetail = await Pet.findById({ _id: petID })
 
 
-    return petDetail
+    return petDetail;
 };
 
 

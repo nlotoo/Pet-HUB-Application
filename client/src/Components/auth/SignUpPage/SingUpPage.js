@@ -1,5 +1,5 @@
 import './signUpPage.css';
-import authService from '../authService';
+import { createUser } from '../authService';
 import { userValidation } from '../../../services/userCheking';
 import { useState, } from 'react';
 
@@ -30,7 +30,7 @@ const SingUpPage = () => {
         try {
 
             userValidation(userInfo)
-            let result = authService.createUser(userInfo)
+            let result = createUser(userInfo)
             result.then(response => {
                 console.log(response)
                 if (response.message) {

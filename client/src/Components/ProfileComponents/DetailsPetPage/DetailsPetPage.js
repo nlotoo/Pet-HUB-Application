@@ -24,7 +24,6 @@ const DetailsPetPage = () => {
         if (itsTrue) {
             setLike(itsTrue);
         };
-        // eslint-disable-next-line
     }, [itsTrue]);
 
     if (error) {
@@ -58,7 +57,10 @@ const DetailsPetPage = () => {
     };
 
     const urlPetOwner = `http://localhost:5000/user-profile/${data?.petOwner[0]}`;
+
     let petOwnerName = useFetch(urlPetOwner);
+
+
     if (petOwnerName.error) {
         console.log(petOwnerName.error);
     };

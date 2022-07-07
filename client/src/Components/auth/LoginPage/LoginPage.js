@@ -1,7 +1,7 @@
 import './loginPage.css';
 import { loginUserValidation } from '../../../services/loginUserValidation';
 import ErrorBar from '../ErrorBar/ErrorBar';
-import authService from '../authService';
+import { loginUser } from '../authService';
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 const LoginForm = () => {
@@ -20,7 +20,7 @@ const LoginForm = () => {
     e.preventDefault();
     try {
       loginUserValidation(userInfo);
-      authService.loginUser(userInfo)
+      loginUser(userInfo)
         .then((responce) => {
           if (responce.message) {
             setError(responce)
@@ -33,7 +33,7 @@ const LoginForm = () => {
             window.localStorage.setItem('User Token', responce.token)
             window.localStorage.setItem('User email', responce.userEmail)
             window.localStorage.setItem('User ID', responce.userID)
-            
+
             navigate('/home-page')
             window.location.reload();
           }

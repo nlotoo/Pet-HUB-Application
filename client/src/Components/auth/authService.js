@@ -1,4 +1,4 @@
-const createUser = async (data) => {
+export const createUser = async (data) => {
 
     let { username, userEmail, password, gender, location, userPhoneNumber } = data;
 
@@ -33,7 +33,7 @@ const createUser = async (data) => {
 
 };
 
-const loginUser = async (data) => {
+export const loginUser = async (data) => {
 
     let userObj = {
         email: data.email,
@@ -61,7 +61,7 @@ const loginUser = async (data) => {
 
 };
 
-module.exports = {
-    createUser,
-    loginUser,
-};
+// module.exports = {
+//     createUser,
+//     loginUser,
+// };

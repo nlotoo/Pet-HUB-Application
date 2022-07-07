@@ -1,5 +1,5 @@
 
-const isLiked = async (data) => {
+export const isLiked = async (data) => {
 
     const requestOptions = {
         method: 'POST',
@@ -18,7 +18,7 @@ const isLiked = async (data) => {
 };
 
 
-const unLiked = async (data) => {
+export const unLiked = async (data) => {
 
     const requestOptions = {
         method: 'POST',
@@ -39,7 +39,7 @@ const unLiked = async (data) => {
 
 };
 
-const createPet = async (data) => {
+export const createPet = async (data) => {
 
 
     const requestOptions = {
@@ -62,7 +62,7 @@ const createPet = async (data) => {
 
 };
 
-const editPetSubmit = async (data, petID) => {
+export const editPetSubmit = async (data, petID) => {
 
     const requestOptions = {
         method: 'POST',
@@ -82,7 +82,7 @@ const editPetSubmit = async (data, petID) => {
 
 };
 
-const deleltePetFunc = async (petCardId) => {
+export const deleltePetFunc = async (petCardId) => {
 
 
     const requestOptions = {
@@ -104,7 +104,7 @@ const deleltePetFunc = async (petCardId) => {
 
 };
 
-const isAuthorizated = async () => {
+export const isAuthorizated = async () => {
     let userID = window.localStorage.getItem('User ID');
 
     if (userID == null) {
@@ -132,12 +132,12 @@ const isAuthorizated = async () => {
 
 
 
-module.exports = {
-    isLiked,
-    createPet,
-    deleltePetFunc,
-    isAuthorizated,
-    editPetSubmit,
-    unLiked,
+// module.exports = {
+//     isLiked,
+
+//     deleltePetFunc,
+//     isAuthorizated,
+//     editPetSubmit,
+//     unLiked,
  
-};
+// };
