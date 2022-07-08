@@ -14,12 +14,12 @@ You will  see any lint errors in the console.
 
 ## Functionality
 * Implemented authentication and authorization.
-* Ability to  view the pet card of other users.
-* Ability to edit and delete personal pet card.
+* Ability to  view the pet-card of other users.
+* Ability to edit and delete personal pet-card.
 * Ability to like other users' posts and add them to Favourites. 
 * Full responsibility of the pages.
 * You can search in our main catalog by name.
-* You can like and disklike pet cards.
+* You can like and disklike pet-cards.
 * Interactive UX.
 
 
@@ -31,12 +31,12 @@ You will  see any lint errors in the console.
 ## Application Pages
 * **Home** - Home page for users who aren’t registered.
 * **Regsiter** - registration with email, username and password and etc.
-* **All dog Catalog** - view all  pets in the database.
-* **Add new pet** - create a pet and save it in the database.
-* **Edit your pet** - edit a pet and save it in the database.
-* **Details** -Shows details about a curent pet. Unauthorised users can add it to Favourites. Authorized users can edit or delete the certain pet card. 
+* **All dog Catalog** - view all  pet-cards in the database.
+* **Add new pet** - create a pet-card and save it in the database.
+* **Edit your pet** - edit a pet-card and save it in the database.
+* **Details** -Shows details about a curent pet-card. Unauthorised users can add it to Favourites. Authorized users can edit or delete the certain pet-card. 
 * **Profile** - view information about the user and  (only for authorized users).
-* **My Favorites** - Shows the registered user's Favourite pets. 
+* **My Favorites** - Shows the registered user's Favourite pet-cards. 
 
 ## Access control:
 
