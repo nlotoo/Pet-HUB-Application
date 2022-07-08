@@ -14,7 +14,7 @@ import OurCatalog from './Components/OurCatalog/OurCatalog';
 import MyFavorite from './Components/ProfileComponents/MyFavoritePets/MyFavoritePets';
 import DetailsPetPage from './Components/ProfileComponents/DetailsPetPage/DetailsPetPage';
 import DeletePage from './Components/ProfileComponents/DeletePage/DeletePage';
-
+import { Waether } from './Components/AdditionalComponents/Weather/Weather';
 
 import { UserContext } from './services/UserContex';
 import globalState from './services/globalStateHOC';
@@ -62,6 +62,7 @@ const App = () => {
               <Route path='/pet-details/:id' element={<DetailsPetPage />} />
               <Route path='/delete-page/:id' element={<DeletePage />} />
               <Route path='/my-favorites/:id' element={<MyFavorite />} />
+              <Route path='/Waether' element={<Waether />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
           </Suspense>
