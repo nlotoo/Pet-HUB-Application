@@ -6,6 +6,7 @@ import { deleltePetFunc, editPetSubmit } from '../profile.service';
 import { useNavigate, useParams } from "react-router-dom";
 import isAuthHOC from '../../../services/HOC';
 import { useFetch } from '../../../services/useFetch';
+import DeletePage from '../DeletePage/DeletePage';
 
 const EditPetPage = () => {
     const { id } = useParams();
@@ -95,16 +96,16 @@ const EditPetPage = () => {
                     </div>
                     <div className='button-div'>
                         <button className='edit-pet-button' >Edit your pet details</button>
-                        <button className='edit-pet-button' onClick={ ()=> {
-                            deleltePetFunc(id)                            
+                        <button className='edit-pet-button' onClick={() => {
+                            <DeletePage petId={id} />
                         }} >Delete</button>
 
 
                     </div>
-                    
+
                     {
-                            errorArray && <ErrorBar errorMessages={errorArray} />
-                        }
+                        errorArray && <ErrorBar errorMessages={errorArray} />
+                    }
                 </form>
             </div >
         </div >

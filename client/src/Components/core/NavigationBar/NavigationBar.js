@@ -4,6 +4,7 @@ import { Link, } from 'react-router-dom';
 import { loginStorageCheker } from '../../../services/loginStorage';
 import { navSlide } from '../../../services/Slider';
 import SearchBox from '../../AdditionalComponents/SearchBox/SearchBox';
+import { Waether } from '../../AdditionalComponents/Weather/Weather';
 
 const NavigationBar = () => {
 
@@ -11,7 +12,7 @@ const NavigationBar = () => {
     let userID = window.localStorage.getItem('User ID')
 
 
-    
+
 
 
 
@@ -43,8 +44,9 @@ const NavigationBar = () => {
 
             </ul>
 
-
             <SearchBox />
+
+            <Waether />
         </nav >
     );
 

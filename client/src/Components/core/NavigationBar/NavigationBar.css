@@ -13,7 +13,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-width: 8vh;
     background-color: white;
     border: 1px solid;
    
@@ -63,7 +62,7 @@ p {
     margin-top: 30px;
     display: flex;
     justify-content: space-around;
-    width: 70%;
+    width: 20%;
 }
 
 .logo-heading {

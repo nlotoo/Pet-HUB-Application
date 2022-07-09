@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-
+import './weaterTool.css'
 
 export const Waether = () => {
 
 	let [data, setData] = useState();
+	let [temperature, setTemperature] = useState('')
 
 	useEffect(() => {
 		const options = {
@@ -14,36 +15,32 @@ export const Waether = () => {
 			}
 		};
 
-		fetch('https://yahoo-weather5.p.rapidapi.com/weather?location=Kailua-Kona&format=json&u=f', options)
+		fetch('https://yahoo-weather5.p.rapidapi.com/weather?location=Varna&format=json&u=f', options)
 			.then(response => response.json())
 			.then(response => {
 				setData(response)
+				setTemperature(Math.ceil((response?.current_observation.condition.temperature - 32) * 5 / 9) + `°C`)
 			})
 			.catch(err => console.error(err));
 
 
 	}, [])
 
+
 	const weatherNow = () => {
 
-		if (data?.current_observation.condition.text.toLowerCase().includes('cloudy')) {
-			return <i className="fa-solid fa-cloud"></i>
+		if (data) {
+
+			return <div>{temperature}</div>
 		} else {
-			return <i className="fa-solid fa-sun"></i>
+			return <div> {temperature}</div>
 		}
 	}
 
+	return (<div className="weather-box-class">
+		<h5>Varna {data ? weatherNow() : <i className="fa-solid fa-sync fa-spin"></i>}</h5>
 
 
-
-
-	console.log(data?.current_observation.condition.text.toLowerCase().includes('cloudy'))
-
-	return (<div>
-		<h1>
-			{data?.current_observation.condition ? weatherNow() : 'Loading...'}
-			Waether
-		</h1>
 
 	</div>)
 
