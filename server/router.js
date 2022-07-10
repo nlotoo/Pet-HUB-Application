@@ -2,12 +2,12 @@ const { Router } = require("express");
 const router = Router();
 
 
-const authControler = require('./routeControler/authControler.js')
+const Controler = require('./routeControler/Controler.js')
 
 // router.use('/', authControler)
 // router.use('/home', authControler)
 
-router.use('/', authControler)
+router.use('/', Controler)
 
 
 module.exports = router

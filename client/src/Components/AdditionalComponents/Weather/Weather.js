@@ -15,11 +15,11 @@ export const Waether = () => {
 			}
 		};
 
-		fetch('https://yahoo-weather5.p.rapidapi.com/weather?location=Varna&format=json&u=f', options)
+		fetch('https://yahoo-weather5.p.rapidapi.com/weather?location=Exeter&format=json&u=f', options)
 			.then(response => response.json())
 			.then(response => {
 				setData(response)
-				setTemperature(Math.ceil((response?.current_observation.condition.temperature - 32) * 5 / 9) + `°C`)
+				setTemperature(Math.ceil((response?.current_observation.condition.temperature - 32) * 5 / 9))
 			})
 			.catch(err => console.error(err));
 
@@ -31,14 +31,14 @@ export const Waether = () => {
 
 		if (data) {
 
-			return <div>{temperature}</div>
+			return <div>{!temperature ? 'N/a' : + temperature +'°C'} </div>
 		} else {
-			return <div> {temperature}</div>
+			return <div> {!temperature ? 'N/a' : + temperature +'°C'} + °C</div>
 		}
 	}
 
 	return (<div className="weather-box-class">
-		<h5>Varna {data ? weatherNow() : <i className="fa-solid fa-sync fa-spin"></i>}</h5>
+		<h5>Exeter {data ? weatherNow() : <i className="fa-solid fa-sync fa-spin"></i>}</h5>
 
 
 

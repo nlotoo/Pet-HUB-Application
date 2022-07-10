@@ -1,12 +1,9 @@
 const mongoose = require('mongoose');
 const { DB_PORT } = require("./config.js");
 
-mongoose.connect(`mongodb://localhost:${DB_PORT}/Veterinary-Clinic-Application`,
-
-);
+mongoose.connect(`mongodb://localhost:${DB_PORT}/Pet-catalog-app`,);
 
 require("../schemes/USER");
-//  да си сложа схемите
 
 
 const db = mongoose.connection;

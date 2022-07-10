@@ -54,7 +54,6 @@ async function createPet(data) {
         if (resulta) {
             throw 'This pet name exist!'
         }
-        console.log(newPetDocument)
         return newPetDocument.save()
     } catch (err) {
         console.log(err)
@@ -167,7 +166,6 @@ async function EditPet(data, petID) {
     updatePet.save();
     let result = await Pet.findById({ _id: petID.id });
 
-    console.log(result);
     return result;
 };
 

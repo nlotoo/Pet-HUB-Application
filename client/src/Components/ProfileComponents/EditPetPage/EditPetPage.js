@@ -2,11 +2,10 @@ import './edit-page.css';
 import { chekingWhenCreatingOrEditingElement } from '../../../services/chekingWhenCreatingElement';
 import { useState, } from 'react';
 import ErrorBar from '../ErrorBar/ErrorBar';
-import { deleltePetFunc, editPetSubmit } from '../profile.service';
+import { editPetSubmit } from '../profile.service';
 import { useNavigate, useParams } from "react-router-dom";
 import isAuthHOC from '../../../services/HOC';
 import { useFetch } from '../../../services/useFetch';
-import DeletePage from '../DeletePage/DeletePage';
 
 const EditPetPage = () => {
     const { id } = useParams();
@@ -54,6 +53,8 @@ const EditPetPage = () => {
 
 
 
+
+
     const url = `http://localhost:5000/pet-details/${id}`;
     const petInfo = useFetch(url);
 
@@ -97,7 +98,7 @@ const EditPetPage = () => {
                     <div className='button-div'>
                         <button className='edit-pet-button' >Edit your pet details</button>
                         <button className='edit-pet-button' onClick={() => {
-                            <DeletePage petId={id} />
+                            navigate(`/delete-page/${id}`)
                         }} >Delete</button>
 
 

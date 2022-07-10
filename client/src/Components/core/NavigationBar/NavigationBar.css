@@ -13,9 +13,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background: white;
+
     border: 1px solid;
-   
+
 }
 
 .logo {
@@ -89,7 +90,7 @@ body {
 .nav-links-desktop {
     position: absolute;
     right: 0px;
-    height:550px;
+    height: 550px;
     top: 3.4vh;
     background-color: #68988C;
     border-left: solid 1px black;
@@ -159,10 +160,10 @@ body {
 
 
     .nav-links-desktop {
-        
+
         width: 70%;
     }
-    
+
 
 
 }
