@@ -28,8 +28,11 @@ const NavigationBar = () => {
 
                 <h4><Link className='logo-heading' to="/">The Pet Care</Link></h4>
             </div>
-
             <ul className='nav-links-desktop' >
+
+                <div onClick={navSlide}  >
+                    <i className="fa-solid fa-arrow-right"></i>
+                </div >
                 <li><Link className='menu-a-tag' to="/">Home</Link></li>
                 <li><Link className='menu-a-tag' to="/about-us">About </Link></li>
                 <li><Link className='menu-a-tag' to="/get-all-pets">All dog Catalog </Link></li>

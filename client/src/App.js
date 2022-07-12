@@ -11,9 +11,6 @@ import SignUpPage from './Components/auth/SignUpPage/SingUpPage';
 import Logout from './Components/auth/Logout/Logout';
 import Footer from './Components/core/Footer/Footer';
 import OurCatalog from './Components/OurCatalog/OurCatalog';
-import MyFavorite from './Components/ProfileComponents/MyFavoritePets/MyFavoritePets';
-import DetailsPetPage from './Components/ProfileComponents/DetailsPetPage/DetailsPetPage';
-import DeletePage from './Components/ProfileComponents/DeletePage/DeletePage';
 
 import { UserContext } from './services/UserContex';
 import globalState from './services/globalStateHOC';
@@ -21,13 +18,13 @@ import NotFound from './Components/AdditionalComponents/NotFound/NotFound';
 
 
 
+const MyFavorite = lazy(() => import('./Components/ProfileComponents/MyFavoritePets/MyFavoritePets'));
 
-
+const DetailsPetPage = lazy(() => import('./Components/ProfileComponents/DetailsPetPage/DetailsPetPage'));
 const AboutUsPage = lazy(() => import('./Components/AdditionalComponents/AboutUsPage/AboutUsPage'));
 const CreatePetPage = lazy(() => import('./Components/ProfileComponents/CreatePetPage/CreatePetPage'));
 const PetsCatalog = lazy(() => import('./Components/ProfileComponents/PetsCatalog/PetsCatalog'));
 const ProfilePage = lazy(() => import('./Components/ProfileComponents/ProfilePage/ProfilePage'));
-const EditPetPage = lazy(() => import('./Components/ProfileComponents/EditPetPage/EditPetPage'));
 
 const App = () => {
 
@@ -57,10 +54,8 @@ const App = () => {
               <Route path='/user-profile/:id' element={<ProfilePage />} />
               <Route path='/get-user-pets/:id' element={<PetsCatalog />} />
               <Route path='/create-new-pet/:id' element={<CreatePetPage />} />
-              <Route path='/edit-pet/:id' element={<EditPetPage />} />
               
               <Route path='/pet-details/:id' element={<DetailsPetPage />} />
-              <Route path='/delete-page/:id' element={<DeletePage />} />
               <Route path='/my-favorites/:id' element={<MyFavorite />} />
               <Route path='*' element={<NotFound />} />
             </Routes>

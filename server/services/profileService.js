@@ -91,7 +91,6 @@ async function populateAllPets(petOwner, petName) {
 };
 async function getUserPets(userID) {
 
-    console.log(userID)
     let user = await User.findById({ _id: userID }).populate('pets')
     return user.pets
 };

@@ -5,9 +5,6 @@ import './pet-card-our-catalog.css'
 const PetsCardU = (data) => {
     let { petsData } = data
 
-
-    const userId = localStorage.getItem('User ID')
-
     
 
     
