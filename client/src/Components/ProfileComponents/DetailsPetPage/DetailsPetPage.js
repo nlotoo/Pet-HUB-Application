@@ -10,7 +10,6 @@ import EditPetPage from '../EditPetPage/EditPetPage'
 const DetailsPetPage = () => {
 
     let { id } = useParams();
-    // const navigate = useNavigate();
 
     const url = `http://localhost:5000/pet-details/${id}`;
 
@@ -80,11 +79,10 @@ const DetailsPetPage = () => {
         <div className="root-element" >
             <div className="pet-card-wrapper">
 
-                {/* {loading
-                    ? <LoadingSpinner />
-                    : 
-            } */} // до тук
-                
+                {
+                    loading ? <LoadingSpinner /> : null
+                }
+
                 {!userAction && <div className="details-pet-card" >
                     <h2 className="heading-class" >Pet detail</h2>
                     <h5>{data?.petName} </h5>

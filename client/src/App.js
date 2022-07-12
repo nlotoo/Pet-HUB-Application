@@ -58,6 +58,7 @@ const App = () => {
               <Route path='/get-user-pets/:id' element={<PetsCatalog />} />
               <Route path='/create-new-pet/:id' element={<CreatePetPage />} />
               <Route path='/edit-pet/:id' element={<EditPetPage />} />
+              
               <Route path='/pet-details/:id' element={<DetailsPetPage />} />
               <Route path='/delete-page/:id' element={<DeletePage />} />
               <Route path='/my-favorites/:id' element={<MyFavorite />} />

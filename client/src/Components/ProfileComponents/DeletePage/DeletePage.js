@@ -1,10 +1,10 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { deleltePetFunc } from '../profile.service';
 import './delete-page.css'
 
-const DeletePage = () => {
+const DeletePage = (props) => {
+    
     const navigate = useNavigate();
-    const { id } = useParams();
     const userID = localStorage.getItem('User ID')
 
 
@@ -13,8 +13,8 @@ const DeletePage = () => {
             <div className='delete-question'>
                 <h4>Do you really want to delete?</h4>
                 <button onClick={(e) => {
-                   
-                    deleltePetFunc(id)
+
+                    deleltePetFunc(props.petId)
                     navigate(`/get-user-pets/${userID}`)
                 }} className="delete-pet-button">YES</button>
                 <button onClick={() => {

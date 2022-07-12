@@ -20,8 +20,7 @@ const PetsCardU = (data) => {
                 <h3>breed</h3>
                 <p>{x.petBreed}</p>
                 {
-                    x.petOwner[0] === userId ? <Link className='card-button-our-catalog' to={'/edit-pet/' + x._id}>Edit</Link>
-                        : ''
+                 
                 }
                 <Link to={'/pet-details/' + x._id} className='card-button-our-catalog'>Details</Link>
             </div >

@@ -17,7 +17,6 @@ const PetCardCatalog = (data) => {
                 <h3>breed</h3>
                 <p>{x.petBreed}</p>
                 <Link to={'/pet-details/' + x._id} className='card-button'>Details</Link>
-                <Link to={'/edit-pet/' + x._id} className='card-button'>Edit</Link>
                 <Link to={'/delete-page/' + x._id} className='card-button'>Delete</Link>
 
 

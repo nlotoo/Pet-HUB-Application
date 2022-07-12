@@ -3,17 +3,17 @@ import { chekingWhenCreatingOrEditingElement } from '../../../services/chekingWh
 import { useState, } from 'react';
 import ErrorBar from '../ErrorBar/ErrorBar';
 import { editPetSubmit } from '../profile.service';
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import isAuthHOC from '../../../services/HOC';
-// import { useFetch } from '../../../services/useFetch';
+
+import DeletePage from '../DeletePage/DeletePage'
 
 const EditPetPage = (props) => {
 
     const { id } = useParams();
 
     let [errorArray, setError] = useState();
-
-    let navigate = useNavigate();
+    let [userAction, setActions] = useState(null);
 
     const EditPet = (e) => {
         e.preventDefault();
@@ -56,16 +56,16 @@ const EditPetPage = (props) => {
 
 
 
-    // const url = `http://localhost:5000/pet-details/${id}`;  // old code refatoring
-    // console.log(props)
-    // const props.userData = props.userData
 
 
 
     return (
+
         <div className='edit-new-pet-root'>
             <div className='edit-new-pet-wrapper'>
-                <form className='edit-new-pet-form' onSubmit={EditPet} >
+                {userAction && <DeletePage petOwnerId={props.userData.petOwner[0]} petId={props.userData._id} />}
+
+                {!userAction && <form className='edit-new-pet-form' onSubmit={EditPet} >
                     <button onClick={
                         () => {
                             props.onAction()
@@ -99,9 +99,7 @@ const EditPetPage = (props) => {
                     </div>
                     <div className='button-div'>
                         <button className='edit-pet-button' >Edit your pet details</button>
-                        <button className='edit-pet-button' onClick={() => {
-                            navigate(`/delete-page/${id}`)
-                        }} >Delete</button>
+                        <button className='edit-pet-button' onClick={(e) => { e.preventDefault(); setActions('Delete') }} >Delete</button>
 
 
                     </div>
@@ -109,7 +107,8 @@ const EditPetPage = (props) => {
                     {
                         errorArray && <ErrorBar errorMessages={errorArray} />
                     }
-                </form>
+                </form>}
+
             </div >
         </div >
     );
