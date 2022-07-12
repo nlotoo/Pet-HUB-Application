@@ -80,58 +80,59 @@ const DetailsPetPage = () => {
         <div className="root-element" >
             <div className="pet-card-wrapper">
 
-                {loading
+                {/* {loading
                     ? <LoadingSpinner />
-                    : <div className="details-pet-card" >
-                <h2 className="heading-class" >Pet detail</h2>
-                <h5>{data?.petName} </h5>
-                <img className='imgs-details-page' alt='pet-details-img' src={`${data?.petPhoto}`} ></img>
-                <div className="pet-info">
-                    <div>Pet breed</div>
-                    <p>{data?.petBreed}</p>
-                </div>
-                <div className="pet-info">
-                    <div>Pet age</div>
-                    <p>{data?.petAge}</p>
-                </div>
-                <div className="pet-info">
-                    <div>Pet owner</div>
-                    <p>{petOwnerName.data?.username?.slice(0, 1).toUpperCase() + petOwnerName.data?.username?.slice(1)}</p>
-                </div>
-                <div className="pet-info">
-                    <div>Pet info</div>
-                    <p>{data?.petInfo} </p>
-                </div>
-                <div className="button-bar">
+                    : 
+            } */} // до тук
+                
+                {!userAction && <div className="details-pet-card" >
+                    <h2 className="heading-class" >Pet detail</h2>
+                    <h5>{data?.petName} </h5>
+                    <img className='imgs-details-page' alt='pet-details-img' src={`${data?.petPhoto}`} ></img>
+                    <div className="pet-info">
+                        <div>Pet breed</div>
+                        <p>{data?.petBreed}</p>
+                    </div>
+                    <div className="pet-info">
+                        <div>Pet age</div>
+                        <p>{data?.petAge}</p>
+                    </div>
+                    <div className="pet-info">
+                        <div>Pet owner</div>
+                        <p>{petOwnerName.data?.username?.slice(0, 1).toUpperCase() + petOwnerName.data?.username?.slice(1)}</p>
+                    </div>
+                    <div className="pet-info">
+                        <div>Pet info</div>
+                        <p>{data?.petInfo} </p>
+                    </div>
+                    <div className="button-bar">
 
-                    {
-                        petOwnerName.data?._id === userID ? <button onClick={() => { setActions('Edit') }} >Edit</button> : ''
-                    }
+                        {
+                            petOwnerName.data?._id === userID ? <button onClick={() => { setActions('Edit') }} >Edit</button> : ''
+                        }
 
-                    {
-                        user &&
-                        <div>
+                        {
+                            user &&
+                            <div>
 
-                            {
-                                !like === true ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Unlike</button>
-                            }
-                        </div>
-                    }
+                                {
+                                    !like === true ? <button onClick={LikedPet} >Like</button> : <button onClick={UnLikedPet} >Unlike</button>
+                                }
+                            </div>
+                        }
 
-                </div>
-                <div className="icon-bar">
+                    </div>
+                    <div className="icon-bar">
 
-                    <i className="fa-brands fa-instagram"></i>
-                    <i className="fa-brands fa-facebook"></i>
-                    <i className="fa-brands fa-twitter"></i>
-                </div>
+                        <i className="fa-brands fa-instagram"></i>
+                        <i className="fa-brands fa-facebook"></i>
+                        <i className="fa-brands fa-twitter"></i>
+                    </div>
+                </div>}
+                {userAction && <EditPetPage userData={data} onAction={onClose} />}
+
+
             </div>
-                }
-
-            {userAction && <EditPetPage userData={data} onAction={onClose} />}
-
-
-        </div>
         </div >
     );
 
