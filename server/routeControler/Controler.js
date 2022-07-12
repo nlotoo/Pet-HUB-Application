@@ -35,7 +35,6 @@ router.get('/user-profile/:id', async (req, res) => {
         res.status(200).json(data)
 
     } catch (err) {
-        console.log(err)
         res.status(401).json({ message: err })
     }
 })
@@ -68,7 +67,7 @@ router.post('/create-new-pet', async (req, res) => {
 })
 
 
-router.delete('/delete/:id', async (req, res) => {
+router.post('/delete/:id', async (req, res) => {
 
     try {
 

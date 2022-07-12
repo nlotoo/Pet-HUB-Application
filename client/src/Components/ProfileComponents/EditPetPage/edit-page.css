@@ -10,7 +10,8 @@
     align-items: center;
     height: fit-content;
     margin-bottom: 40px;
-
+    
+    background-color: red;
 }
 
 .add-new-pet-heading {
@@ -51,7 +52,9 @@
 }
 
 .edit-new-pet-form {
-
+    position: absolute;
+    top: 100px;
+    
     width: 350px;
     border: 1px solid black;
     margin-top: 4em;

@@ -3,6 +3,7 @@
     justify-content: center;
     height: fit-content;
     margin-bottom: 40px;
+
 }
 
 .heading-class {
@@ -11,6 +12,9 @@
 
 .pet-card-wrapper {
     margin-top: 5em;
+    height: fit-content;
+    min-height: 560px
+    
 }
 
 .details-pet-card {
@@ -18,11 +22,9 @@
     border: 1px solid #68988C;
     -webkit-box-shadow: 6px -4px 8px -2px #000000;
     box-shadow: 6px -4px 8px -2px #000000;
+
     background-color: rgb(255, 255, 255);
     text-align: center;
-
-    height: fit-content;
-
 }
 
 .button-bar{
@@ -36,7 +38,7 @@
     border-radius: 5px;
     background-color: rgb(33, 21, 21);
     color: white;
-    width: 50px;
+    width: 55px;
     height: 50px;
     margin-bottom: 10px;
 }

@@ -12,7 +12,8 @@ const DeletePage = () => {
         <div className='delete-wraper'>
             <div className='delete-question'>
                 <h4>Do you really want to delete?</h4>
-                <button onClick={() => {
+                <button onClick={(e) => {
+                   
                     deleltePetFunc(id)
                     navigate(`/get-user-pets/${userID}`)
                 }} className="delete-pet-button">YES</button>

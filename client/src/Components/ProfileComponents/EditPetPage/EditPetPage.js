@@ -5,9 +5,10 @@ import ErrorBar from '../ErrorBar/ErrorBar';
 import { editPetSubmit } from '../profile.service';
 import { useNavigate, useParams } from "react-router-dom";
 import isAuthHOC from '../../../services/HOC';
-import { useFetch } from '../../../services/useFetch';
+// import { useFetch } from '../../../services/useFetch';
 
-const EditPetPage = () => {
+const EditPetPage = (props) => {
+
     const { id } = useParams();
 
     let [errorArray, setError] = useState();
@@ -15,10 +16,10 @@ const EditPetPage = () => {
     let navigate = useNavigate();
 
     const EditPet = (e) => {
-
-
         e.preventDefault();
         let petOwner = window.localStorage.getItem('User ID');
+
+
         let petObj = {
             petName: e.target.petName.value,
             petWeight: e.target.petWeight.value,
@@ -32,6 +33,7 @@ const EditPetPage = () => {
 
 
 
+
         try {
             let result = chekingWhenCreatingOrEditingElement(petObj);
             setError(undefined);
@@ -41,7 +43,8 @@ const EditPetPage = () => {
                     setError(rs.message);
                     return;
                 };
-                navigate(`/get-user-pets/${petOwner}`);
+                props.onAction()
+                window.location.reload()
             }
             );
 
@@ -53,10 +56,9 @@ const EditPetPage = () => {
 
 
 
-
-
-    const url = `http://localhost:5000/pet-details/${id}`;
-    const petInfo = useFetch(url);
+    // const url = `http://localhost:5000/pet-details/${id}`;  // old code refatoring
+    // console.log(props)
+    // const props.userData = props.userData
 
 
 
@@ -66,7 +68,7 @@ const EditPetPage = () => {
                 <form className='edit-new-pet-form' onSubmit={EditPet} >
                     <button onClick={
                         () => {
-                            navigate(`/pet-details/${id}`);
+                            props.onAction()
                         }
                     } className='left-arrow'>
                         <i className="fa-solid fa-arrow-left"></i>
@@ -74,26 +76,26 @@ const EditPetPage = () => {
                     <h2 className='add-new-pet-heading'>Edit your pet</h2>
                     <div>
 
-                        <input placeholder='Pet new name' className='input-edit-pet-class' id='petName' name='petName' defaultValue={petInfo?.data?.petName} ></input>
+                        <input placeholder='Pet new name' className='input-edit-pet-class' id='petName' name='petName' defaultValue={props.userData.petName} ></input>
                     </div>
                     <div>
 
 
-                        <input placeholder='Pet weight' className='input-edit-pet-class' type='number' id='petWeight' name='petWeight' defaultValue={petInfo?.data?.petWeight} ></input>
+                        <input placeholder='Pet weight' className='input-edit-pet-class' type='number' id='petWeight' name='petWeight' defaultValue={props.userData.petWeight} ></input>
                     </div>
                     <div>
 
-                        <input placeholder='Pet breed' className='input-edit-pet-class' id='petBreed' name='petBreed' defaultValue={petInfo?.data?.petBreed} ></input>
+                        <input placeholder='Pet breed' className='input-edit-pet-class' id='petBreed' name='petBreed' defaultValue={props.userData.petBreed} ></input>
                     </div>
                     <div>
 
-                        <input placeholder='Pet age' className='input-edit-pet-class' type='number' id='petAge' name='petAge' defaultValue={petInfo?.data?.petAge} ></input>
+                        <input placeholder='Pet age' className='input-edit-pet-class' type='number' id='petAge' name='petAge' defaultValue={props.userData.petAge} ></input>
                     </div>
                     <div>
-                        <input placeholder='Pet photo' className='input-edit-pet-class' id='petPhoto' name='petPhoto' defaultValue={petInfo?.data?.petPhoto}></input>
+                        <input placeholder='Pet photo' className='input-edit-pet-class' id='petPhoto' name='petPhoto' defaultValue={props.userData.petPhoto}></input>
                     </div>
                     <div>
-                        <textarea placeholder='Pet ifno (optinal)' className='input-edit-pet-class pet-info-textarea' id='petInfo' name='petInfo' defaultValue={petInfo?.data?.petInfo} />
+                        <textarea placeholder='Pet ifno (optinal)' className='input-edit-pet-class pet-info-textarea' id='petInfo' name='petInfo' defaultValue={props.userData.petInfo} />
                     </div>
                     <div className='button-div'>
                         <button className='edit-pet-button' >Edit your pet details</button>
