@@ -20,7 +20,7 @@ You will  see any lint errors in the console.
 ## Technologies
 * React
 * HTML, CSS, JavaScript
-* Еxpress JS, Mongo DB
+* Еxpress JS, Node.js, Mongo DB 
 
 ## Application Pages
 * **Home** - Home page for users who aren’t registered.
