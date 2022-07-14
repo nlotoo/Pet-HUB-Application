@@ -1,6 +1,6 @@
 
 # Pet-HUB-Application - Single Page Application
-Created with React
+## Created with ReactJS.
 
 In the project directory, you can run: `npm start`
 You will  see any lint errors in the console.
