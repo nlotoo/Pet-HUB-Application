@@ -12,7 +12,7 @@ h3{
   width: auto;
   display: grid;
   place-items: center;
-  background-color: #68988cce;
+  background-color: whitesmoke;
   box-shadow: 2px 1px 10px #1b3742;
   /* border: 1px solid red; */
 }
