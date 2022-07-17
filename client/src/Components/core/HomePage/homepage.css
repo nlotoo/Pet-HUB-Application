@@ -1,25 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.image {
+  margin-top: 30px;
+  width: 500px;
+  height: 350px;
+  border-radius: 5px;
+}
 
 h3 {
   font-family: 'Poppins', sans-serif;
 }
 
+.catalog-button {
+  margin-top: 30px;
+  border: 0px;
+  font-size: 50px;
+background: none;
+  color: black;
 
+}
+
+.catalog-button:hover {
+  color: grey;
+}
 
 .container {
-  /* 
-  margin-bottom: 40px;
-  width: 100%;
-  box-shadow: 2px 1px 10px #1b3742; */
-  opacity: 0.9;
-  background-color: whitesmoke;
+
+  background-color: rgba(245, 245, 245, 0.697);
   height: 500px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .home-page-text {
-  /* width: 400px;
-  height: 300px; */
+
   margin-top: 50px;
   float: left;
   width: 50%;
@@ -27,7 +49,7 @@ h3 {
   height: 400px;
   text-align: center;
 
-  border: 1px solid orangered;
+  /* border: 1px solid orangered; */
 
 }
 
@@ -37,8 +59,9 @@ h3 {
   font-size: 40px;
   color: salmon;
   margin-bottom: 30px;
-
 }
+
+
 
 .home-page-text h3 {
   color: green;
@@ -55,15 +78,8 @@ h3 {
   margin-top: 50px;
   height: 400px;
 
-  /* height: auto;
-  /* width: 30%;  */
-  /* margin-left: 46em;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  margin-bottom: 30px; */
-  border: 1px solid green;
+
+  /* border: 1px solid green; */
 }
 
 
