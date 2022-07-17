@@ -6,7 +6,8 @@
 }
 
 .image {
-    width: 500px;
+    margin-top: 40px;
+    width: 400px;
     height: 300px;
     border-radius: 5px;
 }
@@ -15,8 +16,8 @@
     margin: 30px;
     width: 30px;
     background-color: rgba(250, 235, 215, 0);
-
-
+    font-size: 30px;
+    border: 0px;
     border-radius: 20px;
 
 
@@ -25,6 +26,7 @@
 
 .slider button:active {
     box-shadow: 2px 3px 5px black;
+    opacity: 0.1;
   }
   
 
