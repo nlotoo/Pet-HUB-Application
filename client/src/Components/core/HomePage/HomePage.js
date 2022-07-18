@@ -1,12 +1,15 @@
 import '../HomePage/homepage.css';
+
 import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
-    const navigate = useNavigate();
+
+
+    let navigate = useNavigate();
 
     return (
+        <div>
 
-        <div className="wrapper">
             <div className="container">
                 <div className="inside-container">
                     <section className='slider'>
@@ -19,11 +22,14 @@ const HomePage = () => {
                     <h2>You still can`t find your favorite dog breed! </h2>
                     <h3> Try for free with our online catalog for dogs !</h3>
 
-                    <button className='catalog-button' onClick={() => { navigate('/get-all-pets') }} >Our Catalog</button>
+                    <button className='catalog-button' onClick={() => { navigate('get-all-pets') }} >Our Catalog</button>
+                    <button className='catalog-button' onClick={() => { navigate('sign-up') }} >Register</button>
 
                 </div>
 
             </div>
+
+
         </div >
     );
 };

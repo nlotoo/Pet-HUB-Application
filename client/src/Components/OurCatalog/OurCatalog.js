@@ -5,7 +5,8 @@ import { useFetch } from '../../services/useFetch';
 import PetsCardU from './PetCardU.js/PetCardU';
 import { UserContext } from '../../services/UserContex';
 import useResponsiveDesign from '../../services/useResposiveDisplayTool';
-const OutCatalog = () => {
+const OutCatalog = (props) => {
+
 
     const url = 'http://localhost:5000/get-all-pets';
     let petCatalog = useFetch(url);
@@ -36,6 +37,7 @@ const OutCatalog = () => {
         <div className="catalog-root">
             <h3 className="pets-heading">All dog Catalog</h3>
             <div className="pets-catalog-wraper">
+       
                 {petCatalog?.data?.length === 0 ? <div className='no-pet-message'>
                     <span> Still don`t have pet.</span>
                 </div> : ''}

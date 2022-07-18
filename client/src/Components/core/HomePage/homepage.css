@@ -20,23 +20,11 @@ h3 {
   font-family: 'Poppins', sans-serif;
 }
 
-.catalog-button {
-  margin-top: 30px;
-  border: 0px;
-  font-size: 50px;
-background: none;
-  color: black;
-
-}
-
-.catalog-button:hover {
-  color: grey;
-}
 
 .container {
 
   background-color: rgba(245, 245, 245, 0.697);
-  height: 500px;
+  height: 570px;
   /* border: 1px solid red; */
 }
 
@@ -82,17 +70,39 @@ background: none;
   /* border: 1px solid green; */
 }
 
+.catalog-button {
+  border-radius: 5px;
+  background-color: rgb(33, 21, 21);
+  color: white;
+  width: 40%;
+
+  margin: 10px;
+  margin-top: 50px;
+}
+
+.catalog-button:hover {
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  background-color: grey;
+}
+
+.catalog-button:active {
+  -webkit-box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
 
 
 
 
 
 
-.wrapper {
+
+
+/* .wrapper {
   display: flex;
   align-items: center;
   height: 565px;
-}
+} */
 
 @media screen and (max-width: 768px) {
 
