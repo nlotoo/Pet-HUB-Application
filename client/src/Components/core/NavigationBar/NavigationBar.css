@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+.pet-heading {
+    color: salmon;
+    margin: 0;
+    font-size: 40px;
+    font-family: 'Indie Flower', cursive;
+}
+
 .fa-arrow-right {
     margin-right: 20em;
 }
@@ -66,7 +75,7 @@ p {
 
 .navigation-bar ul li {
     list-style: none;
-    
+
 }
 
 .nav-links-desktop {
@@ -82,7 +91,9 @@ p {
 }
 
 .logo-heading:hover {
-    text-decoration: underline;
+    color: #444444;
+    background: #FFFFFF;
+    text-shadow: 3px 2px 1px #CCCCCC
 }
 
 /* menu end */
@@ -101,7 +112,7 @@ body {
     position: absolute;
     right: 0px;
     height: 550px;
-    top: 3.4vh;
+    top: 4vh;
     background-color: #68988C;
     border-left: solid 1px black;
     opacity: 0.9;
@@ -110,7 +121,7 @@ body {
     align-items: center;
     width: 30%;
     transform: translateX(100%);
-    
+
 
     transition: transform 0.5s ease-in;
 

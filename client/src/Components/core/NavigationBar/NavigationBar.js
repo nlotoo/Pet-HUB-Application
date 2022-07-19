@@ -26,7 +26,7 @@ const NavigationBar = () => {
             </div >
             <div className='logo'>
 
-                <h4><Link className='logo-heading' to="/">The Pet Care</Link></h4>
+                <h4><Link className='logo-heading' to="/">The <span className='pet-heading' >Pet</span> Catalog</Link></h4>
             </div>
             <ul className='nav-links-desktop' >
 

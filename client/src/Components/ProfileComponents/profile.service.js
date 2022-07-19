@@ -130,14 +130,3 @@ export const isAuthorizated = async () => {
 
 
 
-
-
-// module.exports = {
-//     isLiked,
-
-//     deleltePetFunc,
-//     isAuthorizated,
-//     editPetSubmit,
-//     unLiked,
- 
-// };

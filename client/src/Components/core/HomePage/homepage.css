@@ -3,7 +3,6 @@
 
 
 .slider {
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
@@ -106,11 +105,28 @@ h3 {
 
 @media screen and (max-width: 768px) {
 
-  img {
+  /* img {
     width: 420px;
     height: 320px;
     border-radius: 20%;
+  } */
 
+
+  .home-page-text h2 {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    color: salmon;
+    float: inline-start;
+  }
+
+
+
+  .home-page-text h3 {
+    color: blue;
+    font-size: 24px;
+    float: inline-start;
+    font-style: italic;
   }
 
 
