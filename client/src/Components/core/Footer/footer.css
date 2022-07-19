@@ -2,6 +2,23 @@
     text-align: -webkit-center;
 }
 
-.footer-map-tree{
+.footer-map-tree {
     text-align: left;
+    border-top: 2px solid black;
+
+
+
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+
+    -webkit-column-rule: 1px solid rgba(28, 110, 164, 0.26);
+    -moz-column-rule: 1px solid rgba(28, 110, 164, 0.26);
+    column-rule: 1px solid rgba(28, 110, 164, 0.26);
+}
+
+.footer-map-tree ul li {
+    color:red;
+
+    list-style-type: none;
 }

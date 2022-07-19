@@ -17,7 +17,11 @@ const Footer = () => {
                     <li><Link to='/'></Link>Register</li>
 
                 </ul>
-
+            </div>
+            <div className='social-media-button'>
+                <i className="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-facebook"></i>
+                <i className="fa-brands fa-twitter"></i>
             </div>
         </div>
     );
