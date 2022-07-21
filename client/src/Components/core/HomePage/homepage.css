@@ -76,6 +76,9 @@ h3 {
 
   margin: 10px;
   margin-top: 50px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .catalog-button:hover {
@@ -133,14 +136,20 @@ h3 {
 
   .home-page-text {
 
-    margin-top: 50px;
     width: 100%;
-    padding: 10px;
     height: 400px;
     text-align: center;
   
     /* border: 1px solid orangered; */
   
+  }
+
+  .catalog-button {
+ 
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
   }
 
 
