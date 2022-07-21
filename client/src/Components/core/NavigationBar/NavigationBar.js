@@ -1,6 +1,6 @@
 import './NavigationBar.css';
 
-import { Link, } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { loginStorageCheker } from '../../../services/loginStorage';
 import { navSlide } from '../../../services/Slider';
 import SearchBox from '../../AdditionalComponents/SearchBox/SearchBox';
@@ -12,9 +12,11 @@ const NavigationBar = () => {
     let userID = window.localStorage.getItem('User ID')
 
 
-
-
-
+    const actionStyle = ({ isActive }) => {
+        return isActive
+            ? 'menu-a-tag active-link'
+            : 'menu-a-tag'
+    }
 
 
     return (
@@ -25,25 +27,30 @@ const NavigationBar = () => {
                 <div className='line3'></div>
             </div >
             <div className='logo'>
-
-                <h4><Link className='logo-heading' to="/">The <span className='pet-heading' >Pet</span> Catalog</Link></h4>
+                <h4><Link className='logo-heading' to="/"> <span className='pet-heading' >Pet</span> Catalog</Link></h4>
             </div>
             <ul className='nav-links-desktop' >
 
                 <div onClick={navSlide}  >
                     <i className="fa-solid fa-arrow-right"></i>
                 </div >
-                <li><Link className='menu-a-tag' to="/">Home</Link></li>
-                <li><Link className='menu-a-tag' to="/about-us">About </Link></li>
-                <li><Link className='menu-a-tag' to="/get-all-pets">All dog Catalog </Link></li>
-                {isLoged && <li><Link className='menu-a-tag' to={"/my-favorites/" + userID}>My Favorites </Link></li>}
+                <li>
+                    <NavLink
+                        to="/"
+                        className={actionStyle}
+                    >Home
+                    </NavLink>
+                </li>
+                <li><NavLink className={actionStyle} to="/about-us">About </NavLink></li>
+                <li><NavLink className={actionStyle} to="/get-all-pets">All dog Catalog </NavLink></li>
+                {isLoged && <li><NavLink className={actionStyle} to={"/my-favorites/" + userID}>My Favorites </NavLink></li>}
 
-                {isLoged && <li><Link className='menu-a-tag' to={"/user-profile/" + userID}>Profile </Link></li>}
-                {isLoged && <li><Link className='menu-a-tag' to={"/get-user-pets/" + userID}>Your Catalog </Link></li>}
-                {isLoged && <li><Link className='menu-a-tag' to={"/create-new-pet/" + userID}>Add new pet </Link></li>}
-                {!isLoged && <li><Link className='menu-a-tag' to="/sign-up">Register </Link></li>}
-                {!isLoged && <li><Link className='menu-a-tag' to="/login">Login </Link></li>}
-                {isLoged && <li><Link className='menu-a-tag' to="/logout">Logout </Link></li>}
+                {isLoged && <li><NavLink className={actionStyle} to={"/user-profile/" + userID}>Profile </NavLink></li>}
+                {isLoged && <li><NavLink className={actionStyle} to={"/get-user-pets/" + userID}>Your Catalog </NavLink></li>}
+                {isLoged && <li><NavLink className={actionStyle} to={"/create-new-pet/" + userID}>Add new pet </NavLink></li>}
+                {!isLoged && <li><NavLink className={actionStyle} to="/sign-up">Register </NavLink></li>}
+                {!isLoged && <li><NavLink className={actionStyle} to="/login">Login </NavLink></li>}
+                {isLoged && <li><NavLink className={actionStyle} to="/logout">Logout </NavLink></li>}
 
             </ul>
 

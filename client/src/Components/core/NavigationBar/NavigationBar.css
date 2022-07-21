@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+.active-link {
+    border: 2px solid salmon;
+    /* background-color: salmon; */
+    padding: 3px;
+    border-radius: 5px;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 .pet-heading {
@@ -16,6 +24,8 @@
 .fa-arrow-right {
     margin-right: 20em;
 }
+
+
 
 .fa-arrow-right:hover {
     cursor: pointer;
@@ -66,7 +76,6 @@ p {
 }
 
 .navigation-bar ul li:hover {
-    text-decoration: underline;
     text-underline-offset: 3px;
 }
 
