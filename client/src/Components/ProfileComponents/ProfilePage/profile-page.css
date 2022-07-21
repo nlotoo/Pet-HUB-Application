@@ -27,8 +27,8 @@
     box-shadow: 6px -4px 8px -2px #000000;
     padding: 10px;
     text-align: -webkit-center;
-    background-color: whitesmoke;
-    opacity: 0.9;
+    background-color: rgba(245, 245, 245, 0.859);
+    
     margin-bottom: 100px;
 }
 

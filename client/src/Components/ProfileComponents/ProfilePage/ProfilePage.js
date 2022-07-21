@@ -21,7 +21,7 @@ const ProfilePage = () => {
                 userFetch.loading ? (<div className='loader-wraper'>
                     <div className='loader'></div>
                 </div>) : <div className="cards-container">
-                    <div className="card card-one">
+                    <div className="card">
                         <h2>User Profile</h2>
                         <header>{
                             userFetch.data?.gender === 'male' ?

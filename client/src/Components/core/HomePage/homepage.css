@@ -24,7 +24,6 @@ h3 {
 
   background-color: rgba(245, 245, 245, 0.697);
   height: 570px;
-  /* border: 1px solid red; */
 }
 
 .home-page-text {
@@ -105,34 +104,44 @@ h3 {
 
 @media screen and (max-width: 768px) {
 
-  /* img {
-    width: 420px;
-    height: 320px;
-    border-radius: 20%;
-  } */
-
 
   .home-page-text h2 {
-    margin-top: 50px;
     text-align: center;
     font-size: 40px;
     color: salmon;
-    float: inline-start;
   }
 
 
 
   .home-page-text h3 {
-    color: blue;
+    text-align: center;
     font-size: 24px;
     float: inline-start;
     font-style: italic;
   }
 
+  .container {
+    display: inline-grid;
+    margin-left: 100px;
+    height: fit-content;
+  }
 
+  .inside-container {
+    width: 100%;
+    /* border: 1px solid yellow; */
+  }
 
+  .home-page-text {
 
-
+    margin-top: 50px;
+    width: 100%;
+    padding: 10px;
+    height: 400px;
+    text-align: center;
+  
+    /* border: 1px solid orangered; */
+  
+  }
 
 
 }

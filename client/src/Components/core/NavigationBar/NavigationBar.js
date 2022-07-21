@@ -29,8 +29,7 @@ const NavigationBar = () => {
             <div className='logo'>
                 <h4><Link className='logo-heading' to="/"> <span className='pet-heading' >Pet</span> Catalog</Link></h4>
             </div>
-            <ul className='nav-links-desktop' >
-
+            <ul className='nav-links-desktop'>
                 <div onClick={navSlide}  >
                     <i className="fa-solid fa-arrow-right"></i>
                 </div >

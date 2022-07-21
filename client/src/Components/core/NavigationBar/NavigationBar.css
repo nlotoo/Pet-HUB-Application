@@ -5,9 +5,9 @@
 }
 
 .active-link {
-    border: 2px solid salmon;
-    /* background-color: salmon; */
-    padding: 3px;
+    /* border: 2px solid salmon; */
+    background-color: salmon;
+    padding: 3   px;
     border-radius: 5px;
 }
 
@@ -201,6 +201,10 @@ body {
 
 @media only screen and (max-width: 760px) {
 
+    .fa-arrow-right {
+        margin-right: 6em;
+    }
+
     .menu-a-tag {
         font-weight: 600;
 
@@ -212,6 +216,7 @@ body {
 
 
     .nav-links-desktop {
+        
         position: absolute;
         right: 0px;
         height: 92vh;
