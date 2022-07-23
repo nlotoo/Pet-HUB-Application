@@ -2,10 +2,10 @@
 # Pet-HUB-Application - Single Page Application
 ## Created with ReactJS.
 
-In the client folder directory, you can run: `npm start`
+- In the client folder directory, you can run: `npm start`
 You will  see any lint errors in the console.
-In the server folder directory, you can run: `npm start`
-You will  see any lint errors in the console.
+- In the server folder directory, you can run: `npm start`
+You will  see any lint errors in the cmd.
 
 
 ## Functionality
