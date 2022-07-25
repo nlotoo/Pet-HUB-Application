@@ -72,7 +72,7 @@ const LoginForm = () => {
 
         <div>
 
-          <input placeholder='Type your password' className='inputs-login-in-card' id="password" name="password" onChange={handleInputChange}></input>
+          <input placeholder='Type your password' className='inputs-login-in-card' type="password" id="password" name="password" onChange={handleInputChange}></input>
         </div>
         <div className='forgot-passwrod'><Link to="/">Forgot your password</Link></div>
         <div>  {errorArr ? <ErrorBar data={errorArr} /> : ''}</div>

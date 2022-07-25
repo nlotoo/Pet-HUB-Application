@@ -19,8 +19,8 @@ const HomePage = () => {
                     <h2>You still can`t find your favorite dog breed! </h2>
                     <h3> Try for free with our online catalog for dogs !</h3>
 
-                    <button className='catalog-button' onClick={() => { navigate('get-all-pets') }} >Our Catalog</button>
-                    <button className='catalog-button' onClick={() => { navigate('sign-up') }} >Register</button>
+                    <button className='catalog-button' onClick={() => { navigate('/get-all-pets') }} >Our Catalog</button>
+                    <button className='catalog-button' onClick={() => { navigate('/sign-up') }} >Register</button>
 
                 </div>
 

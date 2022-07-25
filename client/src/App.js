@@ -43,10 +43,10 @@ const App = () => {
 
             <Routes>
 
-              <Route path='/about-us' element={<AboutUsPage />} />
               <Route path='/' element={<HomePage />} />
               <Route path='/get-all-pets' element={<OurCatalog />} />
               <Route path='/home-page-banner' element={<HomePage />} />
+              <Route path='/about-us' element={<AboutUsPage />} /> 
               <Route path='/home-page' element={<HomePage />} />
               <Route path='/login' element={<LoginPage />} />
               <Route path='/logout' element={<Logout />} />
