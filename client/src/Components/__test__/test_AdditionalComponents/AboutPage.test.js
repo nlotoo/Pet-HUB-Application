@@ -1,10 +1,9 @@
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom'
 import AboutUsPage from '../../AdditionalComponents/AboutUsPage/AboutUsPage'
 
-test('renders aboutUS', () => {
+test('About us page test', () => {
     render(<AboutUsPage />);
-      const linkElement = screen.getByText(/Our Story/i);
-      const imageElement =screen.findByTestId('image-element')
-    //   expect(imageElement)
-      expect(linkElement).toBeInTheDocument();
+    screen.getByText(/Our Story/);
+    screen.getByAltText(/our-story-img/)
 });
