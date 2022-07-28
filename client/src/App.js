@@ -13,7 +13,6 @@ import Footer from './Components/core/Footer/Footer';
 import OurCatalog from './Components/OurCatalog/OurCatalog';
 
 import { UserContext } from './services/UserContex';
-import globalState from './services/globalStateHOC';
 import NotFound from './Components/AdditionalComponents/NotFound/NotFound';
 
 
@@ -71,4 +70,4 @@ const App = () => {
   );
 };
 
-export default globalState(App);
+export default App;

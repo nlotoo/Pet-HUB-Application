@@ -27,7 +27,6 @@ const LoginForm = () => {
             setToken(undefined)
             window.localStorage.clear();
           } else {
-
             setToken(responce)
             setError({})
             window.localStorage.setItem('User Token', responce.token)

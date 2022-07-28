@@ -1,5 +1,7 @@
 
-
+.catalog-root{
+    min-height: 550px;
+}
 
 .pets-heading {
     padding-top: 10px;
@@ -9,7 +11,8 @@
 .pets-catalog-wraper {
     margin-left: 22px;
     margin-right: 22px;
-    height: fit-content;
+    /* height: fit-content; */
+    min-height: 400px;
     background-color: rgba(241, 236, 226, 0.688);
     border: solid 2px #C6E5F1;
     -webkit-box-shadow: 6px -4px 8px -2px #000000;

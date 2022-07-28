@@ -76,7 +76,8 @@ async function loginUser(data) {
 
 
     if (user.length == 0) {
-        throw 'Incorect User';
+        throw 'Incorect email or password';
+        // throw 'Incorect User';
     }
 
     itTrue = bcrypt.compareSync(data.password, user[0].password)
