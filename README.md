@@ -44,3 +44,14 @@ You will  see any lint errors in the cmd.
 * Unregistered and authorized users can search in our catalog by name.
 * Unregistered and authorized users have access to the homepage.
 * Only unregistered users have access to the login and register pages.
+
+## Screenshots
+<img src="https://i2.paste.pics/HYESU.png" width="700" height="322" alt="Screenshot">
+<img src="https://i2.paste.pics/HYEUT.png" width="700" height="322" alt="Screenshot">
+<img src="https://i2.paste.pics/HYETE.png" width="700" height="322" alt="Screenshot">
+<img src="https://i2.paste.pics/HYER0.png" width="700" height="322" alt="Screenshot">
+<img src="https://i2.paste.pics/HYF1J.png" width="700" height="322" alt="Screenshot">
+<img src="https://i2.paste.pics/HYF1T.png" width="700" height="322" alt="Screenshot">
+<img src="https://i2.paste.pics/HYF21.png" width="700" height="322" alt="Screenshot">
+<img src="https://i2.paste.pics/HYF2D.png" width="700" height="332" alt="Screenshot">
+<img src="https://i2.paste.pics/HYF2J.png" width="700" height="322" alt="Screenshot">
