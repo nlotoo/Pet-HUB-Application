@@ -45,7 +45,7 @@ You will  see any lint errors in the cmd.
 * Unregistered and authorized users have access to the homepage.
 * Only unregistered users have access to the login and register pages.
 
-## Screenshots
+## Screenshots:
 <img src="https://i2.paste.pics/HYESU.png" width="700" height="322" alt="Screenshot">
 <img src="https://i2.paste.pics/HYEUT.png" width="700" height="322" alt="Screenshot">
 <img src="https://i2.paste.pics/HYETE.png" width="700" height="322" alt="Screenshot">
