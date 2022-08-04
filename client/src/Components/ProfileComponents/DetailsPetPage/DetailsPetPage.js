@@ -101,6 +101,7 @@ const DetailsPetPage = () => {
                     </div>
                     <div className="pet-info">
                         <div>Pet info</div>
+                        
                         <p>{data?.petInfo} </p>
                     </div>
                     <div className="button-bar">

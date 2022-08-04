@@ -22,6 +22,7 @@ const CreatePetPage = () => {
             petAge: e.target.petAge.value,
             petPhoto: e.target.petPhoto.value,
             petInfo: e.target.petInfo.value,
+           
             petOwner: petOwner
         };
 

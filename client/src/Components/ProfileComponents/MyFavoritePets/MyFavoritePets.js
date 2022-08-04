@@ -4,6 +4,8 @@ import ReactPaginate from 'react-paginate';
 import { useState } from 'react';
 import './petsCatalog.css'
 import useResponsiveDesign from "../../../services/useResposiveDisplayTool";
+import isAuthHOC from '../../../services/HOC';
+
 
 const MyFavorite = () => {
 
@@ -56,4 +58,4 @@ const MyFavorite = () => {
 };
 
 
-export default MyFavorite
+export default isAuthHOC(MyFavorite)

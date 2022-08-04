@@ -18,7 +18,6 @@ import NotFound from './Components/AdditionalComponents/NotFound/NotFound';
 
 
 const MyFavorite = lazy(() => import('./Components/ProfileComponents/MyFavoritePets/MyFavoritePets'));
-
 const DetailsPetPage = lazy(() => import('./Components/ProfileComponents/DetailsPetPage/DetailsPetPage'));
 const AboutUsPage = lazy(() => import('./Components/AdditionalComponents/AboutUsPage/AboutUsPage'));
 const CreatePetPage = lazy(() => import('./Components/ProfileComponents/CreatePetPage/CreatePetPage'));

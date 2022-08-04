@@ -54,6 +54,8 @@ const NavigationBar = () => {
             </ul>
 
             <SearchBox />
+            {isLoged && <div className='welcome-message'>Hello {localStorage.getItem('User email')}</div> }
+            
 
             <Waether />
         </nav >

@@ -22,8 +22,10 @@ export const userValidation = (data) => {
     if (username.length < 4 || password.length < 4 || rePassword.length < 4 || userEmail.length < 4 || location.length < 4) {
         errorArr.push("All fields must be at least 4 characters!");
     };
-    if (userPhoneNumber.length < 4) {
-        errorArr.push("Phone number shoud be more digit!");
+
+    const regexPhoneNumber = /^((\+)44|0)[1-9](\d{2}){4}$/;
+    if (!regexPhoneNumber.test(userPhoneNumber)) {
+        errorArr.push(`Corect format for the phone number is +44123456789`);
 
     };
     if (rePassword !== password) {

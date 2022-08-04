@@ -12,7 +12,6 @@ const ProfilePage = () => {
 
 
     let userFetch = useFetch(url);
-    let petCount = userFetch.data?.pets.length;
 
 
     return (
@@ -34,11 +33,7 @@ const ProfilePage = () => {
                         </header>
                         <h3>{userFetch.data?.username[0]?.toUpperCase() + userFetch.data?.username?.slice(1)}</h3>
                         <div className='user-info'>
-                            <div>
-                                <i className='fas fa-dog'></i>
-                                <span>&nbsp;{petCount ? `You have  ${petCount} pets! ` : 'You don`t have pet yet!'}
-                                </span>
-                            </div>
+            
                             <div>
                                 <i className='fas fa-mobile'></i>
                                 <span>&nbsp;&nbsp;+{userFetch.data?.userPhoneNumber}</span>

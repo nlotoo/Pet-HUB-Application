@@ -43,7 +43,7 @@ const PetsCatalog = () => {
                 </div> : <div className="pets-catalog-rail">
                     <PetCardCatalog petsData={petCatalog?.data?.slice(pageVisited, pageVisited + petsPerPage)} />
                     {petCatalog?.data?.length === 0 && <span className='no-pet-message' > You still don`t have pet.</span>}
-                    {petCatalog?.data?.length < 4 && <button onClick={CreateNewPet} className='add-new-pet-button'>Add new pet </button>}
+                    {petCatalog?.data?.length < 4 && <button onClick={CreateNewPet} className='add-new-pet-button'>Click here to add new pet </button>}
                 </div>}
             </div>
 

@@ -15,7 +15,7 @@ export const Waether = () => {
 			}
 		};
 
-		fetch('https://yahoo-weather5.p.rapidapi.com/weather?location=Exeter&format=json&u=f', options)
+		fetch('https://yahoo-weather5.p.rapidapi.com/weather?location=Hawaii&format=json&u=f', options)
 			.then(response => response.json())
 			.then(response => {
 				setData(response)
@@ -38,7 +38,7 @@ export const Waether = () => {
 	}
 
 	return (<div className="weather-box-class">
-		<h5>Exeter {data ? weatherNow() : <i className="fa-solid fa-sync fa-spin"></i>}</h5>
+		<h5>Hawaii {data ? weatherNow() : <i className="fa-solid fa-sync fa-spin"></i>}</h5>
 
 
 

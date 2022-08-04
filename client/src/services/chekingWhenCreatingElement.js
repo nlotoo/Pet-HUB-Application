@@ -1,15 +1,16 @@
 const chekingWhenCreatingOrEditingElement = (data) => {
+    console.log(data)
 
     let { petName, petWeight, petBreed, petAge, petPhoto, petInfo, petOwner } = data;
 
 
     let petObj = {
         petName: petName.toLowerCase().trim(),
-        petWeight: petWeight.toLowerCase().trim(),
-        petBreed: petBreed.toLowerCase().trim(),
-        petAge: petAge.toLowerCase().trim(),
+        petWeight: petWeight.trim(),
+        petBreed: petBreed.trim(),
+        petAge: petAge.trim(),
         petPhoto: petPhoto.trim(),
-        petInfo: petInfo.toLowerCase().trim(),
+        petInfo: petInfo.trim(),
         petOwner: petOwner,
     };
 
