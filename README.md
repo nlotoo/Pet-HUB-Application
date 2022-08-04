@@ -53,5 +53,4 @@ You will  see any lint errors in the cmd.
 <img src="https://i2.paste.pics/HYF1J.png" width="700" height="322" alt="Screenshot">
 <img src="https://i2.paste.pics/HYF1T.png" width="700" height="322" alt="Screenshot">
 <img src="https://i2.paste.pics/HYF21.png" width="700" height="322" alt="Screenshot">
-<img src="https://i2.paste.pics/HYF2D.png" width="700" height="332" alt="Screenshot">
 <img src="https://i2.paste.pics/HYF2J.png" width="700" height="322" alt="Screenshot">
