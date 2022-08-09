@@ -100,13 +100,8 @@ async function loginUser(data) {
 };
 async function fetchProfile(data) {
 
-
-
-
     let result = await User.findById({ _id: data })
     return result
-
-
 };
 
 

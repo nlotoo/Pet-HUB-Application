@@ -5,6 +5,9 @@ import { useFetch } from '../../services/useFetch';
 import PetsCardU from './PetCardU.js/PetCardU';
 import { UserContext } from '../../services/UserContex';
 import useResponsiveDesign from '../../services/useResposiveDisplayTool';
+
+
+
 const OutCatalog = (props) => {
 
 
@@ -25,6 +28,7 @@ const OutCatalog = (props) => {
 
 
     const { value } = useContext(UserContext);
+
     let [, setSearchQuery] = useState('')
     useEffect(() => {
         setSearchQuery(value)
