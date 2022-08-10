@@ -14,6 +14,7 @@ import OurCatalog from './Components/OurCatalog/OurCatalog';
 
 import { UserContext } from './services/UserContex';
 import NotFound from './Components/AdditionalComponents/NotFound/NotFound';
+import DeletePage from './Components/ProfileComponents/DeletePage/DeletePage';
 
 
 
@@ -44,7 +45,7 @@ const App = () => {
               <Route path='/' element={<HomePage />} />
               <Route path='/get-all-pets' element={<OurCatalog />} />
               <Route path='/home-page-banner' element={<HomePage />} />
-              <Route path='/about-us' element={<AboutUsPage />} /> 
+              <Route path='/about-us' element={<AboutUsPage />} />
               <Route path='/home-page' element={<HomePage />} />
               <Route path='/login' element={<LoginPage />} />
               <Route path='/logout' element={<Logout />} />
@@ -52,7 +53,7 @@ const App = () => {
               <Route path='/user-profile/:id' element={<ProfilePage />} />
               <Route path='/get-user-pets/:id' element={<PetsCatalog />} />
               <Route path='/create-new-pet/:id' element={<CreatePetPage />} />
-              
+              <Route path='/delete-page/:id' element={<DeletePage />} />
               <Route path='/pet-details/:id' element={<DetailsPetPage />} />
               <Route path='/my-favorites/:id' element={<MyFavorite />} />
               <Route path='*' element={<NotFound />} />

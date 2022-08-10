@@ -21,7 +21,7 @@ const DetailsPetPage = () => {
 
     let [userAction, setActions] = useState(null);
 
-    // let [userRendition, setUserRendition]=useState()  prep for context
+
 
 
     const onClose = () => {
