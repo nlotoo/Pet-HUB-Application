@@ -33,14 +33,7 @@ async function createPet(data) {
             throw 'Your description is to long, should be below 50 characters!'
 
         }
-
-
-
-
-
         let petMaster = await User.findById({ _id: petOwner })
-
-
 
         let newPetDocument = new Pet(data)
         petMaster.pets.push(newPetDocument._id)

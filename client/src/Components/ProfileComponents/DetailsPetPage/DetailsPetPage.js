@@ -14,9 +14,13 @@ const DetailsPetPage = () => {
     const url = `http://localhost:5000/pet-details/${id}`;
 
     const { data, error, loading } = useFetch(url);
+
     let userID = localStorage.getItem('User ID');
+
     let [user, setUser] = useState(null);
     let [like, setLike] = useState(null);
+
+
     const itsTrue = data?.petLikes.some(x => x === userID);
 
     let [userAction, setActions] = useState(null);
@@ -48,6 +52,7 @@ const DetailsPetPage = () => {
         let userData = {
             id, userID,
         };
+        
         isLiked(userData)
             .then(rs => {
                 if (rs.message) {

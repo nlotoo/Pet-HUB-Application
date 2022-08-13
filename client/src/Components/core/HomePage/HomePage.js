@@ -1,9 +1,11 @@
 import '../HomePage/homepage.css';
 
 import { useNavigate } from 'react-router-dom';
+import { loginStorageCheker } from '../../../services/loginStorage';
 
 const HomePage = () => {
 
+    let isLoged = loginStorageCheker()
 
     let navigate = useNavigate();
 
@@ -19,7 +21,7 @@ const HomePage = () => {
                     <h3> Try for free with our online catalog for dogs !</h3>
 
                     <button className='catalog-button' onClick={() => { navigate('/get-all-pets') }} >Our Catalog</button>
-                    <button className='catalog-button' onClick={() => { navigate('/sign-up') }} >Register</button>
+                    {!isLoged && <button className='catalog-button' onClick={() => { navigate('/sign-up') }} >Register</button>}
                 </div>
             </div>
         </div >

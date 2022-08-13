@@ -45,8 +45,8 @@ const NavigationBar = () => {
                 {isLoged && <li><NavLink className={actionStyle} to={"/my-favorites/" + userID}>My Favorites </NavLink></li>}
 
                 {isLoged && <li><NavLink className={actionStyle} to={"/user-profile/" + userID}>Profile </NavLink></li>}
-                {isLoged && <li><NavLink className={actionStyle} to={"/get-user-pets/" + userID}>Your Catalog </NavLink></li>}
-                {isLoged && <li><NavLink className={actionStyle} to={"/create-new-pet/" + userID}>Add new pet </NavLink></li>}
+                {isLoged && <li><NavLink className={actionStyle} to={"/get-user-pets/" + userID}>My Catalog </NavLink></li>}
+                {isLoged && <li><NavLink className={actionStyle} to={"/create-new-pet/" + userID}>Create new pet </NavLink></li>}
                 {!isLoged && <li><NavLink className={actionStyle} to="/sign-up">Register </NavLink></li>}
                 {!isLoged && <li><NavLink className={actionStyle} to="/login">Login </NavLink></li>}
                 {isLoged && <li><NavLink className={actionStyle} to="/logout">Logout </NavLink></li>}

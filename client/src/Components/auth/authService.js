@@ -60,8 +60,3 @@ export const loginUser = async (data) => {
 
 
 };
-
-// module.exports = {
-//     createUser,
-//     loginUser,
-// };

@@ -17,7 +17,6 @@ export const isLiked = async (data) => {
 
 };
 
-
 export const unLiked = async (data) => {
 
     const requestOptions = {
