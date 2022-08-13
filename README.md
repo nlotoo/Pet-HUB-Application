@@ -13,7 +13,7 @@ You will  see any lint errors in the cmd.
 * Ability to  view the pet-card of other users.
 * Ability to edit and delete personal pet-card.
 * Ability to like other users' posts and add them to Favourites. 
-* Full responsibility of the pages.
+* Responsibility of the pages.
 * You can search in our main catalog by name.
 * You can like and disklike pet-cards.
 * Interactive UX.
