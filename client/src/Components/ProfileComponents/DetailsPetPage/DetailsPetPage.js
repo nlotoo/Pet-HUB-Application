@@ -19,6 +19,7 @@ const DetailsPetPage = () => {
 
     let [user, setUser] = useState(null);
     let [like, setLike] = useState(null);
+    let [pet, setPet] = useState({});
 
 
     const itsTrue = data?.petLikes.some(x => x === userID);
@@ -36,6 +37,7 @@ const DetailsPetPage = () => {
     useEffect(() => {
 
         setUser(userID)
+        setPet(data)
         if (itsTrue) {
             setLike(itsTrue);
         };
@@ -52,7 +54,7 @@ const DetailsPetPage = () => {
         let userData = {
             id, userID,
         };
-        
+
         isLiked(userData)
             .then(rs => {
                 if (rs.message) {
@@ -90,7 +92,7 @@ const DetailsPetPage = () => {
 
                 {!userAction && <div className="details-pet-card" >
                     <h2 className="heading-class" >Pet detail</h2>
-                    <h5>{data?.petName} </h5>
+                    <h5>{pet?.petName} </h5>
                     <img className='imgs-details-page' alt='pet-details-img' src={`${data?.petPhoto}`} ></img>
                     <div className="pet-info">
                         <div>Pet breed</div>
@@ -106,7 +108,7 @@ const DetailsPetPage = () => {
                     </div>
                     <div className="pet-info">
                         <div>Pet info</div>
-                        
+
                         <p>{data?.petInfo} </p>
                     </div>
                     <div className="button-bar">
